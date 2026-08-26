@@ -15,20 +15,21 @@ command, and then restores focus to the previously active window.
 
 ## Syntax
 
+
 ```powershell
 Switch-VlcMediaPlayerMute [<CommonParameters>]
 ```
 
 ## Examples
 
-### Switch-VlcMediaPlayerMute Toggles the mute state of VLC Media Player using the full function name.
+
 
 ```powershell
 Switch-VlcMediaPlayerMute
 Toggles the mute state of VLC Media Player using the full function name.
 ```
 
-### vlcmute Toggles the mute state of VLC Media Player using the short alias.
+
 
 ```powershell
 vlcmute

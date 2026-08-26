@@ -16,6 +16,7 @@ wait functionality to pause execution until WinMerge closes.
 
 ## Syntax
 
+
 ```powershell
 Invoke-WinMerge -SourcecodeFilePath <String> -TargetcodeFilePath <String> [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [-Wait] [<CommonParameters>]
 ```
@@ -33,7 +34,7 @@ Invoke-WinMerge -SourcecodeFilePath <String> -TargetcodeFilePath <String> [-Auto
 
 ## Examples
 
-### Invoke-WinMerge -SourcecodeFilePath "C:\source\file1.txt" `                 -TargetcodeFilePath "C:\target\file2.txt" `                 -Wait
+
 
 ```powershell
 Invoke-WinMerge -SourcecodeFilePath "C:\source\file1.txt" `
@@ -41,7 +42,7 @@ Invoke-WinMerge -SourcecodeFilePath "C:\source\file1.txt" `
                 -Wait
 ```
 
-### merge "C:\source\file1.txt" "C:\target\file2.txt"
+
 
 ```powershell
 merge "C:\source\file1.txt" "C:\target\file2.txt"

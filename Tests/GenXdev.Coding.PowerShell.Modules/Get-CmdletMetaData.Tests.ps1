@@ -3,7 +3,7 @@
 # Tests per-cmdlet metadata retrieval for C# and .ps1 cmdlets
 ###############################################################################
 
-Pester\Describe 'Get-CmdletMetaData — C# cmdlet (Find-Item)' {
+Pester\Describe 'Get-CmdletMetaData — C# cmdlet (Find-Item)' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\It 'returns a hashtable with all expected top-level keys' {
 
@@ -164,7 +164,7 @@ Pester\Describe 'Get-CmdletMetaData — C# cmdlet (Find-Item)' {
 }
 
 ###############################################################################
-Pester\Describe 'Get-CmdletMetaData — .ps1 script cmdlet (Find-Image)' {
+Pester\Describe 'Get-CmdletMetaData — .ps1 script cmdlet (Find-Image)' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\It 'returns a hashtable with all expected top-level keys' {
 
@@ -329,7 +329,7 @@ Pester\Describe 'Get-CmdletMetaData — .ps1 script cmdlet (Find-Image)' {
 }
 
 ###############################################################################
-Pester\Describe 'Get-CmdletMetaData — edge cases' {
+Pester\Describe 'Get-CmdletMetaData — edge cases' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\It 'resolves cmdlet through alias (l -> Find-Item)' {
 

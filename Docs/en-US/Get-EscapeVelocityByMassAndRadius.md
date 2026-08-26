@@ -13,6 +13,7 @@ Uses v = sqrt(2 G M / r).
 
 ## Syntax
 
+
 ```powershell
 Get-EscapeVelocityByMassAndRadius -MassInKilograms <Double> -RadiusInMeters <Double> [[-As] <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-EscapeVelocityByMassAndRadius -MassInKilograms <Double> -RadiusInMeters <Dou
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-EscapeVelocityByMassAndRadius -MassInKilograms 5.972e24 -RadiusInMeters 6371000 -As "km/h"
@@ -35,7 +35,6 @@ Get-EscapeVelocityByMassAndRadius -MassInKilograms 5.972e24 -RadiusInMeters 6371
 
 Calculates the escape velocity for a body with Earth's mass and radius.
 
-### Examples 2
 
 ```powershell
 Get-EscapeVelocityByMassAndRadius 1e26 10000000

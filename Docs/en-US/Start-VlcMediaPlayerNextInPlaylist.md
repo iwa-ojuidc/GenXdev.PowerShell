@@ -16,19 +16,20 @@ function includes ShouldProcess support for confirmation prompts when needed.
 
 ## Syntax
 
+
 ```powershell
 Start-VlcMediaPlayerNextInPlaylist [<CommonParameters>]
 ```
 
 ## Examples
 
-### Start-VlcMediaPlayerNextInPlaylist
+
 
 ```powershell
 Start-VlcMediaPlayerNextInPlaylist
 ```
 
-### vlcnext
+
 
 ```powershell
 vlcnext

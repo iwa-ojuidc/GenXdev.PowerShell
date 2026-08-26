@@ -17,6 +17,7 @@ browser configuration options.
 
 ## Syntax
 
+
 ```powershell
 Open-ChatGPTQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-ShowWindow] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -72,14 +73,14 @@ Open-ChatGPTQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <Strin
 
 ## Examples
 
-### Open-ChatGPTQuery -Queries "What is PowerShell?", "How do I use functions?" Submit multiple queries using full parameter name.
+
 
 ```powershell
 Open-ChatGPTQuery -Queries "What is PowerShell?", "How do I use functions?"
 Submit multiple queries using full parameter name.
 ```
 
-### "What is PowerShell?" | aicgpt Submit a query using alias and pipeline.
+
 
 ```powershell
 "What is PowerShell?" | aicgpt

@@ -22,6 +22,7 @@ The function handles:
 
 ## Syntax
 
+
 ```powershell
 Get-LLMJsonOutput -Text <String> [[-ResponseFormat] <String>] [<CommonParameters>]
 ```
@@ -42,7 +43,7 @@ Get-LLMJsonOutput -Text '```json
 ```'
 Extracts: {"result": "hello"}
 
-### $schema = '{"type":"json_schema","json_schema":{"name":"r","schema":{"type":"object"}}}' Get-LLMJsonOutput -Text 'The answer is {"key": "value"}' -ResponseFormat $schema Extracts: {"key": "value"}
+
 
 ```powershell
 $schema = '{"type":"json_schema","json_schema":{"name":"r","schema":{"type":"object"}}}'

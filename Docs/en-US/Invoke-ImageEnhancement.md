@@ -17,6 +17,7 @@ supports GPU acceleration and Docker container management.
 
 ## Syntax
 
+
 ```powershell
 Invoke-ImageEnhancement -ImagePath <String> [[-OutputPath] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-ContainerName <String>] [-Force] [-HealthCheckInterval <Int32>] [-HealthCheckTimeout <Int32>] [-ImageName <String>] [-NoDockerInitialize] [-ServicePort <Int32>] [-SessionOnly] [-ShowWindow] [-UseGPU] [-VolumeName <String>] [<CommonParameters>]
 ```
@@ -43,7 +44,7 @@ Invoke-ImageEnhancement -ImagePath <String> [[-OutputPath] <String>] [-AutoConse
 
 ## Examples
 
-### Invoke-ImageEnhancement -ImagePath "C:\Users\YourName\small_photo.jpg" `                         -OutputPath "C:\Users\YourName\enhanced_photo.jpg" Enhances the image and saves it to the specified output path.
+
 
 ```powershell
 Invoke-ImageEnhancement -ImagePath "C:\Users\YourName\small_photo.jpg" `
@@ -51,14 +52,14 @@ Invoke-ImageEnhancement -ImagePath "C:\Users\YourName\small_photo.jpg" `
 Enhances the image and saves it to the specified output path.
 ```
 
-### enhanceimage "C:\photos\low_quality.jpg" Enhances the image and returns the base64 data and dimensions using alias.
+
 
 ```powershell
 enhanceimage "C:\photos\low_quality.jpg"
 Enhances the image and returns the base64 data and dimensions using alias.
 ```
 
-### Invoke-ImageEnhancement -ImagePath "C:\photos\image.jpg" -UseGPU Enhances the image using GPU acceleration for faster processing.
+
 
 ```powershell
 Invoke-ImageEnhancement -ImagePath "C:\photos\image.jpg" -UseGPU

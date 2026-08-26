@@ -14,6 +14,7 @@ in yyyyMMdd format. The line can be formatted as code and optionally displayed.
 
 ## Syntax
 
+
 ```powershell
 Add-FeatureLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveCompleted] [-ArchiveFilePath <String>] [-Ascending] [-Code] [-Done] [-ExcludeCompleted] [-First <Int32>] [-OnlyCompleted] [-Show] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -39,13 +40,13 @@ Add-FeatureLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveComple
 
 ## Examples
 
-### Add-FeatureLineToREADME -Line "Added new Git feature"
+
 
 ```powershell
 Add-FeatureLineToREADME -Line "Added new Git feature"
 ```
 
-### feature "Added new Git feature" -Code -Show
+
 
 ```powershell
 feature "Added new Git feature" -Code -Show

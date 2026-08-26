@@ -15,6 +15,7 @@ function implements an upsert operation.
 
 ## Syntax
 
+
 ```powershell
 Set-ValueByKeyInStore -StoreName <String> -KeyName <String> [[-Value] <String>] [-DatabasePath <String>] [<CommonParameters>]
 ```
@@ -30,7 +31,6 @@ Set-ValueByKeyInStore -StoreName <String> -KeyName <String> [[-Value] <String>] 
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Set-ValueByKeyInStore -StoreName "ConfigStore" -KeyName "ApiEndpoint" `
@@ -39,7 +39,6 @@ Set-ValueByKeyInStore -StoreName "ConfigStore" -KeyName "ApiEndpoint" `
 
 Set an API endpoint in the ConfigStore.
 
-### Examples 2
 
 ```powershell
 setvalue ConfigStore ApiEndpoint "https://api.example.com"

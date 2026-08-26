@@ -18,6 +18,7 @@ The function handles all prerequisites and ensures a working Paint.NET installat
 
 ## Syntax
 
+
 ```powershell
 EnsurePaintNet [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -32,7 +33,7 @@ EnsurePaintNet [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonP
 
 ## Examples
 
-### EnsurePaintNet This will verify and setup Paint.NET if needed.
+
 
 ```powershell
 EnsurePaintNet

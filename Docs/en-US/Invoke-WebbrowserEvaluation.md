@@ -33,6 +33,7 @@ Key capabilities:
 
 ## Syntax
 
+
 ```powershell
 Invoke-WebbrowserEvaluation [[-Scripts] <Object[]>] [-ByReference <PSObject>] [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Inspect] [-NoAutoSelectTab] [-Page <Object>] [-Webkit] [<CommonParameters>]
 ```
@@ -54,14 +55,14 @@ Invoke-WebbrowserEvaluation [[-Scripts] <Object[]>] [-ByReference <PSObject>] [-
 
 ## Examples
 
-### // Execute simple JavaScript Invoke-WebbrowserEvaluation "document.title = 'hello world'"
+
 
 ```powershell
 // Execute simple JavaScript
 Invoke-WebbrowserEvaluation "document.title = 'hello world'"
 ```
 
-### PS> // Synchronizing data Select-WebbrowserTab -Force; $Global:Data = @{ files= (Get-ChildItem *.* -file | % FullName)}; [int] $number = Invoke-WebbrowserEvaluation "     document.body.innerHTML = JSON.stringify(data.files);     data.title = document.title;     return 123; "; Write-Host "     Document title : $($Global:Data.title)     return value   : $Number ";
+
 
 ```powershell
 PS>
@@ -79,7 +80,7 @@ Write-Host "
 ";
 ```
 
-### PS> Support for promises Select-WebbrowserTab -Force; Invoke-WebbrowserEvaluation "     let myList = [];     return new Promise((resolve) => {         let i = 0;         let a = setInterval(() => {             myList.push(++i);             if (i == 10) {                 clearInterval(a);                 resolve(myList);             }         }, 1000);     }); "
+
 
 ```powershell
 PS>
@@ -100,7 +101,7 @@ Invoke-WebbrowserEvaluation "
 "
 ```
 
-### PS> // Support for promises and more // this function returns all rows of all tables/datastores of all databases of indexedDb in the selected tab // beware, not all websites use indexedDb, it could return an empty set Select-WebbrowserTab -Force; Set-WebbrowserTabLocation "https://www.youtube.com/" Start-Sleep 3 $AllIndexedDbData = Invoke-WebbrowserEvaluation "     // enumerate all indexedDB databases     for (let db of await indexedDB.databases()) {         // request to open database         let openRequest = await indexedDB.open(db.name);         // wait for eventhandlers to be called         await new Promise((resolve,reject) => {             openRequest.onsuccess = resolve;             openRequest.onerror = reject         });         // obtain reference         let openedDb = openRequest.result;         // initialize result         let result = { DatabaseName: db.name, Version: db.version, Stores: [] }         // itterate object store names         for (let i = 0; i < openedDb.objectStoreNames.length; i++) {             // reference             let storeName = openedDb.objectStoreNames[i];             // start readonly transaction             let tr = openedDb.transaction(storeName);             // get objectstore handle             let store = tr.objectStore(storeName);             // request all data             let getRequest = store.getAll();             // await result             await new Promise((resolve,reject) => {                 getRequest.onsuccess = resolve;                 getRequest.onerror = reject;             });             // add result             result.Stores.push({ StoreName: storeName, Data: getRequest.result});         }         // stream this database contents to the PowerShell pipeline, and continue         yield result;     } "; $AllIndexedDbData | Out-Host // SECURITY NOTE: This basic example works because the module uses Playwright // browser automation, which bypasses normal JavaScript security restrictions // in the current page context. Standard web pages cannot access IndexedDB from // other origins, but Playwright has the same privileges as the website itself. // See the enhanced example below for more details on security considerations.
+
 
 ```powershell
 PS>
@@ -154,7 +155,7 @@ $AllIndexedDbData | Out-Host
 // See the enhanced example below for more details on security considerations.
 ```
 
-### PS> // Enhanced IndexedDB enumeration with metadata and error handling // This enhanced approach provides more comprehensive IndexedDB data extraction including // database counts, error handling, and metadata. Unlike the basic example above, this // version handles security restrictions, provides detailed store information, and // includes record counts without necessarily retrieving all data. Select-WebbrowserTab -Force; Set-WebbrowserTabLocation "https://www.youtube.com/" Start-Sleep 3 $EnhancedIndexedDbData = Invoke-WebbrowserEvaluation "     // Enhanced IndexedDB enumeration with comprehensive error handling     let results = [];     for (let dbInfo of await indexedDB.databases()) {         try {             // Open database with timeout             let db = await new Promise((resolve, reject) => {                 let req = indexedDB.open(dbInfo.name);                 req.onsuccess = () => resolve(req.result);                 req.onerror = () => reject(req.error);                 setTimeout(() => reject(new Error('Database open timeout')), 5000);             });             let dbResult = {                 DatabaseName: dbInfo.name,                 Version: dbInfo.version,                 ObjectStoreCount: db.objectStoreNames.length,                 Stores: []             };             // Process each object store             for (let i = 0; i < db.objectStoreNames.length; i++) {                 let storeName = db.objectStoreNames[i];                 try {                     let transaction = db.transaction(storeName, 'readonly');                     let store = transaction.objectStore(storeName);                     // Get record count (faster than retrieving all data)                     let count = await new Promise((resolve, reject) => {                         let req = store.count();                         req.onsuccess = () => resolve(req.result);                         req.onerror = () => reject(req.error);                         setTimeout(() => reject(new Error('Count timeout')), 3000);                     });                     dbResult.Stores.push({                         StoreName: storeName,                         RecordCount: count,                         KeyPath: store.keyPath,                         AutoIncrement: store.autoIncrement,                         IndexNames: Array.from(store.indexNames)                     });                 } catch (storeError) {                     dbResult.Stores.push({                         StoreName: storeName,                         Error: storeError.message                     });                 }             }             results.push(dbResult);             db.close();         } catch (dbError) {             results.push({                 DatabaseName: dbInfo.name,                 Error: dbError.message             });         }     }     yield results; "; $EnhancedIndexedDbData | ConvertTo-Json -Depth 10 // Key differences from the basic example: // 1. Includes error handling for database access issues // 2. Provides metadata (KeyPath, AutoIncrement, IndexNames) // 3. Gets record counts without retrieving all data (more efficient) // 4. Handles timeout scenarios // 5. Returns structured information about database schema // 6. More suitable for large databases where retrieving all data would be slow // SECURITY CONSIDERATIONS FOR INDEXEDDB ACCESS: // Both examples work because this module uses Playwright browser automation, // which bypasses standard JavaScript security restrictions in the context // of the current page: // Standard JavaScript Limitations: // - Same-origin policy restricts access to IndexedDB from other origins // - Some databases may be hidden or protected by browser security features // - Cross-origin database access is typically blocked // - Service worker databases may have additional protection // How this example bypasses restrictions: // - Uses Playwright browser automation for privileged access // - Executes in the context of the actual page, not a sandboxed environment // - Has the same permissions as the website itself for its own storage // - Can access all databases created by the current origin/domain // Limitations: // - Cannot access databases from other origins/domains in the same browser // - Cannot access databases from other browser profiles or private browsing // - Some browser extensions may create isolated storage not accessible via JavaScript // Alternative Approaches for Maximum Access: // - Use GenXdev.Webbrowser with multiple tabs from different origins // - Combine with file system access to browser profile directories (when possible) // - Use browser automation to navigate between different domains
+
 
 ```powershell
 PS>
@@ -254,7 +255,7 @@ $EnhancedIndexedDbData | ConvertTo-Json -Depth 10
 // - Use browser automation to navigate between different domains
 ```
 
-### PS> Support for yielded pipeline results Select-WebbrowserTab -Force; Invoke-WebbrowserEvaluation "     for (let i = 0; i < 10; i++) {         await (new Promise((resolve) => setTimeout(resolve, 1000)));         yield i;     } ";
+
 
 ```powershell
 PS>
@@ -268,13 +269,13 @@ Invoke-WebbrowserEvaluation "
 ";
 ```
 
-### PS> Get-ChildItem *.js | Invoke-WebbrowserEvaluation -Edge
+
 
 ```powershell
 PS> Get-ChildItem *.js | Invoke-WebbrowserEvaluation -Edge
 ```
 
-### PS> ls *.js | et -e
+
 
 ```powershell
 PS> ls *.js | et -e

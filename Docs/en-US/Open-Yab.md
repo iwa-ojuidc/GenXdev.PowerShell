@@ -16,6 +16,7 @@ watched in spectator mode where AI plays automatically.
 
 ## Syntax
 
+
 ```powershell
 Open-Yab [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoApplicationMode] [-NoBorders] [-NoBrowserExtensions] [-NoFullScreen] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-ShowWindow] [-SideBySide] [-SkipSession] [-SpectateOnly] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -76,7 +77,7 @@ Open-Yab [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode]
 
 ## Examples
 
-### Open-Yab -SpectateOnly -Chrome -NoFullScreen -Language "English" Opens YAB game in spectator mode using Chrome browser without fullscreen, with English language interface.
+
 
 ```powershell
 Open-Yab -SpectateOnly -Chrome -NoFullScreen -Language "English"
@@ -84,7 +85,7 @@ Opens YAB game in spectator mode using Chrome browser without fullscreen,
 with English language interface.
 ```
 
-### yab -e -Private -Monitor 2 Opens YAB game in Edge browser with private browsing on monitor 2 using aliases for quick access.
+
 
 ```powershell
 yab -e -Private -Monitor 2

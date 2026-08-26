@@ -30,6 +30,7 @@ skipped without errors.
 
 ## Syntax
 
+
 ```powershell
 Open-Webbrowser [[-Url] <String[]>] [[-Monitor] <Int32>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-AutoConsent] [-AutoConsentAllPackages] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-Input <String>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-PreferPlaywrightBrowser] [-Private] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -88,49 +89,49 @@ Open-Webbrowser [[-Url] <String[]>] [[-Monitor] <Int32>] [-AcceptLang <String>] 
 
 ## Examples
 
-### wb -PlayWright https://github.com Opens GitHub in a Playwright-managed Chromium browser.
+
 
 ```powershell
 wb -PlayWright https://github.com
 Opens GitHub in a Playwright-managed Chromium browser.
 ```
 
-### Open-Webbrowser -Url "https://github.com" Opens GitHub in the default browser.
+
 
 ```powershell
 Open-Webbrowser -Url "https://github.com"
 Opens GitHub in the default browser.
 ```
 
-### Open-Webbrowser -Url "https://stackoverflow.com" -Monitor 1 -Left Opens Stack Overflow in the left half of monitor 1.
+
 
 ```powershell
 Open-Webbrowser -Url "https://stackoverflow.com" -Monitor 1 -Left
 Opens Stack Overflow in the left half of monitor 1.
 ```
 
-### wb "https://google.com" -m 0 -fs Opens Google in fullscreen mode on the primary monitor using aliases.
+
 
 ```powershell
 wb "https://google.com" -m 0 -fs
 Opens Google in fullscreen mode on the primary monitor using aliases.
 ```
 
-### Open-Webbrowser -Chrome -Private -NewWindow Opens a new Chrome window in incognito mode.
+
 
 ```powershell
 Open-Webbrowser -Chrome -Private -NewWindow
 Opens a new Chrome window in incognito mode.
 ```
 
-### "https://github.com", "https://stackoverflow.com" | Open-Webbrowser -All Opens multiple URLs in all installed browsers via pipeline.
+
 
 ```powershell
 "https://github.com", "https://stackoverflow.com" | Open-Webbrowser -All
 Opens multiple URLs in all installed browsers via pipeline.
 ```
 
-### Open-Webbrowser -Monitor 0 -Right Re-positions an already open browser window to the right side of the primary monitor.
+
 
 ```powershell
 Open-Webbrowser -Monitor 0 -Right
@@ -138,7 +139,7 @@ Re-positions an already open browser window to the right side of the primary
 monitor.
 ```
 
-### Open-Webbrowser -ApplicationMode -Url "https://app.example.com" Opens a web application in app mode without browser controls.
+
 
 ```powershell
 Open-Webbrowser -ApplicationMode -Url "https://app.example.com"

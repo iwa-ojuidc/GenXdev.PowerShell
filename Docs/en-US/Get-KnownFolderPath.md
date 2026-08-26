@@ -19,6 +19,7 @@ OneDrive sync client, with a registry and default-location fallback.
 
 ## Syntax
 
+
 ```powershell
 Get-KnownFolderPath -KnownFolder <String> [<CommonParameters>]
 ```
@@ -31,28 +32,28 @@ Get-KnownFolderPath -KnownFolder <String> [<CommonParameters>]
 
 ## Examples
 
-### Get-KnownFolderPath -KnownFolder 'Documents' Returns: C:\Users\Username\Documents
+
 
 ```powershell
 Get-KnownFolderPath -KnownFolder 'Documents'
 Returns: C:\Users\Username\Documents
 ```
 
-### folder Downloads Returns: C:\Users\Username\Downloads using the alias
+
 
 ```powershell
 folder Downloads
 Returns: C:\Users\Username\Downloads using the alias
 ```
 
-### cd (folder Desktop) Changes to the Desktop folder using the alias
+
 
 ```powershell
 cd (folder Desktop)
 Changes to the Desktop folder using the alias
 ```
 
-### folder OneDrive Returns the OneDrive folder path from the env var, registry, or default location
+
 
 ```powershell
 folder OneDrive

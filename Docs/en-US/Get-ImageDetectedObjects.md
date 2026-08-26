@@ -17,6 +17,7 @@ custom confidence thresholds, and Docker container management.
 
 ## Syntax
 
+
 ```powershell
 Get-ImageDetectedObjects -ImagePath <String> [-AutoConsent] [-AutoConsentAllPackages] [-ConfidenceThreshold <Double>] [-ContainerName <String>] [-Force] [-HealthCheckInterval <Int32>] [-HealthCheckTimeout <Int32>] [-ImageName <String>] [-NoDockerInitialize] [-ServicePort <Int32>] [-SessionOnly] [-ShowWindow] [-UseGPU] [-VolumeName <String>] [<CommonParameters>]
 ```
@@ -43,7 +44,7 @@ Get-ImageDetectedObjects -ImagePath <String> [-AutoConsent] [-AutoConsentAllPack
 
 ## Examples
 
-### Get-ImageDetectedObjects -ImagePath "C:\Users\YourName\test.jpg" `                          -ConfidenceThreshold 0.5 `                          -ServicePort 5000 Detects objects in the specified image with full parameter names.
+
 
 ```powershell
 Get-ImageDetectedObjects -ImagePath "C:\Users\YourName\test.jpg" `
@@ -52,7 +53,7 @@ Get-ImageDetectedObjects -ImagePath "C:\Users\YourName\test.jpg" `
 Detects objects in the specified image with full parameter names.
 ```
 
-### Get-ImageDetectedObjects "C:\photos\street.jpg" Detects objects using positional parameter and default settings.
+
 
 ```powershell
 Get-ImageDetectedObjects "C:\photos\street.jpg"

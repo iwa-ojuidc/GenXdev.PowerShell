@@ -17,6 +17,7 @@ correct module directory before executing the script block.
 
 ## Syntax
 
+
 ```powershell
 Invoke-OnEachGenXdevModule -Script <ScriptBlock> [[-ModuleName] <String[]>] [-FromScripts] [-IncludeScripts] [-NoLocal] [-OnlyPublished] [<CommonParameters>]
 ```
@@ -34,14 +35,14 @@ Invoke-OnEachGenXdevModule -Script <ScriptBlock> [[-ModuleName] <String[]>] [-Fr
 
 ## Examples
 
-### Invoke-OnEachGenXdevModule -Script { Write-Host $args[0].Name } Lists all GenXdev module names.
+
 
 ```powershell
 Invoke-OnEachGenXdevModule -Script { Write-Host $args[0].Name }
 Lists all GenXdev module names.
 ```
 
-### foreach-genxdev-module-do {     param($ModuleObj, $isScriptsFolder, $isSubModule, $subModuleName)     Get-ChildItem } -ModuleName "GenXdev.AI" Uses alias to list contents of the GenXdev.AI module directory.
+
 
 ```powershell
 foreach-genxdev-module-do {

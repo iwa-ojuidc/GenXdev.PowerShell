@@ -21,6 +21,7 @@ another function's possible parameters.
 
 ## Syntax
 
+
 ```powershell
 Copy-IdenticalParamValues -BoundParameters <Object[]> -FunctionName <String> [[-DefaultValues] <Object>] [<CommonParameters>]
 ```
@@ -35,7 +36,6 @@ Copy-IdenticalParamValues -BoundParameters <Object[]> -FunctionName <String> [[-
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 function Test-Function {

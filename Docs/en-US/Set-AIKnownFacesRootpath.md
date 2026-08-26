@@ -16,6 +16,7 @@ persistently in preferences (default), only in the current session (using
 
 ## Syntax
 
+
 ```powershell
 Set-AIKnownFacesRootpath [[-FacesDirectory] <String>] [-ClearSession] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -32,28 +33,28 @@ Set-AIKnownFacesRootpath [[-FacesDirectory] <String>] [-ClearSession] [-Preferen
 
 ## Examples
 
-### Set-AIKnownFacesRootpath -FacesDirectory "C:\Faces" Sets the faces directory persistently in preferences.
+
 
 ```powershell
 Set-AIKnownFacesRootpath -FacesDirectory "C:\Faces"
 Sets the faces directory persistently in preferences.
 ```
 
-### Set-AIKnownFacesRootpath "C:\FacePictures" Sets the faces directory persistently in preferences.
+
 
 ```powershell
 Set-AIKnownFacesRootpath "C:\FacePictures"
 Sets the faces directory persistently in preferences.
 ```
 
-### Set-AIKnownFacesRootpath -FacesDirectory "C:\TempFaces" -SessionOnly Sets the faces directory only for the current session (Global variable).
+
 
 ```powershell
 Set-AIKnownFacesRootpath -FacesDirectory "C:\TempFaces" -SessionOnly
 Sets the faces directory only for the current session (Global variable).
 ```
 
-### Set-AIKnownFacesRootpath -ClearSession Clears the session faces directory setting (Global variable) without affecting persistent preferences.
+
 
 ```powershell
 Set-AIKnownFacesRootpath -ClearSession

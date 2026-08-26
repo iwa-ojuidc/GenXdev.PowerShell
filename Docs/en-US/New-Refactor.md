@@ -19,6 +19,7 @@ LLM-based code transformations. The function handles:
 
 ## Syntax
 
+
 ```powershell
 New-Refactor -Name <String> -PromptKey <String> [[-Prompt] <String>] [[-SelectionScript] <String>] [[-SelectionPrompt] <String>] [[-LLMQueryType] <String>] [-ApiEndpoint <String>] [-ApiKey <String>] [-AutoAddModifiedFiles] [-ClearSession] [-Code] [-ExposedCmdLets <GenXdev.Helpers.ExposedCmdletDefinition[]>] [-FilesToAdd <IO.FileInfo[]>] [-KeysToSend <String[]>] [-Model <String>] [-NoSupportForJsonSchema] [-PreferencesDatabasePath <String>] [-Priority <Int32>] [-SelectByFreeGpuRam] [-SelectByFreeRam] [-SessionOnly] [-SkipSession] [-Temperature <Double>] [-TimeoutSeconds <Int32>] [-VisualStudio] [<CommonParameters>]
 ```
@@ -55,7 +56,7 @@ New-Refactor -Name <String> -PromptKey <String> [[-Prompt] <String>] [[-Selectio
 
 ## Examples
 
-### New-Refactor -Name "UpdateLogging" -PromptKey "LoggingRefactor" `     -SelectionScript "Get-LoggingMethods" -Priority 1 `     -Code
+
 
 ```powershell
 New-Refactor -Name "UpdateLogging" -PromptKey "LoggingRefactor" `
@@ -63,7 +64,7 @@ New-Refactor -Name "UpdateLogging" -PromptKey "LoggingRefactor" `
     -Code
 ```
 
-### newrefactor UpdateLogging LoggingRefactor -p "Get-LoggingMethods" -c
+
 
 ```powershell
 newrefactor UpdateLogging LoggingRefactor -p "Get-LoggingMethods" -c

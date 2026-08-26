@@ -19,6 +19,7 @@ schema, then serializes it to a compact JSON string via ConvertTo-Json.
 
 ## Syntax
 
+
 ```powershell
 Get-JsonExampleFromSchema [[-Schema] <Object>] [<CommonParameters>]
 ```
@@ -31,7 +32,7 @@ Get-JsonExampleFromSchema [[-Schema] <Object>] [<CommonParameters>]
 
 ## Examples
 
-### $schema = '{ "type": "object", "properties": { "name": { "type": "string" } } }' Get-JsonExampleFromSchema -Schema $schema
+
 
 ```powershell
 $schema = '{ "type": "object", "properties": { "name": { "type": "string" } } }'
@@ -40,7 +41,7 @@ Get-JsonExampleFromSchema -Schema $schema
 
 Generates: {"name":"..."}
 
-### $openAiSchema = '{ "type": "json_schema", "json_schema": { "name": "response", "strict": true, "schema": { "type": "object", "properties": { "items": { "type": "array", "items": { "type": "object", "properties": { "id": { "type": "integer" }, "label": { "type": "string" } } } } } } } }' Get-JsonExampleFromSchema -Schema $openAiSchema
+
 
 ```powershell
 $openAiSchema = '{ "type": "json_schema", "json_schema": { "name": "response",

@@ -13,6 +13,7 @@ Uses θ2 = arcsin( (n1 / n2) sin θ1 ).
 
 ## Syntax
 
+
 ```powershell
 Get-RefractionAngleByIncidentAngleAndIndices -IncidentAngleInDegrees <Double> -IndexOfRefraction1 <Double> -IndexOfRefraction2 <Double> [[-As] <String>] [<CommonParameters>]
 ```
@@ -28,7 +29,6 @@ Get-RefractionAngleByIncidentAngleAndIndices -IncidentAngleInDegrees <Double> -I
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-RefractionAngleByIncidentAngleAndIndices -IncidentAngleInDegrees 30 -IndexOfRefraction1 1 -IndexOfRefraction2 1.33 -As "radians"
@@ -36,7 +36,6 @@ Get-RefractionAngleByIncidentAngleAndIndices -IncidentAngleInDegrees 30 -IndexOf
 
 Calculates the refraction angle when light passes from air (n=1) to water (n=1.33) at 30 degrees incidence.
 
-### Examples 2
 
 ```powershell
 Get-RefractionAngleByIncidentAngleAndIndices 45 1 1.5

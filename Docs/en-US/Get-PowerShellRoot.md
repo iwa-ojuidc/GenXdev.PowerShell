@@ -15,6 +15,7 @@ directory.
 
 ## Syntax
 
+
 ```powershell
 Get-PowerShellRoot [<CommonParameters>]
 ```

@@ -14,6 +14,7 @@ typed response as a string.
 
 ## Syntax
 
+
 ```powershell
 Invoke-SpectreAsk [[-Message] <String>] [<CommonParameters>]
 ```
@@ -26,7 +27,7 @@ Invoke-SpectreAsk [[-Message] <String>] [<CommonParameters>]
 
 ## Examples
 
-### $name = Invoke-SpectreAsk -Message "What is your name?" Prompts the user for their name and returns the entered text
+
 
 ```powershell
 $name = Invoke-SpectreAsk -Message "What is your name?"

@@ -31,6 +31,7 @@ skipped without errors.
 
 ## Syntax
 
+
 ```powershell
 Open-StackOverflowQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -88,28 +89,28 @@ Open-StackOverflowQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang 
 
 ## Examples
 
-### Open-StackOverflowQuery -Queries "powershell array" -Monitor 0 Opens a Stack Overflow search for "powershell array" on the primary monitor.
+
 
 ```powershell
 Open-StackOverflowQuery -Queries "powershell array" -Monitor 0
 Opens a Stack Overflow search for "powershell array" on the primary monitor.
 ```
 
-### qso "powershell array" -mon 0 Opens a Stack Overflow search using the alias with monitor positioning.
+
 
 ```powershell
 qso "powershell array" -mon 0
 Opens a Stack Overflow search using the alias with monitor positioning.
 ```
 
-### "powershell", "array manipulation" | Open-StackOverflowQuery -Language "English" -Chrome Opens multiple Stack Overflow searches in Chrome with English language preference.
+
 
 ```powershell
 "powershell", "array manipulation" | Open-StackOverflowQuery -Language "English" -Chrome
 Opens multiple Stack Overflow searches in Chrome with English language preference.
 ```
 
-### Open-StackOverflowQuery -Queries "c# linq" -ReturnURL Returns the Stack Overflow search URL without opening a browser.
+
 
 ```powershell
 Open-StackOverflowQuery -Queries "c# linq" -ReturnURL

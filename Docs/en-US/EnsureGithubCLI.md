@@ -19,6 +19,7 @@ The function handles all prerequisites and ensures a working GitHub CLI setup.
 
 ## Syntax
 
+
 ```powershell
 EnsureGithubCLI [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -33,7 +34,7 @@ EnsureGithubCLI [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<Common
 
 ## Examples
 
-### EnsureGithubCLI This will verify and setup GitHub CLI if needed.
+
 
 ```powershell
 EnsureGithubCLI

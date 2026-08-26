@@ -16,6 +16,7 @@ formatting across GenXdev cmdlets.
 
 ## Syntax
 
+
 ```powershell
 Write-SpectreMarkupLine [[-Message] <String>] [<CommonParameters>]
 ```
@@ -28,7 +29,7 @@ Write-SpectreMarkupLine [[-Message] <String>] [<CommonParameters>]
 
 ## Examples
 
-### Write-SpectreMarkupLine -Message "[bold green]Success![/] Operation completed." Writes a styled message to the console using Spectre.Console markup
+
 
 ```powershell
 Write-SpectreMarkupLine -Message "[bold green]Success![/] Operation completed."

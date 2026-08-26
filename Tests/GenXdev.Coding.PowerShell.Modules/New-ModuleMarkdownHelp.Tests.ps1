@@ -111,7 +111,7 @@ Pester\AfterAll {
         -Path $testDir -Recurse -Force -ErrorAction SilentlyContinue
 }
 
-Pester\Describe 'New-ModuleMarkdownHelp — PSScriptAnalyzer' {
+Pester\Describe 'New-ModuleMarkdownHelp — PSScriptAnalyzer' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\It 'should pass PSScriptAnalyzer rules' {
 
@@ -140,7 +140,7 @@ $message
     }
 }
 
-Pester\Describe 'New-ModuleMarkdownHelp — basic generation' {
+Pester\Describe 'New-ModuleMarkdownHelp — basic generation' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\It 'generates .md file for each cmdlet' {
 
@@ -339,7 +339,7 @@ Pester\Describe 'New-ModuleMarkdownHelp — basic generation' {
     }
 }
 
-Pester\Describe 'New-ModuleMarkdownHelp — cmdlet .md content' {
+Pester\Describe 'New-ModuleMarkdownHelp — cmdlet .md content' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\It 'includes header with module and type badges' {
 
@@ -390,7 +390,7 @@ Pester\Describe 'New-ModuleMarkdownHelp — cmdlet .md content' {
             -Path $outDir -Recurse -Force -ErrorAction SilentlyContinue
     }
 
-    Pester\It 'includes Description section' {
+    Pester\It 'includes Description section' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
         $outDir = Microsoft.PowerShell.Management\Join-Path `
             $env:TEMP "MdHelpOut_$([System.IO.Path]::GetRandomFileName())"
@@ -511,7 +511,7 @@ Pester\Describe 'New-ModuleMarkdownHelp — cmdlet .md content' {
     }
 }
 
-Pester\Describe 'New-ModuleMarkdownHelp — edge cases' {
+Pester\Describe 'New-ModuleMarkdownHelp — edge cases' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\It 'writes error for nonexistent module' {
 

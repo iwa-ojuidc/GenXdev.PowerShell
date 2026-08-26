@@ -37,6 +37,7 @@ underlying Open-Webbrowser function for consistent behavior.
 
 ## Syntax
 
+
 ```powershell
 Open-GithubQuery -Query <String[]> [-AcceptLang <String>] [-All] [-CaseSensitive] [-Headless] [-In <String[]>] [-Language <String>] [-Order <String>] [-Org <String>] [-Page <Int32>] [-PassThru] [-PerPage <Int32>] [-PlayWright] [-Repo <String>] [-Size <String>] [-SortBy <String>] [-Type <String>] [-User <String>] [-Webkit] [<CommonParameters>]
 
@@ -124,21 +125,21 @@ Open-GithubQuery [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] 
 
 ## Examples
 
-### Open-GithubQuery -Query "powershell module" -Language "PowerShell" Opens a search for PowerShell modules in Github with language filtering.
+
 
 ```powershell
 Open-GithubQuery -Query "powershell module" -Language "PowerShell"
 Opens a search for PowerShell modules in Github with language filtering.
 ```
 
-### qgithub "azure functions" -Monitor 0 Opens a search for Azure Functions on the primary monitor using the alias.
+
 
 ```powershell
 qgithub "azure functions" -Monitor 0
 Opens a search for Azure Functions on the primary monitor using the alias.
 ```
 
-### Open-GithubQuery -Type Repository -Query PowerShell -SortBy stars -Order desc -PerPage 1 Repository search: Find top-starred PowerShell repo in GitHub
+
 
 ```powershell
 Open-GithubQuery -Type Repository -Query PowerShell -SortBy stars -Order desc
@@ -146,14 +147,14 @@ Open-GithubQuery -Type Repository -Query PowerShell -SortBy stars -Order desc
 Repository search: Find top-starred PowerShell repo in GitHub
 ```
 
-### Open-GithubQuery -Type Code -Query "def " -Language python -In File Code search for function definitions in Python
+
 
 ```powershell
 Open-GithubQuery -Type Code -Query "def " -Language python -In File
 Code search for function definitions in Python
 ```
 
-### Open-GithubQuery -Type Issue -Query security -Repo microsoft/vscode -Labels bug -State open Issue search: All open bugs mentioning 'security' in microsoft/vscode
+
 
 ```powershell
 Open-GithubQuery -Type Issue -Query security -Repo microsoft/vscode -Labels
@@ -161,7 +162,7 @@ bug -State open
 Issue search: All open bugs mentioning 'security' in microsoft/vscode
 ```
 
-### Open-GithubQuery -Type Repository -Query PowerShell -SortBy stars -Order desc -PerPage 1 -Api API mode for repository search.
+
 
 ```powershell
 Open-GithubQuery -Type Repository -Query PowerShell -SortBy stars -Order desc

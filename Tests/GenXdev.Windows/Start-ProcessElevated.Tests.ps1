@@ -2,7 +2,7 @@
 # Part of PowerShell module : GenXdev.Windows
 # Original cmdlet filename  : Start-ProcessElevated.Tests.ps1
 # Original author           : René Vaessen / GenXdev
-# Version                   : 3.34.0
+# Version                   : 3.35.0
 ###############################################################################
 
 Pester\BeforeAll {
@@ -18,7 +18,6 @@ Pester\Describe "Start-ProcessElevated" {
                 -FilePath 'cmd.exe' `
                 -ArgumentList '/c', 'exit', '0' `
                 -Wait `
-                -NoNewWindow `
                 -ErrorAction Stop
         } | Pester\Should -Not -Throw
     }

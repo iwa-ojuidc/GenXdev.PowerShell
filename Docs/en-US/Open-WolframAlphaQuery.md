@@ -16,6 +16,7 @@ capabilities for enhanced scientific computation workflows.
 
 ## Syntax
 
+
 ```powershell
 Open-WolframAlphaQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -73,14 +74,14 @@ Open-WolframAlphaQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <
 
 ## Examples
 
-### Open-WolframAlphaQuery -Queries "mass of sun" -Monitor 0 Opens a Wolfram Alpha query for the mass of the sun on the default monitor.
+
 
 ```powershell
 Open-WolframAlphaQuery -Queries "mass of sun" -Monitor 0
 Opens a Wolfram Alpha query for the mass of the sun on the default monitor.
 ```
 
-### qalpha "speed of light", "planck constant" Opens multiple Wolfram Alpha queries using the alias for quick scientific computations.
+
 
 ```powershell
 qalpha "speed of light", "planck constant"
@@ -88,7 +89,7 @@ Opens multiple Wolfram Alpha queries using the alias for quick scientific
 computations.
 ```
 
-### "derivative of x^2" | Open-WolframAlphaQuery -Language "English" -FullScreen Opens a calculus query in fullscreen mode with English language preference via pipeline input.
+
 
 ```powershell
 "derivative of x^2" | Open-WolframAlphaQuery -Language "English" -FullScreen

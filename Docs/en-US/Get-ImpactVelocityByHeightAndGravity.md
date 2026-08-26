@@ -13,6 +13,7 @@ Uses v = sqrt(2 g h) ignoring air resistance.
 
 ## Syntax
 
+
 ```powershell
 Get-ImpactVelocityByHeightAndGravity -HeightInMeters <Double> [[-GravityInMetersPerSecondSquared] <Double>] [[-As] <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-ImpactVelocityByHeightAndGravity -HeightInMeters <Double> [[-GravityInMeters
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-ImpactVelocityByHeightAndGravity -HeightInMeters 100 -As "km/h"
@@ -35,7 +35,6 @@ Get-ImpactVelocityByHeightAndGravity -HeightInMeters 100 -As "km/h"
 
 Calculates impact velocity for a 100 meter fall and outputs in km/h.
 
-### Examples 2
 
 ```powershell
 Get-ImpactVelocityByHeightAndGravity 50

@@ -17,6 +17,7 @@ explicitly specified.
 
 ## Syntax
 
+
 ```powershell
 Set-GenXdevCommandNotFoundAction [[-LLMQueryType] <String>] [[-Model] <String>] [[-ApiEndpoint] <String>] [[-ApiKey] <String>] [-NoPrompt] [-NoSupportForJsonSchema] [-UseAIResolve] [<CommonParameters>]
 ```
@@ -35,14 +36,14 @@ Set-GenXdevCommandNotFoundAction [[-LLMQueryType] <String>] [[-Model] <String>] 
 
 ## Examples
 
-### Set-GenXdevCommandNotFoundAction -UseAIResolve Enables AI resolution with interactive prompting for unknown commands.
+
 
 ```powershell
 Set-GenXdevCommandNotFoundAction -UseAIResolve
 Enables AI resolution with interactive prompting for unknown commands.
 ```
 
-### Set-GenXdevCommandNotFoundAction -UseAIResolve -NoPrompt Enables AI resolution where the unknown command is sent directly to the AI without asking the user what they meant.
+
 
 ```powershell
 Set-GenXdevCommandNotFoundAction -UseAIResolve -NoPrompt

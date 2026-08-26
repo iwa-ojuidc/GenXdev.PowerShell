@@ -13,6 +13,7 @@ Calculates the distance fallen during free fall using a numerical method that ac
 
 ## Syntax
 
+
 ```powershell
 Get-FreeFallDistance -DurationInSeconds <Double> [[-TerminalVelocityInMetersPerSecond] <Double>] [[-GravityInMetersPerSecondSquared] <Double>] [[-As] <String>] [<CommonParameters>]
 ```
@@ -28,7 +29,6 @@ Get-FreeFallDistance -DurationInSeconds <Double> [[-TerminalVelocityInMetersPerS
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-FreeFallDistance -DurationInSeconds 10 -TerminalVelocityInMetersPerSecond 53 -As "feet"
@@ -36,7 +36,6 @@ Get-FreeFallDistance -DurationInSeconds 10 -TerminalVelocityInMetersPerSecond 53
 
 Calculates the distance fallen in 10 seconds in feet.
 
-### Examples 2
 
 ```powershell
 Get-FreeFallDistance 5

@@ -18,6 +18,7 @@ positioning.
 
 ## Syntax
 
+
 ```powershell
 Open-CloudLLMChat -Queries <String[]> [[-EndPoint] <String>] [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Minimize] [-Monitor <Int32>] [-NewWindow] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SetForeground] [-SetRestored] [-ShowWindow] [-SideBySide] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -74,21 +75,21 @@ Open-CloudLLMChat -Queries <String[]> [[-EndPoint] <String>] [[-Language] <Strin
 
 ## Examples
 
-### Open-CloudLLMChat -Queries "How to write better PowerShell functions?" -EndPoint "ChatGPT" Opens ChatGPT and submits the query about PowerShell functions.
+
 
 ```powershell
 Open-CloudLLMChat -Queries "How to write better PowerShell functions?" -EndPoint "ChatGPT"
 Opens ChatGPT and submits the query about PowerShell functions.
 ```
 
-### ask "What is machine learning?" -EndPoint "GoogleGemini" Uses the alias to ask Google Gemini about machine learning.
+
 
 ```powershell
 ask "What is machine learning?" -EndPoint "GoogleGemini"
 Uses the alias to ask Google Gemini about machine learning.
 ```
 
-### "PowerShell", "Python", "JavaScript" | Open-CloudLLMChat -EndPoint "XGrok" -Monitor 0 Processes multiple queries through X Grok on the default monitor.
+
 
 ```powershell
 "PowerShell", "Python", "JavaScript" | Open-CloudLLMChat -EndPoint "XGrok" -Monitor 0

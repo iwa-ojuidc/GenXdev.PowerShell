@@ -16,6 +16,7 @@ and returns the suggested solution.
 
 ## Syntax
 
+
 ```powershell
 Get-ScriptExecutionErrorFixPrompt -Script <ScriptBlock> [-ApiEndpoint <String>] [-ApiKey <String>] [-Attachments <Object>] [-AudioContextSize <Object>] [-AudioTemperature <Object>] [-ChatOnce <Object>] [-ClearSession] [-ContinueLast] [-CpuThreads <Object>] [-DontAddThoughtsToHistory] [-DontSpeak <Object>] [-DontSpeakThoughts <Object>] [-EntropyThreshold <Object>] [-ExposedCmdLets <GenXdev.Helpers.ExposedCmdletDefinition[]>] [-Functions <Collections.Hashtable[]>] [-ImageDetail <Object>] [-IncludeThoughts <Object>] [-Language <Object>] [-LengthPenalty <Object>] [-LLMQueryType <String>] [-LogProbThreshold <Object>] [-MarkupBlocksTypeFilter <Object>] [-MaxToolcallBackLength <Object>] [-Model <String>] [-NoConfirmationToolFunctionNames <String[]>] [-NoContext <Object>] [-NoSessionCaching] [-NoSpeechThreshold <Object>] [-NoSupportForJsonSchema] [-NoVOX <Object>] [-OnlyResponses <Object>] [-OutputMarkdownBlocksOnly <Object>] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-SessionOnly] [-SilenceThreshold <Object>] [-SkipSession] [-Speak] [-SpeakThoughts] [-SuppressRegex <Object>] [-Temperature <Double>] [-TemperatureResponse <Object>] [-TimeoutSeconds <Int32>] [-TTLSeconds <Object>] [-UseDesktopAudioCapture <Object>] [-WithBeamSearchSamplingStrategy <Object>] [<CommonParameters>]
 ```
@@ -74,7 +75,7 @@ Get-ScriptExecutionErrorFixPrompt -Script <ScriptBlock> [-ApiEndpoint <String>] 
 
 ## Examples
 
-### $errorInfo = Get-ScriptExecutionErrorFixPrompt -Script {     My-ScriptThatFails } Write-Host $errorInfo
+
 
 ```powershell
 $errorInfo = Get-ScriptExecutionErrorFixPrompt -Script {
@@ -83,11 +84,10 @@ $errorInfo = Get-ScriptExecutionErrorFixPrompt -Script {
 Write-Host $errorInfo
 ```
 
-### getfixprompt { Get-ChildItem -NotExistingParameter } ##############################################################################
+
 
 ```powershell
 getfixprompt { Get-ChildItem -NotExistingParameter }
-##############################################################################
 ```
 
 ## Parameter Details

@@ -16,6 +16,7 @@ separate file with
 
 ## Syntax
 
+
 ```powershell
 Invoke-ImageFacesUpdate [[-ImageDirectories] <String[]>] [-ApiEndpoint <String>] [-ApiKey <String>] [-AutoUpdateFaces] [-ClearSession] [-ConfidenceThreshold <Double>] [-ContainerName <String>] [-FacesDirectory <String>] [-Force] [-HealthCheckInterval <Int32>] [-HealthCheckTimeout <Int32>] [-ImageName <String>] [-Language <String>] [-Model <String>] [-NoDockerInitialize] [-NoSupportForJsonSchema] [-OnlyNew] [-PassThru] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-Recurse] [-RetryFailed] [-ServicePort <Int32>] [-SessionOnly] [-ShowWindow] [-SkipSession] [-TimeoutSecond <Int32>] [-UseGPU] [-VolumeName <String>] [<CommonParameters>]
 ```
@@ -56,17 +57,16 @@ Invoke-ImageFacesUpdate [[-ImageDirectories] <String[]>] [-ApiEndpoint <String>]
 
 ## Examples
 
-### Invoke-ImageFacesUpdate -Name @("C:\Photos", "D:\Pictures") -Recurse
+
 
 ```powershell
 Invoke-ImageFacesUpdate -Name @("C:\Photos", "D:\Pictures") -Recurse
 ```
 
-### facerecognition @("C:\Photos", "C:\Archive") -RetryFailed -OnlyNew ##############################################################################
+
 
 ```powershell
 facerecognition @("C:\Photos", "C:\Archive") -RetryFailed -OnlyNew
-##############################################################################
 ```
 
 ## Parameter Details

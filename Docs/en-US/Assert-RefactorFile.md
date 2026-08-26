@@ -18,6 +18,7 @@ the refactoring workflow.
 
 ## Syntax
 
+
 ```powershell
 Assert-RefactorFile -Path <String> [[-RefactorSettings] <GenXdev.Helpers.RefactorSettings>] [-AllowLongRunningTests] [<CommonParameters>]
 ```
@@ -32,14 +33,14 @@ Assert-RefactorFile -Path <String> [[-RefactorSettings] <GenXdev.Helpers.Refacto
 
 ## Examples
 
-### $refactorDef = Get-RefactorDefinition -Type "Documentation" Assert-RefactorFile -RefactorDefinition $refactorDef -Path "MyScript.ps1"
+
 
 ```powershell
 $refactorDef = Get-RefactorDefinition -Type "Documentation"
 Assert-RefactorFile -RefactorDefinition $refactorDef -Path "MyScript.ps1"
 ```
 
-### Assert-RefactorFile -RefactorDefinition $refactorDef -Path ".\Functions\Test.ps1"
+
 
 ```powershell
 Assert-RefactorFile -RefactorDefinition $refactorDef -Path ".\Functions\Test.ps1"

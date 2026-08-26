@@ -14,8 +14,9 @@ current directory. Can optionally assure that directories or files exist.
 
 ## Syntax
 
+
 ```powershell
-Expand-Path -FilePath <String> [-CreateDirectory] [-CreateFile] [-DeleteExistingFile] [-DirectoryMustExist] [-FileMustExist] [-ForceDrive <Char>] [<CommonParameters>]
+Expand-Path -FilePath <String> [-CreateDirectory] [-CreateFile] [-DeleteExisting] [-DeleteExistingDirectory] [-DeleteExistingFile] [-DirectoryMustExist] [-FileMustExist] [-ForceDrive <Char>] [<CommonParameters>]
 ```
 
 ## Parameters
@@ -25,20 +26,22 @@ Expand-Path -FilePath <String> [-CreateDirectory] [-CreateFile] [-DeleteExisting
 | `-FilePath` | String | ✅ | Path to expand |
 | `-CreateDirectory` | SwitchParameter | ☐ | Will create directory if it does not exist |
 | `-CreateFile` | SwitchParameter | ☐ | Will create an empty file if it does not<br>exist |
-| `-DeleteExistingFile` | SwitchParameter | ☐ | Will delete the file if it already exists |
+| `-DeleteExistingFile` | SwitchParameter | ☐ | Will delete the target file if it already<br>exists |
+| `-DeleteExistingDirectory` | SwitchParameter | ☐ | Will delete the target if it already exists<br>as directory |
+| `-DeleteExisting` | SwitchParameter | ☐ | Will delete the target if it already exists |
 | `-ForceDrive` | Char | ☐ | Will force the use of a specific drive |
 | `-FileMustExist` | SwitchParameter | ☐ | Will throw if file does not exist |
 | `-DirectoryMustExist` | SwitchParameter | ☐ | Will throw if directory does not exist |
 
 ## Examples
 
-### Expand-Path -FilePath ".\myfile.txt" -CreateFile
+
 
 ```powershell
 Expand-Path -FilePath ".\myfile.txt" -CreateFile
 ```
 
-### ep ~\documents\test.txt -CreateFile
+
 
 ```powershell
 ep ~\documents\test.txt -CreateFile
@@ -93,7 +96,37 @@ ep ~\documents\test.txt -CreateFile
 
 ### `-DeleteExistingFile`
 
-> Will delete the file if it already exists
+> Will delete the target file if it already exists
+
+| Property | Value |
+|:---|:---|
+| **Required?** | No |
+| **Position?** | Named |
+| **Default value** | *(none)* |
+| **Accept pipeline input?** | False |
+| **Aliases** | *(none)* |
+| **Accept wildcard characters?** | No |
+
+<hr/>
+
+### `-DeleteExistingDirectory`
+
+> Will delete the target if it already exists as directory
+
+| Property | Value |
+|:---|:---|
+| **Required?** | No |
+| **Position?** | Named |
+| **Default value** | *(none)* |
+| **Accept pipeline input?** | False |
+| **Aliases** | *(none)* |
+| **Accept wildcard characters?** | No |
+
+<hr/>
+
+### `-DeleteExisting`
+
+> Will delete the target if it already exists
 
 | Property | Value |
 |:---|:---|

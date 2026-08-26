@@ -16,6 +16,7 @@ power on the computer. Supports custom broadcast addresses and ports.
 
 ## Syntax
 
+
 ```powershell
 Send-WakeOnLan -MacAddress <String[]> [[-BroadcastAddress] <String>] [[-Port] <Int32>] [<CommonParameters>]
 ```
@@ -30,14 +31,14 @@ Send-WakeOnLan -MacAddress <String[]> [[-BroadcastAddress] <String>] [[-Port] <I
 
 ## Examples
 
-### Send-WakeOnLan -MacAddress "00:11:22:33:44:55" Sends a magic packet to wake the computer with the specified MAC address.
+
 
 ```powershell
 Send-WakeOnLan -MacAddress "00:11:22:33:44:55"
 Sends a magic packet to wake the computer with the specified MAC address.
 ```
 
-### "00:11:22:33:44:55", "AA:BB:CC:DD:EE:FF" | Send-WakeOnLan -Port 9 Sends magic packets to multiple computers on port 9 via pipeline input.
+
 
 ```powershell
 "00:11:22:33:44:55", "AA:BB:CC:DD:EE:FF" | Send-WakeOnLan -Port 9

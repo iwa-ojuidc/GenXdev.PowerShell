@@ -16,6 +16,7 @@ Pester testing capabilities are available when needed.
 
 ## Syntax
 
+
 ```powershell
 EnsurePester [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -30,7 +31,7 @@ EnsurePester [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonPar
 
 ## Examples
 
-### EnsurePester This ensures Pester is installed and ready for use
+
 
 ```powershell
 EnsurePester

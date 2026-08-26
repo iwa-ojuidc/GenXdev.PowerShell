@@ -16,6 +16,7 @@ registry keys, and handles the complete installation process automatically.
 
 ## Syntax
 
+
 ```powershell
 EnsurePSTools [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-SessionOnly] [<CommonParameters>]
 ```
@@ -31,20 +32,19 @@ EnsurePSTools [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-SessionOnly] [
 
 ## Examples
 
-### EnsurePSTools Ensures Sysinternals tools are installed and properly configured.
+
 
 ```powershell
 EnsurePSTools
 Ensures Sysinternals tools are installed and properly configured.
 ```
 
-### EnsurePSTools -Force -PSExeName 'procexp.exe' Forces reinstallation of Sysinternals tools and uses procexp.exe to verify installation. ##############################################################################
+
 
 ```powershell
 EnsurePSTools -Force -PSExeName 'procexp.exe'
 Forces reinstallation of Sysinternals tools and uses procexp.exe to verify
 installation.
-##############################################################################
 ```
 
 ## Parameter Details

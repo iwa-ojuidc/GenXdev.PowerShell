@@ -15,6 +15,7 @@ Supports multiple languages and visual customization options.
 
 ## Syntax
 
+
 ```powershell
 Open-Timeline [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-BorderDarkColor <String>] [-BorderLightColor <String>] [-BorderWidth <Int32>] [-Bottom] [-BrowserExtensions] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-DragedNodeBackground <String>] [-Edge] [-Firefox] [-FocusedNodeBackground <String>] [-FocusedNodeForeground <String>] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoApplicationMode] [-NoBorders] [-NoBrowserExtensions] [-NoFullScreen] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-RotationDelaySeconds <Int32>] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-SpectateOnly] [-Top] [-UnFocusedNodeBackground <String>] [-UnFocusedNodeForeground <String>] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -84,21 +85,21 @@ Open-Timeline [[-Language] <String>] [-AcceptLang <String>] [-All] [-Application
 
 ## Examples
 
-### Open-Timeline -Language "English" Opens an interactive timeline with Van Gogh-inspired visuals in English.
+
 
 ```powershell
 Open-Timeline -Language "English"
 Opens an interactive timeline with Van Gogh-inspired visuals in English.
 ```
 
-### timeline -mon 2 Opens timeline on monitor 2 using aliases.
+
 
 ```powershell
 timeline -mon 2
 Opens timeline on monitor 2 using aliases.
 ```
 
-### Open-Timeline -Private -Chrome -FullScreen Opens timeline in Chrome incognito mode in fullscreen.
+
 
 ```powershell
 Open-Timeline -Private -Chrome -FullScreen

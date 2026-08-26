@@ -16,6 +16,7 @@ the PATH environment variable.
 
 ## Syntax
 
+
 ```powershell
 EnsureSQLiteStudio [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -30,7 +31,7 @@ EnsureSQLiteStudio [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<Com
 
 ## Examples
 
-### EnsureSQLiteStudio Checks and ensures SQLiteStudio is installed and accessible.
+
 
 ```powershell
 EnsureSQLiteStudio

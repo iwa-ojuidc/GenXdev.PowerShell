@@ -13,8 +13,9 @@ This cmdlet captures audio from microphone or desktop and transcribes it to text
 
 ## Syntax
 
+
 ```powershell
-Receive-RealTimeSpeechToText [-AudioContextSize <Int32?>] [-AudioDevice <String>] [-CpuThreads <Int32>] [-DontSuppressBlank] [-EntropyThreshold <Single?>] [-IgnoreSilence] [-LanguageIn <String>] [-LengthPenalty <Single?>] [-LogProbThreshold <Single?>] [-MaxDuration <TimeSpan?>] [-MaxDurationOfSilence <TimeSpan?>] [-MaxInitialTimestamp <TimeSpan?>] [-MaxLastTextTokens <Int32?>] [-MaxSegmentLength <Int32?>] [-MaxTokensPerSegment <Int32?>] [-ModelFileDirectoryPath <String>] [-ModelType <Whisper.net.Ggml.GgmlType>] [-NoContext] [-NoSpeechThreshold <Single?>] [-Offset <TimeSpan?>] [-Passthru] [-PrintSpecialTokens] [-Prompt <String>] [-SilenceThreshold <Int32?>] [-SingleSegmentOnly] [-SplitOnWord] [-SuppressRegex <String>] [-Temperature <Single?>] [-TemperatureInc <Single?>] [-TokenTimestampsSumThreshold <Single>] [-UseDesktopAndRecordingDevice] [-UseDesktopAudioCapture] [-WithBeamSearchSamplingStrategy] [-WithProgress] [-WithTokenTimestamps] [-WithTranslate] [<CommonParameters>]
+Receive-RealTimeSpeechToText [-AudioContextSize <Int32?>] [-AudioDevice <String>] [-CpuThreads <Int32>] [-DontSuppressBlank] [-EntropyThreshold <Single?>] [-IgnoreSilence] [-LanguageIn <String>] [-LengthPenalty <Single?>] [-LogProbThreshold <Single?>] [-MaxDuration <TimeSpan?>] [-MaxDurationOfSilence <TimeSpan?>] [-MaxInitialTimestamp <TimeSpan?>] [-MaxLastTextTokens <Int32?>] [-MaxSegmentLength <Int32?>] [-MaxTokensPerSegment <Int32?>] [-ModelFileDirectoryPath <String>] [-ModelType <GenXdev.AI.Whisper.GgmlType>] [-NoContext] [-NoSpeechThreshold <Single?>] [-Offset <TimeSpan?>] [-Passthru] [-PrintSpecialTokens] [-Prompt <String>] [-SilenceThreshold <Int32?>] [-SingleSegmentOnly] [-SplitOnWord] [-SuppressRegex <String>] [-Temperature <Single?>] [-TemperatureInc <Single?>] [-TokenTimestampsSumThreshold <Single>] [-UseDesktopAndRecordingDevice] [-UseDesktopAudioCapture] [-WithBeamSearchSamplingStrategy] [-WithProgress] [-WithTokenTimestamps] [-WithTranslate] [<CommonParameters>]
 ```
 
 ## Parameters
@@ -56,11 +57,10 @@ Receive-RealTimeSpeechToText [-AudioContextSize <Int32?>] [-AudioDevice <String>
 | `-NoSpeechThreshold` | Single? | ☐ | No speech threshold |
 | `-NoContext` | SwitchParameter | ☐ | Don't use context |
 | `-WithBeamSearchSamplingStrategy` | SwitchParameter | ☐ | Use beam search sampling strategy |
-| `-ModelType` | Whisper.net.Ggml.GgmlType | ☐ | Whisper model type to use, defaults to Small |
+| `-ModelType` | GenXdev.AI.Whisper.GgmlType | ☐ | Whisper model type to use, defaults to Small |
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Receive-RealTimeSpeechToText
@@ -68,7 +68,6 @@ Receive-RealTimeSpeechToText
 
 Basic usage with microphone.
 
-### Examples 2
 
 ```powershell
 Receive-RealTimeSpeechToText -UseDesktopAudioCapture
@@ -76,7 +75,6 @@ Receive-RealTimeSpeechToText -UseDesktopAudioCapture
 
 Using desktop audio capture.
 
-### Examples 3
 
 ```powershell
 Receive-RealTimeSpeechToText -AudioDevice "Microphone*"
@@ -84,7 +82,6 @@ Receive-RealTimeSpeechToText -AudioDevice "Microphone*"
 
 Using specific audio device.
 
-### Examples 4
 
 ```powershell
 Receive-RealTimeSpeechToText -MaxDurationOfSilence "00:00:05"
@@ -619,7 +616,7 @@ With silence detection.
 
 <hr/>
 
-### `-ModelType <Whisper.net.Ggml.GgmlType>`
+### `-ModelType <GenXdev.AI.Whisper.GgmlType>`
 
 > Whisper model type to use, defaults to Small
 

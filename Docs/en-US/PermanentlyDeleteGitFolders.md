@@ -16,6 +16,7 @@ This operation is destructive and permanently rewrites Git history.
 
 ## Syntax
 
+
 ```powershell
 PermanentlyDeleteGitFolders -RepoUri <String> -Folders <String[]> [-tempPath <String>] [<CommonParameters>]
 ```
@@ -30,7 +31,7 @@ PermanentlyDeleteGitFolders -RepoUri <String> -Folders <String[]> [-tempPath <St
 
 ## Examples
 
-### PermanentlyDeleteGitFolders `     -RepoUri "https://github.com/user/repo.git" `     -Folders "bin", "obj"
+
 
 ```powershell
 PermanentlyDeleteGitFolders `

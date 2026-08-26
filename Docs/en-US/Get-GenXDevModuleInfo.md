@@ -15,6 +15,7 @@ specified modules or all available modules.
 
 ## Syntax
 
+
 ```powershell
 Get-GenXDevModuleInfo [[-ModuleName] <String[]>] [-IncludeLocal] [<CommonParameters>]
 ```
@@ -28,13 +29,13 @@ Get-GenXDevModuleInfo [[-ModuleName] <String[]>] [-IncludeLocal] [<CommonParamet
 
 ## Examples
 
-### Get-GenXDevModuleInfo -ModuleName "GenXdev.Console"
+
 
 ```powershell
 Get-GenXDevModuleInfo -ModuleName "GenXdev.Console"
 ```
 
-### "GenXdev.Console" | Get-GenXDevModuleInfo
+
 
 ```powershell
 "GenXdev.Console" | Get-GenXDevModuleInfo

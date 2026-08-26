@@ -16,6 +16,7 @@ elevate privileges when needed.
 
 ## Syntax
 
+
 ```powershell
 EnsureWindowsMediaFeaturePack [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-SessionOnly] [<CommonParameters>]
 ```

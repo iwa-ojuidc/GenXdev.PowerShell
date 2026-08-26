@@ -52,6 +52,7 @@ GenXdev\Merge-TranslationCache cmdlet.
 
 ## Syntax
 
+
 ```powershell
 Get-CmdletMetaData -Name <String> [[-Language] <String>] [[-TranslationInstructions] <String>] [[-Model] <String>] [[-ApiEndpoint] <String>] [[-ApiKey] <String>] [-NoSupportForJsonSchema] [-PromptForSettings] [-SkipTranslation] [<CommonParameters>]
 ```
@@ -89,14 +90,14 @@ under $env:LOCALAPPDATA\GenXdev.PowerShell\. Translation cache
 files can be controlled and purged using the
 GenXdev\Merge-TranslationCache cmdlet.
 
-### Get-CmdletMetaData -Name "Find-Item" Retrieves metadata for the Find-Item cmdlet in the default language.
+
 
 ```powershell
 Get-CmdletMetaData -Name "Find-Item"
 Retrieves metadata for the Find-Item cmdlet in the default language.
 ```
 
-### Get-CmdletMetaData -Name "Find-Item" -Language "nl-NL" Retrieves metadata for the Find-Item cmdlet with Dutch translations.
+
 
 ```powershell
 Get-CmdletMetaData -Name "Find-Item" -Language "nl-NL"

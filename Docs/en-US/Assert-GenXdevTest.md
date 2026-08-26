@@ -19,6 +19,7 @@ capabilities and detailed progress reporting for development workflows.
 
 ## Syntax
 
+
 ```powershell
 Assert-GenXdevTest [[-CmdletName] <String>] [[-TestFailedAction] <String>] [[-DefinitionMatches] <String>] [[-ModuleName] <String[]>] [-AllowLongRunningTests] [-AutoConsent] [-AutoConsentAllPackages] [-ExactMatch] [-FromScripts] [-NoLocal] [-OnlyPublished] [-OnlyReturnModuleNames] [-SessionOnly] [-SkipPesterTests] [-SkipPSAnalyzerTests] [-StackTraceVerbosity <String>] [-Verbosity <String>] [<CommonParameters>]
 
@@ -51,7 +52,7 @@ Assert-GenXdevTest [-IncludeScripts] [-SkipModuleImports] [<CommonParameters>]
 
 ## Examples
 
-### Assert-GenXdevTest -ModuleName "GenXdev.AI" Executes all tests for the GenXdev.AI module including PSScriptAnalyzer and Pester tests.
+
 
 ```powershell
 Assert-GenXdevTest -ModuleName "GenXdev.AI"
@@ -59,7 +60,7 @@ Executes all tests for the GenXdev.AI module including PSScriptAnalyzer and
 Pester tests.
 ```
 
-### Assert-GenXdevTest -SubModuleName "GenXdev.Coding.PowerShell.Modules" `     -TestFailedAction SolveWithAI Tests the specified sub-module and uses AI to automatically resolve any failures encountered during testing.
+
 
 ```powershell
 Assert-GenXdevTest -SubModuleName "GenXdev.Coding.PowerShell.Modules" `
@@ -68,7 +69,7 @@ Tests the specified sub-module and uses AI to automatically resolve any
 failures encountered during testing.
 ```
 
-### Assert-GenXdevTest -CmdletName "Get-GenXDevCmdlet" -Verbosity Detailed Tests the specific cmdlet with detailed output showing all test operations and results.
+
 
 ```powershell
 Assert-GenXdevTest -CmdletName "Get-GenXDevCmdlet" -Verbosity Detailed
@@ -76,7 +77,7 @@ Tests the specific cmdlet with detailed output showing all test operations
 and results.
 ```
 
-### testcmdlet Assert-GenXdevTest Uses the alias to test the current cmdlet with default settings.
+
 
 ```powershell
 testcmdlet Assert-GenXdevTest

@@ -16,6 +16,7 @@ configures specific extension settings.
 
 ## Syntax
 
+
 ```powershell
 EnsureVSCode [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-SessionOnly] [<CommonParameters>]
 ```
@@ -31,7 +32,7 @@ EnsureVSCode [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-SessionOnly] [<
 
 ## Examples
 
-### EnsureVSCode
+
 
 ```powershell
 EnsureVSCode

@@ -16,6 +16,7 @@ in the README. Both files are updated atomically in one operation.
 
 ## Syntax
 
+
 ```powershell
 Publish-ReleaseNotesToManifest -ManifestPath <String> [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -30,13 +31,13 @@ Publish-ReleaseNotesToManifest -ManifestPath <String> [-UseHomeREADME] [-UseOneD
 
 ## Examples
 
-### Publish-ReleaseNotesToManifest
+
 
 ```powershell
 Publish-ReleaseNotesToManifest
 ```
 
-### Publish-ReleaseNotesToManifest -ManifestPath ".\MyModule.psd1"
+
 
 ```powershell
 Publish-ReleaseNotesToManifest -ManifestPath ".\MyModule.psd1"

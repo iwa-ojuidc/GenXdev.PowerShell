@@ -15,6 +15,7 @@ It accepts either a connection string or a direct path to the database file.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLiteSchema -ConnectionString <String> [<CommonParameters>]
 
@@ -30,13 +31,13 @@ Get-SQLiteSchema -DatabaseFilePath <String> [<CommonParameters>]
 
 ## Examples
 
-### Get-SQLiteSchema -DatabaseFilePath "C:\Databases\inventory.db"
+
 
 ```powershell
 Get-SQLiteSchema -DatabaseFilePath "C:\Databases\inventory.db"
 ```
 
-### Get-SQLiteSchema -ConnectionString "Data Source=C:\Databases\inventory.db;Version=3;"
+
 
 ```powershell
 Get-SQLiteSchema -ConnectionString "Data Source=C:\Databases\inventory.db;Version=3;"

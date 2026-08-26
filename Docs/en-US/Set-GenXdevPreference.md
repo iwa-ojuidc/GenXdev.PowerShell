@@ -17,6 +17,7 @@
 
 ## Syntax
 
+
 ```powershell
 Set-GenXdevPreference -Name <String> [[-Value] <String>] [-AllMachines] [-ClearSession] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -35,7 +36,6 @@ Set-GenXdevPreference -Name <String> [[-Value] <String>] [-AllMachines] [-ClearS
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Set-GenXdevPreference -Name "Theme" -Value "Dark"
@@ -43,7 +43,6 @@ Set-GenXdevPreference -Name "Theme" -Value "Dark"
 
 Sets the "Theme" preference to "Dark" in the local store.
 
-### Examples 2
 
 ```powershell
 setPreference Theme Light -AllMachines

@@ -17,6 +17,7 @@ Connection priority: Transaction > ConnectionString > DatabaseFilePath.
 
 ## Syntax
 
+
 ```powershell
 Invoke-SQLiteQuery [[-ConnectionString] <String>] [[-DatabaseFilePath] <String>] [[-Transaction] <Object>] -Queries <String[]> [[-SqlParameters] <Collections.Hashtable[]>] [-AutoConsent] [-AutoConsentAllPackages] [-IsolationLevel <String>] [-SessionOnly] [<CommonParameters>]
 ```
@@ -37,19 +38,19 @@ Invoke-SQLiteQuery [[-ConnectionString] <String>] [[-DatabaseFilePath] <String>]
 
 ## Examples
 
-### Invoke-SQLiteQuery -DatabaseFilePath "C:\data.db" -Queries "SELECT * FROM Users"
+
 
 ```powershell
 Invoke-SQLiteQuery -DatabaseFilePath "C:\data.db" -Queries "SELECT * FROM Users"
 ```
 
-### "SELECT * FROM Users" | isql "C:\data.db" @{"UserId"=1}
+
 
 ```powershell
 "SELECT * FROM Users" | isql "C:\data.db" @{"UserId"=1}
 ```
 
-### Batch operations using external transaction $tx = Get-SQLiteTransaction -DatabaseFilePath "C:\data.db" try {     Invoke-SQLiteQuery -Transaction $tx -Queries "INSERT INTO Users VALUES (@name)" -SqlParameters @{"name"="John"}     Invoke-SQLiteQuery -Transaction $tx -Queries "UPDATE Users SET active=1 WHERE name=@name" -SqlParameters @{"name"="John"}     $tx.Commit() } catch {     $tx.Rollback()     throw } finally {     $tx.Connection.Close() }
+
 
 ```powershell
 Batch operations using external transaction
@@ -66,7 +67,7 @@ try {
 }
 ```
 
-### Invoke-SQLiteQuery -DatabaseFilePath "C:\data.db" -Queries "SELECT * FROM Users" -AutoConsentAllPackages
+
 
 ```powershell
 Invoke-SQLiteQuery -DatabaseFilePath "C:\data.db" -Queries "SELECT * FROM Users" -AutoConsentAllPackages

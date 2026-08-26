@@ -16,6 +16,7 @@ file doesn't exist.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLiteTransaction -ConnectionString <String> [<CommonParameters>]
 
@@ -38,7 +39,7 @@ Get-SQLiteTransaction [-AutoConsent] [-AutoConsentAllPackages] [-CreateDatabaseI
 
 ## Examples
 
-### $transaction = Get-SQLiteTransaction -DatabaseFilePath "C:\data.db" try {     Invoke-SQLiteQuery -Transaction $transaction -Queries "INSERT INTO Users..."     Invoke-SQLiteQuery -Transaction $transaction -Queries "UPDATE Users..."     $transaction.Commit() } catch {     $transaction.Rollback()     throw } finally {     $transaction.Connection.Close() }
+
 
 ```powershell
 $transaction = Get-SQLiteTransaction -DatabaseFilePath "C:\data.db"
@@ -54,13 +55,13 @@ try {
 }
 ```
 
-### $transaction = Get-SQLiteTransaction -ConnectionString "Data Source=C:\data.db"
+
 
 ```powershell
 $transaction = Get-SQLiteTransaction -ConnectionString "Data Source=C:\data.db"
 ```
 
-### $transaction = Get-SQLiteTransaction -DatabaseFilePath "C:\data.db" -AutoConsentAllPackages
+
 
 ```powershell
 $transaction = Get-SQLiteTransaction -DatabaseFilePath "C:\data.db" -AutoConsentAllPackages

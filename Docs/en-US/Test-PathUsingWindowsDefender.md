@@ -18,6 +18,7 @@
 
 ## Syntax
 
+
 ```powershell
 Test-PathUsingWindowsDefender -FilePath <String> [-EnableRemediation] [<CommonParameters>]
 ```
@@ -31,7 +32,6 @@ Test-PathUsingWindowsDefender -FilePath <String> [-EnableRemediation] [<CommonPa
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Test-PathUsingWindowsDefender -FilePath "C:\Downloads\file.exe" -Verbose
@@ -39,7 +39,6 @@ Test-PathUsingWindowsDefender -FilePath "C:\Downloads\file.exe" -Verbose
 
 Scans the specified file and displays verbose output.
 
-### Examples 2
 
 ```powershell
 virusscan "C:\Downloads\file.exe" -EnableRemediation
@@ -47,7 +46,6 @@ virusscan "C:\Downloads\file.exe" -EnableRemediation
 
 Scans the file using the alias and enables remediation.
 
-### Examples 3
 
 ```powershell
 "C:\Downloads\file.exe" | HasNoVirus

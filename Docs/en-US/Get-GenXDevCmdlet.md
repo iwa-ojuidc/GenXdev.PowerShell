@@ -16,6 +16,7 @@ across both local and published module paths.
 
 ## Syntax
 
+
 ```powershell
 Get-GenXDevCmdlet [[-CmdletName] <String[]>] [[-DefinitionMatches] <String>] [[-ModuleName] <String[]>] [-ExactMatch] [-FromScripts] [-NoLocal] [-OnlyPublished] [-OnlyReturnModuleNames] [<CommonParameters>]
 
@@ -38,19 +39,19 @@ Get-GenXDevCmdlet [-IncludeScripts] [<CommonParameters>]
 
 ## Examples
 
-### Get-GenXDevCmdlet -CmdletName "Get-*" -ModuleName "Console" -NoLocal
+
 
 ```powershell
 Get-GenXDevCmdlet -CmdletName "Get-*" -ModuleName "Console" -NoLocal
 ```
 
-### gcmds Get-*
+
 
 ```powershell
 gcmds Get-*
 ```
 
-### Get-GenXDevCmdlet -OnlyReturnModuleNames
+
 
 ```powershell
 Get-GenXDevCmdlet -OnlyReturnModuleNames

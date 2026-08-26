@@ -15,6 +15,7 @@ SQLite database by establishing and closing a connection.
 
 ## Syntax
 
+
 ```powershell
 New-SQLiteDatabase -DatabaseFilePath <String> [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -30,19 +31,19 @@ New-SQLiteDatabase -DatabaseFilePath <String> [-AutoConsent] [-AutoConsentAllPac
 
 ## Examples
 
-### New-SQLiteDatabase -DatabaseFilePath "C:\Databases\MyNewDb.sqlite"
+
 
 ```powershell
 New-SQLiteDatabase -DatabaseFilePath "C:\Databases\MyNewDb.sqlite"
 ```
 
-### nsqldb "C:\Databases\MyNewDb.sqlite"
+
 
 ```powershell
 nsqldb "C:\Databases\MyNewDb.sqlite"
 ```
 
-### New-SQLiteDatabase -DatabaseFilePath "C:\Databases\MyNewDb.sqlite" -AutoConsentAllPackages
+
 
 ```powershell
 New-SQLiteDatabase -DatabaseFilePath "C:\Databases\MyNewDb.sqlite" -AutoConsentAllPackages

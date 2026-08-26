@@ -17,6 +17,7 @@
 
 ## Syntax
 
+
 ```powershell
 Remove-JSONComments -Json <String> [<CommonParameters>]
 ```
@@ -29,7 +30,6 @@ Remove-JSONComments -Json <String> [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 $jsonContent = @'
@@ -44,7 +44,6 @@ Remove-JSONComments -Json $jsonContent
 
 Removes comments from JSON content stored in a variable.
 
-### Examples 2
 
 ```powershell
 $jsonContent | Remove-JSONComments

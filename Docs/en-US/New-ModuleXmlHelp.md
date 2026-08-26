@@ -40,6 +40,7 @@ visit:
 
 ## Syntax
 
+
 ```powershell
 New-ModuleXmlHelp -ModuleName <String> [-ApiEndpoint <String>] [-ApiKey <String>] [-Force] [-Language <String>] [-LinkPrefix <String>] [-Model <String>] [-NoSupportForJsonSchema] [-PromptForSettings] [-SkipTranslation] [-TranslationInstructions <String>] [<CommonParameters>]
 ```
@@ -62,28 +63,28 @@ New-ModuleXmlHelp -ModuleName <String> [-ApiEndpoint <String>] [-ApiKey <String>
 
 ## Examples
 
-### New-ModuleXmlHelp -ModuleName 'Microsoft.WinGet.Client' Generates English help XML for the WinGet client module in en-US\.
+
 
 ```powershell
 New-ModuleXmlHelp -ModuleName 'Microsoft.WinGet.Client'
 Generates English help XML for the WinGet client module in en-US\.
 ```
 
-### New-ModuleXmlHelp -ModuleName 'GenXdev' -Language 'nl-NL' -Force  -Model 'deepseek-v4-pro' -ApiKey 'your-api-key' -ApiEndpoint 'https://api.deepseek.com/chat/completions' Generates Dutch help XML for GenXdev, overwriting existing files.
+
 
 ```powershell
 New-ModuleXmlHelp -ModuleName 'GenXdev' -Language 'nl-NL' -Force  -Model 'deepseek-v4-pro' -ApiKey 'your-api-key' -ApiEndpoint 'https://api.deepseek.com/chat/completions'
 Generates Dutch help XML for GenXdev, overwriting existing files.
 ```
 
-### New-ModuleXmlHelp -ModuleName 'PSReadLine' -WhatIf Shows what files would be created without actually writing them.
+
 
 ```powershell
 New-ModuleXmlHelp -ModuleName 'PSReadLine' -WhatIf
 Shows what files would be created without actually writing them.
 ```
 
-### New-ModuleXmlHelp -ModuleName 'GenXdev' -LinkPrefix `     'https://github.com/genXdev/GenXdev.PowerShell/blob/main/Docs/en-US/' -Force Generates English help XML with per-cmdlet Online Version URLs pointing to GitHub Markdown docs. Get-Help <cmdlet> -Online opens the browser.
+
 
 ```powershell
 New-ModuleXmlHelp -ModuleName 'GenXdev' -LinkPrefix `

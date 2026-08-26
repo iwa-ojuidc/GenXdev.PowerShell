@@ -15,6 +15,7 @@ to select the last used tab before closing it.
 
 ## Syntax
 
+
 ```powershell
 Close-WebbrowserTab [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Webkit] [<CommonParameters>]
 ```
@@ -31,14 +32,14 @@ Close-WebbrowserTab [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Webkit] [<CommonP
 
 ## Examples
 
-### Close-WebbrowserTab Closes the currently active browser tab
+
 
 ```powershell
 Close-WebbrowserTab
 Closes the currently active browser tab
 ```
 
-### ct Uses the alias to close the currently active browser tab
+
 
 ```powershell
 ct

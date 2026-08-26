@@ -14,6 +14,7 @@ Can display the modified section and open in Visual Studio Code.
 
 ## Syntax
 
+
 ```powershell
 Add-IdeaLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveCompleted] [-ArchiveFilePath <String>] [-Ascending] [-Code] [-Done] [-ExcludeCompleted] [-First <Int32>] [-OnlyCompleted] [-Show] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -39,13 +40,13 @@ Add-IdeaLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveCompleted
 
 ## Examples
 
-### Add-IdeaLineToREADME -Line "Create new PowerShell module" -Show
+
 
 ```powershell
 Add-IdeaLineToREADME -Line "Create new PowerShell module" -Show
 ```
 
-### idea "New feature idea" -UseOneDriveREADME
+
 
 ```powershell
 idea "New feature idea" -UseOneDriveREADME

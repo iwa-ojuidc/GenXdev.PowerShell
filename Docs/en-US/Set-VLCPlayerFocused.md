@@ -15,20 +15,21 @@ continues without error. Uses Windows API calls to manipulate window focus.
 
 ## Syntax
 
+
 ```powershell
 Set-VLCPlayerFocused [<CommonParameters>]
 ```
 
 ## Examples
 
-### Set-VLCPlayerFocused Brings the VLC player window to front and gives it focus
+
 
 ```powershell
 Set-VLCPlayerFocused
 Brings the VLC player window to front and gives it focus
 ```
 
-### vlcf Same operation using the short alias
+
 
 ```powershell
 vlcf

@@ -17,6 +17,7 @@ window.
 
 ## Syntax
 
+
 ```powershell
 Set-ForegroundWindow -WindowHandle <IntPtr> [<CommonParameters>]
 ```
@@ -29,7 +30,6 @@ Set-ForegroundWindow -WindowHandle <IntPtr> [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 $hwnd = (Get-Process notepad).MainWindowHandle
@@ -38,7 +38,6 @@ Set-ForegroundWindow -WindowHandle $hwnd
 
 Brings a Notepad window to the foreground using the window handle.
 
-### Examples 2
 
 ```powershell
 $hwnd = (Get-Process notepad).MainWindowHandle

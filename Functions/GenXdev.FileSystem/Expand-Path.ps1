@@ -69,9 +69,21 @@ function Expand-Path {
         ########################################################################
         [Parameter(
             Mandatory = $false,
-            HelpMessage = 'Will delete the file if it already exists'
+            HelpMessage = 'Will delete the target file if it already exists'
         )]
         [switch] $DeleteExistingFile,
+        ########################################################################
+        [Parameter(
+            Mandatory = $false,
+            HelpMessage = 'Will delete the target if it already exists as directory'
+        )]
+        [switch] $DeleteExistingDirectory,
+        ########################################################################
+        [Parameter(
+            Mandatory = $false,
+            HelpMessage = 'Will delete the target if it already exists'
+        )]
+        [switch] $DeleteExisting,
         ########################################################################
         [Parameter(
             Mandatory = $false,
@@ -94,6 +106,11 @@ function Expand-Path {
     )
 
     begin {
+
+        $doConfirm = (
+            ($PSBoundParameters.ContainsKey('Confirm') -and ($PSBoundParameters["Confirm"].AsBool())) -or
+            ($ConfirmPreference -notlike 'High')
+        );
 
         # normalize path separators and remove double separators
         [string] $normalizedPath = $FilePath.Trim().Replace('\', [IO.Path]::DirectorySeparatorChar).
@@ -262,6 +279,12 @@ function Expand-Path {
             }
         }
 
+        # verify path doesn't point to existing directory
+        if (($DeleteExisting -or $DeleteExistingDirectory) -and [IO.Directory]::Exists($normalizedPath)) {
+
+            GenXdev\Remove-AllItems -Path $normalizedPath -DeleteFolder -Confirm:$doConfirm
+        }
+
         # handle directory/file creation if requested
         if ($CreateDirectory -or $CreateFile) {
 
@@ -282,14 +305,9 @@ function Expand-Path {
         }
 
         # delete existing file if requested
-        if ($DeleteExistingFile -and [IO.File]::Exists($normalizedPath)) {
+        if (($DeleteExisting -or $DeleteExistingFile) -and [IO.File]::Exists($normalizedPath)) {
 
-            # verify path doesn't point to existing directory
-            if ([IO.Directory]::Exists($normalizedPath)) {
-                throw 'Cannot create file: Path refers to an existing directory'
-            }
-
-            if (-not (GenXdev\Remove-ItemWithFallback -Path $normalizedPath)) {
+            if (-not (GenXdev\Remove-ItemWithFallback -Path $normalizedPath -Confirm:$doConfirm)) {
 
                 throw "Failed to delete existing file: $normalizedPath"
             }

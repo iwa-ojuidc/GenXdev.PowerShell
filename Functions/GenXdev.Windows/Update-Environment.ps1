@@ -25,45 +25,48 @@ along with this program. If not, see <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
 function Update-Environment {
 
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess = $true)]
     param ()
 
-    [string] $oldPath = "$($Env:PATH)"
-    [string] $oldPSModulePath = "$($Env:PSModulePath)"
-    $null = & {
-        [System.Environment]::GetEnvironmentVariables([System.EnvironmentVariableTarget]::Machine).GetEnumerator() | Microsoft.PowerShell.Core\ForEach-Object -ErrorAction SilentlyContinue {
-            try {
-                Microsoft.PowerShell.Utility\Invoke-Expression "`$ENV:$($_.Key) = '$($_.Value.Replace('''', ''''''))'" -ErrorAction SilentlyContinue
+    if ($PSCmdlet.ShouldProcess('the current session environment', 'Update')) {
+
+        [string] $oldPath = "$($Env:PATH)"
+        [string] $oldPSModulePath = "$($Env:PSModulePath)"
+        $null = & {
+            [System.Environment]::GetEnvironmentVariables([System.EnvironmentVariableTarget]::Machine).GetEnumerator() | Microsoft.PowerShell.Core\ForEach-Object -ErrorAction SilentlyContinue {
+                try {
+                    Microsoft.PowerShell.Utility\Invoke-Expression "`$ENV:$($_.Key) = '$($_.Value.Replace('''', ''''''))'" -ErrorAction SilentlyContinue
+                }
+                catch {}
             }
-            catch {}
-        }
-        [System.Environment]::GetEnvironmentVariables([System.EnvironmentVariableTarget]::User).GetEnumerator() | Microsoft.PowerShell.Core\ForEach-Object -ErrorAction SilentlyContinue {
-            try {
-                Microsoft.PowerShell.Utility\Invoke-Expression "`$ENV:$($_.Key) = '$($_.Value.Replace('''', ''''''))'" -ErrorAction SilentlyContinue
+            [System.Environment]::GetEnvironmentVariables([System.EnvironmentVariableTarget]::User).GetEnumerator() | Microsoft.PowerShell.Core\ForEach-Object -ErrorAction SilentlyContinue {
+                try {
+                    Microsoft.PowerShell.Utility\Invoke-Expression "`$ENV:$($_.Key) = '$($_.Value.Replace('''', ''''''))'" -ErrorAction SilentlyContinue
+                }
+                catch {}
             }
-            catch {}
-        }
-    } 1> $null 2>$null 3> $null 4> $null
+        } 1> $null 2>$null 3> $null 4> $null
 
-    [string] $NewPath = "$($Env:PATH)"
+        [string] $NewPath = "$($Env:PATH)"
 
-    $Env:PATH = @(
-        @(
-            $NewPath.Split([System.IO.Path]::PathSeparator, [StringSplitOptions]::RemoveEmptyEntries) +
-            $oldPath.Split([System.IO.Path]::PathSeparator, [StringSplitOptions]::RemoveEmptyEntries)
-        ) |
-            Microsoft.PowerShell.Core\ForEach-Object { GenXdev\Expand-Path "$_\" } |
-            Microsoft.PowerShell.Utility\Select-Object -Unique
-    ) -join [System.IO.Path]::PathSeparator
+        $Env:PATH = @(
+            @(
+                $NewPath.Split([System.IO.Path]::PathSeparator, [StringSplitOptions]::RemoveEmptyEntries) +
+                $oldPath.Split([System.IO.Path]::PathSeparator, [StringSplitOptions]::RemoveEmptyEntries)
+            ) |
+                Microsoft.PowerShell.Core\ForEach-Object { GenXdev\Expand-Path "$_\" } |
+                Microsoft.PowerShell.Utility\Select-Object -Unique
+        ) -join [System.IO.Path]::PathSeparator
 
-    [string] $NewPSModulePath = "$($Env:PSModulePath)"
+        [string] $NewPSModulePath = "$($Env:PSModulePath)"
 
-    $Env:PSModulePath = @(
-        @(
-            $NewPSModulePath.Split([System.IO.Path]::PathSeparator, [StringSplitOptions]::RemoveEmptyEntries) +
-            $oldPSModulePath.Split([System.IO.Path]::PathSeparator, [StringSplitOptions]::RemoveEmptyEntries)
-        ) |
-            Microsoft.PowerShell.Core\ForEach-Object { GenXdev\Expand-Path "$_\" } |
-            Microsoft.PowerShell.Utility\Select-Object -Unique
-    ) -join [System.IO.Path]::PathSeparator
+        $Env:PSModulePath = @(
+            @(
+                $NewPSModulePath.Split([System.IO.Path]::PathSeparator, [StringSplitOptions]::RemoveEmptyEntries) +
+                $oldPSModulePath.Split([System.IO.Path]::PathSeparator, [StringSplitOptions]::RemoveEmptyEntries)
+            ) |
+                Microsoft.PowerShell.Core\ForEach-Object { GenXdev\Expand-Path "$_\" } |
+                Microsoft.PowerShell.Utility\Select-Object -Unique
+        ) -join [System.IO.Path]::PathSeparator
+    }
 }

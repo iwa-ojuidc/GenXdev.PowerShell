@@ -15,6 +15,7 @@ definitions including names, types, nullable status, and default values.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLiteTableSchema -ConnectionString <String> [<CommonParameters>]
 
@@ -33,14 +34,14 @@ Get-SQLiteTableSchema -TableName <String> [<CommonParameters>]
 
 ## Examples
 
-### Get-SQLiteTableSchema -DatabaseFilePath "C:\Databases\mydb.sqlite" `     -TableName "Users"
+
 
 ```powershell
 Get-SQLiteTableSchema -DatabaseFilePath "C:\Databases\mydb.sqlite" `
     -TableName "Users"
 ```
 
-### Get-SQLiteTableSchema -ConnectionString "Data Source=C:\Databases\mydb.sqlite" `     -TableName "Products"
+
 
 ```powershell
 Get-SQLiteTableSchema -ConnectionString "Data Source=C:\Databases\mydb.sqlite" `

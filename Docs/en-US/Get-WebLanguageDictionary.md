@@ -15,13 +15,13 @@
 
 ## Syntax
 
+
 ```powershell
 Get-WebLanguageDictionary [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-WebLanguageDictionary

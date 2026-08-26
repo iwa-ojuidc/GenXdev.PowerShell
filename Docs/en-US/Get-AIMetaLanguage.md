@@ -16,6 +16,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-AIMetaLanguage [[-Language] <String>] [-ClearSession] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -32,7 +33,6 @@ Get-AIMetaLanguage [[-Language] <String>] [-ClearSession] [-PreferencesDatabaseP
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-AIMetaLanguage
@@ -40,7 +40,6 @@ Get-AIMetaLanguage
 
 Get the currently configured language from Global variables or preferences.
 
-### Examples 2
 
 ```powershell
 Get-AIMetaLanguage -SkipSession
@@ -48,7 +47,6 @@ Get-AIMetaLanguage -SkipSession
 
 Get the configured language from persistent preferences, ignoring session.
 
-### Examples 3
 
 ```powershell
 Get-AIMetaLanguage -ClearSession

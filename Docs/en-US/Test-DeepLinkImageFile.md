@@ -16,6 +16,7 @@ exceptions for invalid paths or unsupported file formats.
 
 ## Syntax
 
+
 ```powershell
 Test-DeepLinkImageFile -Path <String> [<CommonParameters>]
 ```
@@ -28,13 +29,13 @@ Test-DeepLinkImageFile -Path <String> [<CommonParameters>]
 
 ## Examples
 
-### Test-DeepLinkImageFile -Path "C:\Images\photo.jpg"
+
 
 ```powershell
 Test-DeepLinkImageFile -Path "C:\Images\photo.jpg"
 ```
 
-### Test-DeepLinkImageFile "C:\Images\logo.png"
+
 
 ```powershell
 Test-DeepLinkImageFile "C:\Images\logo.png"

@@ -20,6 +20,7 @@ packages.json manifest file.
 
 ## Syntax
 
+
 ```powershell
 EnsureGenXdev [-AutoConsent] [-AutoConsentAllPackages] [-DownloadAllNugetPackages] [-Force] [-SessionOnly] [<CommonParameters>]
 ```
@@ -36,7 +37,7 @@ EnsureGenXdev [-AutoConsent] [-AutoConsentAllPackages] [-DownloadAllNugetPackage
 
 ## Examples
 
-### EnsureGenXdev This command runs all available Ensure* cmdlets to initialize the GenXdev environment.
+
 
 ```powershell
 EnsureGenXdev
@@ -44,7 +45,7 @@ This command runs all available Ensure* cmdlets to initialize the GenXdev
 environment.
 ```
 
-### EnsureGenXdev -DownloadAllNugetPackages This command runs all Ensure* cmdlets and also downloads and loads all NuGet packages defined in the packages.json manifest file.
+
 
 ```powershell
 EnsureGenXdev -DownloadAllNugetPackages
@@ -52,7 +53,7 @@ This command runs all Ensure* cmdlets and also downloads and loads all NuGet
 packages defined in the packages.json manifest file.
 ```
 
-### EnsureGenXdev -DownloadAllNugetPackages -AutoConsentAllPackages This command runs all Ensure* cmdlets and downloads NuGet packages.
+
 
 ```powershell
 EnsureGenXdev -DownloadAllNugetPackages -AutoConsentAllPackages

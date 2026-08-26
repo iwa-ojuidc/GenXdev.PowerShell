@@ -1,3 +1,24 @@
+<##############################################################################
+Part of PowerShell module : GenXdev.Console
+Original cmdlet filename  : Start-SnakeGame.ps1
+Original author           : René Vaessen / GenXdev
+Version                   : 3.30.2026
+################################################################################
+Copyright (c) 2026 René Vaessen / GenXdev
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+################################################################################>
+
 # filepath: Start-SnakeGame.ps1
 
 ###############################################################################
@@ -264,12 +285,56 @@ function Start-SnakeGame {
             "Bottom=$($script:gameState.playFieldBottom)"
         )
 
-        # clear console unless user specified not to
         if (-not $NoClear) {
+
+            # enter alternate screen buffer to preserve the current screen
+            Microsoft.PowerShell.Utility\Write-Host "`e[?1049h" -NoNewline
 
             Clear-Host
 
             Log "Screen cleared for border drawing"
+        }
+        else {
+
+            Log "-NoClear specified, keeping existing screen content"
+        }
+
+        # build the screen buffer: capture existing content when -NoClear,
+        # otherwise start from a blank canvas
+        Log "Building screen buffer"
+
+        $screenLines = [System.Collections.Generic.List[string]]::new()
+
+        if ($NoClear) {
+
+            # read the current console contents so the snake must avoid them
+            $rect = [System.Management.Automation.Host.Rectangle]::new(
+                0,
+                0,
+                $script:gameState.width - 1,
+                $script:gameState.height - 1
+            )
+
+            $cells = $Host.UI.RawUI.GetBufferContents($rect)
+
+            for ($row = 0; $row -lt $script:gameState.height; $row++) {
+
+                $lineBuilder = [System.Text.StringBuilder]::new()
+
+                for ($col = 0; $col -lt $script:gameState.width; $col++) {
+
+                    $null = $lineBuilder.Append($cells[$row, $col].Character)
+                }
+
+                $screenLines.Add($lineBuilder.ToString())
+            }
+        }
+        else {
+
+            for ($i = 0; $i -lt $script:gameState.height; $i++) {
+
+                $screenLines.Add(' ' * $script:gameState.width)
+            }
         }
 
         # draw border using box drawing characters
@@ -296,20 +361,37 @@ function Start-SnakeGame {
 
         Log "Border drawn to console"
 
-        # read current screen buffer after drawing border
-        Log "Reading screen buffer"
+        # overlay the border onto the screen buffer for collision detection
+        $topLine = $screenLines[0].ToCharArray()
+        $topLine[0] = '┌'
+        $topLine[$script:gameState.width - 1] = '┐'
+        for ($i = 1; $i -lt $script:gameState.width - 1; $i++) {
+            $topLine[$i] = '─'
+        }
+        $screenLines[0] = -join $topLine
 
-        $script:gameState.screenBuffer = @(
-            [GenXdev.Helpers.ConsoleReader]::ReadFromBuffer(
-                0,
-                0,
-                $script:gameState.width,
-                $script:gameState.height
-            )
-        )
+        for ($y = 1; $y -le $script:gameState.playFieldBottom; $y++) {
+
+            $sideLine = $screenLines[$y].ToCharArray()
+            $sideLine[0] = '│'
+            $sideLine[$script:gameState.width - 1] = '│'
+            $screenLines[$y] = -join $sideLine
+        }
+
+        $bottomLine = $screenLines[
+            $script:gameState.playFieldBottom + 1
+        ].ToCharArray()
+        $bottomLine[0] = '└'
+        $bottomLine[$script:gameState.width - 1] = '┘'
+        for ($i = 1; $i -lt $script:gameState.width - 1; $i++) {
+            $bottomLine[$i] = '─'
+        }
+        $screenLines[$script:gameState.playFieldBottom + 1] = -join $bottomLine
+
+        $script:gameState.screenBuffer = $screenLines.ToArray()
 
         Log (
-            "Screen buffer read successfully, lines: " +
+            "Screen buffer built successfully, lines: " +
             "$($script:gameState.screenBuffer.Count)"
         )
 
@@ -1695,9 +1777,9 @@ function Start-SnakeGame {
             # check for boundary collisions
             if (
                 $newX -lt $script:gameState.playFieldLeft -or
-                $newX -ge $script:gameState.playFieldRight -or
+                $newX -gt $script:gameState.playFieldRight -or
                 $newY -lt $script:gameState.playFieldTop -or
-                $newY -ge $script:gameState.playFieldBottom
+                $newY -gt $script:gameState.playFieldBottom
             ) {
 
                 $collision = $true
@@ -2093,7 +2175,13 @@ function Start-SnakeGame {
 
                     $script:gameState.width = [Console]::WindowWidth
 
-                    Clear-Host
+                    if (-not $NoClear) {
+
+                        Clear-Host
+
+                        # restore the original screen before showing the score
+                        Microsoft.PowerShell.Utility\Write-Host "`e[?1049l" -NoNewline
+                    }
 
                     # display final score message
                     Microsoft.PowerShell.Utility\Write-Host (
@@ -2214,6 +2302,12 @@ function Start-SnakeGame {
                         # exit game when escape key pressed
                         Log "Escape key pressed, exiting game"
 
+                        # restore the original screen before showing the score
+                        if (-not $NoClear) {
+
+                            Microsoft.PowerShell.Utility\Write-Host "`e[?1049l" -NoNewline
+                        }
+
                         [Console]::SetCursorPosition(
                             0,
                             $script:gameState.height - 2
@@ -2250,6 +2344,12 @@ function Start-SnakeGame {
                 if (-not $result) {
 
                     Log "Game over due to collision"
+
+                    # restore the original screen before showing the score
+                    if (-not $NoClear) {
+
+                        Microsoft.PowerShell.Utility\Write-Host "`e[?1049l" -NoNewline
+                    }
 
                     [Console]::SetCursorPosition(
                         0,

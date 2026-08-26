@@ -17,6 +17,7 @@ routes queries to the appropriate search engine specific functions.
 
 ## Syntax
 
+
 ```powershell
 Open-SearchEngine -Queries <String[]> [[-EndPoint] <String>] [[-Language] <String>] [[-Monitor] <Int32>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-NewWindow] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SetForeground] [-SetRestored] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -65,14 +66,14 @@ Open-SearchEngine -Queries <String[]> [[-EndPoint] <String>] [[-Language] <Strin
 
 ## Examples
 
-### Open-SearchEngine -Queries "PowerShell cmdlets" -EndPoint "Google" -Language "English" Searches for "PowerShell cmdlets" on Google with English language results.
+
 
 ```powershell
 Open-SearchEngine -Queries "PowerShell cmdlets" -EndPoint "Google" -Language "English"
 Searches for "PowerShell cmdlets" on Google with English language results.
 ```
 
-### q "GitHub PowerShell" Bing -Chrome -Private Uses the alias 'q' to search for "GitHub PowerShell" on Bing using Chrome in private mode.
+
 
 ```powershell
 q "GitHub PowerShell" Bing -Chrome -Private

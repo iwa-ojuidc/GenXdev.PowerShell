@@ -16,6 +16,7 @@ includes retry logic, error handling, and cleanup on failure.
 
 ## Syntax
 
+
 ```powershell
 Register-Face -Identifier <String> -ImagePath <String[]> [-AutoConsent] [-AutoConsentAllPackages] [-ContainerName <String>] [-Force] [-HealthCheckInterval <Int32>] [-HealthCheckTimeout <Int32>] [-ImageName <String>] [-NoDockerInitialize] [-ServicePort <Int32>] [-SessionOnly] [-ShowWindow] [-UseGPU] [-VolumeName <String>] [<CommonParameters>]
 ```
@@ -42,19 +43,19 @@ Register-Face -Identifier <String> -ImagePath <String[]> [-AutoConsent] [-AutoCo
 
 ## Examples
 
-### Register-Face -Identifier "JohnDoe" -ImagePath @("C:\Users\YourName\faces\john1.jpg", "C:\Users\YourName\faces\john2.jpg")
+
 
 ```powershell
 Register-Face -Identifier "JohnDoe" -ImagePath @("C:\Users\YourName\faces\john1.jpg", "C:\Users\YourName\faces\john2.jpg")
 ```
 
-### Register-Face "JohnDoe" @("C:\Users\YourName\faces\john1.jpg", "C:\Users\YourName\faces\john2.jpg")
+
 
 ```powershell
 Register-Face "JohnDoe" @("C:\Users\YourName\faces\john1.jpg", "C:\Users\YourName\faces\john2.jpg")
 ```
 
-### Register-Face -Identifier "JohnDoe" -ImagePath "C:\Users\YourName\faces\john.jpg"
+
 
 ```powershell
 Register-Face -Identifier "JohnDoe" -ImagePath "C:\Users\YourName\faces\john.jpg"

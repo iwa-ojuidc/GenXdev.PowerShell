@@ -18,6 +18,7 @@ alternate data streams, and more.
 
 ## Syntax
 
+
 ```powershell
 ResolveInputObjectFileNames [[-InputObject] <Object>] [[-RelativeBasePath] <String>] [-AllDrives] [-File] [-IncludeAlternateFileStreams] [-NoRecurse] [-PassThru] [<CommonParameters>]
 
@@ -43,7 +44,7 @@ ResolveInputObjectFileNames [-Directory] [-FilesAndDirectories] [<CommonParamete
 
 ## Examples
 
-### ResolveInputObjectFileNames -Input "C:\Temp" -File
+
 
 ```powershell
 ResolveInputObjectFileNames -Input "C:\Temp" -File

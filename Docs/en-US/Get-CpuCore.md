@@ -13,13 +13,13 @@ Queries the system hardware through Windows Management Instrumentation (WMI) to 
 
 ## Syntax
 
+
 ```powershell
 Get-CpuCore [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-CpuCore

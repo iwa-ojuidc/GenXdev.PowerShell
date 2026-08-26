@@ -13,6 +13,7 @@ Computes the apparent size using small angle approximation.
 
 ## Syntax
 
+
 ```powershell
 Get-ApparentSizeAtArmLength -DistanceInMeters <Double> -SizeInMeters <Double> [[-ArmLengthInMeters] <Double>] [[-As] <String>] [<CommonParameters>]
 ```
@@ -28,7 +29,6 @@ Get-ApparentSizeAtArmLength -DistanceInMeters <Double> -SizeInMeters <Double> [[
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-ApparentSizeAtArmLength -DistanceInMeters 10 -SizeInMeters 1 -As "centimeters"
@@ -36,7 +36,6 @@ Get-ApparentSizeAtArmLength -DistanceInMeters 10 -SizeInMeters 1 -As "centimeter
 
 Calculates the apparent size of a 1 meter object at 10 meters distance.
 
-### Examples 2
 
 ```powershell
 Get-ApparentSizeAtArmLength 10 1

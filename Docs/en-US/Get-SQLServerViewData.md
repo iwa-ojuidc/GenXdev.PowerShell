@@ -15,6 +15,7 @@ verbose output for tracking query execution.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLServerViewData -ConnectionString <String> [<CommonParameters>]
 
@@ -35,7 +36,7 @@ Get-SQLServerViewData -ViewName <String> [[-Count] <Int32>] [<CommonParameters>]
 
 ## Examples
 
-### Get-SQLServerViewData -DatabaseFilePath "C:\MyDb.sqlite" `     -ViewName "CustomerView" `     -Count 50
+
 
 ```powershell
 Get-SQLServerViewData -DatabaseFilePath "C:\MyDb.sqlite" `
@@ -43,7 +44,7 @@ Get-SQLServerViewData -DatabaseFilePath "C:\MyDb.sqlite" `
     -Count 50
 ```
 
-### Get-SQLServerViewData "C:\MyDb.sqlite" "CustomerView"
+
 
 ```powershell
 Get-SQLServerViewData "C:\MyDb.sqlite" "CustomerView"

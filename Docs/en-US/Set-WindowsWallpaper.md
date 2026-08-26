@@ -16,6 +16,7 @@
 
 ## Syntax
 
+
 ```powershell
 Set-WindowsWallpaper [[-InputObject] <Object>] [-AllDrives] [-NoRecurse] [<CommonParameters>]
 ```
@@ -30,7 +31,6 @@ Set-WindowsWallpaper [[-InputObject] <Object>] [-AllDrives] [-NoRecurse] [<Commo
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Set-WindowsWallpaper -InputObject "C:\Wallpapers\*.jpg"
@@ -38,7 +38,6 @@ Set-WindowsWallpaper -InputObject "C:\Wallpapers\*.jpg"
 
 Sets a random wallpaper from the C:\Wallpapers directory.
 
-### Examples 2
 
 ```powershell
 nextbg

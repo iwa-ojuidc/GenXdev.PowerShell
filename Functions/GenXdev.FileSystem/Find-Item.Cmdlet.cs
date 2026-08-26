@@ -82,6 +82,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/gpl-3.0.txt>.
 
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item -Content ""translation""
 
 # Short form:
@@ -92,6 +93,7 @@ Find files containing a specific word
 Search for all files in the current directory and subdirectories that contain the word ""translation"".
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.js"" ""Version == `""\d\d?\.\d\d?\.\d\d?`""""
 
 # Short form:
@@ -102,6 +104,7 @@ Find JavaScript files with a version string
 Search for JavaScript files containing a version string in the format ""Version == `x.y.z`"".
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item -Directory
 
 # Short form:
@@ -112,6 +115,7 @@ List all directories
 Find all directories in the current directory and its subdirectories.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item "".\*.xml"" -PassThru | % FullName
 
 # Short form:
@@ -122,6 +126,7 @@ Find XML files and pass objects
 Search for all .xml files and pass the results as objects through the pipeline.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item -IncludeAlternateFileStreams
 
 # Short form:
@@ -132,6 +137,7 @@ Include alternate data streams
 Search for all files and include their alternate data streams in the results.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.pdf"" -AllDrives
 
 # Short form:
@@ -142,7 +148,9 @@ Search across all drives
 Search for all PDF files across all available drives.
 .EXAMPLE
 ```powershell
-Find-Item ""*.log"" -TimeoutSeconds 300 -MaxDegreeOfParallelism 4
+# Long form:
+Find-Item ""*.log"" `
+    -TimeoutSeconds 300 -MaxDegreeOfParallelism 4
 
 # Short form:
 l *.log -maxseconds 300 -threads 4
@@ -152,7 +160,9 @@ Custom timeout and parallelism
 Search for log files with a 5-minute timeout and limited parallelism.
 .EXAMPLE
 ```powershell
-Get-ChildItem -Path ""C:\Logs"" | Find-Item -Content ""error""
+# Long form:
+Get-ChildItem -Path ""C:\Logs"" | `
+    Find-Item -Content ""error""
 
 # Short form:
 ls C:\Logs | l -matchcontent ""error""
@@ -162,6 +172,7 @@ Pipeline input
 Pass file paths from Get-ChildItem to search for files containing ""error"".
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.txt"" -MaxRecursionDepth 2
 
 # Short form:
@@ -172,6 +183,7 @@ Limit recursion depth
 Search for text files but limit recursion to 2 directory levels.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item -MinFileSize 1048576 -MaxFileSize 10485760
 
 # Short form:
@@ -182,6 +194,7 @@ Filter by file size
 Find files larger than 1MB but smaller than 10MB.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item -ModifiedAfter ""2025-01-01""
 
 # Short form:
@@ -192,6 +205,7 @@ Filter by modification date
 Find files modified after January 1, 2025.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item -Exclude ""*.tmp"", ""*\bin\*""
 
 # Short form:
@@ -202,6 +216,7 @@ Exclude specific patterns
 Search for all files but exclude temporary files and bin directories.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.docx"" -SearchDrives ""C:\"", ""D:\""
 
 # Short form:
@@ -212,6 +227,7 @@ Search specific drives
 Search for .docx files on C: and D: drives only.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item -Content ""Error"" -CaseSensitive
 
 # Short form:
@@ -222,7 +238,9 @@ Case-sensitive content search
 Search for files containing ""Error"" (case-sensitive) in their content.
 .EXAMPLE
 ```powershell
-Find-Item -IncludeAlternateFileStreams -SearchADSContent -Content ""secret""
+# Long form:
+Find-Item -IncludeAlternateFileStreams `
+    -SearchADSContent -Content ""secret""
 
 # Short form:
 l -ads -sads -mc ""secret""
@@ -232,6 +250,7 @@ Search alternate data stream content
 Search for files with alternate data streams containing ""secret"".
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.ps1"" -Content ""function"" -AllMatches
 
 # Short form:
@@ -242,6 +261,7 @@ Find all matches per line
 Search for all occurrences of ""function"" in each line, not just the first match.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.log"" -Content ""error"" -Context 2,3
 
 # Short form:
@@ -252,6 +272,7 @@ Show context around matches
 Display 2 lines before and 3 lines after each match for better understanding.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.txt"" -Content ""TODO:.*"" -Raw
 
 # Short form:
@@ -262,6 +283,7 @@ Get only matching strings
 Return just the matching text strings instead of full match objects.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.config"" -Content ""database"" -Quiet
 
 # Short form:
@@ -272,6 +294,7 @@ Simple boolean check
 Return true/false instead of match details to check if pattern exists.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.cs"" -Content ""class.*Controller"" -List
 
 # Short form:
@@ -282,6 +305,7 @@ Find first match only per file
 Stop at the first match in each file for efficient file listing.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.txt"" -Content ""$variable[0]"" -SimpleMatch
 
 # Short form:
@@ -292,6 +316,7 @@ Literal string matching
 Search for exact text without regex interpretation using SimpleMatch.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.js"" -Content ""console\.log"" -NotMatch
 
 # Short form:
@@ -302,6 +327,7 @@ Find files NOT containing pattern
 Use NotMatch to find files that don't contain the specified pattern.
 .EXAMPLE
 ```powershell
+# Long form:
 Find-Item ""*.txt"" -Content ""café"" -Encoding UTF8
 
 # Short form:
@@ -312,7 +338,9 @@ Specify file encoding
 Search files with specific encoding for accurate text processing.
 .EXAMPLE
 ```powershell
-Find-Item ""*.txt"" -Content ""Müller"" -SimpleMatch -Culture ""de-DE""
+# Long form:
+Find-Item ""*.txt"" -Content ""Müller"" `
+    -SimpleMatch -Culture ""de-DE""
 
 # Short form:
 l *.txt -mc ""Müller"" -SimpleMatch -Culture ""de-DE""
@@ -322,10 +350,14 @@ Cultural text comparison
 Use culture-specific matching with SimpleMatch for international text.
 .EXAMPLE
 ```powershell
-Find-Item ""*.log"" -Content ""exception"" -MinFileSize 1024 -ModifiedAfter ""2025-01-01"" -MaxRecursionDepth 3
+# Long form:
+Find-Item ""*.log"" -Content ""exception"" `
+    -MinFileSize 1024 -ModifiedAfter ""2025-01-01"" `
+    -MaxRecursionDepth 3
 
 # Short form:
-l *.log -mc ""exception"" -minsize 1024 -after ""2025-01-01"" -maxdepth 3
+l *.log -mc ""exception"" -minsize 1024 `
+    -after ""2025-01-01"" -maxdepth 3
 ```
 
 Complex content search with file filters

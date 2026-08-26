@@ -19,6 +19,7 @@ Each task runs with elevated privileges under the current user's context.
 
 ## Syntax
 
+
 ```powershell
 Initialize-ScheduledTaskScripts [[-FilePath] <String>] [[-Prefix] <String>] [<CommonParameters>]
 ```
@@ -32,13 +33,13 @@ Initialize-ScheduledTaskScripts [[-FilePath] <String>] [[-Prefix] <String>] [<Co
 
 ## Examples
 
-### Initialize-ScheduledTaskScripts -FilePath "C:\Tasks" -Prefix "MyTasks"
+
 
 ```powershell
 Initialize-ScheduledTaskScripts -FilePath "C:\Tasks" -Prefix "MyTasks"
 ```
 
-### Initialize-ScheduledTaskScripts
+
 
 ```powershell
 Initialize-ScheduledTaskScripts

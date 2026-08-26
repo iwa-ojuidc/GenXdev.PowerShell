@@ -15,6 +15,7 @@ clean while preserving a history of completed features.
 
 ## Syntax
 
+
 ```powershell
 Backup-CompletedFeatures -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -29,13 +30,13 @@ Backup-CompletedFeatures -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<
 
 ## Examples
 
-### Backup-CompletedFeatures -Path "C:\temp\feature-archive.md"
+
 
 ```powershell
 Backup-CompletedFeatures -Path "C:\temp\feature-archive.md"
 ```
 
-### archive-features -Path ".\archive.md" -UseHomeREADME
+
 
 ```powershell
 archive-features -Path ".\archive.md" -UseHomeREADME

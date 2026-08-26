@@ -16,6 +16,7 @@ the PATH environment variable.
 
 ## Syntax
 
+
 ```powershell
 EnsureSSMSInstalled [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-SessionOnly] [<CommonParameters>]
 ```
@@ -31,7 +32,7 @@ EnsureSSMSInstalled [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-SessionO
 
 ## Examples
 
-### EnsureSSMSInstalled Checks and ensures SSMS is installed and accessible.
+
 
 ```powershell
 EnsureSSMSInstalled

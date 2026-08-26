@@ -42,6 +42,8 @@ archive-todoos -Path ".\archive.md" -UseHomeREADME
 function Backup-CompletedTodoos {
 
     [CmdletBinding()]
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseSingularNouns", "Backup-CompletedTodoos")]
+
     [Alias('archive-todoos')]
     param(
         #######################################################################

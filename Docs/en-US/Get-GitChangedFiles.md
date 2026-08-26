@@ -13,6 +13,7 @@ This function retrieves the list of files that have been changed in the current 
 
 ## Syntax
 
+
 ```powershell
 Get-GitChangedFiles [-PassThru] [<CommonParameters>]
 ```
@@ -25,15 +26,13 @@ Get-GitChangedFiles [-PassThru] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-GitChangedFiles
 ```
 
-Returns relative paths like .\Modules\GenXdev.AI\3.34.0\README.md
+Returns relative paths like .\Modules\GenXdev.AI\3.35.0\README.md
 
-### Examples 2
 
 ```powershell
 Get-GitChangedFiles -PassThru

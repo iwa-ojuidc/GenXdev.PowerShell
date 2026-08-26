@@ -15,27 +15,28 @@ after sending the key command.
 
 ## Syntax
 
+
 ```powershell
 Switch-VLCMediaPlayerPaused [<CommonParameters>]
 ```
 
 ## Examples
 
-### Switch-VLCMediaPlayerPaused Toggles the pause/play state of VLC Media Player.
+
 
 ```powershell
 Switch-VLCMediaPlayerPaused
 Toggles the pause/play state of VLC Media Player.
 ```
 
-### vlcpause Uses the alias to toggle the pause/play state.
+
 
 ```powershell
 vlcpause
 Uses the alias to toggle the pause/play state.
 ```
 
-### vlcplay Uses the alternate alias to toggle the pause/play state.
+
 
 ```powershell
 vlcplay

@@ -15,6 +15,7 @@ directory.
 
 ## Syntax
 
+
 ```powershell
 Get-Ideas [[-First] <Int32>] [-Ascending] [-ExcludeCompleted] [-OnlyCompleted] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -33,13 +34,13 @@ Get-Ideas [[-First] <Int32>] [-Ascending] [-ExcludeCompleted] [-OnlyCompleted] [
 
 ## Examples
 
-### Ideas -UseHomeREADME
+
 
 ```powershell
 Ideas -UseHomeREADME
 ```
 
-### Ideas -UseOneDriveREADME
+
 
 ```powershell
 Ideas -UseOneDriveREADME

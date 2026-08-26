@@ -17,6 +17,7 @@ least one setting parameter is provided unless clearing session settings.
 
 ## Syntax
 
+
 ```powershell
 Set-AILLMSettings -LLMQueryType <String> [[-Model] <String>] [[-ApiEndpoint] <String>] [[-ApiKey] <String>] [-AllMachines] [-ClearSession] [-NonInteractive] [-NoSupportForImageUpload] [-NoSupportForJsonSchema] [-NoSupportForToolCalls] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -42,14 +43,14 @@ Set-AILLMSettings -LLMQueryType <String> [[-Model] <String>] [[-ApiEndpoint] <St
 
 ## Examples
 
-### Set-AILLMSettings -LLMQueryType "Coding" -Model "*Qwen*14B*" Sets the LLM settings for Coding query type persistently in preferences.
+
 
 ```powershell
 Set-AILLMSettings -LLMQueryType "Coding" -Model "*Qwen*14B*"
 Sets the LLM settings for Coding query type persistently in preferences.
 ```
 
-### Set-AILLMSettings -LLMQueryType "SimpleIntelligence" -Model "maziyarpanahi/llama-3-groq-8b-tool-use" -SessionOnly Sets the LLM settings for SimpleIntelligence only for the current session.
+
 
 ```powershell
 Set-AILLMSettings -LLMQueryType "SimpleIntelligence" -Model "maziyarpanahi/llama-3-groq-8b-tool-use" -SessionOnly
@@ -57,7 +58,7 @@ Sets the LLM settings for SimpleIntelligence only for the current
 session.
 ```
 
-### Set-AILLMSettings -LLMQueryType "Pictures" -ClearSession Clears the session LLM settings for Pictures query type without affecting persistent preferences.
+
 
 ```powershell
 Set-AILLMSettings -LLMQueryType "Pictures" -ClearSession
@@ -65,14 +66,14 @@ Clears the session LLM settings for Pictures query type without affecting
 persistent preferences.
 ```
 
-### Set-AILLMSettings "Coding" "*Qwen*14B*" Sets the LLM settings for Coding query type using positional parameters.
+
 
 ```powershell
 Set-AILLMSettings "Coding" "*Qwen*14B*"
 Sets the LLM settings for Coding query type using positional parameters.
 ```
 
-### Set-AILLMSettings -LLMQueryType "SimpleIntelligence" -Model "gpt-4o" -ApiEndpoint "https://api.openai.com/v1/chat/completions" -ApiKey "sk-..." -AllMachines Sets the LLM settings for SimpleIntelligence and syncs to OneDrive for use across multiple machines.
+
 
 ```powershell
 Set-AILLMSettings -LLMQueryType "SimpleIntelligence" -Model "gpt-4o" -ApiEndpoint "https://api.openai.com/v1/chat/completions" -ApiKey "sk-..." -AllMachines

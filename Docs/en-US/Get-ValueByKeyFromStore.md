@@ -15,6 +15,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-ValueByKeyFromStore -StoreName <String> -KeyName <String> [[-DefaultValue] <String>] [-DatabasePath <String>] [<CommonParameters>]
 ```
@@ -30,7 +31,6 @@ Get-ValueByKeyFromStore -StoreName <String> -KeyName <String> [[-DefaultValue] <
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-ValueByKeyFromStore -StoreName "AppSettings" -KeyName "Theme" -DefaultValue "Dark"
@@ -39,7 +39,6 @@ Get-ValueByKeyFromStore -StoreName "AppSettings" -KeyName "Theme" -DefaultValue 
 Retrieves the "Theme" value from "AppSettings", returning "Dark" if not
 found.
 
-### Examples 2
 
 ```powershell
 getvalue AppSettings Theme

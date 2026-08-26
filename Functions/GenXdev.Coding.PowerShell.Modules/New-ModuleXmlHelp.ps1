@@ -708,7 +708,7 @@ function New-ModuleXmlHelp {
                     # Parse fenced code block: ```powershell...``` is code,
                     # first non-blank line after ``` is title, rest is remarks.
                     $code = ''
-                    $title = "---------- Example ${exNum} ----------"
+                    $title = ''
                     $remarks = ''
 
                     if ($exampleText -match '(?s)```powershell\s*\r?\n(.*?)```') {
@@ -740,8 +740,11 @@ function New-ModuleXmlHelp {
                         $code = $exampleText
                     }
 
+                    # Numbered separator so each example is visually distinct
+                    $title = "---[Example ${exNum}]-------`n${title}".TrimEnd()
+
                     $Writer.WriteStartElement('command', 'example', $Ns['command'])
-                    $Writer.WriteElementString('maml', 'title', $Ns['maml'], $title)
+                    $Writer.WriteElementString('maml', 'title', $Ns['maml'], "--`r`n`r`n$title")
                     $Writer.WriteElementString('dev', 'code', $Ns['dev'], $code)
                     $Writer.WriteStartElement('dev', 'remarks', $Ns['dev'])
                     $Writer.WriteElementString('maml', 'para', $Ns['maml'], $remarks)

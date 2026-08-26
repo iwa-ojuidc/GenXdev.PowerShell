@@ -42,6 +42,8 @@ archive-ideas -Path ".\archive.md" -UseHomeREADME
 function Backup-CompletedIdeas {
 
     [CmdletBinding()]
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseSingularNouns", "Backup-CompletedIdeas")]
+
     [Alias('archive-ideas')]
     param(
         #######################################################################

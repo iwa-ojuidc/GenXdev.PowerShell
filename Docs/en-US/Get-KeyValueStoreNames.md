@@ -14,6 +14,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-KeyValueStoreNames [-DatabasePath <String>] [<CommonParameters>]
 ```
@@ -26,7 +27,6 @@ Get-KeyValueStoreNames [-DatabasePath <String>] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-KeyValueStoreNames
@@ -34,7 +34,6 @@ Get-KeyValueStoreNames
 
 Retrieves all store names from the default location.
 
-### Examples 2
 
 ```powershell
 getstorenames -DatabasePath 'C:\MyStores'

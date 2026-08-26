@@ -17,6 +17,7 @@ the Force parameter is specified.
 
 ## Syntax
 
+
 ```powershell
 Remove-WireGuardPeer -PeerName <String> [-AutoConsent] [-AutoConsentAllPackages] [-Bottom] [-Centered] [-ClearSession] [-ContainerName <String>] [-FocusWindow] [-Force] [-Fullscreen] [-HealthCheckInterval <Int32>] [-HealthCheckTimeout <Int32>] [-Height <Int32>] [-ImageName <String>] [-Left] [-NoBorders] [-NoDockerInitialize] [-PGID <String>] [-PUID <String>] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-ServicePort <Int32>] [-SessionOnly] [-SetForeground] [-ShowWindow] [-SideBySide] [-SkipSession] [-TimeZone <String>] [-VolumeName <String>] [-Width <Int32>] [<CommonParameters>]
 ```
@@ -62,21 +63,21 @@ Remove-WireGuardPeer -PeerName <String> [-AutoConsent] [-AutoConsentAllPackages]
 
 ## Examples
 
-### Remove-WireGuardPeer -PeerName "MyPhone" Removes the peer named "MyPhone" with confirmation prompt.
+
 
 ```powershell
 Remove-WireGuardPeer -PeerName "MyPhone"
 Removes the peer named "MyPhone" with confirmation prompt.
 ```
 
-### Remove-WireGuardPeer -PeerName "Tablet" -Force Removes the peer named "Tablet" without confirmation prompt.
+
 
 ```powershell
 Remove-WireGuardPeer -PeerName "Tablet" -Force
 Removes the peer named "Tablet" without confirmation prompt.
 ```
 
-### Remove-WireGuardPeer "WorkLaptop" Removes the peer using positional parameter syntax.
+
 
 ```powershell
 Remove-WireGuardPeer "WorkLaptop"

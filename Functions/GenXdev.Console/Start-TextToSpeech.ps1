@@ -501,10 +501,22 @@ function Start-TextToSpeech {
 
         if (-not [IO.File]::Exists([IO.Path]::Combine((GenXdev\Get-KnownFolderPath System), 'mfplat.dll'))) {
 
-            $ensureParams = GenXdev\Copy-IdenticalParamValues `
-                -BoundParameters $PSBoundParameters `
-                -FunctionName 'GenXdev\EnsureWindowsMediaFeaturePack'
-            GenXdev\EnsureWindowsMediaFeaturePack @ensureParams
+            # verify administrative privileges are available
+            if (-not (GenXdev\CurrentUserHasElevatedRights)) {
+
+                $json = GenXdev\Copy-IdenticalParamValues `
+                    -BoundParameters $PSBoundParameters `
+                    -FunctionName "GenXdev\EnsureWindowsMediaFeaturePack" |
+                    Microsoft.PowerShell.Utility\ConvertTo-Json -Compress
+
+                GenXdev\Invoke-CommandElevated ([ScriptBlock]::Create(@"
+
+            `$params = '$json' | ConvertFrom-Json -AsHashTable
+            GenXdev\EnsureWindowsMediaFeaturePack @params
+"@)) -JobDescription 'Installing Windows Media Feature Pack';
+
+                return;
+            }
         }
 
         if (-not [IO.File]::Exists([IO.Path]::Combine((GenXdev\Get-KnownFolderPath System), 'mfplat.dll'))) {

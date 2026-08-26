@@ -16,6 +16,7 @@ escape characters, and various timing options for reliable key delivery.
 
 ## Syntax
 
+
 ```powershell
 Send-Key -KeysToSend <String[]> [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [<CommonParameters>]
 
@@ -41,21 +42,21 @@ Send-Key [-WindowHandle <Int64>] [<CommonParameters>]
 
 ## Examples
 
-### Send-Key -KeysToSend "Hello World{ENTER}" -ProcessName "notepad" Sends text to Notepad followed by Enter key using process name targeting.
+
 
 ```powershell
 Send-Key -KeysToSend "Hello World{ENTER}" -ProcessName "notepad"
 Sends text to Notepad followed by Enter key using process name targeting.
 ```
 
-### Send-Key "Special {F11} key" -SendKeyEscape -ProcessId 1234 Sends literal "{F11}" text rather than F11 key using process ID targeting.
+
 
 ```powershell
 Send-Key "Special {F11} key" -SendKeyEscape -ProcessId 1234
 Sends literal "{F11}" text rather than F11 key using process ID targeting.
 ```
 
-### sendkeys "Line 1{ENTER}Line 2" -WindowHandle 123456 -SendKeyDelayMilliSeconds 50 Sends multi-line text with custom delay using window handle targeting.
+
 
 ```powershell
 sendkeys "Line 1{ENTER}Line 2" -WindowHandle 123456 -SendKeyDelayMilliSeconds 50

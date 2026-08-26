@@ -36,6 +36,7 @@ Sub-module assignment uses two independent paths:
 
 ## Syntax
 
+
 ```powershell
 Get-ModuleCmdletMetaData -ModuleName <String> [-ApiEndpoint <String>] [-ApiKey <String>] [-Language <String>] [-Model <String>] [-NoSupportForJsonSchema] [-PromptForSettings] [-SkipTranslation] [-TranslationInstructions <String>] [<CommonParameters>]
 ```
@@ -56,14 +57,14 @@ Get-ModuleCmdletMetaData -ModuleName <String> [-ApiEndpoint <String>] [-ApiKey <
 
 ## Examples
 
-### Get-ModuleCmdletMetaData -ModuleName 'GenXdev' Returns metadata for all cmdlets in the GenXdev module.
+
 
 ```powershell
 Get-ModuleCmdletMetaData -ModuleName 'GenXdev'
 Returns metadata for all cmdlets in the GenXdev module.
 ```
 
-### Get-ModuleCmdletMetaData -ModuleName 'GenXdev' -Language 'nl-NL' Returns Dutch-translated metadata for all GenXdev cmdlets.
+
 
 ```powershell
 Get-ModuleCmdletMetaData -ModuleName 'GenXdev' -Language 'nl-NL'

@@ -15,6 +15,7 @@ while preserving a history of completed ideas.
 
 ## Syntax
 
+
 ```powershell
 Backup-CompletedIdeas -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -29,13 +30,13 @@ Backup-CompletedIdeas -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<Com
 
 ## Examples
 
-### Backup-CompletedIdeas -Path "C:\temp\idea-archive.md"
+
 
 ```powershell
 Backup-CompletedIdeas -Path "C:\temp\idea-archive.md"
 ```
 
-### archive-ideas -Path ".\archive.md" -UseHomeREADME
+
 
 ```powershell
 archive-ideas -Path ".\archive.md" -UseHomeREADME

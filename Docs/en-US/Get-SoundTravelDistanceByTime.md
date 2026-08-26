@@ -13,6 +13,7 @@ Uses the formula distance = speed * time, with default speed of sound in air.
 
 ## Syntax
 
+
 ```powershell
 Get-SoundTravelDistanceByTime -TimeInSeconds <Double> [[-As] <String>] [<CommonParameters>]
 
@@ -32,7 +33,6 @@ Get-SoundTravelDistanceByTime -Medium <String> [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-SoundTravelDistanceByTime -TimeInSeconds 5 -Medium "water" -As "kilometers"
@@ -40,7 +40,6 @@ Get-SoundTravelDistanceByTime -TimeInSeconds 5 -Medium "water" -As "kilometers"
 
 Calculates how far sound travels in water over 5 seconds and converts the result to kilometers.
 
-### Examples 2
 
 ```powershell
 Get-SoundTravelDistanceByTime 10 -SpeedOfSoundInMetersPerSecond 1480

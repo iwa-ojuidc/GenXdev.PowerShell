@@ -18,6 +18,7 @@ transcription quality.
 
 ## Syntax
 
+
 ```powershell
 Start-AudioTranscription [[-Input] <Object>] [[-LanguageIn] <String>] [[-LanguageOut] <String>] [-AudioContextSize <Int32>] [-AudioDevice <String>] [-AutoConsent] [-AutoConsentAllPackages] [-ClearSession] [-CpuThreads <Int32>] [-DontSuppressBlank] [-EntropyThreshold <Single>] [-IgnoreSilence] [-LengthPenalty <Single>] [-LogProbThreshold <Single>] [-MaxDuration <Object>] [-MaxDurationOfSilence <Object>] [-MaxInitialTimestamp <Object>] [-MaxLastTextTokens <Int32>] [-MaxSegmentLength <Int32>] [-MaxTokensPerSegment <Int32>] [-ModelType <String>] [-NoContext] [-NoSpeechThreshold <Single>] [-Offset <Object>] [-PassThru] [-PreferencesDatabasePath <String>] [-PrintSpecialTokens] [-Prompt <String>] [-SessionOnly] [-SilenceThreshold <Int32>] [-SingleSegmentOnly] [-SkipSession] [-SplitOnWord] [-SRT] [-SuppressRegex <String>] [-Temperature <Single>] [-TemperatureInc <Single>] [-TokenTimestampsSumThreshold <Single>] [-UseDesktopAndRecordingDevice] [-UseDesktopAudioCapture] [-VOX] [-WithBeamSearchSamplingStrategy] [-WithProgress] [-WithTokenTimestamps] [<CommonParameters>]
 ```
@@ -73,30 +74,29 @@ Start-AudioTranscription [[-Input] <Object>] [[-LanguageIn] <String>] [[-Languag
 
 ## Examples
 
-### Start-AudioTranscription -Input "C:\path\to\audio.wav" `     -LanguageIn "English" -LanguageOut "French" -SRT
+
 
 ```powershell
 Start-AudioTranscription -Input "C:\path\to\audio.wav" `
     -LanguageIn "English" -LanguageOut "French" -SRT
 ```
 
-### transcribefile "C:\video.mp4" "English"
+
 
 ```powershell
 transcribefile "C:\video.mp4" "English"
 ```
 
-### Get-ChildItem "*.mp4" | Start-AudioTranscription -LanguageIn "English"
+
 
 ```powershell
 Get-ChildItem "*.mp4" | Start-AudioTranscription -LanguageIn "English"
 ```
 
-### Start-AudioTranscription  # Records from microphone when no file specified ##############################################################################
+
 
 ```powershell
 Start-AudioTranscription  # Records from microphone when no file specified
-##############################################################################
 ```
 
 ## Parameter Details

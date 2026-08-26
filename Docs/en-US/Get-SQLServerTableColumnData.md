@@ -17,6 +17,7 @@ performance.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLServerTableColumnData -ConnectionString <String> [<CommonParameters>]
 
@@ -38,7 +39,7 @@ Get-SQLServerTableColumnData -TableName <String> -ColumnName <String> [[-Count] 
 
 ## Examples
 
-### Get-SQLServerTableColumnData -DatabaseFilePath "C:\MyDb.sqlite" `     -TableName "Employees" `     -ColumnName "Email" `     -Count 10
+
 
 ```powershell
 Get-SQLServerTableColumnData -DatabaseFilePath "C:\MyDb.sqlite" `
@@ -47,7 +48,7 @@ Get-SQLServerTableColumnData -DatabaseFilePath "C:\MyDb.sqlite" `
     -Count 10
 ```
 
-### Get-SQLServerTableColumnData "C:\MyDb.sqlite" "Employees" "Email"
+
 
 ```powershell
 Get-SQLServerTableColumnData "C:\MyDb.sqlite" "Employees" "Email"

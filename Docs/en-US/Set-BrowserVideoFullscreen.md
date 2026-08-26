@@ -16,6 +16,7 @@ experience.
 
 ## Syntax
 
+
 ```powershell
 Set-BrowserVideoFullscreen [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Webkit] [<CommonParameters>]
 ```
@@ -32,7 +33,7 @@ Set-BrowserVideoFullscreen [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Webkit] [<
 
 ## Examples
 
-### Set-BrowserVideoFullscreen
+
 
 ```powershell
 Set-BrowserVideoFullscreen

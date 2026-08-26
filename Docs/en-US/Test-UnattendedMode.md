@@ -18,6 +18,7 @@
 
 ## Syntax
 
+
 ```powershell
 Test-UnattendedMode [[-CallersInvocation] <InvocationInfo>] [-Detailed] [<CommonParameters>]
 ```
@@ -31,7 +32,6 @@ Test-UnattendedMode [[-CallersInvocation] <InvocationInfo>] [-Detailed] [<Common
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Test-UnattendedMode
@@ -39,7 +39,6 @@ Test-UnattendedMode
 
 Returns a boolean indicating if running in unattended mode.
 
-### Examples 2
 
 ```powershell
 Test-UnattendedMode -CallersInvocation $MyInvocation
@@ -47,7 +46,6 @@ Test-UnattendedMode -CallersInvocation $MyInvocation
 
 Analyzes the caller's invocation context and returns a boolean.
 
-### Examples 3
 
 ```powershell
 Test-UnattendedMode -CallersInvocation $MyInvocation -Detailed
@@ -55,7 +53,6 @@ Test-UnattendedMode -CallersInvocation $MyInvocation -Detailed
 
 Returns detailed analysis object with all indicators.
 
-### Examples 4
 
 ```powershell
 function My-Function {

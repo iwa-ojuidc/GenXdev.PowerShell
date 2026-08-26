@@ -19,6 +19,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-GenXdevPreference -Name <String> [[-DefaultValue] <String>] [-ClearSession] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -36,7 +37,6 @@ Get-GenXdevPreference -Name <String> [[-DefaultValue] <String>] [-ClearSession] 
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-GenXdevPreference -Name "Theme" -DefaultValue "Dark"
@@ -44,7 +44,6 @@ Get-GenXdevPreference -Name "Theme" -DefaultValue "Dark"
 
 Retrieves the "Theme" preference with fallback to default "Dark".
 
-### Examples 2
 
 ```powershell
 getPreference "Theme" "Dark"

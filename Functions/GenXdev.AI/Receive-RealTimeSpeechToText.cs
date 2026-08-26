@@ -2,8 +2,7 @@ using NAudio.Wave;
 using System.Collections.Concurrent;
 using System.Management;
 using System.Management.Automation;
-using Whisper.net;
-using Whisper.net.Ggml;
+using GenXdev.AI.Whisper;
 
 namespace GenXdev.AI
 {
@@ -255,6 +254,11 @@ With silence detection.
         private readonly ConcurrentQueue<byte[]> _bufferQueue = new();
         private readonly ConcurrentQueue<ErrorRecord> _errorQueue = new();
         private readonly ConcurrentQueue<string> _verboseQueue = new();
+
+        // Transcription progress percentages. Whisper raises its progress callback
+        // on a native thread and WriteProgress may only be called on the pipeline
+        // thread, so the value is handed over here and written by the main loop.
+        private readonly ConcurrentQueue<int> _progressQueue = new();
         private CancellationTokenSource _cts;
         private WhisperProcessor _processor;
         private WhisperFactory _whisperFactory; // Keep reference for proper disposal
@@ -271,6 +275,11 @@ With silence detection.
         private readonly object _audioMixingLock = new object();
         private int _audioCallbackCount = 0;
         private int _bufferQueueCount = 0;
+
+        // The format the capture device actually settled on. Not necessarily what
+        // was requested: WasapiLoopbackCapture dictates its own, and some mics
+        // reject 16kHz mono. The buffered bytes are converted from this.
+        private NAudio.Wave.WaveFormat _captureFormat;
         private bool hadAudio;
         private bool everHadAudio;
         private double totalSilenceSeconds;
@@ -285,29 +294,7 @@ With silence detection.
         /// </summary>
         protected override void BeginProcessing()
         {
-            //base.BeginProcessing();
-
-            //if (!Avx.IsSupported || Environment.OSVersion.Version.Major == 10)
-            //{
-            //    RuntimeOptions.LoadedLibrary = null;
-            //    Environment.SetEnvironmentVariable("DOTNET_SYSTEM_GLOBALIZATION_INVARIANT", "false");
-            //    Environment.SetEnvironmentVariable("DOTNET_EnableWriteXorExecute", "1");
-
-            //    RuntimeOptions.LoadedLibrary = null; // critical
-
-            //    RuntimeOptions.RuntimeLibraryOrder = new List<RuntimeLibrary>
-            //    {
-            //        RuntimeLibrary.CpuNoAvx
-            //    };
-
-            //    System.Console.WriteLine("Using no-avx -> " + Whisper.net.LibraryLoader.RuntimeOptions.LibraryPath);
-            //}
-
-            //Whisper.net.LibraryLoader.RuntimeOptions.LibraryPath =
-            //    Path.Combine(this.GetGenXdevModuleBase("GenXdev"));
-
-            // WhisperRuntimeSelector.Initialize();
-
+            
             // Expand ModelFileDirectoryPath if provided
             if (!string.IsNullOrEmpty(ModelFileDirectoryPath))
             {
@@ -315,7 +302,12 @@ With silence detection.
             }
             if (string.IsNullOrEmpty(ModelFileDirectoryPath) || !Directory.Exists(ModelFileDirectoryPath))
             {
-                ModelFileDirectoryPath = ExpandPath(GetGenXdevAppDataPath() + "\\", CreateDirectory: true);
+                 var localAppData = System.Environment.GetEnvironmentVariable("LOCALAPPDATA");
+                ModelFileDirectoryPath = Path.Combine(localAppData, "GenXdev.PowerShell");
+                if (!Directory.Exists(ModelFileDirectoryPath))
+                {
+                    Directory.CreateDirectory(ModelFileDirectoryPath);
+                }
             }
             if (!MyInvocation.BoundParameters.ContainsKey("LanguageIn"))
             {
@@ -401,20 +393,23 @@ With silence detection.
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            // Initialize Whisper
-            var ggmlType = ModelType;
-            var modelFileName = Path.GetFullPath(Path.Combine(ModelFileDirectoryPath, GetModelFileName(ModelType)));
-            if (!File.Exists(modelFileName))
-            {
-                DownloadModel(modelFileName, ggmlType).GetAwaiter().GetResult();
-            }
-            // Ensure native runtime folders (runtimes\win-*) are discoverable by the process before loading Whisper
-            // EnsureNativeRuntimesAvailable();
+            // Point the native loader at the module's own folders before any
+            // whisper call, so whisper.dll and the ggml libraries resolve no
+            // matter where the module was imported from
+            RegisterNativeProbeDirectories();
+
+            // Route whisper's native logging into the verbose stream instead of
+            // stderr, where it would corrupt the pipeline output
+            WhisperInterop.SetLogHandler(message => _verboseQueue.Enqueue(message));
+
+            // Locate the model, downloading it on first use
+            var modelFileName = EnsureModelAvailable(ModelType);
+
             _whisperFactory = WhisperFactory.FromPath(modelFileName);
             var builder = ConfigureWhisperBuilder(_whisperFactory.CreateBuilder());
             _processor = builder.Build();
-            
-            
+
+
             // Create audio input(s) based on parameters
             if (UseDesktopAndRecordingDevice.ToBool())
             {
@@ -475,7 +470,7 @@ With silence detection.
                             IsDeviceMatch(deviceInfo.ProductGuid.ToString(), AudioDevice))
                         {
                             WriteVerbose($"Selected microphone device: {deviceInfo.ProductName}");
-                            var waveIn = new WaveInEvent { DeviceNumber = i };
+                            var waveIn = new WaveIn { DeviceNumber = i };
                             return waveIn;
                         }
                     }
@@ -486,7 +481,7 @@ With silence detection.
                 }
                 WriteWarning($"Microphone device '{AudioDevice}' not found, using default");
             }
-            return new WaveInEvent();
+            return new WaveIn();
         }
         /// <summary>
         /// Configures and starts recording from dual audio inputs (primary and secondary), sets up event handlers for audio data,
@@ -496,6 +491,16 @@ With silence detection.
         {
             _primaryWaveIn.WaveFormat = new WaveFormat(16000, 1);
             _secondaryWaveIn.WaveFormat = new WaveFormat(16000, 1);
+
+            // The mixer emits in the primary's format, so that is what the
+            // buffered bytes must be interpreted as
+            _captureFormat = _primaryWaveIn.WaveFormat;
+
+            _verboseQueue.Enqueue(
+                $"Capture (dual): {_captureFormat.SampleRate} Hz, " +
+                $"{_captureFormat.Channels} ch, {_captureFormat.BitsPerSample} bit, " +
+                $"{_captureFormat.Encoding}");
+
             var processingTask = Task.Run(() => ProcessAudioBuffer());
             _processingTask = processingTask;
             _mixingTask = Task.Run(() => MixAudioBuffers());
@@ -761,7 +766,25 @@ With silence detection.
         {
             using (waveIn)
             {
-                waveIn.WaveFormat = new WaveFormat(16000, 1);
+                // WasapiLoopbackCapture ignores or rejects this - always read back
+                // what the device actually settled on rather than assuming
+                try
+                {
+                    waveIn.WaveFormat = new WaveFormat(16000, 1);
+                }
+                catch (Exception ex)
+                {
+                    _verboseQueue.Enqueue(
+                        $"Capture device refused 16kHz mono ({ex.Message}); using its own format");
+                }
+
+                _captureFormat = waveIn.WaveFormat;
+
+                _verboseQueue.Enqueue(
+                    $"Capture: {waveIn.GetType().Name} @ {_captureFormat.SampleRate} Hz, " +
+                    $"{_captureFormat.Channels} ch, {_captureFormat.BitsPerSample} bit, " +
+                    $"{_captureFormat.Encoding}");
+
                 var processingTask = Task.Run(() => ProcessAudioBuffer());
                 _processingTask = processingTask;
                 // Variables for silence detection
@@ -902,6 +925,10 @@ With silence detection.
         {
             System.Console.WriteLine("Recording started. Press Q to stop...");
             var startTime = System.DateTime.UtcNow;
+            // Periodic pipeline heartbeat. Without it, "no output" is indistinguishable
+            // between no audio arriving, audio arriving but never reaching the chunk
+            // threshold, and whisper returning only blanks.
+            var lastHeartbeat = System.DateTime.UtcNow;
             while (!_cts.IsCancellationRequested && _isRecordingStarted)
             {
                 try
@@ -923,6 +950,13 @@ With silence detection.
                         _cts.Cancel();
                         break;
                     }
+                    if ((System.DateTime.UtcNow - lastHeartbeat).TotalSeconds >= 3)
+                    {
+                        lastHeartbeat = System.DateTime.UtcNow;
+                        WriteVerbose(
+                            $"audio callbacks={_audioCallbackCount}, buffers queued={_bufferQueueCount}, " +
+                            $"pending={_bufferQueue.Count}, segments={_results.Count}");
+                    }
                     // Process all queued messages in the main thread
                     while (_errorQueue.TryDequeue(out var errorRecord))
                     {
@@ -931,6 +965,20 @@ With silence detection.
                     while (_verboseQueue.TryDequeue(out var verboseMessage))
                     {
                         WriteVerbose(verboseMessage);
+                    }
+                    // Coalesce progress to the newest value rather than replaying
+                    // every percentage point queued by the native callback
+                    var latestProgress = -1;
+                    while (_progressQueue.TryDequeue(out var percent))
+                    {
+                        latestProgress = percent;
+                    }
+                    if (latestProgress >= 0)
+                    {
+                        WriteProgress(new ProgressRecord(1, "Transcribing", $"Progress: {latestProgress}%")
+                        {
+                            PercentComplete = Math.Min(100, Math.Max(0, latestProgress))
+                        });
                     }
                     while (_results.TryDequeue(out var segment))
                     {
@@ -1056,7 +1104,7 @@ With silence detection.
                                 IsDeviceMatch(deviceInfo.ProductGuid.ToString(), AudioDevice))
                             {
                                 WriteVerbose($"Selected microphone device: {deviceInfo.ProductName}");
-                                var waveIn = new WaveInEvent { DeviceNumber = i };
+                                var waveIn = new WaveIn { DeviceNumber = i };
                                 return waveIn;
                             }
                         }
@@ -1067,7 +1115,7 @@ With silence detection.
                     }
                     WriteWarning($"Microphone device '{AudioDevice}' not found, using default");
                 }
-                return new WaveInEvent();
+                return new WaveIn();
             }
         }
         /// <summary>
@@ -1104,12 +1152,9 @@ With silence detection.
                 physicalCoreCount += Convert.ToInt32(item["NumberOfCores"]);
             }
             builder.WithLanguage(LanguageIn)
-                   .WithThreads(CpuThreads > 0 ? CpuThreads : physicalCoreCount);
-            // Check for LanguageIn to enable WithTranslate
-            if (MyInvocation.BoundParameters.ContainsKey("LanguageIn"))
-            {
-                builder.WithTranslate();
-            }
+                   .WithThreads(ResolveThreadCount(physicalCoreCount));
+            // Translation is driven solely by -WithTranslate below; specifying an
+            // input language used to silently force translation to English
             // Improved speech detection settings
             if (Temperature.HasValue)
             {
@@ -1126,7 +1171,10 @@ With silence detection.
             if (!string.IsNullOrWhiteSpace(SuppressRegex)) builder.WithSuppressRegex(SuppressRegex);
             if (WithProgress.ToBool())
             {
-                builder.WithProgressHandler(progress => WriteProgress(new ProgressRecord(1, "Processing", $"Progress: {progress}%") { PercentComplete = progress }));
+                // Whisper invokes this from a native thread inside whisper_full, and
+                // WriteProgress is thread-affine, so it may only enqueue here - the
+                // main loop below does the actual writing
+                builder.WithProgressHandler(progress => _progressQueue.Enqueue(progress));
             }
             if (SplitOnWord.ToBool()) builder.SplitOnWord();
             if (MaxTokensPerSegment.HasValue) builder.WithMaxTokensPerSegment(MaxTokensPerSegment.Value);
@@ -1168,6 +1216,28 @@ With silence detection.
         {
             using var processingStream = new MemoryStream();
             bool isProcessing = false;
+
+            // Trigger a transcription every ~3 seconds of captured audio, matching
+            // the step_ms default of whisper.cpp's own streaming example.
+            //
+            // The step size is the single biggest CPU lever here. whisper's encoder
+            // always runs over a fixed 2*n_ctx by n_mels tensor (3000 x 80), so a
+            // call costs the same whether it carries 1.5 seconds of audio or 30.
+            // Halving the number of calls therefore halves encoder work outright:
+            // 3s steps mean 20 encoder passes per minute of speech instead of 40,
+            // and each pass sees more context, so accuracy improves too. The cost
+            // is latency - text appears up to a step behind the speaker.
+            //
+            // Derived from the device's actual byte rate rather than hard-coded:
+            // 48000 bytes is 1.5s only at 16kHz mono 16-bit, but just 0.125s at
+            // 48kHz stereo float, which would fire far too often to keep up.
+            var bytesPerSecond = _captureFormat?.AverageBytesPerSecond ?? 32000;
+            var chunkSeconds = 3;
+            var minChunkBytes = Math.Max(16000, bytesPerSecond * chunkSeconds);
+
+            _verboseQueue.Enqueue(
+                $"Buffering {minChunkBytes} bytes (~{chunkSeconds}s) per transcription at " +
+                $"{bytesPerSecond} bytes/sec");
             try
             {
                 while ((!_cts.IsCancellationRequested || _bufferQueue.Count > 0) && !_isDisposed)
@@ -1184,17 +1254,20 @@ With silence detection.
                             processingStream.Write(buffer, 0, buffer.Length);
                             // Increased threshold for better speech recognition
                             // 48000 bytes = ~3 seconds of audio (16kHz * 1 channel * 2 bytes * 3 seconds)
-                            if (!isProcessing && processingStream.Length >= 48000)
+                            if (!isProcessing && processingStream.Length >= minChunkBytes)
                             {
-                                var audioDurationSeconds = processingStream.Length / 32000.0; // 16kHz * 2 bytes
+                                var audioDurationSeconds = processingStream.Length / (double)bytesPerSecond;
                                 isProcessing = true;
-                                // Convert raw PCM data to WAV format that Whisper can understand
-                                using var wavStream = ConvertPcmToWav(processingStream.ToArray(), 16000, 1, 16);
-                                wavStream.Position = 0;
+                                // Convert from the device's actual format - it is not
+                                // necessarily the 16kHz mono 16-bit that was requested
+                                var pcmBytes = processingStream.ToArray();
+                                var samples = AudioDecoder.ConvertToPcm16KMono(pcmBytes, pcmBytes.Length, _captureFormat);
+                                _verboseQueue.Enqueue(
+                                    $"Transcribing {audioDurationSeconds:F2}s chunk ({samples.Length} samples)");
                                 try
                                 {
                                     int segmentCount = 0;
-                                    await foreach (var segment in _processor.ProcessAsync(wavStream, _cts.Token))
+                                    await foreach (var segment in _processor.ProcessAsync(samples, _cts.Token))
                                     {
                                         if (_cts.IsCancellationRequested || _isDisposed)
                                         {
@@ -1228,15 +1301,15 @@ With silence detection.
                             // If we have data but not enough for a full segment, process it anyway when stopping
                             if (!_isRecordingStarted && processingStream.Length > 0 && !isProcessing && !_isDisposed)
                             {
-                                var audioDurationSeconds = processingStream.Length / 32000.0;
+                                var audioDurationSeconds = processingStream.Length / (double)bytesPerSecond;
                                 isProcessing = true;
-                                // Convert raw PCM data to WAV format for final processing
-                                using var wavStream = ConvertPcmToWav(processingStream.ToArray(), 16000, 1, 16);
-                                wavStream.Position = 0;
+                                // Final partial buffer, same format-aware conversion
+                                var pcmBytes = processingStream.ToArray();
+                                var samples = AudioDecoder.ConvertToPcm16KMono(pcmBytes, pcmBytes.Length, _captureFormat);
                                 try
                                 {
                                     int segmentCount = 0;
-                                    await foreach (var segment in _processor.ProcessAsync(wavStream, _cts.Token))
+                                    await foreach (var segment in _processor.ProcessAsync(samples, _cts.Token))
                                     {
                                         if (_cts.IsCancellationRequested || _isDisposed)
                                         {
@@ -1279,41 +1352,6 @@ With silence detection.
             catch when (!_isDisposed)
             {
             }
-        }
-        /// <summary>
-        /// Converts raw PCM audio data to WAV format by adding the appropriate WAV header with format information.
-        /// Creates a properly formatted WAV stream that Whisper can process for speech recognition.
-        /// </summary>
-        /// <param name="pcmData">The raw PCM audio data bytes.</param>
-        /// <param name="sampleRate">The sample rate in Hz (e.g., 16000).</param>
-        /// <param name="channels">The number of audio channels (e.g., 1 for mono).</param>
-        /// <param name="bitsPerSample">The bits per sample (e.g., 16).</param>
-        /// <returns>A MemoryStream containing the WAV-formatted audio data.</returns>
-        private MemoryStream ConvertPcmToWav(byte[] pcmData, int sampleRate, int channels, int bitsPerSample)
-        {
-            var wavStream = new MemoryStream();
-            int bytesPerSample = bitsPerSample / 8;
-            int byteRate = sampleRate * channels * bytesPerSample;
-            int blockAlign = channels * bytesPerSample;
-            // Write WAV header
-            // "RIFF" chunk descriptor
-            wavStream.Write(System.Text.Encoding.ASCII.GetBytes("RIFF"), 0, 4);
-            wavStream.Write(BitConverter.GetBytes(36 + pcmData.Length), 0, 4); // File size - 8
-            wavStream.Write(System.Text.Encoding.ASCII.GetBytes("WAVE"), 0, 4);
-            // "fmt " sub-chunk
-            wavStream.Write(System.Text.Encoding.ASCII.GetBytes("fmt "), 0, 4);
-            wavStream.Write(BitConverter.GetBytes(16), 0, 4); // Sub-chunk size
-            wavStream.Write(BitConverter.GetBytes((short)1), 0, 2); // Audio format (1 = PCM)
-            wavStream.Write(BitConverter.GetBytes((short)channels), 0, 2); // Number of channels
-            wavStream.Write(BitConverter.GetBytes(sampleRate), 0, 4); // Sample rate
-            wavStream.Write(BitConverter.GetBytes(byteRate), 0, 4); // Byte rate
-            wavStream.Write(BitConverter.GetBytes((short)blockAlign), 0, 2); // Block align
-            wavStream.Write(BitConverter.GetBytes((short)bitsPerSample), 0, 2); // Bits per sample
-                                                                                // "data" sub-chunk
-            wavStream.Write(System.Text.Encoding.ASCII.GetBytes("data"), 0, 4);
-            wavStream.Write(BitConverter.GetBytes(pcmData.Length), 0, 4); // Data size
-            wavStream.Write(pcmData, 0, pcmData.Length); // The actual audio data
-            return wavStream;
         }
         /// <summary>
         /// Cleans up resources and disposes of audio components.
@@ -1455,153 +1493,111 @@ With silence detection.
             base.EndProcessing();
         }
         /// <summary>
-        /// Downloads a Whisper model file from the default source and saves it to the specified filename.
-        /// Displays progress information to the console during the download process.
+        /// Decides how many threads to hand to whisper.
+        ///
+        /// ggml parallelises with OpenMP, so asking for more threads than the
+        /// machine has logical processors does not go faster - the workers contend
+        /// for the same cores and the extra scheduling makes it slower.
         /// </summary>
-        /// <param name="fileName">The filename to save the downloaded model to.</param>
-        /// <param name="ggmlType">The GGML model type to download.</param>
-        private static async Task DownloadModel(string fileName, GgmlType ggmlType)
+        /// <param name="physicalCoreCount">Physical cores detected via WMI.</param>
+        /// <returns>Thread count to use.</returns>
+        private int ResolveThreadCount(int physicalCoreCount)
         {
-            System.Console.WriteLine($"Downloading Model {fileName}");
-            using var modelStream = await WhisperGgmlDownloader.Default.GetGgmlModelAsync(ggmlType);
-            using var fileWriter = File.OpenWrite(fileName);
-            await modelStream.CopyToAsync(fileWriter);
+            var logical = Environment.ProcessorCount;
+
+            // WMI can come back empty on some systems
+            if (physicalCoreCount <= 0)
+            {
+                physicalCoreCount = Math.Max(1, logical / 2);
+            }
+
+            if (CpuThreads <= 0)
+            {
+                return Math.Max(1, Math.Min(physicalCoreCount, logical));
+            }
+
+            if (CpuThreads > logical)
+            {
+                _verboseQueue.Enqueue(
+                    $"-CpuThreads {CpuThreads} exceeds the {logical} logical processors " +
+                    $"on this machine; using {logical}. Oversubscribing ggml's OpenMP " +
+                    $"pool slows transcription down.");
+
+                return logical;
+            }
+
+            return CpuThreads;
         }
 
         /// <summary>
-        /// Ensures native whisper runtime directories (runtimes\**\*) are added to the process PATH so
-        /// the native no-avx/cpu/cuda libraries can be located when Whisper.net attempts to load them.
-        /// This helps when the module is loaded inside PowerShell where native probing paths differ.
+        /// Tells the native loader where this module keeps whisper.dll and the
+        /// ggml libraries.
         /// </summary>
-        //private void EnsureNativeRuntimesAvailable()
-        //{
-        //    try
-        //    {
-        //        // Determine likely runtime directories in a deterministic manner instead of scanning entire CWD.
-        //        // Prefer the Whisper.net assembly location and the module output folders.
-        //        var candidateDirs = new List<string>();
+        private void RegisterNativeProbeDirectories()
+        {
+            try
+            {
+                var moduleBase = MyInvocation?.MyCommand?.Module?.ModuleBase;
 
-        //        // 1) Whisper.net managed assembly location
-        //        try
-        //        {
-        //            var whisperAsm = typeof(WhisperFactory).Assembly;
-        //            var whisperAsmLocation = whisperAsm?.Location;
-        //            if (!string.IsNullOrEmpty(whisperAsmLocation))
-        //            {
-        //                var dir = Path.GetDirectoryName(whisperAsmLocation);
-        //                if (!string.IsNullOrEmpty(dir) && !candidateDirs.Contains(dir)) candidateDirs.Add(dir);
-        //                // also consider parent folders where runtimes are commonly placed
-        //                var parent = Path.GetDirectoryName(dir);
-        //                if (!string.IsNullOrEmpty(parent) && !candidateDirs.Contains(parent)) candidateDirs.Add(parent);
-        //            }
-        //        }
-        //        catch { }
+                if (string.IsNullOrWhiteSpace(moduleBase))
+                {
+                    moduleBase = SessionState?.Module?.ModuleBase;
+                }
 
-        //        // 2) This module assembly output (module base/lib)
-        //        try
-        //        {
-        //            var asmLocation = System.Reflection.Assembly.GetExecutingAssembly().Location;
-        //            if (!string.IsNullOrEmpty(asmLocation))
-        //            {
-        //                var asmDir = Path.GetDirectoryName(asmLocation);
-        //                if (!string.IsNullOrEmpty(asmDir) && !candidateDirs.Contains(asmDir)) candidateDirs.Add(asmDir);
-        //                var libDir = Path.Combine(asmDir, "lib");
-        //                if (!candidateDirs.Contains(libDir) && Directory.Exists(libDir)) candidateDirs.Add(libDir);
-        //                var moduleBase = Path.GetFullPath(Path.Combine(asmDir, ".."));
-        //                if (!candidateDirs.Contains(moduleBase) && Directory.Exists(moduleBase)) candidateDirs.Add(moduleBase);
-        //            }
-        //        }
-        //        catch { }
+                if (!string.IsNullOrWhiteSpace(moduleBase))
+                {
+                    WhisperInterop.AddProbeDirectory(moduleBase);
+                    WhisperInterop.AddProbeDirectory(Path.Combine(moduleBase, "lib"));
+                }
+            }
+            catch (Exception ex)
+            {
+                // Not fatal - the resolver still probes the directory holding the
+                // assembly itself, which covers the normal layouts
+                WriteVerbose($"Could not resolve the module base: {ex.Message}");
+            }
+        }
 
-        //        // 3) add common local package layout patterns
-        //        var arch = Environment.Is64BitProcess ? "x64" : "x86";
-        //        var possibleRuntimes = new[] {
-        //            Path.Combine("runtimes", $"win-{arch}"),
-        //            Path.Combine("lib", "runtimes", $"win-{arch}"),
-        //            Path.Combine("build", $"win-{arch}"),
-        //        };
-
-        //        var nativeNames = new[] { "whisper.dll", "libwhisper.dll", "ggml-whisper.dll", "ggml-base-whisper.dll", "ggml-cpu-whisper.dll" };
-        //        string foundNativeDir = null;
-
-        //        foreach (var baseDir in candidateDirs)
-        //        {
-        //            if (string.IsNullOrEmpty(baseDir)) continue;
-        //            foreach (var rel in possibleRuntimes)
-        //            {
-        //                var cand = Path.GetFullPath(Path.Combine(baseDir, rel));
-        //                if (!Directory.Exists(cand)) continue;
-        //                foreach (var name in nativeNames)
-        //                {
-        //                    var file = Path.Combine(cand, name);
-        //                    if (File.Exists(file))
-        //                    {
-        //                        foundNativeDir = cand;
-        //                        break;
-        //                    }
-        //                }
-        //                if (foundNativeDir != null) break;
-        //            }
-        //            if (foundNativeDir != null) break;
-        //        }
-
-        //        if (foundNativeDir != null)
-        //        {
-        //            var currentPath = Environment.GetEnvironmentVariable("PATH") ?? string.Empty;
-        //            var parts = (currentPath ?? string.Empty).Split(Path.PathSeparator, StringSplitOptions.RemoveEmptyEntries);
-        //            if (!parts.Any(p => string.Equals(p, foundNativeDir, StringComparison.OrdinalIgnoreCase)))
-        //            {
-        //                var newPath = foundNativeDir + Path.PathSeparator + currentPath;
-        //                // Update process PATH so native loader can find libs
-        //                Environment.SetEnvironmentVariable("PATH", newPath, EnvironmentVariableTarget.Process);
-        //                WriteVerbose($"Added native runtime dir to process PATH: {foundNativeDir}");
-
-        //                // Update PowerShell session $Env:Path using SetGlobalVariable so it's visible to the caller session
-        //                try
-        //                {
-        //                    var sessionPath = GetVariableValue("Env:Path", currentPath)?.ToString() ?? currentPath;
-        //                    var updatedSessionPath = foundNativeDir + Path.PathSeparator + sessionPath;
-        //                    SetGlobalVariable("Env:Path", updatedSessionPath);
-        //                    WriteVerbose($"Updated PowerShell session $Env:Path with native runtime dir: {foundNativeDir}");
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                    WriteVerbose($"Failed to set session Env:Path via SetGlobalVariable: {ex.Message}");
-        //                }
-
-        //                // Record the native runtime dir as a global session variable for other cmdlets to read
-        //                try
-        //                {
-        //                    SetGlobalVariable("GenXdev_NativeRuntimePath", foundNativeDir);
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                    WriteVerbose($"Failed to set GenXdev_NativeRuntimePath global variable: {ex.Message}");
-        //                }
-        //            }
-        //            else
-        //            {
-        //                WriteVerbose($"Native runtime dir already in PATH: {foundNativeDir}");
-        //            }
-        //        }
-        //        else
-        //        {
-        //            WriteVerbose("No whisper native runtime files found in expected runtime directories.");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        WriteVerbose($"Error ensuring native runtimes available: {ex.Message}");
-        //    }
-        //}
         /// <summary>
-        /// Generates the standard filename for a Whisper GGML model based on the model type.
+        /// Resolves the model file for a model type, downloading it on first use.
         /// </summary>
         /// <param name="modelType">The GGML model type.</param>
-        /// <returns>The formatted model filename (e.g., "ggml-base.bin").</returns>
-        private static string GetModelFileName(GgmlType modelType)
+        /// <returns>Full path to the model file.</returns>
+        private string EnsureModelAvailable(GgmlType modelType)
         {
-            return $"ggml-{modelType}.bin";
+            // Accept a model that is already on disk under either the canonical
+            // whisper.cpp name or the older name this cmdlet used to write
+            foreach (var candidate in modelType.GetModelFileNameCandidates())
+            {
+                var existing = Path.GetFullPath(Path.Combine(ModelFileDirectoryPath, candidate));
+                if (File.Exists(existing))
+                {
+                    WriteVerbose($"Using Whisper model: {existing}");
+                    return existing;
+                }
+            }
+
+            var modelFileName = Path.GetFullPath(
+                Path.Combine(ModelFileDirectoryPath, modelType.ToModelFileName()));
+
+            WriteVerbose($"Downloading Whisper model {modelType} to {modelFileName}");
+            System.Console.WriteLine($"Downloading Whisper model {modelType.ToCanonicalName()}...");
+
+            var lastPercent = -1;
+
+            WhisperGgmlDownloader.Default.DownloadModelAsync(
+                modelType,
+                modelFileName,
+                percent =>
+                {
+                    // Only report when the number actually moves
+                    if (percent == lastPercent) return;
+                    lastPercent = percent;
+                    _verboseQueue.Enqueue($"Downloading {modelType.ToCanonicalName()}: {percent}%");
+                },
+                _cts.Token).GetAwaiter().GetResult();
+
+            return modelFileName;
         }
     }
 }

@@ -16,6 +16,7 @@ interaction.
 
 ## Syntax
 
+
 ```powershell
 Unprotect-WebbrowserTab [-Force] [-UseCurrent] [<CommonParameters>]
 ```
@@ -29,13 +30,13 @@ Unprotect-WebbrowserTab [-Force] [-UseCurrent] [<CommonParameters>]
 
 ## Examples
 
-### Unprotect-WebbrowserTab -UseCurrent
+
 
 ```powershell
 Unprotect-WebbrowserTab -UseCurrent
 ```
 
-### wbctrl -Force
+
 
 ```powershell
 wbctrl -Force

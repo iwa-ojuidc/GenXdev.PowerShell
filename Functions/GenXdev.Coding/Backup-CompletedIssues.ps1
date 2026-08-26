@@ -42,6 +42,7 @@ archive-issues -Path ".\archive.md" -UseHomeREADME
 function Backup-CompletedIssues {
 
     [CmdletBinding()]
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseSingularNouns", "Backup-CompletedIssues")]
     [Alias('archive-issues')]
     param(
         #######################################################################

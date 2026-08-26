@@ -15,6 +15,7 @@ README clean while preserving a history of past releases.
 
 ## Syntax
 
+
 ```powershell
 Backup-CompletedReleaseNotes -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -29,13 +30,13 @@ Backup-CompletedReleaseNotes -Path <String> [-UseHomeREADME] [-UseOneDriveREADME
 
 ## Examples
 
-### Backup-CompletedReleaseNotes -Path "C:\temp\release-archive.md"
+
 
 ```powershell
 Backup-CompletedReleaseNotes -Path "C:\temp\release-archive.md"
 ```
 
-### archive-releasenotes -Path ".\archive.md" -UseHomeREADME
+
 
 ```powershell
 archive-releasenotes -Path ".\archive.md" -UseHomeREADME

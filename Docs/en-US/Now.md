@@ -15,20 +15,21 @@ datetime calculations, formatting, and comparisons.
 
 ## Syntax
 
+
 ```powershell
 Now [<CommonParameters>]
 ```
 
 ## Examples
 
-### Now Returns the current system date and time as a DateTime object
+
 
 ```powershell
 Now
 Returns the current system date and time as a DateTime object
 ```
 
-### $timestamp = Now Stores the current date and time in a variable for later use
+
 
 ```powershell
 $timestamp = Now

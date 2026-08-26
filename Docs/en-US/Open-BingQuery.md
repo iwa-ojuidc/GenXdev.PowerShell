@@ -21,6 +21,7 @@ management, and keystroke automation.
 
 ## Syntax
 
+
 ```powershell
 Open-BingQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -78,21 +79,21 @@ Open-BingQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>]
 
 ## Examples
 
-### Open-BingQuery -Queries "PowerShell scripting" -Monitor 0 Opens a Bing search for "PowerShell scripting" on the default monitor.
+
 
 ```powershell
 Open-BingQuery -Queries "PowerShell scripting" -Monitor 0
 Opens a Bing search for "PowerShell scripting" on the default monitor.
 ```
 
-### bq "PowerShell scripting" -m 0 Opens a Bing search using the alias and short parameter names.
+
 
 ```powershell
 bq "PowerShell scripting" -m 0
 Opens a Bing search using the alias and short parameter names.
 ```
 
-### Open-BingQuery -Queries "machine learning" -Language "English" -Private Opens a private browsing session to search for "machine learning" with English language results.
+
 
 ```powershell
 Open-BingQuery -Queries "machine learning" -Language "English" -Private
@@ -100,7 +101,7 @@ Opens a private browsing session to search for "machine learning" with
 English language results.
 ```
 
-### "PowerShell", "automation", "scripting" | Open-BingQuery -All -Left Searches for multiple terms via pipeline and opens results in all installed browsers, positioning windows on the left side of the screen.
+
 
 ```powershell
 "PowerShell", "automation", "scripting" | Open-BingQuery -All -Left

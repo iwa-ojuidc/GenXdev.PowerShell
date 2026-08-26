@@ -17,6 +17,7 @@ commands with comprehensive parameter support for various AI backends.
 
 ## Syntax
 
+
 ```powershell
 Invoke-AIPowershellCommand -PowershellCmdline <String> [-ApiEndpoint <String>] [-ApiKey <String>] [-LLMQueryType <String>] [-Model <String>] [-NoSupportForJsonSchema] [-PromptForSettings] [<CommonParameters>]
 ```
@@ -35,21 +36,21 @@ Invoke-AIPowershellCommand -PowershellCmdline <String> [-ApiEndpoint <String>] [
 
 ## Examples
 
-### Invoke-AIPowershellCommand -Query "list all running processes" Generates a PowerShell command to list running processes
+
 
 ```powershell
 Invoke-AIPowershellCommand -Query "list all running processes"
 Generates a PowerShell command to list running processes
 ```
 
-### hint "list files modified today" Uses the alias to generate a command for finding files modified today.
+
 
 ```powershell
 hint "list files modified today"
 Uses the alias to generate a command for finding files modified today.
 ```
 
-### Invoke-AIPowershellCommand -Query "stop service" -Clipboard Generates a command to stop a service and copies it to clipboard.
+
 
 ```powershell
 Invoke-AIPowershellCommand -Query "stop service" -Clipboard

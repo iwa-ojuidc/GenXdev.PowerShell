@@ -19,6 +19,7 @@ management for both system and user-level Docker installations.
 
 ## Syntax
 
+
 ```powershell
 EnsureDockerDesktop [[-Monitor] <Int32>] [[-Width] <Int32>] [[-Height] <Int32>] [[-X] <Int32>] [[-Y] <Int32>] [[-KeysToSend] <String[]>] [[-SendKeyDelayMilliSeconds] <Int32>] [-AutoConsent] [-AutoConsentAllPackages] [-Bottom] [-Centered] [-ClearSession] [-FocusWindow] [-Force] [-Fullscreen] [-Left] [-NoBorders] [-NoDockerInitialization] [-RestoreFocus] [-Right] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-ShowWindow] [-SideBySide] [-SkipSession] [-Top] [<CommonParameters>]
 ```
@@ -59,19 +60,19 @@ EnsureDockerDesktop [[-Monitor] <Int32>] [[-Width] <Int32>] [[-Height] <Int32>] 
 
 ## Examples
 
-### EnsureDockerDesktop
+
 
 ```powershell
 EnsureDockerDesktop
 ```
 
-### EnsureDockerDesktop -ShowWindow -Centered -NoBorders
+
 
 ```powershell
 EnsureDockerDesktop -ShowWindow -Centered -NoBorders
 ```
 
-### EnsureDockerDesktop -ShowWindow -Monitor 1 -Left -Width 800 -Height 600
+
 
 ```powershell
 EnsureDockerDesktop -ShowWindow -Monitor 1 -Left -Width 800 -Height 600

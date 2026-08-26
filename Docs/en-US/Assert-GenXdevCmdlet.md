@@ -16,6 +16,7 @@ and can open files in Visual Studio Code or Visual Studio.
 
 ## Syntax
 
+
 ```powershell
 Assert-GenXdevCmdlet [[-CmdletName] <String>] [[-PromptKey] <String>] [[-Prompt] <String>] [-Code] [-FromScripts] [-Integrate] [-ModuleName <String[]>] [-NoLocal] [-OnlyPublished] [-VisualStudio] [<CommonParameters>]
 
@@ -40,13 +41,13 @@ Assert-GenXdevCmdlet [-EditPrompt] [<CommonParameters>]
 
 ## Examples
 
-### Assert-GenXdevCmdlet -CmdletName "Get-Something" -PromptKey "CheckDocs" -Code
+
 
 ```powershell
 Assert-GenXdevCmdlet -CmdletName "Get-Something" -PromptKey "CheckDocs" -Code
 ```
 
-### improvecmdlet Get-Something CheckDocs -c
+
 
 ```powershell
 improvecmdlet Get-Something CheckDocs -c

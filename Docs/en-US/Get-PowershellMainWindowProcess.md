@@ -18,13 +18,13 @@
 
 ## Syntax
 
+
 ```powershell
 Get-PowershellMainWindowProcess [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 $hostProcess = Get-PowershellMainWindowProcess

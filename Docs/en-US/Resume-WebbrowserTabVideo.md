@@ -16,19 +16,20 @@ automating video playback control in browser sessions.
 
 ## Syntax
 
+
 ```powershell
 Resume-WebbrowserTabVideo [<CommonParameters>]
 ```
 
 ## Examples
 
-### Resume-WebbrowserTabVideo
+
 
 ```powershell
 Resume-WebbrowserTabVideo
 ```
 
-### wbvideoplay
+
 
 ```powershell
 wbvideoplay

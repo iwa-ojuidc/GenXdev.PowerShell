@@ -16,6 +16,7 @@ directory to the session PATH so that 7z.exe can be invoked directly.
 
 ## Syntax
 
+
 ```powershell
 Ensure7Zip [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -30,7 +31,7 @@ Ensure7Zip [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParam
 
 ## Examples
 
-### Ensure7Zip 7z x -y "-oC:\Output" archive.7z
+
 
 ```powershell
 Ensure7Zip

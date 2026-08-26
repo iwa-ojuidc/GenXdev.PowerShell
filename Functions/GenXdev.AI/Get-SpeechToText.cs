@@ -1,8 +1,7 @@
 using System.Collections.Concurrent;
 using System.Management;
 using System.Management.Automation;
-using Whisper.net;
-using Whisper.net.Ggml;
+using GenXdev.AI.Whisper;
 
 namespace GenXdev.AI
 {
@@ -11,7 +10,7 @@ namespace GenXdev.AI
 .SYNOPSIS
 Converts audio files to text using OpenAI's Whisper speech recognition model.
 .DESCRIPTION
-Processes audio files and converts speech to text using the Whisper.NET library, which implements OpenAI's Whisper automatic speech recognition (ASR) system. It supports multiple languages, translation capabilities, and various transcription quality settings.
+Processes audio files and converts speech to text using whisper.cpp, a native implementation of OpenAI's Whisper automatic speech recognition (ASR) system. It supports multiple languages, translation capabilities, and various transcription quality settings. The bundled native libraries are built without AVX so they run on any x64 CPU.
 
 .LICENSE
 Copyright (C) 2026 René Vaessen / GenXdev
@@ -332,6 +331,11 @@ Returns SegmentData objects with precise timing information.
         // Thread-safe queue for storing verbose messages from background processing
         private readonly ConcurrentQueue<string> _verboseQueue = new();
 
+        // Thread-safe queue for transcription progress percentages. Whisper raises
+        // its progress callback on a native thread, and WriteProgress may only be
+        // called on the pipeline thread, so the value is handed over here.
+        private readonly ConcurrentQueue<int> _progressQueue = new();
+
         // Cancellation token source for aborting long-running operations
         private CancellationTokenSource _cts;
 
@@ -359,31 +363,9 @@ Returns SegmentData objects with precise timing information.
 
             base.BeginProcessing();
 
-            //if (!Avx.IsSupported || Environment.OSVersion.Version.Major == 10)
-            //{
-            //    RuntimeOptions.LoadedLibrary = null;
-            //    Environment.SetEnvironmentVariable("DOTNET_SYSTEM_GLOBALIZATION_INVARIANT", "false");
-            //    Environment.SetEnvironmentVariable("DOTNET_EnableWriteXorExecute", "1");
+             RegisterNativeProbeDirectories();
 
-            //    RuntimeOptions.LoadedLibrary = null; // critical
-
-            //    RuntimeOptions.RuntimeLibraryOrder = new List<RuntimeLibrary>
-            //    {
-            //        RuntimeLibrary.CpuNoAvx
-            //    };
-
-            //    System.Console.WriteLine("Using no-avx -> " + Whisper.net.LibraryLoader.RuntimeOptions.LibraryPath);
-            //}
-
-            //Whisper.net.LibraryLoader.RuntimeOptions.LibraryPath =
-            //    Path.Combine(this.GetGenXdevModuleBase("GenXdev"));
-
-            // # cuda12, openvino, vulkan, noavx, cpu
-
-            // WhisperRuntimeSelector.Initialize();
-
-            // Set default model directory if not specified or invalid
-            if (string.IsNullOrEmpty(ModelFileDirectoryPath) ||
+              if (string.IsNullOrEmpty(ModelFileDirectoryPath) ||
                 !Directory.Exists(ModelFileDirectoryPath))
             {
 
@@ -526,18 +508,12 @@ Returns SegmentData objects with precise timing information.
             // Initialize cancellation token for aborting operations
             _cts = new CancellationTokenSource();
 
-            // Construct full model file path
-            var ggmlType = ModelType;
+            // Route whisper's native logging into the verbose stream instead of
+            // stderr, where it would corrupt the pipeline output
+            WhisperInterop.SetLogHandler(message => _verboseQueue.Enqueue(message));
 
-            var modelFileName = Path.GetFullPath(
-                Path.Combine(ModelFileDirectoryPath, GetModelFileName(ModelType)));
-
-            // Download model if not already present
-            if (!File.Exists(modelFileName))
-            {
-
-                DownloadModel(modelFileName, ggmlType).GetAwaiter().GetResult();
-            }
+            // Locate the model, downloading it on first use
+            var modelFileName = EnsureModelAvailable(ModelType);
 
             // Initialize Whisper factory and processor
             _whisperFactory = WhisperFactory.FromPath(modelFileName);
@@ -765,6 +741,83 @@ Returns SegmentData objects with precise timing information.
         }
 
         /// <summary>
+        /// Decides how many threads to hand to whisper.
+        ///
+        /// ggml parallelises with OpenMP, so asking for more threads than the
+        /// machine has logical processors does not go faster - the workers contend
+        /// for the same cores and the extra scheduling makes it slower.
+        /// </summary>
+        /// <param name="physicalCoreCount">Physical cores detected via WMI</param>
+        /// <returns>Thread count to use</returns>
+        private int ResolveThreadCount(int physicalCoreCount)
+        {
+
+            var logical = Environment.ProcessorCount;
+
+            // WMI can come back empty on some systems
+            if (physicalCoreCount <= 0)
+            {
+
+                physicalCoreCount = Math.Max(1, logical / 2);
+            }
+
+            if (CpuThreads <= 0)
+            {
+
+                return Math.Max(1, Math.Min(physicalCoreCount, logical));
+            }
+
+            if (CpuThreads > logical)
+            {
+
+                WriteWarning(
+                    $"-CpuThreads {CpuThreads} exceeds the {logical} logical " +
+                    $"processors on this machine; using {logical}. " +
+                    $"Oversubscribing ggml's OpenMP pool slows transcription down.");
+
+                return logical;
+            }
+
+            return CpuThreads;
+        }
+
+        /// <summary>
+        /// Writes any queued transcription progress and native log lines.
+        ///
+        /// MUST only be called from the pipeline thread - WriteProgress and
+        /// WriteVerbose are thread-affine, which is exactly why the producers
+        /// (whisper's native progress callback and its log callback) enqueue
+        /// instead of writing.
+        /// </summary>
+        private void DrainProgressAndVerbose()
+        {
+
+            // Coalesce progress to the newest value rather than replaying every
+            // percentage point that arrived since the last drain
+            var latest = -1;
+
+            while (_progressQueue.TryDequeue(out var percent))
+            {
+                latest = percent;
+            }
+
+            if (latest >= 0)
+            {
+
+                WriteProgress(new ProgressRecord(
+                    1, "Transcribing", $"Progress: {latest}%")
+                {
+                    PercentComplete = Math.Min(100, Math.Max(0, latest))
+                });
+            }
+
+            while (_verboseQueue.TryDequeue(out var message))
+            {
+                WriteVerbose(message);
+            }
+        }
+
+        /// <summary>
         /// Processes an audio file and transcribes it to text segments
         /// </summary>
         /// <param name="filePath">Path to the audio file</param>
@@ -816,7 +869,18 @@ Returns SegmentData objects with precise timing information.
                 }
             });
 
-            System.Console.WriteLine("Processing audio file. Press Q to abort...");
+            // Only offer the keyboard abort when there is a real console to read
+            // from. Under a redirected stdin - a piped or scripted invocation -
+            // Console.KeyAvailable throws, which would otherwise break out of the
+            // loop and cancel a still-running transcription.
+            var canReadKeys = !System.Console.IsInputRedirected;
+
+            if (canReadKeys)
+            {
+
+                System.Console.WriteLine(
+                    "Processing audio file. Press Q to abort...");
+            }
 
             // Main processing loop with keyboard interrupt support
             while (!processingTask.IsCompleted)
@@ -826,8 +890,9 @@ Returns SegmentData objects with precise timing information.
                 {
 
                     // Check for Q key to abort processing
-                    if (System.Console.KeyAvailable &&
-                       System.Console.ReadKey(true).Key == ConsoleKey.Q)
+                    if (canReadKeys &&
+                        System.Console.KeyAvailable &&
+                        System.Console.ReadKey(true).Key == ConsoleKey.Q)
                     {
 
                         _cts.Cancel();
@@ -841,20 +906,24 @@ Returns SegmentData objects with precise timing information.
                         break;
                     }
 
+                    // This is the pipeline thread, so it is the only place the
+                    // queued progress and log lines may legally be written
+                    DrainProgressAndVerbose();
+
                     Thread.Sleep(100);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
-                    WriteError(new ErrorRecord(
-                        ex,
-                        "ProcessingLoopError",
-                        ErrorCategory.OperationStopped,
-                        null));
+                    // The console became unavailable mid-run; keep transcribing
+                    // without the abort key rather than dropping the results.
+                    canReadKeys = false;
 
-                    break;
+                    Thread.Sleep(100);
                 }
             }
+
+            DrainProgressAndVerbose();
 
             // Wait for processing task to complete with timeout
             bool taskCompleted = false;
@@ -976,14 +1045,10 @@ Returns SegmentData objects with precise timing information.
 
             // Set language and thread count
             builder.WithLanguage(LanguageIn)
-                   .WithThreads(CpuThreads > 0 ? CpuThreads : physicalCoreCount);
+                   .WithThreads(ResolveThreadCount(physicalCoreCount));
 
-            // Enable translation if language detection is active
-            if (MyInvocation.BoundParameters.ContainsKey("LanguageIn"))
-            {
-
-                builder.WithTranslate();
-            }
+            // Translation is driven solely by -WithTranslate below; specifying an
+            // input language used to silently force translation to English
 
             // Configure temperature for speech detection consistency
             if (Temperature.HasValue)
@@ -1016,14 +1081,10 @@ Returns SegmentData objects with precise timing information.
             if (WithProgress.IsPresent)
             {
 
-                builder.WithProgressHandler(progress =>
-                    WriteProgress(new ProgressRecord(
-                        1,
-                        "Processing",
-                        $"Progress: {progress}%")
-                    {
-                        PercentComplete = progress
-                    }));
+                // Whisper invokes this from a native thread inside whisper_full,
+                // so it may only enqueue - the main loop does the WriteProgress
+                builder.WithProgressHandler(
+                    progress => _progressQueue.Enqueue(progress));
             }
 
             if (SplitOnWord.IsPresent)
@@ -1091,32 +1152,125 @@ Returns SegmentData objects with precise timing information.
         }
 
         /// <summary>
-        /// Downloads a Whisper model file if not already present
+        /// Tells the native loader where this module keeps whisper.dll and the
+        /// ggml libraries.
         /// </summary>
-        /// <param name="fileName">Target file path for the model</param>
-        /// <param name="ggmlType">Model type to download</param>
-        private static async Task DownloadModel(string fileName, GgmlType ggmlType)
+        private void RegisterNativeProbeDirectories()
         {
 
-            System.Console.WriteLine($"Downloading Model {fileName}");
+            try
+            {
 
-            using var modelStream =
-                await WhisperGgmlDownloader.Default.GetGgmlModelAsync(ggmlType);
+                var moduleBase = MyInvocation?.MyCommand?.Module?.ModuleBase;
 
-            using var fileWriter = File.OpenWrite(fileName);
+                if (string.IsNullOrWhiteSpace(moduleBase))
+                {
 
-            await modelStream.CopyToAsync(fileWriter);
+                    moduleBase = SessionState?.Module?.ModuleBase;
+                }
+
+                if (!string.IsNullOrWhiteSpace(moduleBase))
+                {
+
+                    WhisperInterop.AddProbeDirectory(moduleBase);
+
+                    WhisperInterop.AddProbeDirectory(
+                        Path.Combine(moduleBase, "lib"));
+                }
+            }
+            catch (Exception ex)
+            {
+
+                // Not fatal - the resolver still probes the directory holding
+                // the assembly itself, which covers the normal layouts
+                WriteVerbose($"Could not resolve the module base: {ex.Message}");
+            }
         }
 
         /// <summary>
-        /// Generates the standard model filename for a given model type
+        /// Resolves the model file for a model type, downloading it on first use
         /// </summary>
         /// <param name="modelType">Whisper model type</param>
-        /// <returns>Model filename string</returns>
-        private static string GetModelFileName(GgmlType modelType)
+        /// <returns>Full path to the model file</returns>
+        private string EnsureModelAvailable(GgmlType modelType)
         {
 
-            return $"ggml-{modelType}.bin";
+            // Accept a model that is already on disk under either the canonical
+            // whisper.cpp name or the older name this cmdlet used to write
+            foreach (var candidate in modelType.GetModelFileNameCandidates())
+            {
+
+                var existing = Path.GetFullPath(
+                    Path.Combine(ModelFileDirectoryPath, candidate));
+
+                if (File.Exists(existing))
+                {
+
+                    WriteVerbose($"Using Whisper model: {existing}");
+
+                    return existing;
+                }
+            }
+
+            var modelFileName = Path.GetFullPath(Path.Combine(
+                ModelFileDirectoryPath, modelType.ToModelFileName()));
+
+            WriteVerbose($"Downloading Whisper model {modelType} to {modelFileName}");
+
+            System.Console.WriteLine(
+                $"Downloading Whisper model '{modelType.ToCanonicalName()}'...");
+
+            var activity =
+                $"Downloading Whisper model '{modelType.ToCanonicalName()}'";
+
+            // WriteProgress is thread-affine - it may only be called on the
+            // pipeline thread. So the download runs on a worker, its callback only
+            // enqueues, and this thread does the writing while it waits.
+            var progressQueue = new ConcurrentQueue<int>();
+
+            var downloadTask = Task.Run(() =>
+                WhisperGgmlDownloader.Default.DownloadModelAsync(
+                    modelType,
+                    modelFileName,
+                    percent => progressQueue.Enqueue(percent),
+                    _cts.Token));
+
+            var lastReported = -1;
+
+            while (!downloadTask.Wait(200))
+            {
+
+                // Coalesce to the newest value - the downloader reports every
+                // percent and replaying the backlog would just stutter the bar
+                var latest = -1;
+
+                while (progressQueue.TryDequeue(out var percent))
+                {
+                    latest = percent;
+                }
+
+                if (latest >= 0 && latest != lastReported)
+                {
+
+                    lastReported = latest;
+
+                    WriteProgress(new ProgressRecord(
+                        2, activity, $"{latest}% complete")
+                    {
+                        PercentComplete = latest
+                    });
+                }
+            }
+
+            // Surface any download failure now that the wait has finished
+            downloadTask.GetAwaiter().GetResult();
+
+            WriteProgress(new ProgressRecord(2, activity, "Completed")
+            {
+                RecordType = ProgressRecordType.Completed
+            });
+
+            return modelFileName;
         }
 
         #endregion

@@ -15,6 +15,7 @@ processes the file content through an LLM query and returns a boolean response.
 
 ## Syntax
 
+
 ```powershell
 Test-RefactorLLMSelection -RefactorDefinition <GenXdev.Helpers.RefactorDefinition> -Path <String> [<CommonParameters>]
 ```
@@ -28,13 +29,13 @@ Test-RefactorLLMSelection -RefactorDefinition <GenXdev.Helpers.RefactorDefinitio
 
 ## Examples
 
-### Test-RefactorLLMSelection -RefactorDefinition $refDef -Path "C:\source.ps1"
+
 
 ```powershell
 Test-RefactorLLMSelection -RefactorDefinition $refDef -Path "C:\source.ps1"
 ```
 
-### $def | Test-RefactorLLMSelection -Path source.ps1
+
 
 ```powershell
 $def | Test-RefactorLLMSelection -Path source.ps1

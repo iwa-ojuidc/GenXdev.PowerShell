@@ -16,6 +16,7 @@ defines the requested view.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLiteViewSchema -ConnectionString <String> [<CommonParameters>]
 
@@ -34,7 +35,7 @@ Get-SQLiteViewSchema -ViewName <String> [<CommonParameters>]
 
 ## Examples
 
-### Get-SQLiteViewSchema -DatabaseFilePath "C:\Databases\MyApp.sqlite" `                     -ViewName "CustomerOrders"
+
 
 ```powershell
 Get-SQLiteViewSchema -DatabaseFilePath "C:\Databases\MyApp.sqlite" `

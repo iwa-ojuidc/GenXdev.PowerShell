@@ -19,6 +19,7 @@ using the AllLanguages switch.
 
 ## Syntax
 
+
 ```powershell
 Remove-ImageMetaData [[-ImageDirectories] <String[]>] [[-Language] <String>] [[-PreferencesDatabasePath] <String>] [-AllLanguages] [-ClearSession] [-OnlyKeywords] [-OnlyObjects] [-OnlyPeople] [-OnlyScenes] [-Recurse] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -42,7 +43,7 @@ Remove-ImageMetaData [[-ImageDirectories] <String[]>] [[-Language] <String>] [[-
 
 ## Examples
 
-### Remove-ImageMetaData -ImageDirectories @("C:\Photos", "D:\MyImages") -Recurse Removes all metadata files for images in multiple directories and all subdirectories.
+
 
 ```powershell
 Remove-ImageMetaData -ImageDirectories @("C:\Photos", "D:\MyImages") -Recurse
@@ -50,7 +51,7 @@ Removes all metadata files for images in multiple directories and all
 subdirectories.
 ```
 
-### Remove-ImageMetaData -Recurse -OnlyKeywords Removes only description.json files from default system directories and subdirectories.
+
 
 ```powershell
 Remove-ImageMetaData -Recurse -OnlyKeywords
@@ -58,14 +59,14 @@ Removes only description.json files from default system directories and
 subdirectories.
 ```
 
-### Remove-ImageMetaData -OnlyPeople -ImageDirectories @(".\MyPhotos") Removes only people.json files from the MyPhotos directory.
+
 
 ```powershell
 Remove-ImageMetaData -OnlyPeople -ImageDirectories @(".\MyPhotos")
 Removes only people.json files from the MyPhotos directory.
 ```
 
-### Remove-ImageMetaData -Language "Spanish" -OnlyKeywords -Recurse Removes both English and Spanish description files recursively from default directories.
+
 
 ```powershell
 Remove-ImageMetaData -Language "Spanish" -OnlyKeywords -Recurse
@@ -73,7 +74,7 @@ Removes both English and Spanish description files recursively from default
 directories.
 ```
 
-### removeimagedata -AllLanguages -OnlyKeywords Uses alias to remove keyword files for all supported languages.
+
 
 ```powershell
 removeimagedata -AllLanguages -OnlyKeywords

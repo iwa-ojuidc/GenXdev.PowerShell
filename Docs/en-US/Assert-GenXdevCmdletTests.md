@@ -17,6 +17,7 @@ This function helps maintain and improve unit tests for GenXdev cmdlets by:
 
 ## Syntax
 
+
 ```powershell
 Assert-GenXdevCmdletTests -CmdletName <String> [[-Prompt] <String>] [[-PromptKey] <String>] [-AssertFailedTest] [-AutoConsent] [-AutoConsentAllPackages] [-ContinuationHandled] [-EditPrompt] [-FromScripts] [-SessionOnly] [<CommonParameters>]
 ```
@@ -38,17 +39,16 @@ Assert-GenXdevCmdletTests -CmdletName <String> [[-Prompt] <String>] [[-PromptKey
 
 ## Examples
 
-### Assert-GenXdevCmdletTests -CmdletName "Get-GenXDevModuleInfo" -EditPrompt
+
 
 ```powershell
 Assert-GenXdevCmdletTests -CmdletName "Get-GenXDevModuleInfo" -EditPrompt
 ```
 
-### improvecmdlettests Get-GenXDevModuleInfo -AssertFailedTest ##############################################################################
+
 
 ```powershell
 improvecmdlettests Get-GenXDevModuleInfo -AssertFailedTest
-##############################################################################
 ```
 
 ## Parameter Details

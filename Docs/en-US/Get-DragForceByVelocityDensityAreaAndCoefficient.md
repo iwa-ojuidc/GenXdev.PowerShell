@@ -13,6 +13,7 @@ Uses F = 1/2 C ρ A v².
 
 ## Syntax
 
+
 ```powershell
 Get-DragForceByVelocityDensityAreaAndCoefficient -VelocityInMetersPerSecond <Double> -DensityInKilogramsPerCubicMeter <Double> -AreaInSquareMeters <Double> -Coefficient <Double> [[-As] <String>] [<CommonParameters>]
 ```
@@ -29,7 +30,6 @@ Get-DragForceByVelocityDensityAreaAndCoefficient -VelocityInMetersPerSecond <Dou
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-DragForceByVelocityDensityAreaAndCoefficient -VelocityInMetersPerSecond 10 -DensityInKilogramsPerCubicMeter 1.225 -AreaInSquareMeters 1 -Coefficient 0.5 -As "poundforce"
@@ -37,7 +37,6 @@ Get-DragForceByVelocityDensityAreaAndCoefficient -VelocityInMetersPerSecond 10 -
 
 Calculates drag force using velocity 10 m/s, air density 1.225 kg/m³, area 1 m², and coefficient 0.5, outputting in poundforce.
 
-### Examples 2
 
 ```powershell
 Get-DragForceByVelocityDensityAreaAndCoefficient 20 1.225 2 0.3

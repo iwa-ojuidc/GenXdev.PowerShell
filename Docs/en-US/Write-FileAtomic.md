@@ -21,6 +21,7 @@
 
 ## Syntax
 
+
 ```powershell
 Write-FileAtomic -FilePath <String> [[-Data] <Byte[]>] [-DebounceMs <Int32>] [-MaxRetries <Int32>] [-RetryDelayMs <Int32>] [<CommonParameters>]
 ```
@@ -37,7 +38,6 @@ Write-FileAtomic -FilePath <String> [[-Data] <Byte[]>] [-DebounceMs <Int32>] [-M
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Write-FileAtomic -FilePath "data.bin" -Data $bytes
@@ -45,7 +45,6 @@ Write-FileAtomic -FilePath "data.bin" -Data $bytes
 
 Writes a byte array to data.bin atomically with default retry settings.
 
-### Examples 2
 
 ```powershell
 # Debounce: only the LAST write within 5 seconds actually hits disk
@@ -59,7 +58,6 @@ Start-Sleep -Seconds 6
 Rapidly writes 100 times but only the final payload (100) is persisted
 to disk after a 5-second quiet period.
 
-### Examples 3
 
 ```powershell
 Write-FileAtomic -FilePath "cache.dat" -Data $buffer `

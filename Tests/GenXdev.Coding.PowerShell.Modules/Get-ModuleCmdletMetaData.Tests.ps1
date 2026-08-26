@@ -11,7 +11,7 @@ Pester\BeforeAll {
     # GenXdev module auto-loads via GenXdev.psd1
 }
 
-Pester\Describe 'Get-ModuleCmdletMetaData — PSScriptAnalyzer' {
+Pester\Describe 'Get-ModuleCmdletMetaData — PSScriptAnalyzer' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\It 'should pass PSScriptAnalyzer rules' {
 
@@ -40,7 +40,7 @@ $message
     }
 }
 
-Pester\Describe 'Get-ModuleCmdletMetaData — returns all cmdlets in module' {
+Pester\Describe 'Get-ModuleCmdletMetaData — returns all cmdlets in module' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\BeforeAll {
         $Script:allResults = @(GenXdev\Get-ModuleCmdletMetaData -ModuleName 'GenXdev')
@@ -61,7 +61,7 @@ Pester\Describe 'Get-ModuleCmdletMetaData — returns all cmdlets in module' {
     }
 }
 
-Pester\Describe 'Get-ModuleCmdletMetaData — C# cmdlet (Find-Item)' {
+Pester\Describe 'Get-ModuleCmdletMetaData — C# cmdlet (Find-Item)' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\BeforeAll {
         $Script:allResults = @(GenXdev\Get-ModuleCmdletMetaData -ModuleName 'GenXdev')
@@ -153,7 +153,7 @@ Pester\Describe 'Get-ModuleCmdletMetaData — C# cmdlet (Find-Item)' {
     }
 }
 
-Pester\Describe 'Get-ModuleCmdletMetaData — script cmdlets' {
+Pester\Describe 'Get-ModuleCmdletMetaData — script cmdlets' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\BeforeAll {
         $Script:allResults = @(GenXdev\Get-ModuleCmdletMetaData -ModuleName 'GenXdev')
@@ -180,7 +180,7 @@ Pester\Describe 'Get-ModuleCmdletMetaData — script cmdlets' {
     }
 }
 
-Pester\Describe 'Get-ModuleCmdletMetaData — error handling' {
+Pester\Describe 'Get-ModuleCmdletMetaData — error handling' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\It 'errors for non-existent module' {
 
@@ -194,7 +194,7 @@ Pester\Describe 'Get-ModuleCmdletMetaData — error handling' {
     }
 }
 
-Pester\Describe 'Get-ModuleCmdletMetaData — pass-through parameters' {
+Pester\Describe 'Get-ModuleCmdletMetaData — pass-through parameters' -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
 
     Pester\BeforeAll {
         $Script:allResultsWithSkip = @(GenXdev\Get-ModuleCmdletMetaData `

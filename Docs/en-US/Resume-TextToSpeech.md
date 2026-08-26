@@ -18,20 +18,21 @@ calls will auto-resume as normal.
 
 ## Syntax
 
+
 ```powershell
 Resume-TextToSpeech [<CommonParameters>]
 ```
 
 ## Examples
 
-### PS C:\> say "Long text" ; Suspend-TextToSpeech ; Resume-TextToSpeech Starts speaking, pauses it, then resumes.
+
 
 ```powershell
 PS C:\> say "Long text" ; Suspend-TextToSpeech ; Resume-TextToSpeech
 Starts speaking, pauses it, then resumes.
 ```
 
-### PS C:\> Suspend-TextToSpeech; say "Urgent!" -Force; Resume-TextToSpeech Pauses ongoing speech, interrupts with urgent message, then resumes the original speech.
+
 
 ```powershell
 PS C:\> Suspend-TextToSpeech; say "Urgent!" -Force; Resume-TextToSpeech

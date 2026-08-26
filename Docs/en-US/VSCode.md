@@ -16,6 +16,7 @@ opening multiple files from terminal searches.
 
 ## Syntax
 
+
 ```powershell
 VSCode -FilePath <String[]> [-AutoConsent] [-AutoConsentAllPackages] [-Copilot] [-SessionOnly] [<CommonParameters>]
 ```
@@ -32,13 +33,13 @@ VSCode -FilePath <String[]> [-AutoConsent] [-AutoConsentAllPackages] [-Copilot] 
 
 ## Examples
 
-### VSCode -FilePath "C:\path\to\file.txt" -Copilot
+
 
 ```powershell
 VSCode -FilePath "C:\path\to\file.txt" -Copilot
 ```
 
-### Get-ChildItem *.js -Recurse | VSCode
+
 
 ```powershell
 Get-ChildItem *.js -Recurse | VSCode

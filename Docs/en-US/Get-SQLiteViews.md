@@ -16,6 +16,7 @@ connection string or a direct path to the database file.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLiteViews -ConnectionString <String> [<CommonParameters>]
 
@@ -31,13 +32,13 @@ Get-SQLiteViews -DatabaseFilePath <String> [<CommonParameters>]
 
 ## Examples
 
-### Get-SQLiteViews -DatabaseFilePath "C:\Databases\MyDatabase.sqlite"
+
 
 ```powershell
 Get-SQLiteViews -DatabaseFilePath "C:\Databases\MyDatabase.sqlite"
 ```
 
-### s -ConnectionString "Data Source=C:\Databases\MyDatabase.sqlite;Version=3;"
+
 
 ```powershell
 s -ConnectionString "Data Source=C:\Databases\MyDatabase.sqlite;Version=3;"

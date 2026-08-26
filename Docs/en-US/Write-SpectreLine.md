@@ -15,13 +15,14 @@ class that provides consistent output formatting.
 
 ## Syntax
 
+
 ```powershell
 Write-SpectreLine [<CommonParameters>]
 ```
 
 ## Examples
 
-### Write-SpectreLine Writes a single blank line to the console
+
 
 ```powershell
 Write-SpectreLine

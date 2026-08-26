@@ -15,6 +15,7 @@ with 'refactor_set_'. The function deserializes matching sets into objects.
 
 ## Syntax
 
+
 ```powershell
 Get-Refactor [[-Name] <String[]>] [-ClearSession] [-DefaultValue <String>] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -32,14 +33,14 @@ Get-Refactor [[-Name] <String[]>] [-ClearSession] [-DefaultValue <String>] [-Pre
 
 ## Examples
 
-### Get-Refactor -Name "CodeStyle*" Returns refactor definitions matching pattern "CodeStyle*"
+
 
 ```powershell
 Get-Refactor -Name "CodeStyle*"
 Returns refactor definitions matching pattern "CodeStyle*"
 ```
 
-### refactor "UnitTest" Uses alias to find refactor definitions containing "UnitTest"
+
 
 ```powershell
 refactor "UnitTest"

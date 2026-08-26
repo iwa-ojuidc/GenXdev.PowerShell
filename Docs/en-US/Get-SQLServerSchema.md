@@ -16,6 +16,7 @@ connection string or database name with server parameters.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLServerSchema -ConnectionString <String> [<CommonParameters>]
 
@@ -32,13 +33,13 @@ Get-SQLServerSchema -DatabaseName <String> [[-Server] <String>] [<CommonParamete
 
 ## Examples
 
-### Get-SQLServerSchema -DatabaseName "inventory" -Server "localhost"
+
 
 ```powershell
 Get-SQLServerSchema -DatabaseName "inventory" -Server "localhost"
 ```
 
-### Get-SQLServerSchema -ConnectionString "Server=localhost;Database=inventory;Integrated Security=true;"
+
 
 ```powershell
 Get-SQLServerSchema -ConnectionString "Server=localhost;Database=inventory;Integrated Security=true;"

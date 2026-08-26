@@ -15,6 +15,7 @@ file doesn't exist.
 
 ## Syntax
 
+
 ```powershell
 ReadJsonWithRetry -FilePath <String> [[-MaxRetries] <Int32>] [[-RetryDelayMs] <Int32>] [-AsHashtable] [<CommonParameters>]
 ```

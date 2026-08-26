@@ -14,6 +14,7 @@ in yyyyMMdd format. The line can be formatted as code and optionally displayed.
 
 ## Syntax
 
+
 ```powershell
 Add-ReleaseNoteLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveCompleted] [-ArchiveFilePath <String>] [-Ascending] [-Code] [-ExcludeCompleted] [-First <Int32>] [-OnlyCompleted] [-Show] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -38,13 +39,13 @@ Add-ReleaseNoteLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveCo
 
 ## Examples
 
-### Add-ReleaseNoteLineToREADME -Line "Added new Git ReleaseNote"
+
 
 ```powershell
 Add-ReleaseNoteLineToREADME -Line "Added new Git ReleaseNote"
 ```
 
-### ReleaseNote "Added new Git ReleaseNote" -Code -Show
+
 
 ```powershell
 ReleaseNote "Added new Git ReleaseNote" -Code -Show

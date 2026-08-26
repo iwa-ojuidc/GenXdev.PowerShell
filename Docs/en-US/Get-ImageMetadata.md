@@ -16,6 +16,7 @@ in their EXIF data (JPEG, TIFF) as well as PNG metadata.
 
 ## Syntax
 
+
 ```powershell
 Get-ImageMetadata -ImagePath <String> [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -31,19 +32,19 @@ Get-ImageMetadata -ImagePath <String> [-AutoConsent] [-AutoConsentAllPackages] [
 
 ## Examples
 
-### Get-ImageMetadata -ImagePath "C:\Pictures\vacation.jpg"
+
 
 ```powershell
 Get-ImageMetadata -ImagePath "C:\Pictures\vacation.jpg"
 ```
 
-### "C:\Pictures\vacation.jpg" | Get-ImageMetadata
+
 
 ```powershell
 "C:\Pictures\vacation.jpg" | Get-ImageMetadata
 ```
 
-### Get-ImageMetadata -ImagePath "C:\Pictures\photo.webp" -AutoConsentAllPackages
+
 
 ```powershell
 Get-ImageMetadata -ImagePath "C:\Pictures\photo.webp" -AutoConsentAllPackages

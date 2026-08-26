@@ -13,6 +13,7 @@ Uses v = sqrt(2 m g / (ρ A C)).
 
 ## Syntax
 
+
 ```powershell
 Get-TerminalVelocityByMassGravityDensityAndArea -MassInKilograms <Double> [[-GravityInMetersPerSecondSquared] <Double>] -DensityInKilogramsPerCubicMeter <Double> -AreaInSquareMeters <Double> [[-DragCoefficient] <Double>] [[-As] <String>] [<CommonParameters>]
 ```
@@ -30,7 +31,6 @@ Get-TerminalVelocityByMassGravityDensityAndArea -MassInKilograms <Double> [[-Gra
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-TerminalVelocityByMassGravityDensityAndArea -MassInKilograms 80 -DensityInKilogramsPerCubicMeter 1.225 -AreaInSquareMeters 0.7 -DragCoefficient 1.0 -As "mph"
@@ -38,7 +38,6 @@ Get-TerminalVelocityByMassGravityDensityAndArea -MassInKilograms 80 -DensityInKi
 
 Calculates the terminal velocity for a mass of 80 kg in air with a drag coefficient of 1.0, outputting the result in mph.
 
-### Examples 2
 
 ```powershell
 Get-TerminalVelocityByMassGravityDensityAndArea 70 1.225 0.8 0.8

@@ -20,6 +20,7 @@ Provides comprehensive management of refactoring sets by:
 
 ## Syntax
 
+
 ```powershell
 Update-Refactor [[-Name] <String[]>] [<CommonParameters>]
 
@@ -78,20 +79,20 @@ Update-Refactor [[-FilesToAdd] <IO.FileInfo[]>] [[-FilesToRemove] <IO.FileInfo[]
 
 ## Examples
 
-### Update-Refactor -Name "CodeCleanup" -FilesToAdd ".\src\*.cs" `     -CleanUpDeletedFiles -PerformAutoSelections -ReprocessModifiedFiles
+
 
 ```powershell
 Update-Refactor -Name "CodeCleanup" -FilesToAdd ".\src\*.cs" `
     -CleanUpDeletedFiles -PerformAutoSelections -ReprocessModifiedFiles
 ```
 
-### Get-Refactor "MyRefactor" | Update-Refactor -Reset -Clear
+
 
 ```powershell
 Get-Refactor "MyRefactor" | Update-Refactor -Reset -Clear
 ```
 
-### updaterefactor * -Clear -Reset
+
 
 ```powershell
 updaterefactor * -Clear -Reset

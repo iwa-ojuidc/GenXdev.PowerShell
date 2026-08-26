@@ -13,6 +13,7 @@ Uses m = - (image distance / object distance).
 
 ## Syntax
 
+
 ```powershell
 Get-MagnificationByObjectDistanceAndImageDistance -ObjectDistanceInMeters <Double> -ImageDistanceInMeters <Double> [<CommonParameters>]
 ```
@@ -26,7 +27,6 @@ Get-MagnificationByObjectDistanceAndImageDistance -ObjectDistanceInMeters <Doubl
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-MagnificationByObjectDistanceAndImageDistance -ObjectDistanceInMeters 0.5 -ImageDistanceInMeters 1
@@ -34,7 +34,6 @@ Get-MagnificationByObjectDistanceAndImageDistance -ObjectDistanceInMeters 0.5 -I
 
 Calculates magnification with object distance 0.5m and image distance 1m.
 
-### Examples 2
 
 ```powershell
 Get-MagnificationByObjectDistanceAndImageDistance 0.3 0.6

@@ -15,6 +15,7 @@ database and controlling the amount of data retrieved through the Count paramete
 
 ## Syntax
 
+
 ```powershell
 Get-SQLiteTableData -ConnectionString <String> [<CommonParameters>]
 
@@ -34,13 +35,13 @@ Get-SQLiteTableData -TableName <String> [[-Count] <Int32>] [<CommonParameters>]
 
 ## Examples
 
-### Get-SQLiteTableData -DatabaseFilePath "C:\data\users.db" -TableName "Employees" -Count 50
+
 
 ```powershell
 Get-SQLiteTableData -DatabaseFilePath "C:\data\users.db" -TableName "Employees" -Count 50
 ```
 
-### Get-SQLiteTableData "C:\data\users.db" "Employees"
+
 
 ```powershell
 Get-SQLiteTableData "C:\data\users.db" "Employees"

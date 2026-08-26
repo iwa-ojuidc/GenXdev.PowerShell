@@ -15,6 +15,7 @@ windows and background processes.
 
 ## Syntax
 
+
 ```powershell
 Close-Webbrowser [-Chrome] [-Chromium] [-Edge] [-Firefox] [<CommonParameters>]
 
@@ -37,14 +38,14 @@ Close-Webbrowser [-All] [-Headless] [-IncludeBackgroundProcesses] [-PlayWright] 
 
 ## Examples
 
-### Close-Webbrowser -Chrome -Firefox -IncludeBackgroundProcesses Closes all Chrome and Firefox instances including background processes
+
 
 ```powershell
 Close-Webbrowser -Chrome -Firefox -IncludeBackgroundProcesses
 Closes all Chrome and Firefox instances including background processes
 ```
 
-### wbc -a -bg Closes all browser instances including background processes using aliases
+
 
 ```powershell
 wbc -a -bg

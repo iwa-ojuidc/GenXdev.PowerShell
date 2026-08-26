@@ -16,6 +16,7 @@ Archive's Wayback Machine service.
 
 ## Syntax
 
+
 ```powershell
 Open-WaybackMachineSiteInfo -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -73,14 +74,14 @@ Open-WaybackMachineSiteInfo -Queries <String[]> [[-Language] <String>] [-AcceptL
 
 ## Examples
 
-### Open-WaybackMachineSiteInfo -Queries "www.example.com" -Monitor 0 Opens the Wayback Machine archive for example.com on the default monitor.
+
 
 ```powershell
 Open-WaybackMachineSiteInfo -Queries "www.example.com" -Monitor 0
 Opens the Wayback Machine archive for example.com on the default monitor.
 ```
 
-### wayback example.com -mon -1 Opens the Wayback Machine archive for example.com using aliases with monitor positioning discarded.
+
 
 ```powershell
 wayback example.com -mon -1
@@ -88,7 +89,7 @@ Opens the Wayback Machine archive for example.com using aliases with monitor
 positioning discarded.
 ```
 
-### Open-WaybackMachineSiteInfo -Queries "microsoft.com" -Chrome -Private Opens the Wayback Machine archive for microsoft.com in Chrome's incognito mode.
+
 
 ```powershell
 Open-WaybackMachineSiteInfo -Queries "microsoft.com" -Chrome -Private

@@ -16,6 +16,7 @@
 
 ## Syntax
 
+
 ```powershell
 Remove-GenXdevPreference -Name <String> [-AllMachines] [-ClearSession] [-PreferencesDatabasePath <String>] [-RemoveDefault] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -34,7 +35,6 @@ Remove-GenXdevPreference -Name <String> [-AllMachines] [-ClearSession] [-Prefere
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Remove-GenXdevPreference -Name "Theme"
@@ -42,7 +42,6 @@ Remove-GenXdevPreference -Name "Theme"
 
 Removes the "Theme" preference from the local store only.
 
-### Examples 2
 
 ```powershell
 removePreference "Theme" -RemoveDefault -AllMachines

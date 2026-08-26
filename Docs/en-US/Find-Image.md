@@ -32,6 +32,7 @@ browser.
 
 ## Syntax
 
+
 ```powershell
 Find-Image [[-Any] <String[]>] [[-Name] <String[]>] [-AcceptLang <String>] [-All] [-AllDrives] [-ApplicationMode] [-AttributesToSkip <IO.FileAttributes>] [-AutoAnimateRectangles] [-AutoScrollPixelsPerSecond <Int32>] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-Description <String>] [-DescriptionSearch <String[]>] [-DisablePopupBlocker] [-Edge] [-EmbedImages] [-Firefox] [-FocusWindow] [-FollowSymlinkAndJunctions] [-Force] [-FullScreen] [-GeoDistanceInMeters <Double>] [-GeoLocation <Double[]>] [-HasExplicitContent] [-HasNudity] [-Headless] [-Height <Int32>] [-ImageUrlPrefix <String>] [-Interactive] [-KeysToSend <String[]>] [-Keywords <String[]>] [-Language <String>] [-Left] [-MaxFileSize <Int64>] [-Maximize] [-MaxRecursionDepth <Int32>] [-MaxSearchUpDepth <Int32>] [-MetaCameraMake <String[]>] [-MetaCameraModel <String[]>] [-MetaDateTaken <DateTime[]>] [-MetaExposureTime <Double[]>] [-MetaFNumber <Double[]>] [-MetaFocalLength <Double[]>] [-MetaGPSAltitude <Double[]>] [-MetaGPSLatitude <Double[]>] [-MetaGPSLongitude <Double[]>] [-MetaHeight <Int32[]>] [-MetaISO <Int32[]>] [-MetaWidth <Int32[]>] [-MinConfidenceRatio <Double>] [-MinFileSize <Int64>] [-ModifiedAfter <DateTime>] [-ModifiedBefore <DateTime>] [-Monitor <Int32>] [-NeverRebuild] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-NoExplicitContent] [-NoFallback] [-NoNudity] [-NoRecurse] [-Objects <String[]>] [-OnlyReturnHtml] [-OverallMood <String[]>] [-PassThru] [-People <String[]>] [-PictureType <String[]>] [-PlayWright] [-PreferencesDatabasePath <String>] [-Private] [-RestoreFocus] [-Right] [-Scenes <String[]>] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-ShowInBrowser] [-ShowOnlyPictures] [-SideBySide] [-SingleColumnMode] [-SkipSession] [-StyleType <String[]>] [-Title <String>] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -139,28 +140,28 @@ Find-Image [[-Any] <String[]>] [[-Name] <String[]>] [-AcceptLang <String>] [-All
 
 ## Examples
 
-### Find-Image -Keywords "cat","dog" -Name "C:\Photos\*" Searches for images containing 'cat' OR 'dog' keywords and returns the image objects.
+
 
 ```powershell
 Find-Image -Keywords "cat","dog" -Name "C:\Photos\*"
 Searches for images containing 'cat' OR 'dog' keywords and returns the image objects.
 ```
 
-### findimages cat,dog "C:\Photos" Same as above using the alias and positional parameters.
+
 
 ```powershell
 findimages cat,dog "C:\Photos"
 Same as above using the alias and positional parameters.
 ```
 
-### Find-Image -People "John","Jane" -Name "C:\Family\*" -ShowInBrowser Searches for photos containing John OR Jane and displays them in a web gallery.
+
 
 ```powershell
 Find-Image -People "John","Jane" -Name "C:\Family\*" -ShowInBrowser
 Searches for photos containing John OR Jane and displays them in a web gallery.
 ```
 
-### Find-Image -Keywords "vacation" -People "John" -Objects "beach" -Name "C:\Photos\*" Searches for images that contain vacation keywords AND John as a person AND beach objects. All three criteria must be met (AND logic between parameter types).
+
 
 ```powershell
 Find-Image -Keywords "vacation" -People "John" -Objects "beach" -Name "C:\Photos\*"
@@ -168,7 +169,7 @@ Searches for images that contain vacation keywords AND John as a person AND beac
 All three criteria must be met (AND logic between parameter types).
 ```
 
-### Find-Image -MetaISO 100,800 -MetaFNumber 1.4,2.8 -Name "C:\Photos\*" Finds images with ISO between 100-800 AND aperture (F-number) between f/1.4-f/2.8. EXIF parameters use range filtering with [min, max] values.
+
 
 ```powershell
 Find-Image -MetaISO 100,800 -MetaFNumber 1.4,2.8 -Name "C:\Photos\*"
@@ -176,56 +177,56 @@ Finds images with ISO between 100-800 AND aperture (F-number) between f/1.4-f/2.
 EXIF parameters use range filtering with [min, max] values.
 ```
 
-### Find-Image -Objects "car","bicycle" -Name "C:\Photos\*" -ShowInBrowser -PassThru Searches for images containing detected cars or bicycles, displays them in a gallery, and also returns the objects.
+
 
 ```powershell
 Find-Image -Objects "car","bicycle" -Name "C:\Photos\*" -ShowInBrowser -PassThru
 Searches for images containing detected cars or bicycles, displays them in a gallery, and also returns the objects.
 ```
 
-### findimages -Language "Spanish" -Keywords "playa","sol" -Name "C:\Vacations\*" -ShowInBrowser Searches for images with Spanish metadata containing the keywords "playa" (beach) or "sol" (sun) and displays in gallery.
+
 
 ```powershell
 findimages -Language "Spanish" -Keywords "playa","sol" -Name "C:\Vacations\*" -ShowInBrowser
 Searches for images with Spanish metadata containing the keywords "playa" (beach) or "sol" (sun) and displays in gallery.
 ```
 
-### Find-Image -Keywords "vacation" -People "John" -Objects "beach*" -Name "C:\Photos\*" Searches for vacation photos with John in them that also contain beach-related objects and returns the data objects.
+
 
 ```powershell
 Find-Image -Keywords "vacation" -People "John" -Objects "beach*" -Name "C:\Photos\*"
 Searches for vacation photos with John in them that also contain beach-related objects and returns the data objects.
 ```
 
-### Find-Image -Scenes "beach","forest","mountain*" -Name "C:\Nature\*" -ShowInBrowser Searches for images classified as beach, forest, or mountain scenes and displays them in a gallery.
+
 
 ```powershell
 Find-Image -Scenes "beach","forest","mountain*" -Name "C:\Nature\*" -ShowInBrowser
 Searches for images classified as beach, forest, or mountain scenes and displays them in a gallery.
 ```
 
-### Find-Image -NoNudity -NoExplicitContent -Name "C:\Family\*" -ShowInBrowser Searches for family-safe images (no nudity or explicit content) and displays them in a gallery.
+
 
 ```powershell
 Find-Image -NoNudity -NoExplicitContent -Name "C:\Family\*" -ShowInBrowser
 Searches for family-safe images (no nudity or explicit content) and displays them in a gallery.
 ```
 
-### Find-Image -PictureType "daylight" -OverallMood "calm" -Name "C:\Photos\*" Searches for daylight photos with a calm/peaceful mood and returns the image objects.
+
 
 ```powershell
 Find-Image -PictureType "daylight" -OverallMood "calm" -Name "C:\Photos\*"
 Searches for daylight photos with a calm/peaceful mood and returns the image objects.
 ```
 
-### findimages -StyleType "casual" -HasNudity -Name "C:\Art\*" Searches for casual style images that contain nudity and returns the data objects.
+
 
 ```powershell
 findimages -StyleType "casual" -HasNudity -Name "C:\Art\*"
 Searches for casual style images that contain nudity and returns the data objects.
 ```
 
-### Find-Image -Scenes "beach" -MinConfidenceRatio 0.75 -Name "C:\Photos\*" Searches for beach scenes with confidence level of 75% or higher and filters people, scenes, and objects data by confidence.
+
 
 ```powershell
 Find-Image -Scenes "beach" -MinConfidenceRatio 0.75 -Name "C:\Photos\*"

@@ -16,6 +16,7 @@ token limits for output length.
 
 ## Syntax
 
+
 ```powershell
 Invoke-QueryImageContent -Query <String> -ImagePath <String> [[-Instructions] <String>] [-ApiEndpoint <String>] [-ApiKey <String>] [-AudioContextSize <Int32>] [-AudioTemperature <Double>] [-AutoConsent] [-AutoConsentAllPackages] [-ChatOnce] [-ClearSession] [-ContinueLast] [-CpuThreads <Int32>] [-DontAddThoughtsToHistory] [-DontSpeak] [-DontSpeakThoughts] [-EntropyThreshold <Double>] [-ExposedCmdLets <String[]>] [-Functions <String[]>] [-ImageDetail <String>] [-IncludeThoughts] [-Language <String>] [-LengthPenalty <Double>] [-LLMQueryType <String>] [-LogProbThreshold <Double>] [-MarkupBlocksTypeFilter <String[]>] [-MaxToolcallBackLength <Int32>] [-Model <String>] [-NoConfirmationToolFunctionNames <String[]>] [-NoContext] [-NoSessionCaching] [-NoSpeechThreshold <Double>] [-NoSupportForJsonSchema] [-NoVOX] [-OnlyResponses] [-OutputMarkdownBlocksOnly] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-ResponseFormat <String>] [-SessionOnly] [-SilenceThreshold <Double>] [-SkipSession] [-Speak] [-SpeakThoughts] [-SuppressRegex <String>] [-Temperature <Double>] [-TemperatureResponse <Double>] [-TimeoutSeconds <Int32>] [-UseDesktopAudioCapture] [-WithBeamSearchSamplingStrategy] [<CommonParameters>]
 ```
@@ -77,7 +78,7 @@ Invoke-QueryImageContent -Query <String> -ImagePath <String> [[-Instructions] <S
 
 ## Examples
 
-### Invoke-QueryImageContent `     -Query "What objects are in this image?" `     -ImagePath "C:\Images\sample.jpg" `     -Temperature 0.01 Analyzes an image with specific temperature and token limits.
+
 
 ```powershell
 Invoke-QueryImageContent `
@@ -87,13 +88,13 @@ Invoke-QueryImageContent `
 Analyzes an image with specific temperature and token limits.
 ```
 
-### Invoke-QueryImageContent -Query "Describe this image" -ImagePath "photo.webp" -AutoConsentAllPackages
+
 
 ```powershell
 Invoke-QueryImageContent -Query "Describe this image" -ImagePath "photo.webp" -AutoConsentAllPackages
 ```
 
-### Query-Image "Describe this image" "C:\Images\photo.jpg" Simple image analysis using alias and positional parameters.
+
 
 ```powershell
 Query-Image "Describe this image" "C:\Images\photo.jpg"

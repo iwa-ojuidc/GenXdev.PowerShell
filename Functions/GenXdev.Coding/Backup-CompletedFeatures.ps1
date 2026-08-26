@@ -42,6 +42,7 @@ archive-features -Path ".\archive.md" -UseHomeREADME
 function Backup-CompletedFeatures {
 
     [CmdletBinding()]
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseSingularNouns", "Backup-CompletedFeatures")]
     [Alias('archive-features')]
     param(
         #######################################################################

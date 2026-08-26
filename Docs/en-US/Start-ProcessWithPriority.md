@@ -16,6 +16,7 @@
 
 ## Syntax
 
+
 ```powershell
 Start-ProcessWithPriority -FilePath <String> [[-ArgumentList] <String[]>] [[-Priority] <String>] [-NoWait] [-PassThru] [<CommonParameters>]
 ```
@@ -32,7 +33,6 @@ Start-ProcessWithPriority -FilePath <String> [[-ArgumentList] <String[]>] [[-Pri
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Start-ProcessWithPriority -FilePath "notepad.exe" -Priority "Low" -NoWait
@@ -40,7 +40,6 @@ Start-ProcessWithPriority -FilePath "notepad.exe" -Priority "Low" -NoWait
 
 Starts Notepad with low priority and returns immediately.
 
-### Examples 2
 
 ```powershell
 nice notepad.exe -Priority High

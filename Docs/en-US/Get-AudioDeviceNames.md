@@ -13,6 +13,7 @@ Enumerates audio devices that can be used with other cmdlets that accept an Audi
 
 ## Syntax
 
+
 ```powershell
 Get-AudioDeviceNames [-Passthru] [-UseDesktopAudioCapture] [<CommonParameters>]
 ```
@@ -26,7 +27,6 @@ Get-AudioDeviceNames [-Passthru] [-UseDesktopAudioCapture] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-AudioDeviceNames
@@ -34,7 +34,6 @@ Get-AudioDeviceNames
 
 Retrieves a list of available microphone device names.
 
-### Examples 2
 
 ```powershell
 Get-AudioDeviceNames -UseDesktopAudioCapture
@@ -42,7 +41,6 @@ Get-AudioDeviceNames -UseDesktopAudioCapture
 
 Retrieves a list of available desktop audio capture device names.
 
-### Examples 3
 
 ```powershell
 Get-AudioDeviceNames -Passthru

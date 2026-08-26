@@ -14,6 +14,7 @@ related:) in a web browser for the specified domain(s).
 
 ## Syntax
 
+
 ```powershell
 Open-GoogleSiteInfo -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -71,13 +72,13 @@ Open-GoogleSiteInfo -Queries <String[]> [[-Language] <String>] [-AcceptLang <Str
 
 ## Examples
 
-### Open-GoogleSiteInfo -Queries "example.com" -Monitor 0
+
 
 ```powershell
 Open-GoogleSiteInfo -Queries "example.com" -Monitor 0
 ```
 
-### "example.com" | Open-GoogleSiteInfo -mon -1
+
 
 ```powershell
 "example.com" | Open-GoogleSiteInfo -mon -1

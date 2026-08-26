@@ -15,6 +15,7 @@ column definitions including names, types, nullable status, and default values.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLServerTableSchema -ConnectionString <String> [<CommonParameters>]
 
@@ -34,14 +35,14 @@ Get-SQLServerTableSchema -TableName <String> [<CommonParameters>]
 
 ## Examples
 
-### Get-SQLServerTableSchema -DatabaseName "mydb" -Server "localhost" `     -TableName "Users"
+
 
 ```powershell
 Get-SQLServerTableSchema -DatabaseName "mydb" -Server "localhost" `
     -TableName "Users"
 ```
 
-### Get-SQLServerTableSchema -ConnectionString "Server=localhost;Database=mydb;Integrated Security=true" `     -TableName "Products"
+
 
 ```powershell
 Get-SQLServerTableSchema -ConnectionString "Server=localhost;Database=mydb;Integrated Security=true" `

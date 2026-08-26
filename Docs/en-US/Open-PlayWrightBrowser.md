@@ -33,6 +33,7 @@ $Global:GenXdevPlaywright for use by other cmdlets.
 
 ## Syntax
 
+
 ```powershell
 Open-PlayWrightBrowser [[-BrowserType] <String>] [-AcceptLang <String>] [-AutoConsent] [-AutoConsentAllPackages] [-Bottom] [-Centered] [-ClearSession] [-FocusWindow] [-Force] [-Fullscreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Minimize] [-Monitor <Int32>] [-NoBorders] [-OnlyOutputCoords] [-PassThru] [-Proxy <String>] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -80,7 +81,7 @@ Open-PlayWrightBrowser [[-BrowserType] <String>] [-AcceptLang <String>] [-AutoCo
 
 ## Examples
 
-### Open-PlayWrightBrowser Launches your OS-installed Chrome or Edge (auto-detected) with a persistent profile and anti-detection measures.
+
 
 ```powershell
 Open-PlayWrightBrowser
@@ -88,28 +89,28 @@ Launches your OS-installed Chrome or Edge (auto-detected) with a
 persistent profile and anti-detection measures.
 ```
 
-### Open-PlayWrightBrowser -BrowserType EdgeNormal Launches Microsoft Edge via Playwright's Channel API.
+
 
 ```powershell
 Open-PlayWrightBrowser -BrowserType EdgeNormal
 Launches Microsoft Edge via Playwright's Channel API.
 ```
 
-### Open-PlayWrightBrowser -BrowserType ChromiumPlaywright Uses the bundled Playwright Chromium binary.
+
 
 ```powershell
 Open-PlayWrightBrowser -BrowserType ChromiumPlaywright
 Uses the bundled Playwright Chromium binary.
 ```
 
-### Open-PlayWrightBrowser -BrowserType FirefoxPlaywright -Headless Launches the bundled Firefox in headless mode.
+
 
 ```powershell
 Open-PlayWrightBrowser -BrowserType FirefoxPlaywright -Headless
 Launches the bundled Firefox in headless mode.
 ```
 
-### Open-PlayWrightBrowser -Width 1280 -Height 720 -Force Restarts the browser with a 1280x720 viewport.
+
 
 ```powershell
 Open-PlayWrightBrowser -Width 1280 -Height 720 -Force

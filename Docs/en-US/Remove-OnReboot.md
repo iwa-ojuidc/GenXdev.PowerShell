@@ -17,6 +17,7 @@
 
 ## Syntax
 
+
 ```powershell
 Remove-OnReboot -Path <String[]> [-MarkInPlace] [<CommonParameters>]
 ```
@@ -30,7 +31,6 @@ Remove-OnReboot -Path <String[]> [-MarkInPlace] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Remove-OnReboot -Path "C:\temp\locked-file.txt"
@@ -38,7 +38,6 @@ Remove-OnReboot -Path "C:\temp\locked-file.txt"
 
 Marks a locked file for deletion during the next system boot.
 
-### Examples 2
 
 ```powershell
 "file1.txt","file2.txt" | Remove-OnReboot -MarkInPlace

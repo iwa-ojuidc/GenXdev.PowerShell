@@ -15,6 +15,7 @@ OneDrive directory.
 
 ## Syntax
 
+
 ```powershell
 Get-Features [[-First] <Int32>] [-Ascending] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -31,7 +32,7 @@ Get-Features [[-First] <Int32>] [-Ascending] [-SortByDate] [-UseHomeREADME] [-Us
 
 ## Examples
 
-### Features -UseHomeREADME
+
 
 ```powershell
 Features -UseHomeREADME

@@ -18,13 +18,13 @@
 
 ## Syntax
 
+
 ```powershell
 Get-DefaultWebbrowser [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-DefaultWebbrowser | Format-List
@@ -32,7 +32,6 @@ Get-DefaultWebbrowser | Format-List
 
 Get detailed information about the default browser.
 
-### Examples 2
 
 ```powershell
 $browser = Get-DefaultWebbrowser

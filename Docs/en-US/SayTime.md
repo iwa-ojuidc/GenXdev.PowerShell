@@ -15,6 +15,7 @@ accessibility purposes or when you need an audible time announcement.
 
 ## Syntax
 
+
 ```powershell
 SayTime [-Wait] [<CommonParameters>]
 ```
@@ -27,7 +28,7 @@ SayTime [-Wait] [<CommonParameters>]
 
 ## Examples
 
-### SayTime Speaks the current time, e.g. "The time is 14 hours and 30 minutes"
+
 
 ```powershell
 SayTime

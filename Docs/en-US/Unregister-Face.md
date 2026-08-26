@@ -15,6 +15,7 @@ registered face data from the system permanently.
 
 ## Syntax
 
+
 ```powershell
 Unregister-Face -Identifier <String> [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [[-ImageName] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-NoDockerInitialize] [-SessionOnly] [-ShowWindow] [-UseGPU] [<CommonParameters>]
 ```
@@ -40,14 +41,14 @@ Unregister-Face -Identifier <String> [[-ContainerName] <String>] [[-VolumeName] 
 
 ## Examples
 
-### Unregister-Face -Identifier "JohnDoe" -NoDockerInitialize $false `     -ContainerName "deepstack_face_recognition" -ServicePort 5000
+
 
 ```powershell
 Unregister-Face -Identifier "JohnDoe" -NoDockerInitialize $false `
     -ContainerName "deepstack_face_recognition" -ServicePort 5000
 ```
 
-### rface "JohnDoe"
+
 
 ```powershell
 rface "JohnDoe"

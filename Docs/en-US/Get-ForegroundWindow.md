@@ -16,13 +16,13 @@
 
 ## Syntax
 
+
 ```powershell
 Get-ForegroundWindow [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-ForegroundWindow
@@ -30,7 +30,6 @@ Get-ForegroundWindow
 
 Retrieves and returns the IntPtr handle of the currently active window.
 
-### Examples 2
 
 ```powershell
 $windowHandle = Get-ForegroundWindow

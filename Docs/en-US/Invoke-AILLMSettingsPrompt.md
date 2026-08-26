@@ -20,6 +20,7 @@ When -LLMQueryType is omitted, a type-selection menu is shown first with an
 
 ## Syntax
 
+
 ```powershell
 Invoke-AILLMSettingsPrompt [[-LLMQueryType] <String>] [-AllMachines] [-ClearSession] [-NonInteractive] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -38,21 +39,21 @@ Invoke-AILLMSettingsPrompt [[-LLMQueryType] <String>] [-AllMachines] [-ClearSess
 
 ## Examples
 
-### Invoke-AILLMSettingsPrompt -LLMQueryType "ToolUse" Launches interactive setup for the ToolUse query type.
+
 
 ```powershell
 Invoke-AILLMSettingsPrompt -LLMQueryType "ToolUse"
 Launches interactive setup for the ToolUse query type.
 ```
 
-### Invoke-AILLMSettingsPrompt Shows a type-selection menu, then launches interactive setup.
+
 
 ```powershell
 Invoke-AILLMSettingsPrompt
 Shows a type-selection menu, then launches interactive setup.
 ```
 
-### Invoke-AILLMSettingsPrompt "Coding" -PreferencesDatabasePath "C:\custom\prefs" Launches interactive setup for Coding with a custom preferences database.
+
 
 ```powershell
 Invoke-AILLMSettingsPrompt "Coding" -PreferencesDatabasePath "C:\custom\prefs"

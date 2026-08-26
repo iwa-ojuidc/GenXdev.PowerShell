@@ -16,6 +16,7 @@ the most recent version folder (1.x) that contains a valid module manifest
 
 ## Syntax
 
+
 ```powershell
 Get-GenXDevModule [[-Path] <String>] [-IncludeLocal] [<CommonParameters>]
 ```
@@ -29,13 +30,13 @@ Get-GenXDevModule [[-Path] <String>] [-IncludeLocal] [<CommonParameters>]
 
 ## Examples
 
-### Get-GenXDevModule -Path "C:\PowerShell\Modules"
+
 
 ```powershell
 Get-GenXDevModule -Path "C:\PowerShell\Modules"
 ```
 
-### Get-GenXDevModule "C:\PowerShell\Modules"
+
 
 ```powershell
 Get-GenXDevModule "C:\PowerShell\Modules"

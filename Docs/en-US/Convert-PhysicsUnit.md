@@ -15,6 +15,7 @@ an error for incompatible conversions.
 
 ## Syntax
 
+
 ```powershell
 Convert-PhysicsUnit -Value <Double> -FromUnit <String> -ToUnit <String> [<CommonParameters>]
 ```
@@ -29,14 +30,14 @@ Convert-PhysicsUnit -Value <Double> -FromUnit <String> -ToUnit <String> [<Common
 
 ## Examples
 
-### Convert-PhysicsUnit -Value 100 -FromUnit "meters" -ToUnit "feet" Converts 100 meters to feet.
+
 
 ```powershell
 Convert-PhysicsUnit -Value 100 -FromUnit "meters" -ToUnit "feet"
 Converts 100 meters to feet.
 ```
 
-### Convert-PhysicsUnit 10 "seconds" "minutes" Converts 10 seconds to minutes using positional parameters.
+
 
 ```powershell
 Convert-PhysicsUnit 10 "seconds" "minutes"

@@ -16,6 +16,7 @@ The function supports GPU acceleration and Docker container management.
 
 ## Syntax
 
+
 ```powershell
 Get-ImageDetectedScenes -ImagePath <String> [[-ConfidenceThreshold] <Double>] [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-ImageName <String>] [-NoDockerInitialize] [-SessionOnly] [-ShowWindow] [-UseGPU] [<CommonParameters>]
 ```
@@ -42,28 +43,28 @@ Get-ImageDetectedScenes -ImagePath <String> [[-ConfidenceThreshold] <Double>] [[
 
 ## Examples
 
-### Get-ImageDetectedScenes -ImagePath "C:\Users\YourName\landscape.jpg" Classifies the scene in the specified image using default settings.
+
 
 ```powershell
 Get-ImageDetectedScenes -ImagePath "C:\Users\YourName\landscape.jpg"
 Classifies the scene in the specified image using default settings.
 ```
 
-### Get-ImageDetectedScenes -ImagePath "C:\photos\vacation.jpg" -ConfidenceThreshold 0.6 -UseGPU Classifies the scene using GPU acceleration and only accepts results with confidence >= 60%.
+
 
 ```powershell
 Get-ImageDetectedScenes -ImagePath "C:\photos\vacation.jpg" -ConfidenceThreshold 0.6 -UseGPU
 Classifies the scene using GPU acceleration and only accepts results with confidence >= 60%.
 ```
 
-### Get-ImageDetectedScenes -ImagePath "C:\photos\vacation.jpg" -UseGPU Classifies the scene using GPU acceleration for faster processing.
+
 
 ```powershell
 Get-ImageDetectedScenes -ImagePath "C:\photos\vacation.jpg" -UseGPU
 Classifies the scene using GPU acceleration for faster processing.
 ```
 
-### "C:\Users\YourName\beach.jpg" | Get-ImageDetectedScenes Pipeline support for processing multiple images.
+
 
 ```powershell
 "C:\Users\YourName\beach.jpg" | Get-ImageDetectedScenes

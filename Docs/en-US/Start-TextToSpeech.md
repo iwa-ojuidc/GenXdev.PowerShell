@@ -17,6 +17,7 @@ playback options. It can handle both single strings and arrays of text.
 
 ## Syntax
 
+
 ```powershell
 Start-TextToSpeech -Lines <String[]> [<CommonParameters>]
 
@@ -42,25 +43,25 @@ Start-TextToSpeech [[-VoiceName] <String>] [-AutoConsent] [-AutoConsentAllPackag
 
 ## Examples
 
-### Start-TextToSpeech -Lines "Hello World" -Locale "en-US" -Wait
+
 
 ```powershell
 Start-TextToSpeech -Lines "Hello World" -Locale "en-US" -Wait
 ```
 
-### "Hello World" | say
+
 
 ```powershell
 "Hello World" | say
 ```
 
-### say "Hello World" -Rate "+50%" -Pitch "-5Hz"
+
 
 ```powershell
 say "Hello World" -Rate "+50%" -Pitch "-5Hz"
 ```
 
-### say "Alert!" -Force <# Interrupts any ongoing speech to immediately speak "Alert!",    then continues with the interrupted speech afterwards.
+
 
 ```powershell
 say "Alert!" -Force

@@ -15,13 +15,13 @@
 
 ## Syntax
 
+
 ```powershell
 Get-PowershellMainWindow [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-PowershellMainWindow

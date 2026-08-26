@@ -16,6 +16,7 @@ size, modification dates, and many other criteria.
 
 ## Syntax
 
+
 ```powershell
 Set-FoundLocation -Name <String> [-AllDrives] [-AttributesToSkip <IO.FileAttributes>] [-CaseNameMatching <IO.MatchCasing>] [-Category <String[]>] [-DirectoriesAndFiles] [-DriveLetter <Char[]>] [-ExactMatch] [-Exclude <String[]>] [-File] [-FollowSymlinkAndJunctions] [-IncludeAlternateFileStreams] [-IncludeNonTextFileMatching] [-IncludeOpticalDiskDrives] [-MaxDegreeOfParallelism <Int32>] [-MaxFileSize <Int64>] [-MaxRecursionDepth <Int32>] [-MinFileSize <Int64>] [-ModifiedAfter <DateTime>] [-ModifiedBefore <DateTime>] [-NoRecurse] [-Push] [-Root <String[]>] [-SearchADSContent] [-SearchDrives <String[]>] [-TimeoutSeconds <Int32>] [<CommonParameters>]
 
@@ -64,21 +65,21 @@ Set-FoundLocation [[-Content] <String[]>] [-CaseSensitive] [-Culture <String>] [
 
 ## Examples
 
-### Set-FoundLocation *.Console Changes to the first directory matching the pattern '*.Console'.
+
 
 ```powershell
 Set-FoundLocation *.Console
 Changes to the first directory matching the pattern '*.Console'.
 ```
 
-### lcd *.Console Changes to the first directory matching the pattern '*.Console' using the alias.
+
 
 ```powershell
 lcd *.Console
 Changes to the first directory matching the pattern '*.Console' using the alias.
 ```
 
-### Set-FoundLocation -Name "*.ps1" -Content "function" Changes to the directory containing the first PowerShell file that contains the word 'function'.
+
 
 ```powershell
 Set-FoundLocation -Name "*.ps1" -Content "function"
@@ -86,14 +87,14 @@ Changes to the directory containing the first PowerShell file that contains
 the word 'function'.
 ```
 
-### Set-FoundLocation *test* -File Changes to the directory containing the first file with 'test' in its name.
+
 
 ```powershell
 Set-FoundLocation *test* -File
 Changes to the directory containing the first file with 'test' in its name.
 ```
 
-### Set-FoundLocation * '1\.\d+\.2025' Changes to the directory containing the first file which content  matches the pattern '1.\d+\.2025'.
+
 
 ```powershell
 Set-FoundLocation * '1\.\d+\.2025'

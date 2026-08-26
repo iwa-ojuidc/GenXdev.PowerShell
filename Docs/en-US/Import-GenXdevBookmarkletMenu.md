@@ -13,6 +13,7 @@ This function scans a directory for GenXdev bookmarklet files with the
 
 ## Syntax
 
+
 ```powershell
 Import-GenXdevBookmarkletMenu [[-SnippetsPath] <String>] [[-TargetFolder] <String>] [-Chrome] [-Edge] [-Firefox] [<CommonParameters>]
 ```
@@ -29,7 +30,7 @@ Import-GenXdevBookmarkletMenu [[-SnippetsPath] <String>] [[-TargetFolder] <Strin
 
 ## Examples
 
-### Import-GenXdevBookmarkletMenu -Edge Imports all bookmarklet files from the default snippets directory into Microsoft Edge's bookmark bar folder.
+
 
 ```powershell
 Import-GenXdevBookmarkletMenu -Edge
@@ -37,7 +38,7 @@ Imports all bookmarklet files from the default snippets directory into
 Microsoft Edge's bookmark bar folder.
 ```
 
-### Import-GenXdevBookmarkletMenu -SnippetsPath "C:\MyBookmarklets" -Chrome -WhatIf Shows what bookmarklets would be imported from the specified path into Google Chrome without actually performing the import operation.
+
 
 ```powershell
 Import-GenXdevBookmarkletMenu -SnippetsPath "C:\MyBookmarklets" -Chrome -WhatIf

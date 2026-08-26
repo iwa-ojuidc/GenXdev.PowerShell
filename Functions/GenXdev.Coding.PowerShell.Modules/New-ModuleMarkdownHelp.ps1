@@ -504,6 +504,7 @@ function New-ModuleMarkdownHelp {
                     }
                 }
 
+                $null = $sb.AppendLine();
                 $null = $sb.AppendLine('```powershell')
 
                 if ($allSetNames.Count -le 1) {
@@ -532,6 +533,7 @@ function New-ModuleMarkdownHelp {
             }
             else {
                 # No parameters — minimal syntax line.
+                $null = $sb.AppendLine();
                 $null = $sb.AppendLine('```powershell')
                 $null = $sb.AppendLine("${cmdletName} [<CommonParameters>]")
                 $null = $sb.AppendLine('```')
@@ -622,24 +624,34 @@ function New-ModuleMarkdownHelp {
                         $fencePos = $exText.IndexOf('```')
                         if ($fencePos -gt 0) {
                             $title = $exText.Substring(0, $fencePos).Trim()
+
+                            if ([string]::IsNullOrWhiteSpace($title)) {
+
+                                $fencePos = $exText.LastIndexOf('```')
+
+                                if ($fencePo+3 -lt $exText.Length) {
+
+                                    $title = $exText.Substring($fencePo+3).Trim("`r`n`t #".ToCharArray());
+                                }
+                            }
                         }
                     }
-                    else {
-                        # First non-blank line until first blank line.
-                        $lines = $exText -split '\r?\n'
-                        $titleLines = @()
-                        foreach ($line in $lines) {
-                            if ([string]::IsNullOrWhiteSpace($line)) { break }
-                            $titleLines += $line
-                        }
-                        $title = ($titleLines -join ' ').Trim()
+                    # else {
+                    #     # First non-blank line until first blank line.
+                    #     $lines = $exText -split '\r?\n'
+                    #     $titleLines = @()
+                    #     foreach ($line in $lines) {
+                    #         if ([string]::IsNullOrWhiteSpace($line)) { break }
+                    #         $titleLines += $line
+                    #     }
+                    #     $title = ($titleLines -join ' ').Trim()
+                    # }
+
+                    if (-not [string]::IsNullOrWhiteSpace($title)) {
+
+                        $null = $sb.AppendLine("### ${title}")
                     }
 
-                    if ([string]::IsNullOrWhiteSpace($title)) {
-                        $title = "$($markdownLabels['Examples']) ${exampleNum}"
-                    }
-
-                    $null = $sb.AppendLine("### ${title}")
                     $null = $sb.AppendLine()
 
                     # Render the example text with code fences.
@@ -668,7 +680,7 @@ function New-ModuleMarkdownHelp {
                                 0, $blankMatch.Index).TrimEnd()
                             $descPart = $exText.Substring(
                                 $blankMatch.Index + $blankMatch.Length).Trim()
-
+                            $null = $sb.AppendLine();
                             $null = $sb.AppendLine('```powershell')
                             $null = $sb.AppendLine($codePart)
                             $null = $sb.AppendLine('```')
@@ -682,6 +694,7 @@ function New-ModuleMarkdownHelp {
                             }
                         }
                         else {
+                            $null = $sb.AppendLine();
                             $null = $sb.AppendLine('```powershell')
                             $null = $sb.AppendLine($exText)
                             $null = $sb.AppendLine('```')

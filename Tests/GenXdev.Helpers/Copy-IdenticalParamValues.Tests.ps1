@@ -1,7 +1,6 @@
 Pester\Describe 'Copy-IdenticalParamValues unit tests' {
 
     Pester\BeforeAll {
-
         function Script:testParams {
             [CmdletBinding()]
             param
@@ -11,9 +10,7 @@ Pester\Describe 'Copy-IdenticalParamValues unit tests' {
                 [string[]] $TagFilter,
                 [string[]] $ExcludeTagFilter,
                 [string[]] $FullNameFilter,
-                [switch] $CI,
-                [Parameter(Mandatory = $false)]
-                [string] $CodeCoverageOutputFileFormat
+                [switch] $CI
             )
 
             $params = GenXdev\Copy-IdenticalParamValues `
@@ -33,7 +30,6 @@ Pester\Describe 'Copy-IdenticalParamValues unit tests' {
         $ExcludeTagFilter = 'Tag3'
         $FullNameFilter = 'example*'
         $CI = $true
-        $CodeCoverageOutputFileFormat = 'Detailed'
 
         [System.Collections.Hashtable] $expected = @{
             Path             = [string[]] @($Path)
@@ -42,7 +38,6 @@ Pester\Describe 'Copy-IdenticalParamValues unit tests' {
             ExcludeTagFilter = [string[]] @($ExcludeTagFilter)
             FullNameFilter   = [string[]] @($FullNameFilter)
             CI               = !!$CI
-            CodeCoverageOutputFileFormat           = $CodeCoverageOutputFileFormat
         }
 
         [System.Collections.Hashtable] $result = testParams @expected
@@ -60,7 +55,6 @@ Pester\Describe 'Copy-IdenticalParamValues unit tests' {
         $ExcludeTagFilter = 'Tag3'
         $FullNameFilter = 'example*'
         $CI = $true
-        $CodeCoverageOutputFileFormat = 'Detailed'
 
         [System.Collections.Hashtable] $expected = @{
             ExcludePath      = [string[]] @($ExcludePath)
@@ -68,7 +62,6 @@ Pester\Describe 'Copy-IdenticalParamValues unit tests' {
             ExcludeTagFilter = [string[]] @($ExcludeTagFilter)
             FullNameFilter   = [string[]] @($FullNameFilter)
             CI               = !!$CI
-            CodeCoverageOutputFileFormat           = $CodeCoverageOutputFileFormat
         }
 
         [System.Collections.Hashtable] $result = testParams @expected
@@ -88,7 +81,6 @@ Pester\Describe 'Copy-IdenticalParamValues unit tests' {
         $ExcludeTagFilter = 'Tag3'
         $FullNameFilter = 'example*'
         $CI = $true
-        $CodeCoverageOutputFileFormat = 'Detailed'
 
         [System.Collections.Hashtable] $expected = @{
             ExcludePath      = [string[]] @($ExcludePath)
@@ -96,7 +88,6 @@ Pester\Describe 'Copy-IdenticalParamValues unit tests' {
             ExcludeTagFilter = [string[]] @($ExcludeTagFilter)
             FullNameFilter   = [string[]] @($FullNameFilter)
             CI               = !!$CI
-            CodeCoverageOutputFileFormat           = $CodeCoverageOutputFileFormat
         }
 
         [System.Collections.Hashtable] $result = testParams @expected -Path 'c:\secondotherfile.txt'
@@ -126,7 +117,5 @@ Pester\Describe 'Copy-IdenticalParamValues unit tests' {
         }
 
         [System.Collections.Hashtable] $result = testParams @expected
-
-        $result.ContainsKey("CodeCoverageOutputFileFormat") | Pester\Should -Be $False
     }
 }

@@ -14,6 +14,7 @@ are provided as input, only matching verbs will be shown. Supports wildcards.
 
 ## Syntax
 
+
 ```powershell
 Show-Verb [[-Verb] <String[]>] [<CommonParameters>]
 ```
@@ -26,21 +27,21 @@ Show-Verb [[-Verb] <String[]>] [<CommonParameters>]
 
 ## Examples
 
-### Show-Verb Shows all approved PowerShell verbs
+
 
 ```powershell
 Show-Verb
 Shows all approved PowerShell verbs
 ```
 
-### Show-Verb -Verb "Get*" Shows all approved verbs starting with "Get"
+
 
 ```powershell
 Show-Verb -Verb "Get*"
 Shows all approved verbs starting with "Get"
 ```
 
-### showverbs "Set*", "Get*" Shows all approved verbs starting with "Set" or "Get" using the alias
+
 
 ```powershell
 showverbs "Set*", "Get*"

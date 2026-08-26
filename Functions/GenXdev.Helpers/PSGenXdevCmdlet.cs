@@ -758,6 +758,8 @@ $obj | ConvertTo-Json @params",
     /// <param name="CreateDirectory">Whether to create the directory if it doesn't exist.</param>
     /// <param name="CreateFile">Whether to create the file if it doesn't exist.</param>
     /// <param name="DeleteExistingFile">Whether to delete the existing file.</param>
+    /// <param name="DeleteExistingDirectory">Whether to delete an already existing directory.</param>
+    /// <param name="DeleteExisting">Whether to delete the existing target.</param>
     /// <param name="FileMustExist">Whether the file must exist.</param>
     /// <param name="DirectoryMustExist">Whether the directory must exist.</param>
     /// <returns>The expanded path string.</returns>
@@ -765,6 +767,8 @@ $obj | ConvertTo-Json @params",
     bool CreateDirectory = false,
     bool CreateFile = false,
     bool DeleteExistingFile = false,
+    bool DeleteExistingDirectory = false,
+    bool DeleteExisting = false,
     bool FileMustExist = false,
     bool DirectoryMustExist = false)
     {
@@ -782,6 +786,14 @@ $obj | ConvertTo-Json @params",
         if (DeleteExistingFile)
         {
             scriptBuilder.Append(" -DeleteExistingFile");
+        }
+        if (DeleteExistingDirectory)
+        {
+            scriptBuilder.Append(" -DeleteExistingDirectory");
+        }
+        if (DeleteExisting)
+        {
+            scriptBuilder.Append(" -DeleteExisting");
         }
         if (FileMustExist)
         {
@@ -953,8 +965,7 @@ $obj | ConvertTo-Json @params",
                     Environment.GetEnvironmentVariable("LOCALAPPDATA"),
                     "GenXdev.PowerShell"
                 ) + "\\",
-                CreateDirectory: true,
-                DeleteExistingFile: true
+                CreateDirectory: true
             );
         }
 
@@ -964,8 +975,7 @@ $obj | ConvertTo-Json @params",
                 "GenXdev.PowerShell",
                 additional
             ) + "\\",
-            CreateDirectory: true,
-            DeleteExistingFile: true
+            CreateDirectory: true
         );
     }
 
@@ -980,8 +990,7 @@ $obj | ConvertTo-Json @params",
             System.IO.Path.GetDirectoryName(
                 InvokeScript<string>("(Get-Module '" + ModuleName + "').Path")
             ) + "\\"),
-            CreateDirectory: true,
-            DeleteExistingFile: true
+            CreateDirectory: true
         );
     }
 
@@ -997,8 +1006,7 @@ $obj | ConvertTo-Json @params",
                 "..",
                 ".."
             ) + "\\",
-            CreateDirectory: true,
-            DeleteExistingFile: true
+            CreateDirectory: true
         );
     }
 
@@ -1013,8 +1021,7 @@ $obj | ConvertTo-Json @params",
                 InvokeScript<string>("$Profile")
 
             ) + "\\",
-            CreateDirectory: true,
-            DeleteExistingFile: true
+            CreateDirectory: true
         );
     }
 
@@ -1029,8 +1036,7 @@ $obj | ConvertTo-Json @params",
                 GetPowerShellProfilePath(),
                 "Scripts"
             ) + "\\",
-            CreateDirectory: true,
-            DeleteExistingFile: true
+            CreateDirectory: true
         );
     }
 

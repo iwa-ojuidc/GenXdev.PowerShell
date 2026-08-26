@@ -13,6 +13,7 @@ Ensures that the environment variables are up to date in the current session.
 
 ## Syntax
 
+
 ```powershell
 Update-Environment [<CommonParameters>]
 ```

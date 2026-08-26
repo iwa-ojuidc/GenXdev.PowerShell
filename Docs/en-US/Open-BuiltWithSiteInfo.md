@@ -21,6 +21,7 @@ manually navigating to the BuiltWith website.
 
 ## Syntax
 
+
 ```powershell
 Open-BuiltWithSiteInfo -Queries <String[]> [[-Language] <String>] [[-Monitor] <Int32>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -78,14 +79,14 @@ Open-BuiltWithSiteInfo -Queries <String[]> [[-Language] <String>] [[-Monitor] <I
 
 ## Examples
 
-### Open-BuiltWithSiteInfo -Queries "microsoft.com" -Monitor 0 Opens a BuiltWith technology analysis for Microsoft.com on the default monitor.
+
 
 ```powershell
 Open-BuiltWithSiteInfo -Queries "microsoft.com" -Monitor 0
 Opens a BuiltWith technology analysis for Microsoft.com on the default monitor.
 ```
 
-### "microsoft.com" | Open-BuiltWithSiteInfo -m -1 Analyzes Microsoft.com using pipeline input with monitor positioning discarded.
+
 
 ```powershell
 "microsoft.com" | Open-BuiltWithSiteInfo -m -1

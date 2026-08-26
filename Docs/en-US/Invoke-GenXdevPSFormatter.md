@@ -16,6 +16,7 @@ formatting settings and provides detailed logging of the formatting process.
 
 ## Syntax
 
+
 ```powershell
 Invoke-GenXdevPSFormatter -Path <String> [-Range <Int32[]>] [-Recurse] [-Settings <Object>] [<CommonParameters>]
 ```
@@ -31,19 +32,19 @@ Invoke-GenXdevPSFormatter -Path <String> [-Range <Int32[]>] [-Recurse] [-Setting
 
 ## Examples
 
-### Invoke-GenXdevPSFormatter -Path "C:\Scripts\MyScript.ps1"
+
 
 ```powershell
 Invoke-GenXdevPSFormatter -Path "C:\Scripts\MyScript.ps1"
 ```
 
-### Invoke-GenXdevPSFormatter -Path "C:\Scripts" -Recurse
+
 
 ```powershell
 Invoke-GenXdevPSFormatter -Path "C:\Scripts" -Recurse
 ```
 
-### "MyScript.ps1" | Invoke-GenXdevPSFormatter -Settings @{IncludeRules=@('PSUseCorrectCasing')}
+
 
 ```powershell
 "MyScript.ps1" | Invoke-GenXdevPSFormatter -Settings @{IncludeRules=@('PSUseCorrectCasing')}

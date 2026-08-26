@@ -18,6 +18,7 @@ function returns a string array and optionally copies results to clipboard.
 
 ## Syntax
 
+
 ```powershell
 Invoke-LLMStringListEvaluation [[-Text] <String>] [[-Instructions] <String>] [[-Attachments] <String[]>] [-AllowDefaultTools] [-ApiEndpoint <String>] [-ApiKey <String>] [-AudioContextSize <Int32>] [-AudioTemperature <Double>] [-ClearSession] [-ContinueLast] [-CpuThreads <Int32>] [-DontAddThoughtsToHistory] [-DontSpeak] [-DontSpeakThoughts] [-EntropyThreshold <Double>] [-ExposedCmdLets <GenXdev.Helpers.ExposedCmdletDefinition[]>] [-Functions <Collections.Hashtable[]>] [-ImageDetail <String>] [-IncludeThoughts] [-Language <String>] [-LengthPenalty <Double>] [-LLMQueryType <String>] [-LogProbThreshold <Double>] [-MarkupBlocksTypeFilter <String[]>] [-MaxToolcallBackLength <Int32>] [-Model <String>] [-NoConfirmationToolFunctionNames <String[]>] [-NoContext] [-NoSessionCaching] [-NoSpeechThreshold <Double>] [-NoSupportForJsonSchema] [-NoVOX] [-OnlyResponses] [-OutputMarkdownBlocksOnly] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-SessionOnly] [-SetClipboard] [-SilenceThreshold <Double>] [-SkipSession] [-Speak] [-SpeakThoughts] [-SuppressRegex <String>] [-Temperature <Double>] [-TemperatureResponse <Double>] [-TimeoutSeconds <Int32>] [-UseDesktopAudioCapture] [-WithBeamSearchSamplingStrategy] [<CommonParameters>]
 ```
@@ -77,7 +78,7 @@ Invoke-LLMStringListEvaluation [[-Text] <String>] [[-Instructions] <String>] [[-
 
 ## Examples
 
-### PS> Invoke-LLMStringListEvaluation -Text ("PowerShell features: object-based " +     "pipeline, integrated scripting environment, backwards compatibility, " +     "and enterprise management.") Returns: @("Object-based pipeline", "Integrated scripting environment",          "Backwards compatibility", "Enterprise management")
+
 
 ```powershell
 PS> Invoke-LLMStringListEvaluation -Text ("PowerShell features: object-based " +
@@ -87,7 +88,7 @@ Returns: @("Object-based pipeline", "Integrated scripting environment",
          "Backwards compatibility", "Enterprise management")
 ```
 
-### PS> "Make a shopping list with: keyboard, mouse, monitor, headset" |     Invoke-LLMStringListEvaluation Returns: @("Keyboard", "Mouse", "Monitor", "Headset")
+
 
 ```powershell
 PS> "Make a shopping list with: keyboard, mouse, monitor, headset" |
@@ -95,13 +96,12 @@ PS> "Make a shopping list with: keyboard, mouse, monitor, headset" |
 Returns: @("Keyboard", "Mouse", "Monitor", "Headset")
 ```
 
-### PS> getlist "List common PowerShell commands for file operations" -SetClipboard Returns and copies to clipboard: @("Get-ChildItem", "Copy-Item", "Move-Item",                                   "Remove-Item", "Set-Content", "Get-Content") ##############################################################################
+
 
 ```powershell
 PS> getlist "List common PowerShell commands for file operations" -SetClipboard
 Returns and copies to clipboard: @("Get-ChildItem", "Copy-Item", "Move-Item",
                                   "Remove-Item", "Set-Content", "Get-Content")
-##############################################################################
 ```
 
 ## Parameter Details

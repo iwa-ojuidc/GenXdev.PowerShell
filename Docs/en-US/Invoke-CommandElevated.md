@@ -15,6 +15,7 @@ In contrast to other Environment variables, the directories in $ENV:PATH is merg
 
 ## Syntax
 
+
 ```powershell
 Invoke-CommandElevated -ScriptBlock <ScriptBlock> [[-JobDescription] <String>] [-DontUpdateEnvironment] [-PauseAfterCompletion] [<CommonParameters>]
 ```
@@ -30,7 +31,7 @@ Invoke-CommandElevated -ScriptBlock <ScriptBlock> [[-JobDescription] <String>] [
 
 ## Examples
 
-### Invoke-CommandElevated { sfc /scannow } -PauseAfterCompletion
+
 
 ```powershell
 Invoke-CommandElevated { sfc /scannow } -PauseAfterCompletion

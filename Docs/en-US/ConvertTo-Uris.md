@@ -15,6 +15,7 @@
 
 ## Syntax
 
+
 ```powershell
 ConvertTo-Uris [[-Text] <String[]>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ ConvertTo-Uris [[-Text] <String[]>] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 ConvertTo-Uris -Text "Check out https://github.com and about:config"
@@ -35,7 +35,6 @@ ConvertTo-Uris -Text "Check out https://github.com and about:config"
 
 Parses the provided text string for URIs and returns Uri objects.
 
-### Examples 2
 
 ```powershell
 "Visit http://example.com" | ConvertTo-Uris

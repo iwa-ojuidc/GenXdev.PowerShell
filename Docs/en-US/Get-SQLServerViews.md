@@ -16,6 +16,7 @@ or a database name with server.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLServerViews -ConnectionString <String> [<CommonParameters>]
 
@@ -32,13 +33,13 @@ Get-SQLServerViews -DatabaseName <String> [[-Server] <String>] [<CommonParameter
 
 ## Examples
 
-### Get-SQLServerViews -DatabaseName "MyDatabase" -Server "localhost"
+
 
 ```powershell
 Get-SQLServerViews -DatabaseName "MyDatabase" -Server "localhost"
 ```
 
-### Get-SQLServerViews -ConnectionString "Server=localhost;Database=MyDatabase;Integrated Security=true;"
+
 
 ```powershell
 Get-SQLServerViews -ConnectionString "Server=localhost;Database=MyDatabase;Integrated Security=true;"

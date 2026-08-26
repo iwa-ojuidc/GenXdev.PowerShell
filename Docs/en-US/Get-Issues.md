@@ -15,6 +15,7 @@ OneDrive directory.
 
 ## Syntax
 
+
 ```powershell
 Get-Issues [[-First] <Int32>] [-Ascending] [-ExcludeCompleted] [-OnlyCompleted] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -33,13 +34,13 @@ Get-Issues [[-First] <Int32>] [-Ascending] [-ExcludeCompleted] [-OnlyCompleted] 
 
 ## Examples
 
-### Issues -UseHomeREADME
+
 
 ```powershell
 Issues -UseHomeREADME
 ```
 
-### Issues -UseOneDriveREADME
+
 
 ```powershell
 Issues -UseOneDriveREADME

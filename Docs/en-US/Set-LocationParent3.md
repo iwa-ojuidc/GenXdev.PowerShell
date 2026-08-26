@@ -15,13 +15,13 @@
 
 ## Syntax
 
+
 ```powershell
 Set-LocationParent3 [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Set-LocationParent3
@@ -29,7 +29,6 @@ Set-LocationParent3
 
 Navigates up three directory levels from the current location.
 
-### Examples 2
 
 ```powershell
 ....

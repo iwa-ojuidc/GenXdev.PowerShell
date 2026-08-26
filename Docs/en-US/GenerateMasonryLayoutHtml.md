@@ -18,15 +18,16 @@ displaying images. Features include:
 
 ## Syntax
 
+
 ```powershell
-GenerateMasonryLayoutHtml -Images <IEnumerable`1[[GenXdev.Helpers.ImageSearchResult, GenXdev, Version=3.34.0.0, Culture=neutral, PublicKeyToken=null]]> [[-FilePath] <String>] [-AutoAnimateRectangles] [-AutoScrollPixelsPerSecond <Int32>] [-CanDelete] [-CanEdit] [-Description <String>] [-EmbedImages] [-ImageUrlPrefix <String>] [-MaxPrintImages <Int32>] [-PageSize <Int32>] [-RootMargin <String>] [-ShowOnlyPictures] [-SingleColumnMode] [-Threshold <Double>] [-Title <String>] [<CommonParameters>]
+GenerateMasonryLayoutHtml -Images <IEnumerable`1[[GenXdev.Helpers.ImageSearchResult, GenXdev, Version=3.35.0.0, Culture=neutral, PublicKeyToken=null]]> [[-FilePath] <String>] [-AutoAnimateRectangles] [-AutoScrollPixelsPerSecond <Int32>] [-CanDelete] [-CanEdit] [-Description <String>] [-EmbedImages] [-ImageUrlPrefix <String>] [-MaxPrintImages <Int32>] [-PageSize <Int32>] [-RootMargin <String>] [-ShowOnlyPictures] [-SingleColumnMode] [-Threshold <Double>] [-Title <String>] [<CommonParameters>]
 ```
 
 ## Parameters
 
 | Name | Type | Required | Description |
 |:---|:---|:---:|:---|
-| `-Images` | IEnumerable`1[[GenXdev.Helpers.ImageSearchResult, GenXdev, Version=3.34.0.0, Culture=neutral, PublicKeyToken=null]] | ✅ | Array of image objects with path, keywords<br>and description |
+| `-Images` | IEnumerable`1[[GenXdev.Helpers.ImageSearchResult, GenXdev, Version=3.35.0.0, Culture=neutral, PublicKeyToken=null]] | ✅ | Array of image objects with path, keywords<br>and description |
 | `-FilePath` | String | ☐ | Output path for the generated HTML file |
 | `-Title` | String | ☐ | Title for the gallery |
 | `-Description` | String | ☐ | Description for the gallery |
@@ -45,7 +46,7 @@ GenerateMasonryLayoutHtml -Images <IEnumerable`1[[GenXdev.Helpers.ImageSearchRes
 
 ## Examples
 
-### Create gallery from image array and save to file $images = @(     @{         path = "C:\photos\sunset.jpg"         keywords = @("nature", "sunset", "landscape")         description = @{             short_description = "Mountain sunset"             long_description = "Beautiful sunset over mountain range"         }     } ) GenerateMasonryLayoutHtml -Images $images -FilePath "C:\output\gallery.html"
+
 
 ```powershell
 Create gallery from image array and save to file
@@ -62,7 +63,7 @@ $images = @(
 GenerateMasonryLayoutHtml -Images $images -FilePath "C:\output\gallery.html"
 ```
 
-### Generate HTML string without saving $html = GenerateMasonryLayoutHtml $images
+
 
 ```powershell
 Generate HTML string without saving
@@ -71,7 +72,7 @@ $html = GenerateMasonryLayoutHtml $images
 
 ## Parameter Details
 
-### `-Images <IEnumerable`1[[GenXdev.Helpers.ImageSearchResult, GenXdev, Version=3.34.0.0, Culture=neutral, PublicKeyToken=null]]>`
+### `-Images <IEnumerable`1[[GenXdev.Helpers.ImageSearchResult, GenXdev, Version=3.35.0.0, Culture=neutral, PublicKeyToken=null]]>`
 
 > Array of image objects with path, keywords and description
 

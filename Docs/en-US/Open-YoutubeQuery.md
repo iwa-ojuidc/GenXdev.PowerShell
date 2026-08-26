@@ -17,6 +17,7 @@ with full control over window positioning, browser type, and search language.
 
 ## Syntax
 
+
 ```powershell
 Open-YoutubeQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -74,14 +75,14 @@ Open-YoutubeQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <Strin
 
 ## Examples
 
-### Open-YoutubeQuery -Queries "PowerShell tutorial" -Monitor 0 Opens a YouTube search for "PowerShell tutorial" on the default monitor.
+
 
 ```powershell
 Open-YoutubeQuery -Queries "PowerShell tutorial" -Monitor 0
 Opens a YouTube search for "PowerShell tutorial" on the default monitor.
 ```
 
-### youtube "how to code" -m -2 Opens a YouTube search for "how to code" on the configured secondary monitor using the function alias.
+
 
 ```powershell
 youtube "how to code" -m -2

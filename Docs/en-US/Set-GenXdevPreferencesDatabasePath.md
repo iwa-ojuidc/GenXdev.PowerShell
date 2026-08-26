@@ -16,6 +16,7 @@
 
 ## Syntax
 
+
 ```powershell
 Set-GenXdevPreferencesDatabasePath [[-PreferencesDatabasePath] <String>] [-ClearSession] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -31,7 +32,6 @@ Set-GenXdevPreferencesDatabasePath [[-PreferencesDatabasePath] <String>] [-Clear
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Set-GenXdevPreferencesDatabasePath -PreferencesDatabasePath "C:\Data\Preferences.db"
@@ -39,7 +39,6 @@ Set-GenXdevPreferencesDatabasePath -PreferencesDatabasePath "C:\Data\Preferences
 
 Sets the database path in the current session (Global variable).
 
-### Examples 2
 
 ```powershell
 Set-GenXdevPreferencesDatabasePath "C:\MyPreferences.db"
@@ -47,7 +46,6 @@ Set-GenXdevPreferencesDatabasePath "C:\MyPreferences.db"
 
 Sets the database path using positional parameter.
 
-### Examples 3
 
 ```powershell
 Set-GenXdevPreferencesDatabasePath "C:\TempPrefs.db" -SessionOnly
@@ -55,7 +53,6 @@ Set-GenXdevPreferencesDatabasePath "C:\TempPrefs.db" -SessionOnly
 
 Sets the path only for the current session without persisting.
 
-### Examples 4
 
 ```powershell
 Set-GenXdevPreferencesDatabasePath -ClearSession

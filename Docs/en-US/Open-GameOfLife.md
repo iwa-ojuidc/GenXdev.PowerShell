@@ -20,6 +20,7 @@ various interaction modes.
 
 ## Syntax
 
+
 ```powershell
 Open-GameOfLife [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoApplicationMode] [-NoBorders] [-NoBrowserExtensions] [-NoFullScreen] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -78,21 +79,21 @@ Open-GameOfLife [[-Language] <String>] [-AcceptLang <String>] [-All] [-Applicati
 
 ## Examples
 
-### Open-GameOfLife -Monitor 1 -FullScreen Opens Conway's Game of Life in fullscreen mode on monitor 1.
+
 
 ```powershell
 Open-GameOfLife -Monitor 1 -FullScreen
 Opens Conway's Game of Life in fullscreen mode on monitor 1.
 ```
 
-### Open-GameOfLife -Language "French" -Chrome -Private Opens the Game of Life in French language using Chrome in private mode.
+
 
 ```powershell
 Open-GameOfLife -Language "French" -Chrome -Private
 Opens the Game of Life in French language using Chrome in private mode.
 ```
 
-### gameoflife -m 0 -app Opens the Game of Life on the primary monitor in application mode using the alias.
+
 
 ```powershell
 gameoflife -m 0 -app
@@ -100,7 +101,7 @@ Opens the Game of Life on the primary monitor in application mode using the
 alias.
 ```
 
-### conway -Edge -Left -Width 800 -Height 600 Opens Conway's Game of Life in Microsoft Edge, positioned on the left side with specific dimensions.
+
 
 ```powershell
 conway -Edge -Left -Width 800 -Height 600

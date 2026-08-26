@@ -18,6 +18,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-Webbrowser [-Chrome] [-Chromium] [-Edge] [-Firefox] [<CommonParameters>]
 ```
@@ -33,7 +34,6 @@ Get-Webbrowser [-Chrome] [-Chromium] [-Edge] [-Firefox] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-Webbrowser | Select-Object Name, Description | Format-Table
@@ -41,7 +41,6 @@ Get-Webbrowser | Select-Object Name, Description | Format-Table
 
 Returns a collection of all installed modern web browsers.
 
-### Examples 2
 
 ```powershell
 Get-Webbrowser | Where-Object { $_.IsDefaultBrowser }

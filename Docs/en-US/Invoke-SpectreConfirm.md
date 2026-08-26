@@ -14,6 +14,7 @@ specified message. Returns $true if the user confirms, $false otherwise.
 
 ## Syntax
 
+
 ```powershell
 Invoke-SpectreConfirm [[-Message] <String>] [<CommonParameters>]
 ```
@@ -26,7 +27,7 @@ Invoke-SpectreConfirm [[-Message] <String>] [<CommonParameters>]
 
 ## Examples
 
-### Invoke-SpectreConfirm -Message "Are you sure you want to continue?" Presents a confirmation prompt with the specified message
+
 
 ```powershell
 Invoke-SpectreConfirm -Message "Are you sure you want to continue?"

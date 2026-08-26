@@ -17,13 +17,13 @@ process.
 
 ## Syntax
 
+
 ```powershell
 Get-ChildProcesses [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-ChildProcesses
@@ -31,7 +31,6 @@ Get-ChildProcesses
 
 Get all child processes of the current PowerShell session.
 
-### Examples 2
 
 ```powershell
 Get-ChildProcesses -Verbose

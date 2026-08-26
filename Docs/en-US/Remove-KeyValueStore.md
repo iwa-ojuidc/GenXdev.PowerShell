@@ -14,6 +14,7 @@ its JSON file from disk.
 
 ## Syntax
 
+
 ```powershell
 Remove-KeyValueStore -StoreName <String> [-DatabasePath <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Remove-KeyValueStore -StoreName <String> [-DatabasePath <String>] [<CommonParame
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Remove-KeyValueStore -StoreName "MyStore"

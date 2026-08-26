@@ -17,6 +17,7 @@ files.
 
 ## Syntax
 
+
 ```powershell
 Assert-ModuleDefinition -ModuleName <String> [-EditPrompt] [-Prompt <String>] [<CommonParameters>]
 ```
@@ -31,13 +32,13 @@ Assert-ModuleDefinition -ModuleName <String> [-EditPrompt] [-Prompt <String>] [<
 
 ## Examples
 
-### Assert-ModuleDefinition -ModuleName "MyModule" -EditPrompt
+
 
 ```powershell
 Assert-ModuleDefinition -ModuleName "MyModule" -EditPrompt
 ```
 
-### "MyModule" | Assert-ModuleDefinition
+
 
 ```powershell
 "MyModule" | Assert-ModuleDefinition

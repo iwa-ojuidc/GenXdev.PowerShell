@@ -16,19 +16,20 @@ window after sending the command.
 
 ## Syntax
 
+
 ```powershell
 Switch-VlcMediaPlayerRepeat [<CommonParameters>]
 ```
 
 ## Examples
 
-### Switch-VlcMediaPlayerRepeat
+
 
 ```powershell
 Switch-VlcMediaPlayerRepeat
 ```
 
-### vlcrepeat
+
 
 ```powershell
 vlcrepeat

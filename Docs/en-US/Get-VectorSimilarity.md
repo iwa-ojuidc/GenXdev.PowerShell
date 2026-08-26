@@ -13,6 +13,7 @@ Takes two numerical vectors (arrays) as input and computes their cosine similari
 
 ## Syntax
 
+
 ```powershell
 Get-VectorSimilarity -Vector1 <Double[]> -Vector2 <Double[]> [<CommonParameters>]
 ```
@@ -26,7 +27,6 @@ Get-VectorSimilarity -Vector1 <Double[]> -Vector2 <Double[]> [<CommonParameters>
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 $v1 = @(0.12, -0.45, 0.89)

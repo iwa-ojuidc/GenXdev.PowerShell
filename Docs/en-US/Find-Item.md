@@ -65,6 +65,7 @@
 
 ## Syntax
 
+
 ```powershell
 Find-Item [[-Name] <String[]>] [[-RelativeBasePath] <String>] [-AllDrives] [-AttributesToSkip <IO.FileAttributes>] [-CaseNameMatching <IO.MatchCasing>] [-Category <String[]>] [-Directory] [-DriveLetter <Char[]>] [-Exclude <String[]>] [-FilesAndDirectories] [-FollowSymlinkAndJunctions] [-IncludeAlternateFileStreams] [-IncludeNonTextFileMatching] [-IncludeOpticalDiskDrives] [-Input <Object>] [-LimitToRoot] [-MaxDegreeOfParallelism <Int32>] [-MaxFileSize <Int64>] [-MaxRecursionDepth <Int32>] [-MaxSearchUpDepth <Int32>] [-MinFileSize <Int64>] [-ModifiedAfter <DateTime?>] [-ModifiedBefore <DateTime?>] [-NoLinks] [-NoRecurse] [-PassThru] [-Root <String[]>] [-SearchADSContent] [-SearchDrives <String[]>] [-TimeoutSeconds <Int32?>] [<CommonParameters>]
 
@@ -120,9 +121,9 @@ Find-Item [[-Content] <String[]>] [-AllMatches] [-CaseSensitive] [-Context <Int3
 
 ## Examples
 
-### Examples 1
 
 ```powershell
+# Long form:
 Find-Item -Content "translation"
 
 # Short form:
@@ -132,9 +133,9 @@ l -mc translation
 Find files containing a specific word
 Search for all files in the current directory and subdirectories that contain the word "translation".
 
-### Examples 2
 
 ```powershell
+# Long form:
 Find-Item "*.js" "Version == `"\d\d?\.\d\d?\.\d\d?`""
 
 # Short form:
@@ -144,9 +145,9 @@ l *.js "Version == `"\d\d?\.\d\d?\.\d\d?`""
 Find JavaScript files with a version string
 Search for JavaScript files containing a version string in the format "Version == `x.y.z`".
 
-### Examples 3
 
 ```powershell
+# Long form:
 Find-Item -Directory
 
 # Short form:
@@ -156,9 +157,9 @@ l -dir
 List all directories
 Find all directories in the current directory and its subdirectories.
 
-### Examples 4
 
 ```powershell
+# Long form:
 Find-Item ".\*.xml" -PassThru | % FullName
 
 # Short form:
@@ -168,9 +169,9 @@ l *.xml -pt | % FullName
 Find XML files and pass objects
 Search for all .xml files and pass the results as objects through the pipeline.
 
-### Examples 5
 
 ```powershell
+# Long form:
 Find-Item -IncludeAlternateFileStreams
 
 # Short form:
@@ -180,9 +181,9 @@ l -ads
 Include alternate data streams
 Search for all files and include their alternate data streams in the results.
 
-### Examples 6
 
 ```powershell
+# Long form:
 Find-Item "*.pdf" -AllDrives
 
 # Short form:
@@ -192,10 +193,11 @@ l *.pdf -alldrives
 Search across all drives
 Search for all PDF files across all available drives.
 
-### Examples 7
 
 ```powershell
-Find-Item "*.log" -TimeoutSeconds 300 -MaxDegreeOfParallelism 4
+# Long form:
+Find-Item "*.log" `
+    -TimeoutSeconds 300 -MaxDegreeOfParallelism 4
 
 # Short form:
 l *.log -maxseconds 300 -threads 4
@@ -204,10 +206,11 @@ l *.log -maxseconds 300 -threads 4
 Custom timeout and parallelism
 Search for log files with a 5-minute timeout and limited parallelism.
 
-### Examples 8
 
 ```powershell
-Get-ChildItem -Path "C:\Logs" | Find-Item -Content "error"
+# Long form:
+Get-ChildItem -Path "C:\Logs" | `
+    Find-Item -Content "error"
 
 # Short form:
 ls C:\Logs | l -matchcontent "error"
@@ -216,9 +219,9 @@ ls C:\Logs | l -matchcontent "error"
 Pipeline input
 Pass file paths from Get-ChildItem to search for files containing "error".
 
-### Examples 9
 
 ```powershell
+# Long form:
 Find-Item "*.txt" -MaxRecursionDepth 2
 
 # Short form:
@@ -228,9 +231,9 @@ l *.txt -maxdepth 2
 Limit recursion depth
 Search for text files but limit recursion to 2 directory levels.
 
-### Examples 10
 
 ```powershell
+# Long form:
 Find-Item -MinFileSize 1048576 -MaxFileSize 10485760
 
 # Short form:
@@ -240,9 +243,9 @@ l -minsize 1048576 -maxsize 10485760
 Filter by file size
 Find files larger than 1MB but smaller than 10MB.
 
-### Examples 11
 
 ```powershell
+# Long form:
 Find-Item -ModifiedAfter "2025-01-01"
 
 # Short form:
@@ -252,9 +255,9 @@ l -after "2025-01-01"
 Filter by modification date
 Find files modified after January 1, 2025.
 
-### Examples 12
 
 ```powershell
+# Long form:
 Find-Item -Exclude "*.tmp", "*\bin\*"
 
 # Short form:
@@ -264,9 +267,9 @@ l -skiplike "*.tmp", "*\bin\*"
 Exclude specific patterns
 Search for all files but exclude temporary files and bin directories.
 
-### Examples 13
 
 ```powershell
+# Long form:
 Find-Item "*.docx" -SearchDrives "C:\", "D:\"
 
 # Short form:
@@ -276,9 +279,9 @@ l *.docx -drives C:\, D:\
 Search specific drives
 Search for .docx files on C: and D: drives only.
 
-### Examples 14
 
 ```powershell
+# Long form:
 Find-Item -Content "Error" -CaseSensitive
 
 # Short form:
@@ -288,10 +291,11 @@ l -mc "Error" -CaseSensitive
 Case-sensitive content search
 Search for files containing "Error" (case-sensitive) in their content.
 
-### Examples 15
 
 ```powershell
-Find-Item -IncludeAlternateFileStreams -SearchADSContent -Content "secret"
+# Long form:
+Find-Item -IncludeAlternateFileStreams `
+    -SearchADSContent -Content "secret"
 
 # Short form:
 l -ads -sads -mc "secret"
@@ -300,9 +304,9 @@ l -ads -sads -mc "secret"
 Search alternate data stream content
 Search for files with alternate data streams containing "secret".
 
-### Examples 16
 
 ```powershell
+# Long form:
 Find-Item "*.ps1" -Content "function" -AllMatches
 
 # Short form:
@@ -312,9 +316,9 @@ l *.ps1 -mc "function" -AllMatches
 Find all matches per line
 Search for all occurrences of "function" in each line, not just the first match.
 
-### Examples 17
 
 ```powershell
+# Long form:
 Find-Item "*.log" -Content "error" -Context 2,3
 
 # Short form:
@@ -324,9 +328,9 @@ l *.log -mc "error" -Context 2,3
 Show context around matches
 Display 2 lines before and 3 lines after each match for better understanding.
 
-### Examples 18
 
 ```powershell
+# Long form:
 Find-Item "*.txt" -Content "TODO:.*" -Raw
 
 # Short form:
@@ -336,9 +340,9 @@ l *.txt -mc "TODO:.*" -Raw
 Get only matching strings
 Return just the matching text strings instead of full match objects.
 
-### Examples 19
 
 ```powershell
+# Long form:
 Find-Item "*.config" -Content "database" -Quiet
 
 # Short form:
@@ -348,9 +352,9 @@ l *.config -mc "database" -Quiet
 Simple boolean check
 Return true/false instead of match details to check if pattern exists.
 
-### Examples 20
 
 ```powershell
+# Long form:
 Find-Item "*.cs" -Content "class.*Controller" -List
 
 # Short form:
@@ -360,9 +364,9 @@ l *.cs -mc "class.*Controller" -List
 Find first match only per file
 Stop at the first match in each file for efficient file listing.
 
-### Examples 21
 
 ```powershell
+# Long form:
 Find-Item "*.txt" -Content "$variable[0]" -SimpleMatch
 
 # Short form:
@@ -372,9 +376,9 @@ l *.txt -mc "$variable[0]" -SimpleMatch
 Literal string matching
 Search for exact text without regex interpretation using SimpleMatch.
 
-### Examples 22
 
 ```powershell
+# Long form:
 Find-Item "*.js" -Content "console\.log" -NotMatch
 
 # Short form:
@@ -384,9 +388,9 @@ l *.js -mc "console\.log" -NotMatch
 Find files NOT containing pattern
 Use NotMatch to find files that don't contain the specified pattern.
 
-### Examples 23
 
 ```powershell
+# Long form:
 Find-Item "*.txt" -Content "café" -Encoding UTF8
 
 # Short form:
@@ -396,10 +400,11 @@ l *.txt -mc "café" -Encoding UTF8
 Specify file encoding
 Search files with specific encoding for accurate text processing.
 
-### Examples 24
 
 ```powershell
-Find-Item "*.txt" -Content "Müller" -SimpleMatch -Culture "de-DE"
+# Long form:
+Find-Item "*.txt" -Content "Müller" `
+    -SimpleMatch -Culture "de-DE"
 
 # Short form:
 l *.txt -mc "Müller" -SimpleMatch -Culture "de-DE"
@@ -408,13 +413,16 @@ l *.txt -mc "Müller" -SimpleMatch -Culture "de-DE"
 Cultural text comparison
 Use culture-specific matching with SimpleMatch for international text.
 
-### Examples 25
 
 ```powershell
-Find-Item "*.log" -Content "exception" -MinFileSize 1024 -ModifiedAfter "2025-01-01" -MaxRecursionDepth 3
+# Long form:
+Find-Item "*.log" -Content "exception" `
+    -MinFileSize 1024 -ModifiedAfter "2025-01-01" `
+    -MaxRecursionDepth 3
 
 # Short form:
-l *.log -mc "exception" -minsize 1024 -after "2025-01-01" -maxdepth 3
+l *.log -mc "exception" -minsize 1024 `
+    -after "2025-01-01" -maxdepth 3
 ```
 
 Complex content search with file filters

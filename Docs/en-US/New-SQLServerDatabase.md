@@ -16,6 +16,7 @@ Supports file-based database creation with explicit .mdf/.ldf paths.
 
 ## Syntax
 
+
 ```powershell
 New-SQLServerDatabase -DatabaseName <String> [[-Server] <String>] [-DataFilePath <String>] [-DetachAfterCreation] [-LogFilePath <String>] [<CommonParameters>]
 
@@ -40,31 +41,31 @@ New-SQLServerDatabase [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<
 
 ## Examples
 
-### New-SQLServerDatabase -DatabaseName "MyNewDatabase" -Server "localhost"
+
 
 ```powershell
 New-SQLServerDatabase -DatabaseName "MyNewDatabase" -Server "localhost"
 ```
 
-### New-SQLServerDatabase "MyNewDatabase"
+
 
 ```powershell
 New-SQLServerDatabase "MyNewDatabase"
 ```
 
-### New-SQLServerDatabase -DatabaseName "MyDB" -ConnectionString "Server=.;..."
+
 
 ```powershell
 New-SQLServerDatabase -DatabaseName "MyDB" -ConnectionString "Server=.;..."
 ```
 
-### New-SQLServerDatabase -DatabaseName "ImageIndex" -DataFilePath "C:\Data\ImageIndex.mdf" -DetachAfterCreation
+
 
 ```powershell
 New-SQLServerDatabase -DatabaseName "ImageIndex" -DataFilePath "C:\Data\ImageIndex.mdf" -DetachAfterCreation
 ```
 
-### New-SQLServerDatabase -DatabaseName "MyDB" -Server "." -AutoConsentAllPackages
+
 
 ```powershell
 New-SQLServerDatabase -DatabaseName "MyDB" -Server "." -AutoConsentAllPackages

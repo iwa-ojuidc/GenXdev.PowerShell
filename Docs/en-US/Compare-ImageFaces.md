@@ -18,6 +18,7 @@ photos show the same person.
 
 ## Syntax
 
+
 ```powershell
 Compare-ImageFaces -ImagePath1 <String> -ImagePath2 <String> [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [[-ImageName] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-NoDockerInitialize] [-SessionOnly] [-ShowWindow] [-UseGPU] [<CommonParameters>]
 ```
@@ -44,7 +45,7 @@ Compare-ImageFaces -ImagePath1 <String> -ImagePath2 <String> [[-ContainerName] <
 
 ## Examples
 
-### Compare-ImageFaces -ImagePath1 "C:\Users\YourName\photo1.jpg" `                    -ImagePath2 "C:\Users\YourName\photo2.jpg" Compares faces between two images using default settings.
+
 
 ```powershell
 Compare-ImageFaces -ImagePath1 "C:\Users\YourName\photo1.jpg" `
@@ -52,7 +53,7 @@ Compare-ImageFaces -ImagePath1 "C:\Users\YourName\photo1.jpg" `
 Compares faces between two images using default settings.
 ```
 
-### comparefaces "C:\docs\id_photo.jpg" "C:\photos\person.jpg" -UseGPU Compares faces using GPU acceleration for identity verification with alias and positional parameters.
+
 
 ```powershell
 comparefaces "C:\docs\id_photo.jpg" "C:\photos\person.jpg" -UseGPU

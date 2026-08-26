@@ -13,6 +13,7 @@ Uses f = v / (4 L) for fundamental frequency.
 
 ## Syntax
 
+
 ```powershell
 Get-ResonantFrequencyByLengthAndSpeed -LengthInMeters <Double> [[-As] <String>] [<CommonParameters>]
 
@@ -32,7 +33,6 @@ Get-ResonantFrequencyByLengthAndSpeed -Medium <String> [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-ResonantFrequencyByLengthAndSpeed -LengthInMeters 0.5 -Medium "air" -As "kilohertz"
@@ -40,7 +40,6 @@ Get-ResonantFrequencyByLengthAndSpeed -LengthInMeters 0.5 -Medium "air" -As "kil
 
 Calculates the resonant frequency for a 0.5 meter pipe in air, output in kilohertz.
 
-### Examples 2
 
 ```powershell
 Get-ResonantFrequencyByLengthAndSpeed 1 -SpeedInMetersPerSecond 343

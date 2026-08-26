@@ -19,6 +19,7 @@ the type is already available before proceeding.
 
 ## Syntax
 
+
 ```powershell
 EnsureNuGetAssembly -PackageKey <String> [-AutoConsent] [-AutoConsentAllPackages] [-Description <String>] [-Destination <String>] [-ForceLatest] [-ManifestPath <String>] [-Publisher <String>] [-SessionOnly] [-TypeName <String>] [-Version <String>] [<CommonParameters>]
 ```
@@ -41,19 +42,19 @@ EnsureNuGetAssembly -PackageKey <String> [-AutoConsent] [-AutoConsentAllPackages
 
 ## Examples
 
-### EnsureNuGetAssembly -PackageKey "Microsoft.Data.Sqlite.Core"
+
 
 ```powershell
 EnsureNuGetAssembly -PackageKey "Microsoft.Data.Sqlite.Core"
 ```
 
-### EnsureNuGetAssembly -PackageKey "Microsoft.Playwright" -Version "1.54.0" -TypeName "Microsoft.Playwright.Playwright"
+
 
 ```powershell
 EnsureNuGetAssembly -PackageKey "Microsoft.Playwright" -Version "1.54.0" -TypeName "Microsoft.Playwright.Playwright"
 ```
 
-### EnsureNuGetAssembly -PackageKey "Microsoft.Data.Sqlite.Core" -AutoConsentAllPackages
+
 
 ```powershell
 EnsureNuGetAssembly -PackageKey "Microsoft.Data.Sqlite.Core" -AutoConsentAllPackages

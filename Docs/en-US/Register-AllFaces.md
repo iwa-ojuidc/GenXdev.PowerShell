@@ -21,6 +21,7 @@ eliminating the need for _1, _2, etc. suffixes.
 
 ## Syntax
 
+
 ```powershell
 Register-AllFaces [[-FacesDirectory] <String>] [[-MaxRetries] <Int32>] [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [[-ImageName] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-ClearSession] [-Force] [-ForceRebuild] [-NoDockerInitialize] [-PreferencesDatabasePath <String>] [-RenameFailed] [-SessionOnly] [-ShowWindow] [-SkipSession] [-UseGPU] [<CommonParameters>]
 ```
@@ -52,7 +53,7 @@ Register-AllFaces [[-FacesDirectory] <String>] [[-MaxRetries] <Int32>] [[-Contai
 
 ## Examples
 
-### Register-AllFaces -FacesDirectory "b:\media\faces\" -MaxRetries 3 `     -ContainerName "deepstack_face_recognition" -VolumeName "deepstack_face_data" `     -ServicePort 5000 -HealthCheckTimeout 60 -HealthCheckInterval 3
+
 
 ```powershell
 Register-AllFaces -FacesDirectory "b:\media\faces\" -MaxRetries 3 `
@@ -60,18 +61,17 @@ Register-AllFaces -FacesDirectory "b:\media\faces\" -MaxRetries 3 `
     -ServicePort 5000 -HealthCheckTimeout 60 -HealthCheckInterval 3
 ```
 
-### Register-AllFaces Uses the configured faces directory from Set-AIKnownFacesRootpath or defaults to "b:\media\faces\"
+
 
 ```powershell
 Register-AllFaces
 Uses the configured faces directory from Set-AIKnownFacesRootpath or defaults to "b:\media\faces\"
 ```
 
-### updatefaces -RenameFailed ##############################################################################
+
 
 ```powershell
 updatefaces -RenameFailed
-##############################################################################
 ```
 
 ## Parameter Details

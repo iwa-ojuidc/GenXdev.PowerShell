@@ -15,6 +15,7 @@ and handles errors gracefully.
 
 ## Syntax
 
+
 ```powershell
 Stop-WebbrowserVideos [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Webkit] [<CommonParameters>]
 ```
@@ -31,17 +32,16 @@ Stop-WebbrowserVideos [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Webkit] [<Commo
 
 ## Examples
 
-### Stop-WebbrowserVideos
+
 
 ```powershell
 Stop-WebbrowserVideos
 ```
 
-### wbsst ##############################################################################
+
 
 ```powershell
 wbsst
-##############################################################################
 ```
 
 ## Parameter Details

@@ -15,6 +15,7 @@ OneDrive directory.
 
 ## Syntax
 
+
 ```powershell
 Get-ReleaseNotes [[-First] <Int32>] [-Ascending] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -31,7 +32,7 @@ Get-ReleaseNotes [[-First] <Int32>] [-Ascending] [-SortByDate] [-UseHomeREADME] 
 
 ## Examples
 
-### ReleaseNotes -UseHomeREADME
+
 
 ```powershell
 ReleaseNotes -UseHomeREADME

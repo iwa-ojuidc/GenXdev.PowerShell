@@ -17,6 +17,7 @@ location. If not found, will use the README in the PowerShell profile directory.
 
 ## Syntax
 
+
 ```powershell
 Add-LineToREADME -Section <String> [[-Priority] <Int32>] [-ArchiveCompleted] [-ArchiveFilePath <String>] [-Ascending] [-Code] [-Done] [-ExcludeCompleted] [-First <Int32>] [-Line <String>] [-OnlyCompleted] [-Show] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -43,13 +44,13 @@ Add-LineToREADME -Section <String> [[-Priority] <Int32>] [-ArchiveCompleted] [-A
 
 ## Examples
 
-### Add-LineToREADME -Line "New feature" -Section "## Features"
+
 
 ```powershell
 Add-LineToREADME -Line "New feature" -Section "## Features"
 ```
 
-### Add-LineToREADME "High prio item" "## Issues" -Priority 5
+
 
 ```powershell
 Add-LineToREADME "High prio item" "## Issues" -Priority 5

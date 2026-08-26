@@ -17,6 +17,7 @@
 
 ## Syntax
 
+
 ```powershell
 Initialize-SearchPaths [[-WorkspaceFolder] <String>] [<CommonParameters>]
 ```
@@ -29,7 +30,6 @@ Initialize-SearchPaths [[-WorkspaceFolder] <String>] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Initialize-SearchPaths
@@ -37,7 +37,6 @@ Initialize-SearchPaths
 
 Initializes search paths using the default workspace folder.
 
-### Examples 2
 
 ```powershell
 Initialize-SearchPaths -WorkspaceFolder "C:\workspace"

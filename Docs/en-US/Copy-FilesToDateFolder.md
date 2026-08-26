@@ -20,6 +20,7 @@ last-write time when no other reliable information is available.
 
 ## Syntax
 
+
 ```powershell
 Copy-FilesToDateFolder -TargetFolder <String> [[-Name] <String[]>] [[-RelativeBasePath] <String>] [-AllDrives] [-AttributesToSkip <IO.FileAttributes>] [-CaseNameMatching <IO.MatchCasing>] [-Category <String[]>] [-DeleteEmptyDirs] [-Directory] [-DriveLetter <Char[]>] [-Exclude <String[]>] [-FilesAndDirectories] [-FollowSymlinkAndJunctions] [-IncludeAlternateFileStreams] [-IncludeNonTextFileMatching] [-IncludeOpticalDiskDrives] [-Input <Object>] [-LimitToRoot] [-MaxDegreeOfParallelism <Int32>] [-MaxFileSize <Int64>] [-MaxRecursionDepth <Int32>] [-MaxSearchUpDepth <Int32>] [-MinFileSize <Int64>] [-ModifiedAfter <DateTime>] [-ModifiedBefore <DateTime>] [-NoLinks] [-NoRecurse] [-PassThru] [-Root <String[]>] [-SearchADSContent] [-SearchDrives <String[]>] [-TargetFolderNameDateSyntax <String>] [-TimeoutSeconds <Int32>] [<CommonParameters>]
 
@@ -77,7 +78,7 @@ Copy-FilesToDateFolder [[-Content] <String[]>] [-AllMatches] [-CaseSensitive] [-
 
 ## Examples
 
-### Copy all pictures and videos to the corresponsing Android Onedrive App Image backup folders     Copy-FilesToDateFolder -TargetFolder "$(folder OneDrive)\Pictures\Camera Roll" `                            -SourceFolder ~\Pictures\*, ~\desktop\* `                            -Category 'Pictures', 'Videos'
+
 
 ```powershell
 Copy all pictures and videos to the corresponsing Android Onedrive App Image backup folders
@@ -86,7 +87,7 @@ Copy all pictures and videos to the corresponsing Android Onedrive App Image bac
                            -Category 'Pictures', 'Videos'
 ```
 
-### Copy all jpg files from the current directory into date folders under `D:\Archive` (dry run):     Copy-FilesToDateFolder -TargetFolder 'D:\Archive' -Name '*.jpg' -WhatIf
+
 
 ```powershell
 Copy all jpg files from the current directory into date folders under
@@ -94,7 +95,7 @@ Copy all jpg files from the current directory into date folders under
     Copy-FilesToDateFolder -TargetFolder 'D:\Archive' -Name '*.jpg' -WhatIf
 ```
 
-### Copy all files across drives matching `*.mp4` into monthly folders     Copy-FilesToDateFolder -TargetFolder 'E:\Media\Videos' -Name '.\*.mp4'
+
 
 ```powershell
 Copy all files across drives matching `*.mp4` into monthly folders

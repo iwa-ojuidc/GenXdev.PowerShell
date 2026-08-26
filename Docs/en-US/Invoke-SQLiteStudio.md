@@ -18,6 +18,7 @@ Provides a PowerShell interface for executing SQLite queries with support for:
 
 ## Syntax
 
+
 ```powershell
 Invoke-SQLiteStudio -ConnectionString <String> [<CommonParameters>]
 
@@ -38,7 +39,7 @@ Invoke-SQLiteStudio -Queries <String[]> [[-SqlParameters] <Collections.Hashtable
 
 ## Examples
 
-### Invoke-SQLiteStudio `     -DatabaseFilePath "C:\data\users.sqlite" `     -Queries "SELECT * FROM Users WHERE active = @status" `     -SqlParameters @{"status" = 1}
+
 
 ```powershell
 Invoke-SQLiteStudio `
@@ -47,7 +48,7 @@ Invoke-SQLiteStudio `
     -SqlParameters @{"status" = 1}
 ```
 
-### "SELECT * FROM Users" | isql -DatabaseFilePath "C:\data\users.sqlite"
+
 
 ```powershell
 "SELECT * FROM Users" | isql -DatabaseFilePath "C:\data\users.sqlite"

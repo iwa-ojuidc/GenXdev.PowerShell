@@ -16,13 +16,13 @@
 
 ## Syntax
 
+
 ```powershell
 Test-CpuAvx [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Test-CpuAvx

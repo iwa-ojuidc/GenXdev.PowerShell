@@ -25,6 +25,7 @@ The function provides comprehensive support for LLM interaction including:
 
 ## Syntax
 
+
 ```powershell
 Invoke-LLMQuery [[-Query] <String>] [[-Instructions] <String>] [[-Attachments] <String[]>] [-ApiEndpoint <String>] [-ApiKey <String>] [-AudioContextSize <Int32>] [-AudioTemperature <Double>] [-ChatMode <String>] [-ChatOnce] [-ClearSession] [-ContinueLast] [-CpuThreads <Int32>] [-DontAddThoughtsToHistory] [-DontSpeak] [-DontSpeakThoughts] [-EntropyThreshold <Double>] [-ExposedCmdLets <GenXdev.Helpers.ExposedCmdletDefinition[]>] [-FilterForJsonOutput] [-Functions <Collections.Hashtable[]>] [-Gpu <Int32>] [-ImageDetail <String>] [-IncludeThoughts] [-Language <String>] [-LengthPenalty <Double>] [-LLMQueryType <String>] [-LogProbThreshold <Double>] [-MarkupBlocksTypeFilter <String[]>] [-MaxToolcallBackLength <Int32>] [-Model <String>] [-NoConfirmationToolFunctionNames <String[]>] [-NoContext] [-NoSessionCaching] [-NoSpeechThreshold <Double>] [-NoSupportForJsonSchema] [-NoVOX] [-OnlyResponses] [-OutputMarkdownBlocksOnly] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-QuietToolChainInvocations] [-ResponseFormat <String>] [-SessionOnly] [-SilenceThreshold <Double>] [-SkipSession] [-Speak] [-SpeakThoughts] [-SuppressRegex <String>] [-Temperature <Double>] [-TemperatureResponse <Double>] [-TimeoutSeconds <Int32>] [-UseDesktopAudioCapture] [-WithBeamSearchSamplingStrategy] [<CommonParameters>]
 ```
@@ -88,28 +89,28 @@ Invoke-LLMQuery [[-Query] <String>] [[-Instructions] <String>] [[-Attachments] <
 
 ## Examples
 
-### Invoke-LLMQuery -Query "What is 2+2?" -Model "qwen" -Temperature 0.7 Sends a simple mathematical query to the qwen model with specified temperature.
+
 
 ```powershell
 Invoke-LLMQuery -Query "What is 2+2?" -Model "qwen" -Temperature 0.7
 Sends a simple mathematical query to the qwen model with specified temperature.
 ```
 
-### qllm "What is 2+2?" -Model "qwen" Uses the alias to send a query with default parameters.
+
 
 ```powershell
 qllm "What is 2+2?" -Model "qwen"
 Uses the alias to send a query with default parameters.
 ```
 
-### Invoke-LLMQuery -Query "Analyze this image" -Attachments @("image.jpg") -Model "qwen" Sends a query with an image attachment for analysis.
+
 
 ```powershell
 Invoke-LLMQuery -Query "Analyze this image" -Attachments @("image.jpg") -Model "qwen"
 Sends a query with an image attachment for analysis.
 ```
 
-### llm "Start a conversation" -ChatMode "textprompt" -Model "qwen" Starts an interactive text chat session with the specified model.
+
 
 ```powershell
 llm "Start a conversation" -ChatMode "textprompt" -Model "qwen"

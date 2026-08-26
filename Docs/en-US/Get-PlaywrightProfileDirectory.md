@@ -19,6 +19,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-PlaywrightProfileDirectory [[-BrowserType] <String>] [<CommonParameters>]
 ```
@@ -31,7 +32,6 @@ Get-PlaywrightProfileDirectory [[-BrowserType] <String>] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-PlaywrightProfileDirectory -BrowserType ChromeNormal
@@ -39,7 +39,6 @@ Get-PlaywrightProfileDirectory -BrowserType ChromeNormal
 
 Creates or returns path for the OS-installed Chrome browser profile.
 
-### Examples 2
 
 ```powershell
 Get-PlaywrightProfileDirectory -BrowserType ChromiumNormal
@@ -47,7 +46,6 @@ Get-PlaywrightProfileDirectory -BrowserType ChromiumNormal
 
 Creates or returns path for the auto-detected Chromium browser profile.
 
-### Examples 3
 
 ```powershell
 Get-PlaywrightProfileDirectory -BrowserType ChromiumPlaywright

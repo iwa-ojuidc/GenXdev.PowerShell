@@ -18,6 +18,7 @@ This ensures maximum reliability when removing items across different providers.
 
 ## Syntax
 
+
 ```powershell
 Remove-ItemWithFallback -Path <String> [-CountRebootDeletionAsSuccess] [<CommonParameters>]
 ```
@@ -31,14 +32,14 @@ Remove-ItemWithFallback -Path <String> [-CountRebootDeletionAsSuccess] [<CommonP
 
 ## Examples
 
-### Remove-ItemWithFallback -Path "C:\temp\myfile.txt" Attempts to remove the file using all available methods.
+
 
 ```powershell
 Remove-ItemWithFallback -Path "C:\temp\myfile.txt"
 Attempts to remove the file using all available methods.
 ```
 
-### "C:\temp\mydir" | rif Uses the alias 'rif' to remove a directory through the pipeline.
+
 
 ```powershell
 "C:\temp\mydir" | rif

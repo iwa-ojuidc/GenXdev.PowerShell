@@ -13,6 +13,7 @@ Uses v = f λ.
 
 ## Syntax
 
+
 ```powershell
 Get-WaveSpeedByFrequencyAndWavelength -FrequencyInHertz <Double> -WavelengthInMeters <Double> [[-As] <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-WaveSpeedByFrequencyAndWavelength -FrequencyInHertz <Double> -WavelengthInMe
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-WaveSpeedByFrequencyAndWavelength -FrequencyInHertz 440 -WavelengthInMeters 0.78 -As "km/h"
@@ -35,7 +35,6 @@ Get-WaveSpeedByFrequencyAndWavelength -FrequencyInHertz 440 -WavelengthInMeters 
 
 Calculates wave speed using v = f * λ.
 
-### Examples 2
 
 ```powershell
 Get-WaveSpeedByFrequencyAndWavelength 1000 0.34

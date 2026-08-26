@@ -12,14 +12,14 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>3.34.0</AssemblyVersion>
-    <FileVersion>3.34.0</FileVersion>
-    <Description>A Windows PowerShell module with helpers mostly used by other GenXdev modules</Description>
+    <AssemblyVersion>3.35.0</AssemblyVersion>
+    <FileVersion>3.35.0</FileVersion>
+    <Description>An all-in-one PowerShell toolkit combining AI, browser automation, media control, databases, and Windows utilities into one module.</Description>
     <Copyright>Copyright (c) 2024 GenXdev</Copyright>
-    <PackageProjectUrl>https://github.com/genXdev/GenXdev</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/genXdev/GenXdev.PowerShell/</PackageProjectUrl>
     <PackageIcon>powershell.jpg</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/genXdev/GenXdev</RepositoryUrl>
+    <RepositoryUrl>https://github.com/genXdev/GenXdev.PowerShell/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>GenXdev, PowerShell, Windows</PackageTags>
     <UseWindowsForms>true</UseWindowsForms>
@@ -38,28 +38,19 @@
     <SupportedOSPlatformVersion>10.0.26100.0</SupportedOSPlatformVersion>
     <Platforms>x64</Platforms>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <DebugType>portable</DebugType>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
 	  <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>none</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2" />
-    <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="7.6.3" />
-    <PackageReference Include="NAudio" Version="2.3.0" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="7.6.5" />
+    <PackageReference Include="NAudio" Version="3.0.1" />
     <PackageReference Include="Spectre.Console" Version="0.57.2" />
-    <PackageReference Include="System.Management.Automation" Version="7.6.3" />
+    <PackageReference Include="System.Management.Automation" Version="7.6.5" />
     <PackageReference Include="EdgeTTS.DotNet" Version="0.4.0" />
-    <PackageReference Include="Whisper.net" Version="1.9.1" />
-    <PackageReference Include="Whisper.net.AllRuntimes" Version="1.9.1" />
-    <PackageReference Include="Whisper.net.Runtime.NoAvx" Version="1.9.1" />
     <PackageReference Include="WpfScreenHelper" Version="2.1.1" />
   </ItemGroup>
   <ItemGroup>
@@ -69,13 +60,20 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
-  <!-- GenXdev.Elevated is a separate lightweight project -->
+  <!--
+    Native whisper.cpp/ggml libraries plus the MSVC runtime they import, vendored
+    in Assets\whisperddls. They are copied flat next to GenXdev.dll so the runtime
+    resolves whisper.dll from the assembly directory, and so whisper.dll's own
+    imports (ggml.dll -> ggml-cpu.dll -> ggml-base.dll) resolve from the same
+    folder. Their original filenames must be preserved: the import tables refer to
+    each other by name, so renaming any of them breaks loading.
+  -->
   <ItemGroup>
-    <Compile Remove="GenXdev.Elevated\**" />
-    <None Remove="GenXdev.Elevated\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Functions\GenXdev.Windows\Invoke-CommandElevated - Copy.cs.no" />
-    <None Remove="Functions\GenXdev.Windows\Invoke-CommandElevated.ps1.no" />
+    <None Include="..\..\..\Assets\whisperddls\*.dll">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <Pack>False</Pack>
+    </None>
   </ItemGroup>
 </Project>

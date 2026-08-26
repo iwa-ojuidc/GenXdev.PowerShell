@@ -20,6 +20,7 @@ international Grokipedia domains.
 
 ## Syntax
 
+
 ```powershell
 Open-GrokipediaQuery -Queries <String[]> [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -76,21 +77,21 @@ Open-GrokipediaQuery -Queries <String[]> [-AcceptLang <String>] [-All] [-Applica
 
 ## Examples
 
-### Open-GrokipediaQuery -Queries "PowerShell" -Monitor 0 -Language "English" Opens a Grokipedia search for "PowerShell" in English on the default monitor.
+
 
 ```powershell
 Open-GrokipediaQuery -Queries "PowerShell" -Monitor 0 -Language "English"
 Opens a Grokipedia search for "PowerShell" in English on the default monitor.
 ```
 
-### wiki "PowerShell" -mon 0 Opens a Grokipedia search using the alias with positional parameters.
+
 
 ```powershell
 wiki "PowerShell" -mon 0
 Opens a Grokipedia search using the alias with positional parameters.
 ```
 
-### "PowerShell", "Windows" | Open-GrokipediaQuery -Private Searches for multiple terms in Grokipedia using private browsing mode.
+
 
 ```powershell
 "PowerShell", "Windows" | Open-GrokipediaQuery -Private

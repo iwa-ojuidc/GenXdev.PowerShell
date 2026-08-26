@@ -13,6 +13,7 @@ Stages all changes in the current git repository, creates a commit with the spec
 
 ## Syntax
 
+
 ```powershell
 New-GitCommit [[-Title] <String>] [<CommonParameters>]
 ```
@@ -25,7 +26,6 @@ New-GitCommit [[-Title] <String>] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 New-GitCommit -Title "Added new authentication feature"
@@ -33,7 +33,6 @@ New-GitCommit -Title "Added new authentication feature"
 
 Create a commit with a custom message "Added new authentication feature".
 
-### Examples 2
 
 ```powershell
 commit "Hotfix for login issue"

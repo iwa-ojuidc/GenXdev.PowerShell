@@ -15,6 +15,7 @@ is useful for web scraping and browser automation tasks.
 
 ## Syntax
 
+
 ```powershell
 Get-WebbrowserTabDomNodes -QuerySelector <String[]> [[-ModifyScript] <String>] [-ByReference <PSObject>] [-Chrome] [-Chromium] [-Edge] [-Firefox] [-NoAutoSelectTab] [-Page <Object>] [-Webkit] [<CommonParameters>]
 ```
@@ -36,14 +37,14 @@ Get-WebbrowserTabDomNodes -QuerySelector <String[]> [[-ModifyScript] <String>] [
 
 ## Examples
 
-### Get HTML of all header divs Get-WebbrowserTabDomNodes -QuerySelector "div.header"
+
 
 ```powershell
 Get HTML of all header divs
 Get-WebbrowserTabDomNodes -QuerySelector "div.header"
 ```
 
-### Pause all videos on the page wl "video" "e.pause()"
+
 
 ```powershell
 Pause all videos on the page

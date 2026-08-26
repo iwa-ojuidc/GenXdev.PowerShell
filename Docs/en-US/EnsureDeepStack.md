@@ -18,6 +18,7 @@ recognition that is well-documented and actively maintained.
 
 ## Syntax
 
+
 ```powershell
 EnsureDeepStack [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [[-ImageName] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-Bottom] [-Centered] [-ClearSession] [-FocusWindow] [-Force] [-Fullscreen] [-Height <Int32>] [-Left] [-Monitor <Int32>] [-NoBorders] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-ShowWindow] [-SideBySide] [-SkipSession] [-UseGPU] [-Width <Int32>] [<CommonParameters>]
 ```
@@ -60,7 +61,7 @@ EnsureDeepStack [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServiceP
 
 ## Examples
 
-### EnsureDeepStack -ContainerName "deepstack_face_recognition" `                 -VolumeName "deepstack_face_data" `                 -ServicePort 5000 `                 -HealthCheckTimeout 60 `                 -HealthCheckInterval 3
+
 
 ```powershell
 EnsureDeepStack -ContainerName "deepstack_face_recognition" `
@@ -70,7 +71,7 @@ EnsureDeepStack -ContainerName "deepstack_face_recognition" `
                 -HealthCheckInterval 3
 ```
 
-### EnsureDeepStack -Force -UseGPU
+
 
 ```powershell
 EnsureDeepStack -Force -UseGPU

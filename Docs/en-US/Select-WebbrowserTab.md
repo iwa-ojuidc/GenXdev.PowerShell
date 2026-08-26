@@ -19,6 +19,7 @@ Webbrowser cmdlets.
 
 ## Syntax
 
+
 ```powershell
 Select-WebbrowserTab [[-Id] <Int32>] [<CommonParameters>]
 
@@ -47,28 +48,28 @@ Select-WebbrowserTab [-All] [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Force] [-
 
 ## Examples
 
-### Select-WebbrowserTab Lists all open tabs across all Playwright browser types.
+
 
 ```powershell
 Select-WebbrowserTab
 Lists all open tabs across all Playwright browser types.
 ```
 
-### Select-WebbrowserTab -Id 2 Selects the tab at index 2 from the list.
+
 
 ```powershell
 Select-WebbrowserTab -Id 2
 Selects the tab at index 2 from the list.
 ```
 
-### st -Name "github.com" Selects the first tab whose URL contains "github.com".
+
 
 ```powershell
 st -Name "github.com"
 Selects the first tab whose URL contains "github.com".
 ```
 
-### st -Firefox -Id 0 Selects the first tab from the Firefox browser.
+
 
 ```powershell
 st -Firefox -Id 0

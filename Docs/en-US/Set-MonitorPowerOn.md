@@ -13,13 +13,13 @@ Uses the Windows API through GenXdev.Helpers.WindowObj to wake up the monitor fr
 
 ## Syntax
 
+
 ```powershell
 Set-MonitorPowerOn [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Set-MonitorPowerOn
@@ -27,7 +27,6 @@ Set-MonitorPowerOn
 
 Turns the monitor power on.
 
-### Examples 2
 
 ```powershell
 wake-monitor

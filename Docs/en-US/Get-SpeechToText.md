@@ -8,13 +8,14 @@
 
 ## Description
 
-Processes audio files and converts speech to text using the Whisper.NET library, which implements OpenAI's Whisper automatic speech recognition (ASR) system. It supports multiple languages, translation capabilities, and various transcription quality settings.
+Processes audio files and converts speech to text using whisper.cpp, a native implementation of OpenAI's Whisper automatic speech recognition (ASR) system. It supports multiple languages, translation capabilities, and various transcription quality settings. The bundled native libraries are built without AVX so they run on any x64 CPU.
 
 
 ## Syntax
 
+
 ```powershell
-Get-SpeechToText -Input <Object> [-AudioContextSize <Int32?>] [-CpuThreads <Int32>] [-DontSuppressBlank] [-EntropyThreshold <Single?>] [-LanguageIn <String>] [-LengthPenalty <Single?>] [-LogProbThreshold <Single?>] [-MaxDuration <TimeSpan?>] [-MaxInitialTimestamp <TimeSpan?>] [-MaxLastTextTokens <Int32?>] [-MaxSegmentLength <Int32?>] [-MaxTokensPerSegment <Int32?>] [-ModelFileDirectoryPath <String>] [-ModelType <Whisper.net.Ggml.GgmlType>] [-NoContext] [-NoSpeechThreshold <Single?>] [-Offset <TimeSpan?>] [-Passthru] [-PrintSpecialTokens] [-Prompt <String>] [-SingleSegmentOnly] [-SplitOnWord] [-SuppressRegex <String>] [-Temperature <Single?>] [-TemperatureInc <Single?>] [-TokenTimestampsSumThreshold <Single>] [-WithBeamSearchSamplingStrategy] [-WithProgress] [-WithTokenTimestamps] [-WithTranslate] [<CommonParameters>]
+Get-SpeechToText -Input <Object> [-AudioContextSize <Int32?>] [-CpuThreads <Int32>] [-DontSuppressBlank] [-EntropyThreshold <Single?>] [-LanguageIn <String>] [-LengthPenalty <Single?>] [-LogProbThreshold <Single?>] [-MaxDuration <TimeSpan?>] [-MaxInitialTimestamp <TimeSpan?>] [-MaxLastTextTokens <Int32?>] [-MaxSegmentLength <Int32?>] [-MaxTokensPerSegment <Int32?>] [-ModelFileDirectoryPath <String>] [-ModelType <GenXdev.AI.Whisper.GgmlType>] [-NoContext] [-NoSpeechThreshold <Single?>] [-Offset <TimeSpan?>] [-Passthru] [-PrintSpecialTokens] [-Prompt <String>] [-SingleSegmentOnly] [-SplitOnWord] [-SuppressRegex <String>] [-Temperature <Single?>] [-TemperatureInc <Single?>] [-TokenTimestampsSumThreshold <Single>] [-WithBeamSearchSamplingStrategy] [-WithProgress] [-WithTokenTimestamps] [-WithTranslate] [<CommonParameters>]
 ```
 
 ## Parameters
@@ -41,7 +42,7 @@ Get-SpeechToText -Input <Object> [-AudioContextSize <Int32?>] [-CpuThreads <Int3
 | `-LengthPenalty` | Single? | ☐ | Length penalty |
 | `-EntropyThreshold` | Single? | ☐ | Entropy threshold |
 | `-LogProbThreshold` | Single? | ☐ | Log probability threshold |
-| `-ModelType` | Whisper.net.Ggml.GgmlType | ☐ | Whisper model type to use, defaults to<br>LargeV3Turbo |
+| `-ModelType` | GenXdev.AI.Whisper.GgmlType | ☐ | Whisper model type to use, defaults to<br>LargeV3Turbo |
 | `-Passthru` | SwitchParameter | ☐ | Returns objects instead of strings |
 | `-WithTokenTimestamps` | SwitchParameter | ☐ | Whether to include token timestamps |
 | `-SplitOnWord` | SwitchParameter | ☐ | Whether to split on word boundaries |
@@ -55,7 +56,6 @@ Get-SpeechToText -Input <Object> [-AudioContextSize <Int32?>] [-CpuThreads <Int3
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-SpeechToText -Input "C:\audio\recording.wav"
@@ -63,7 +63,6 @@ Get-SpeechToText -Input "C:\audio\recording.wav"
 
 Transcribes an audio file to text using default settings.
 
-### Examples 2
 
 ```powershell
 Get-ChildItem "C:\audio\*.wav" | Get-SpeechToText
@@ -71,7 +70,6 @@ Get-ChildItem "C:\audio\*.wav" | Get-SpeechToText
 
 Transcribes all WAV files in a directory.
 
-### Examples 3
 
 ```powershell
 Get-SpeechToText -Input "audio.mp3" -LanguageIn "es" -WithTranslate
@@ -79,7 +77,6 @@ Get-SpeechToText -Input "audio.mp3" -LanguageIn "es" -WithTranslate
 
 Transcribes Spanish audio and translates it to English.
 
-### Examples 4
 
 ```powershell
 Get-SpeechToText -Input "recording.wav" -Passthru -WithTokenTimestamps
@@ -389,7 +386,7 @@ Returns SegmentData objects with precise timing information.
 
 <hr/>
 
-### `-ModelType <Whisper.net.Ggml.GgmlType>`
+### `-ModelType <GenXdev.AI.Whisper.GgmlType>`
 
 > Whisper model type to use, defaults to LargeV3Turbo
 

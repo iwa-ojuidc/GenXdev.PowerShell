@@ -22,6 +22,7 @@ error is thrown with instructions for configuring settings.
 
 ## Syntax
 
+
 ```powershell
 Get-AILLMSettings [[-LLMQueryType] <String>] [-ApiEndpoint <String>] [-ApiKey <String>] [-ClearSession] [-Model <String>] [-NonInteractive] [-NoSupportForImageUpload] [-NoSupportForJsonSchema] [-NoSupportForToolCalls] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-SessionOnly] [-SkipSession] [-SuppressAutoPrompt] [<CommonParameters>]
 ```
@@ -47,21 +48,21 @@ Get-AILLMSettings [[-LLMQueryType] <String>] [-ApiEndpoint <String>] [-ApiKey <S
 
 ## Examples
 
-### Get-AILLMSettings Gets the LLM settings for SimpleIntelligence query type (default).
+
 
 ```powershell
 Get-AILLMSettings
 Gets the LLM settings for SimpleIntelligence query type (default).
 ```
 
-### Get-AILLMSettings -LLMQueryType "Coding" Gets the LLM settings for Coding query type.
+
 
 ```powershell
 Get-AILLMSettings -LLMQueryType "Coding"
 Gets the LLM settings for Coding query type.
 ```
 
-### Get-AILLMSettings -SkipSession Gets the LLM settings from preferences or defaults only, ignoring session settings.
+
 
 ```powershell
 Get-AILLMSettings -SkipSession
@@ -69,7 +70,7 @@ Gets the LLM settings from preferences or defaults only, ignoring session
 settings.
 ```
 
-### Get-AILLMSettings "Knowledge"
+
 
 ```powershell
 Get-AILLMSettings "Knowledge"

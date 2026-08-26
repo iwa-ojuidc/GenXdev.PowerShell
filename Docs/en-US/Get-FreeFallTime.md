@@ -13,6 +13,7 @@ Calculates the time duration required for an object to fall a specified height u
 
 ## Syntax
 
+
 ```powershell
 Get-FreeFallTime -HeightInMeters <Double> [[-TerminalVelocityInMs] <Double>] [[-As] <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-FreeFallTime -HeightInMeters <Double> [[-TerminalVelocityInMs] <Double>] [[-
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-FreeFallTime -HeightInMeters 100 -TerminalVelocityInMs 53
@@ -35,7 +35,6 @@ Get-FreeFallTime -HeightInMeters 100 -TerminalVelocityInMs 53
 
 Calculates the time required to fall 100 meters with default human terminal velocity.
 
-### Examples 2
 
 ```powershell
 Get-FreeFallTime 50
@@ -43,7 +42,6 @@ Get-FreeFallTime 50
 
 Calculates the time required to fall 50 meters using positional parameter and default terminal velocity.
 
-### Examples 3
 
 ```powershell
 Get-FreeFallTime -HeightInMeters 100 -As "minutes"

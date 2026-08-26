@@ -15,6 +15,7 @@ block and command info callbacks.
 
 ## Syntax
 
+
 ```powershell
 Invoke-CommandFromToolCall -ToolCall <Collections.Hashtable> [-ExposedCmdLets <GenXdev.Helpers.ExposedCmdletDefinition[]>] [-ForceAsText] [-Functions <Collections.Hashtable[]>] [-NoConfirmationToolFunctionNames <String[]>] [<CommonParameters>]
 ```
@@ -31,14 +32,14 @@ Invoke-CommandFromToolCall -ToolCall <Collections.Hashtable> [-ExposedCmdLets <G
 
 ## Examples
 
-### Invoke-CommandFromToolCall -ToolCall $toolCall -Functions $functions `     -ExposedCmdLets $exposedCmdlets
+
 
 ```powershell
 Invoke-CommandFromToolCall -ToolCall $toolCall -Functions $functions `
     -ExposedCmdLets $exposedCmdlets
 ```
 
-### $result = Invoke-CommandFromToolCall $toolCall $functions -ForceAsText
+
 
 ```powershell
 $result = Invoke-CommandFromToolCall $toolCall $functions -ForceAsText

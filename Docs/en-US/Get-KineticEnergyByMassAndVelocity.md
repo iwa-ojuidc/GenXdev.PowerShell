@@ -13,6 +13,7 @@ Uses KE = 1/2 m v².
 
 ## Syntax
 
+
 ```powershell
 Get-KineticEnergyByMassAndVelocity -MassInKilograms <Double> -VelocityInMetersPerSecond <Double> [[-As] <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-KineticEnergyByMassAndVelocity -MassInKilograms <Double> -VelocityInMetersPe
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-KineticEnergyByMassAndVelocity -MassInKilograms 10 -VelocityInMetersPerSecond 5 -As "calories"
@@ -35,7 +35,6 @@ Get-KineticEnergyByMassAndVelocity -MassInKilograms 10 -VelocityInMetersPerSecon
 
 Calculates kinetic energy for a 10kg mass moving at 5 m/s and outputs in calories.
 
-### Examples 2
 
 ```powershell
 Get-KineticEnergyByMassAndVelocity 5 10

@@ -16,6 +16,7 @@ dictionary for later reference.
 
 ## Syntax
 
+
 ```powershell
 Connect-PlaywrightViaDebuggingPort -WsEndpoint <String> [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -31,12 +32,11 @@ Connect-PlaywrightViaDebuggingPort -WsEndpoint <String> [-AutoConsent] [-AutoCon
 
 ## Examples
 
-### Connect-PlaywrightViaDebuggingPort `     -WsEndpoint "ws://localhost:9222/devtools/browser/abc123" ##############################################################################
+
 
 ```powershell
 Connect-PlaywrightViaDebuggingPort `
     -WsEndpoint "ws://localhost:9222/devtools/browser/abc123"
-##############################################################################
 ```
 
 ## Parameter Details

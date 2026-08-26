@@ -15,13 +15,14 @@ the system's text-to-speech engine. The date is spoken in the format:
 
 ## Syntax
 
+
 ```powershell
 SayDate [<CommonParameters>]
 ```
 
 ## Examples
 
-### SayDate Announces today's date using text-to-speech
+
 
 ```powershell
 SayDate

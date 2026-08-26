@@ -15,6 +15,7 @@ purposes.
 
 ## Syntax
 
+
 ```powershell
 Remove-KeyFromStore -StoreName <String> -KeyName <String> [-DatabasePath <String>] [<CommonParameters>]
 ```
@@ -29,7 +30,6 @@ Remove-KeyFromStore -StoreName <String> -KeyName <String> [-DatabasePath <String
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Remove-KeyFromStore -StoreName "MyStore" -KeyName "MyKey"
@@ -37,7 +37,6 @@ Remove-KeyFromStore -StoreName "MyStore" -KeyName "MyKey"
 
 Remove the key "MyKey" from the store "MyStore".
 
-### Examples 2
 
 ```powershell
 removekey "MyStore" "MyKey"

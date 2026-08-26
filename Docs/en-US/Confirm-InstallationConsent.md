@@ -32,6 +32,7 @@ proceed with installation. If allowed, it returns $true.
 
 ## Syntax
 
+
 ```powershell
 Confirm-InstallationConsent -ApplicationName <String> -Source <String> [-AutoConsent] [-AutoConsentAllPackages] [-Description <String>] [-Publisher <String>] [<CommonParameters>]
 ```
@@ -49,7 +50,7 @@ Confirm-InstallationConsent -ApplicationName <String> -Source <String> [-AutoCon
 
 ## Examples
 
-### if (Confirm-InstallationConsent -ApplicationName "Docker Desktop" `         -Source "Winget") {     # Proceed with installation     Microsoft.WinGet.Client\Install-WinGetPackage `         -Id "Docker.DockerDesktop" } This checks consent before installing Docker Desktop via Winget.
+
 
 ```powershell
 if (Confirm-InstallationConsent -ApplicationName "Docker Desktop" `
@@ -61,7 +62,7 @@ if (Confirm-InstallationConsent -ApplicationName "Docker Desktop" `
 This checks consent before installing Docker Desktop via Winget.
 ```
 
-### Confirm-InstallationConsent -ApplicationName "Pester" `     -Source "PowerShell Gallery" -Publisher "Pester Team" `     -Description "Required for unit testing in PowerShell modules." Prompts with detailed information before installing the Pester module.
+
 
 ```powershell
 Confirm-InstallationConsent -ApplicationName "Pester" `

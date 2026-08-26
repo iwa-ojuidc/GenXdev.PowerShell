@@ -13,6 +13,7 @@ Calculates the distance fallen during free fall using a numerical method that ac
 
 ## Syntax
 
+
 ```powershell
 Get-FreeFallHeight -DurationInSeconds <Double> [[-TerminalVelocityInMs] <Double>] [[-As] <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-FreeFallHeight -DurationInSeconds <Double> [[-TerminalVelocityInMs] <Double>
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-FreeFallHeight -DurationInSeconds 10 -TerminalVelocityInMs 53
@@ -35,7 +35,6 @@ Get-FreeFallHeight -DurationInSeconds 10 -TerminalVelocityInMs 53
 
 Calculates the height fallen in 10 seconds with default human terminal velocity.
 
-### Examples 2
 
 ```powershell
 Get-FreeFallHeight 5
@@ -43,7 +42,6 @@ Get-FreeFallHeight 5
 
 Calculates the height fallen in 5 seconds using positional parameter and default terminal velocity.
 
-### Examples 3
 
 ```powershell
 Get-FreeFallHeight -DurationInSeconds 10 -As "feet"

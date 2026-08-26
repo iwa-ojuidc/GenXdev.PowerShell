@@ -16,6 +16,7 @@
 
 ## Syntax
 
+
 ```powershell
 ConvertTo-HashTable -InputObject <Object> [<CommonParameters>]
 ```
@@ -28,7 +29,6 @@ ConvertTo-HashTable -InputObject <Object> [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 $object = [PSCustomObject]@{

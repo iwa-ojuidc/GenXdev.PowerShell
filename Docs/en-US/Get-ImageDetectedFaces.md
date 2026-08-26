@@ -18,6 +18,7 @@ confidence thresholds, and Docker container management.
 
 ## Syntax
 
+
 ```powershell
 Get-ImageDetectedFaces -ImagePath <String> [-AutoConsent] [-AutoConsentAllPackages] [-ConfidenceThreshold <Double>] [-ContainerName <String>] [-Force] [-HealthCheckInterval <Int32>] [-HealthCheckTimeout <Int32>] [-ImageName <String>] [-NoDockerInitialize] [-ServicePort <Int32>] [-SessionOnly] [-ShowWindow] [-UseGPU] [-VolumeName <String>] [<CommonParameters>]
 ```
@@ -44,7 +45,7 @@ Get-ImageDetectedFaces -ImagePath <String> [-AutoConsent] [-AutoConsentAllPackag
 
 ## Examples
 
-### Get-ImageDetectedFaces -ImagePath "C:\Users\YourName\test.jpg" `                        -ConfidenceThreshold 0.5 `                        -ContainerName "deepstack_face_recognition" `                        -VolumeName "deepstack_face_data" `                        -ServicePort 5000 `                        -HealthCheckTimeout 60 `                        -HealthCheckInterval 3 Recognizes faces in the specified image using full parameter names.
+
 
 ```powershell
 Get-ImageDetectedFaces -ImagePath "C:\Users\YourName\test.jpg" `
@@ -57,14 +58,14 @@ Get-ImageDetectedFaces -ImagePath "C:\Users\YourName\test.jpg" `
 Recognizes faces in the specified image using full parameter names.
 ```
 
-### Get-ImageDetectedFaces "C:\photos\family.jpg" -Force -UseGPU Recognizes faces using positional parameter and aliases.
+
 
 ```powershell
 Get-ImageDetectedFaces "C:\photos\family.jpg" -Force -UseGPU
 Recognizes faces using positional parameter and aliases.
 ```
 
-### "C:\Users\YourName\test.jpg" | Get-ImageDetectedFaces Recognizes faces using pipeline input.
+
 
 ```powershell
 "C:\Users\YourName\test.jpg" | Get-ImageDetectedFaces

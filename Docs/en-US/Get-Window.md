@@ -16,6 +16,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-Window [[-ProcessName] <String>] [-ProcessId <Int32>] [-WindowHandle <Int64>] [<CommonParameters>]
 ```
@@ -30,7 +31,6 @@ Get-Window [[-ProcessName] <String>] [-ProcessId <Int32>] [-WindowHandle <Int64>
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-Window -ProcessName "notepad"
@@ -38,7 +38,6 @@ Get-Window -ProcessName "notepad"
 
 Retrieves window information for all processes named "notepad".
 
-### Examples 2
 
 ```powershell
 Get-Window -ProcessId 1234
@@ -46,7 +45,6 @@ Get-Window -ProcessId 1234
 
 Retrieves window information for the process with ID 1234.
 
-### Examples 3
 
 ```powershell
 Get-Window -WindowHandle 45678

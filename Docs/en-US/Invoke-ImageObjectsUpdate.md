@@ -17,6 +17,7 @@ skip existing metadata files or retry previously failed detections.
 
 ## Syntax
 
+
 ```powershell
 Invoke-ImageObjectsUpdate [[-ImageDirectories] <String[]>] [-ClearSession] [-Language <String>] [-LLMQueryType <String>] [-Model <String>] [-OnlyNew] [-PreferencesDatabasePath <String>] [-Recurse] [-RetryFailed] [-SessionOnly] [-SkipSession] [-TimeoutSeconds <Int32>] [<CommonParameters>]
 ```
@@ -40,7 +41,7 @@ Invoke-ImageObjectsUpdate [[-ImageDirectories] <String[]>] [-ClearSession] [-Lan
 
 ## Examples
 
-### Invoke-ImageObjectsUpdate -ImageDirectories @("C:\Photos", "D:\Pictures") -Recurse This example processes all images in C:\Photos and D:\Pictures and all subdirectories using default settings with 0.5 confidence threshold.
+
 
 ```powershell
 Invoke-ImageObjectsUpdate -ImageDirectories @("C:\Photos", "D:\Pictures") -Recurse
@@ -48,7 +49,7 @@ This example processes all images in C:\Photos and D:\Pictures and all
 subdirectories using default settings with 0.5 confidence threshold.
 ```
 
-### Invoke-ImageObjectsUpdate @("C:\Photos", "C:\Archive") -RetryFailed -OnlyNew This example processes only new images and retries previously failed ones in multiple directories using positional parameter syntax.
+
 
 ```powershell
 Invoke-ImageObjectsUpdate @("C:\Photos", "C:\Archive") -RetryFailed -OnlyNew
@@ -56,7 +57,7 @@ This example processes only new images and retries previously failed ones
 in multiple directories using positional parameter syntax.
 ```
 
-### Invoke-ImageObjectsUpdate -ImageDirectories "C:\Photos" -UseGPU `     -ConfidenceThreshold 0.7 This example uses GPU acceleration with higher confidence threshold of 0.7 for more accurate but fewer object detections.
+
 
 ```powershell
 Invoke-ImageObjectsUpdate -ImageDirectories "C:\Photos" -UseGPU `

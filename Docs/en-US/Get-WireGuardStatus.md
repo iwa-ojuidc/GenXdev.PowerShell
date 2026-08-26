@@ -17,6 +17,7 @@ network configuration details.
 
 ## Syntax
 
+
 ```powershell
 Get-WireGuardStatus [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [[-ImageName] <String>] [[-PUID] <String>] [[-PGID] <String>] [[-TimeZone] <String>] [[-Width] <Int32>] [[-Height] <Int32>] [[-Left] <Int32>] [[-Right] <Int32>] [[-Bottom] <Int32>] [[-SendKeyDelayMilliSeconds] <Int32>] [-AutoConsent] [-AutoConsentAllPackages] [-Centered] [-ClearSession] [-FocusWindow] [-Force] [-Fullscreen] [-NoBorders] [-NoDockerInitialize] [-RestoreFocus] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-ShowWindow] [-SideBySide] [-SkipSession] [<CommonParameters>]
 ```
@@ -61,14 +62,14 @@ Get-WireGuardStatus [[-ContainerName] <String>] [[-VolumeName] <String>] [[-Serv
 
 ## Examples
 
-### Get-WireGuardStatus Returns the status of the WireGuard server with default settings.
+
 
 ```powershell
 Get-WireGuardStatus
 Returns the status of the WireGuard server with default settings.
 ```
 
-### Get-WireGuardStatus -NoDockerInitialize -ContainerName "custom_wireguard" Retrieves status for a custom container without initializing Docker.
+
 
 ```powershell
 Get-WireGuardStatus -NoDockerInitialize -ContainerName "custom_wireguard"

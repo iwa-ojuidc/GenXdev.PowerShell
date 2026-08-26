@@ -17,6 +17,7 @@ structured response format to ensure consistent output.
 
 ## Syntax
 
+
 ```powershell
 Get-Fallacy -InputObject <Object> [[-Instructions] <String>] [[-Attachments] <String[]>] [-ApiEndpoint <String>] [-ApiKey <String>] [-AudioContextSize <Int32>] [-AudioTemperature <Double>] [-ClearSession] [-ContinueLast] [-CpuThreads <Int32>] [-DontSpeak] [-DontSpeakThoughts] [-EntropyThreshold <Double>] [-ExposedCmdLets <GenXdev.Helpers.ExposedCmdletDefinition[]>] [-Functions <Collections.Hashtable[]>] [-ImageDetail <String>] [-IncludeThoughts] [-LengthPenalty <Double>] [-LLMQueryType <String>] [-LogProbThreshold <Double>] [-MaxToolcallBackLength <Int32>] [-Model <String>] [-NoConfirmationToolFunctionNames <String[]>] [-NoContext] [-NoSessionCaching] [-NoSpeechThreshold <Double>] [-NoVOX] [-OnlyResponses] [-OpenInImdb] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SilenceThreshold <Double>] [-SkipSession] [-Speak] [-SpeakThoughts] [-SuppressRegex <String>] [-Temperature <Double>] [-TemperatureResponse <Double>] [-TimeoutSeconds <Int32>] [-UseDesktopAudioCapture] [-WithBeamSearchSamplingStrategy] [<CommonParameters>]
 ```
@@ -69,7 +70,7 @@ Get-Fallacy -InputObject <Object> [[-Instructions] <String>] [[-Attachments] <St
 
 ## Examples
 
-### Get-Fallacy -Text ("All politicians are corrupt because John was corrupt " + "and he was a politician") Analyzes the provided text for logical fallacies and returns structured information about any fallacies detected.
+
 
 ```powershell
 Get-Fallacy -Text ("All politicians are corrupt because John was corrupt " +
@@ -78,14 +79,14 @@ Analyzes the provided text for logical fallacies and returns structured
 information about any fallacies detected.
 ```
 
-### "This product is the best because everyone uses it" | Get-Fallacy -Temperature 0.1 Uses pipeline input to analyze text with low temperature for focused analysis.
+
 
 ```powershell
 "This product is the best because everyone uses it" | Get-Fallacy -Temperature 0.1
 Uses pipeline input to analyze text with low temperature for focused analysis.
 ```
 
-### dispicetext "Everyone knows this is true" Uses the alias to analyze text for logical fallacies.
+
 
 ```powershell
 dispicetext "Everyone knows this is true"

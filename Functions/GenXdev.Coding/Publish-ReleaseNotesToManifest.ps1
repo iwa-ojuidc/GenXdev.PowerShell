@@ -202,7 +202,6 @@ function Publish-ReleaseNotesToManifest {
             )) {
             # Save backup copies first
             $readmeBackup = $readmeContent
-            $manifestBackup = [IO.File]::ReadAllText($ManifestPath)
 
             try {
                 GenXdev\Write-TextFileAtomic `

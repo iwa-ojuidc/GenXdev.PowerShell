@@ -15,6 +15,7 @@ to provide intelligent answers and insights for the provided queries.
 
 ## Syntax
 
+
 ```powershell
 Open-DeepSearchQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-ShowWindow] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -71,21 +72,21 @@ Open-DeepSearchQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <St
 
 ## Examples
 
-### Open-DeepSearchQuery -Queries "powershell function" Opens DeepSeek and searches for "powershell function" using default settings.
+
 
 ```powershell
 Open-DeepSearchQuery -Queries "powershell function"
 Opens DeepSeek and searches for "powershell function" using default settings.
 ```
 
-### aideepseek "powershell function" Uses the alias to search for "powershell function" with default parameters.
+
 
 ```powershell
 aideepseek "powershell function"
 Uses the alias to search for "powershell function" with default parameters.
 ```
 
-### Open-DeepSearchQuery -Queries "machine learning basics" -Monitor 0 -FullScreen Opens DeepSeek in fullscreen mode on the primary monitor to search for "machine learning basics".
+
 
 ```powershell
 Open-DeepSearchQuery -Queries "machine learning basics" -Monitor 0 -FullScreen

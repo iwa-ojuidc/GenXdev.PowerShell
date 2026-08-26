@@ -17,6 +17,7 @@ display options.
 
 ## Syntax
 
+
 ```powershell
 Open-VlcMediaPlayerLyrics [[-Queries] <String[]>] [[-EndPoint] <String>] [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-ShowWindow] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -75,14 +76,14 @@ Open-VlcMediaPlayerLyrics [[-Queries] <String[]>] [[-EndPoint] <String>] [[-Lang
 
 ## Examples
 
-### Open-VlcMediaPlayerLyrics Opens a Google search for lyrics of the currently playing VLC media.
+
 
 ```powershell
 Open-VlcMediaPlayerLyrics
 Opens a Google search for lyrics of the currently playing VLC media.
 ```
 
-### vlclyrics -Edge -Private Opens lyrics search in Microsoft Edge using private/incognito mode.
+
 
 ```powershell
 vlclyrics -Edge -Private

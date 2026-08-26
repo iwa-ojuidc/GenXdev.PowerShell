@@ -17,6 +17,7 @@ existence before adding paths to the clipboard.
 
 ## Syntax
 
+
 ```powershell
 Set-ClipboardFiles -InputObject <String[]> [<CommonParameters>]
 ```
@@ -29,21 +30,21 @@ Set-ClipboardFiles -InputObject <String[]> [<CommonParameters>]
 
 ## Examples
 
-### Set-ClipboardFiles -InputObject "C:\temp\file1.txt", "C:\temp\file2.txt" Sets two files to the clipboard using full parameter names.
+
 
 ```powershell
 Set-ClipboardFiles -InputObject "C:\temp\file1.txt", "C:\temp\file2.txt"
 Sets two files to the clipboard using full parameter names.
 ```
 
-### "C:\temp\file1.txt", "C:\temp\file2.txt" | Set-ClipboardFiles Sets files to clipboard using pipeline input.
+
 
 ```powershell
 "C:\temp\file1.txt", "C:\temp\file2.txt" | Set-ClipboardFiles
 Sets files to clipboard using pipeline input.
 ```
 
-### ls * -file | select -first 5 | Set-ClipboardFiles Sets files to clipboard using pipeline input, selecting the first 5 files
+
 
 ```powershell
 ls * -file | select -first 5 | Set-ClipboardFiles

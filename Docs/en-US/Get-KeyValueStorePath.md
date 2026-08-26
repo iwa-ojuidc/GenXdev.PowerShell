@@ -14,6 +14,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-KeyValueStorePath -StoreName <String> [-BasePath <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-KeyValueStorePath -StoreName <String> [-BasePath <String>] [<CommonParameter
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-KeyValueStorePath -StoreName "MyStore"

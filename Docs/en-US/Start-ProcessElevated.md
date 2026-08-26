@@ -20,6 +20,7 @@ The -Verb parameter is forced to 'RunAs'.
 
 ## Syntax
 
+
 ```powershell
 Start-ProcessElevated -FilePath <String> [[-ArgumentList] <String[]>] [-Elevated] [-Environment <Collections.Hashtable>] [-LoadUserProfile] [-NoNewWindow] [-PassThru] [-RedirectStandardError <String>] [-RedirectStandardInput <String>] [-RedirectStandardOutput <String>] [-UseNewEnvironment] [-Wait] [-WindowStyle <String>] [-WorkingDirectory <String>] [<CommonParameters>]
 ```
@@ -45,14 +46,14 @@ Start-ProcessElevated -FilePath <String> [[-ArgumentList] <String[]>] [-Elevated
 
 ## Examples
 
-### Start-ProcessElevated -FilePath 'notepad.exe' Launches Notepad with administrator privileges.
+
 
 ```powershell
 Start-ProcessElevated -FilePath 'notepad.exe'
 Launches Notepad with administrator privileges.
 ```
 
-### Start-ProcessElevated -FilePath 'winget.exe' -ArgumentList 'install', 'SomePackage' -Wait Installs a package via winget with admin rights and waits for completion.
+
 
 ```powershell
 Start-ProcessElevated -FilePath 'winget.exe' -ArgumentList 'install',

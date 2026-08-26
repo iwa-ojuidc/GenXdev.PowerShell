@@ -23,6 +23,7 @@
 
 ## Syntax
 
+
 ```powershell
 Write-TextFileAtomic -FilePath <String> [[-Data] <String>] [-DebounceMs <Int32>] [-Encoding <Text.Encoding>] [-MaxRetries <Int32>] [-RetryDelayMs <Int32>] [<CommonParameters>]
 ```
@@ -40,7 +41,6 @@ Write-TextFileAtomic -FilePath <String> [[-Data] <String>] [-DebounceMs <Int32>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Write-TextFileAtomic -FilePath "config.txt" -Data "hello world"
@@ -48,7 +48,6 @@ Write-TextFileAtomic -FilePath "config.txt" -Data "hello world"
 
 Writes a string to config.txt using UTF-8 encoding atomically.
 
-### Examples 2
 
 ```powershell
 # Debounce: only the LAST log line within 2 seconds hits disk
@@ -62,7 +61,6 @@ Start-Sleep -Seconds 3
 Pipes 50 lines rapidly; only the final line is persisted after a
 2-second quiet period.
 
-### Examples 3
 
 ```powershell
 Write-TextFileAtomic -FilePath "data.csv" -Data $csv `
@@ -71,7 +69,6 @@ Write-TextFileAtomic -FilePath "data.csv" -Data $csv `
 
 Writes a string to data.csv using ASCII encoding atomically.
 
-### Examples 4
 
 ```powershell
 # Debounce with custom retry: coalesce UI state saves

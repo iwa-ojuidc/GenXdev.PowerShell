@@ -13,6 +13,7 @@ Computes the size an object would appear to be if viewed at average adult arm's 
 
 ## Syntax
 
+
 ```powershell
 Get-AtEyeLengthSizeInMM -DistanceInMeters <Double> -SizeInMeters <Double> [-EyeToArmLengthInMeters <Double>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-AtEyeLengthSizeInMM -DistanceInMeters <Double> -SizeInMeters <Double> [-EyeT
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-AtEyeLengthSizeInMM -DistanceInMeters 10 -SizeInMeters 1

@@ -18,6 +18,7 @@ captured in a pipeline and adjusts its behavior accordingly.
 
 ## Syntax
 
+
 ```powershell
 WriteFileOutput -CallerInvocation <Object> -Input <Object> [-FullPaths] [-Prefix <String>] [-RelativeBasePath <String>] [<CommonParameters>]
 ```
@@ -34,13 +35,13 @@ WriteFileOutput -CallerInvocation <Object> -Input <Object> [-FullPaths] [-Prefix
 
 ## Examples
 
-### WriteFileOutput -CallerInvocation $MyInvocation -Input "C:\temp\file.txt"
+
 
 ```powershell
 WriteFileOutput -CallerInvocation $MyInvocation -Input "C:\temp\file.txt"
 ```
 
-### Get-ChildItem | WriteFileOutput -CallerInvocation $MyInvocation -Input $_
+
 
 ```powershell
 Get-ChildItem | WriteFileOutput -CallerInvocation $MyInvocation -Input $_

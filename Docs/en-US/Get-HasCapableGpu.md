@@ -13,13 +13,13 @@ Checks the system for CUDA-compatible GPUs with at least 4GB of video RAM. It us
 
 ## Syntax
 
+
 ```powershell
 Get-HasCapableGpu [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 $hasGpu = Get-HasCapableGpu

@@ -16,6 +16,7 @@ that cannot be undone and will permanently remove all registered face data.
 
 ## Syntax
 
+
 ```powershell
 Unregister-AllFaces [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [[-ImageName] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-ForceRebuild] [-NoDockerInitialize] [-SessionOnly] [-ShowWindow] [-UseGPU] [<CommonParameters>]
 ```
@@ -41,21 +42,21 @@ Unregister-AllFaces [[-ContainerName] <String>] [[-VolumeName] <String>] [[-Serv
 
 ## Examples
 
-### Unregister-AllFaces Removes all registered faces with confirmation prompt.
+
 
 ```powershell
 Unregister-AllFaces
 Removes all registered faces with confirmation prompt.
 ```
 
-### Unregister-AllFaces -Force Removes all registered faces without confirmation prompt.
+
 
 ```powershell
 Unregister-AllFaces -Force
 Removes all registered faces without confirmation prompt.
 ```
 
-### unregall -Force Uses alias to remove all faces without confirmation.
+
 
 ```powershell
 unregall -Force

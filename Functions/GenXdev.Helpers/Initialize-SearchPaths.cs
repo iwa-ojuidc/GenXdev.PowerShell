@@ -78,18 +78,24 @@ Initializes search paths using a specific workspace folder.
             // Create a new list to store unique search paths
             var searchPaths = new List<string>();
 
+            // Resolve environment variables before passing to ExpandPath,
+            // since Expand-Path does not expand ${env:...} placeholders.
+            var programData = System.Environment.GetEnvironmentVariable("ProgramData") ?? "";
+            var programFiles = System.Environment.GetEnvironmentVariable("ProgramFiles") ?? "";
+            var localAppData = System.Environment.GetEnvironmentVariable("LOCALAPPDATA") ?? "";
+
             // Add system and development tool paths
             var defaultPaths = new[]
             {
-                ExpandPath("${env:ProgramData}\\chocolatey\\bin\\"),
+                ExpandPath(Path.Combine(programData, "chocolatey\\bin\\")),
                 ExpandPath($"{WorkspaceFolder}\\node_modules\\.bin"),
                 ExpandPath($"{WorkspaceFolder}\\scripts"),
-                ExpandPath("${env:ProgramFiles}\\Git\\cmd"),
-                ExpandPath("${env:ProgramFiles}\\nodejs"),
-                ExpandPath("${env:ProgramFiles}\\Google\\Chrome\\Application"),
-                ExpandPath("${env:ProgramFiles}\\Microsoft VS Code\\bin"),
-                ExpandPath("${env:LOCALAPPDATA}Programs\\Microsoft VS Code Insiders"),
-                ExpandPath("${env:ProgramFiles}\\dotnet")
+                ExpandPath(Path.Combine(programFiles, "Git\\cmd")),
+                ExpandPath(Path.Combine(programFiles, "nodejs")),
+                ExpandPath(Path.Combine(programFiles, "Google\\Chrome\\Application")),
+                ExpandPath(Path.Combine(programFiles, "Microsoft VS Code\\bin")),
+                ExpandPath(Path.Combine(localAppData, "Programs\\Microsoft VS Code Insiders")),
+                ExpandPath(Path.Combine(programFiles, "dotnet"))
             };
 
             foreach (var path in defaultPaths)

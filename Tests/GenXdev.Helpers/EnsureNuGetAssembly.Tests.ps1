@@ -2,7 +2,7 @@
 # Part of PowerShell module : GenXdev.Helpers
 # Original cmdlet filename  : EnsureNuGetAssembly.Tests.ps1
 # Original author           : René Vaessen / GenXdev
-# Version                   : 3.34.0
+# Version                   : 3.35.0
 ###############################################################################
 
 Pester\BeforeAll {
@@ -12,7 +12,7 @@ Pester\Describe "EnsureNuGetAssembly" {
 
     Pester\It "Should install successfully" -Skip:(-not ($Global:AllowLongRunningTests -eq $true)) {
         {
-            GenXdev\EnsureNuGetAssembly -AutoConsent -SessionOnly `
+            GenXdev\EnsureNuGetAssembly -PackageKey 'Newtonsoft.Json' -AutoConsent -SessionOnly `
                 -ErrorAction Stop
         } | Pester\Should -Not -Throw
     }

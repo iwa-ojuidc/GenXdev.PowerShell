@@ -17,13 +17,13 @@
 
 ## Syntax
 
+
 ```powershell
 Get-CurrentFocusedProcess [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 $focusedProcess = Get-CurrentFocusedProcess

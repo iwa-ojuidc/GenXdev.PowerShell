@@ -15,13 +15,14 @@ See also cmdlet 'sidebyside' and 'restoredefaultmonitor'
 
 ## Syntax
 
+
 ```powershell
 secondscreen [<CommonParameters>]
 ```
 
 ## Examples
 
-### PS> secondscreen Sets defaults for GenXdev window openings to be on the secondary monitor
+
 
 ```powershell
 PS> secondscreen

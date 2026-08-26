@@ -17,6 +17,7 @@ Docker container to generate QR codes for peer configurations.
 
 ## Syntax
 
+
 ```powershell
 Get-WireGuardPeerQRCode -PeerName <String> [-AutoConsent] [-AutoConsentAllPackages] [-ContainerName <String>] [-Force] [-HealthCheckInterval <Int32>] [-HealthCheckTimeout <Int32>] [-ImageName <String>] [-NoDockerInitialize] [-PGID <String>] [-PUID <String>] [-ServicePort <Int32>] [-SessionOnly] [-TimeZone <String>] [-VolumeName <String>] [<CommonParameters>]
 ```
@@ -43,13 +44,13 @@ Get-WireGuardPeerQRCode -PeerName <String> [-AutoConsent] [-AutoConsentAllPackag
 
 ## Examples
 
-### Get-WireGuardPeerQRCode -PeerName "MyPhone"
+
 
 ```powershell
 Get-WireGuardPeerQRCode -PeerName "MyPhone"
 ```
 
-### Get-WireGuardPeerQRCode -PeerName "Tablet" -NoDockerInitialize
+
 
 ```powershell
 Get-WireGuardPeerQRCode -PeerName "Tablet" -NoDockerInitialize

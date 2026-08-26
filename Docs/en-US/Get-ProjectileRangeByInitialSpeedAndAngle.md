@@ -13,6 +13,7 @@ Uses the formula R = (v² sin(2θ)) / g for ideal projectile motion.
 
 ## Syntax
 
+
 ```powershell
 Get-ProjectileRangeByInitialSpeedAndAngle -InitialSpeedInMetersPerSecond <Double> -AngleInDegrees <Double> [[-GravityInMetersPerSecondSquared] <Double>] [[-As] <String>] [<CommonParameters>]
 ```
@@ -28,7 +29,6 @@ Get-ProjectileRangeByInitialSpeedAndAngle -InitialSpeedInMetersPerSecond <Double
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-ProjectileRangeByInitialSpeedAndAngle -InitialSpeedInMetersPerSecond 20 -AngleInDegrees 45 -As "feet"
@@ -36,7 +36,6 @@ Get-ProjectileRangeByInitialSpeedAndAngle -InitialSpeedInMetersPerSecond 20 -Ang
 
 Calculates the range using the projectile motion formula.
 
-### Examples 2
 
 ```powershell
 Get-ProjectileRangeByInitialSpeedAndAngle 30 30

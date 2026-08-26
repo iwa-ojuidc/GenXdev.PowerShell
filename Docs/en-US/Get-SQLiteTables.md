@@ -15,6 +15,7 @@ or a database file path. Returns the table names as a collection of strings.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLiteTables -ConnectionString <String> [<CommonParameters>]
 
@@ -30,14 +31,14 @@ Get-SQLiteTables -DatabaseFilePath <String> [<CommonParameters>]
 
 ## Examples
 
-### Get-SQLiteTables -DatabaseFilePath "C:\Databases\Inventory.sqlite" Returns all table names from the specified database file
+
 
 ```powershell
 Get-SQLiteTables -DatabaseFilePath "C:\Databases\Inventory.sqlite"
 Returns all table names from the specified database file
 ```
 
-### Get-SQLiteTables -ConnectionString "Data Source=C:\DB\Users.sqlite;Version=3;" Returns all table names using a custom connection string
+
 
 ```powershell
 Get-SQLiteTables -ConnectionString "Data Source=C:\DB\Users.sqlite;Version=3;"

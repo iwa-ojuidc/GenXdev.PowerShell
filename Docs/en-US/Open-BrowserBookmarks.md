@@ -19,6 +19,7 @@ extensive window positioning and behavior customization.
 
 ## Syntax
 
+
 ```powershell
 Open-BrowserBookmarks [[-Queries] <String[]>] [[-Count] <Int32>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Minimize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PlayWright] [-Private] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-ShowWindow] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -75,7 +76,7 @@ Open-BrowserBookmarks [[-Queries] <String[]>] [[-Count] <Int32>] [-AcceptLang <S
 
 ## Examples
 
-### Open-BrowserBookmarks -Queries "github" -Edge -Count 5 Searches for bookmarks containing "github" in Microsoft Edge and opens the first 5 results in the default browser.
+
 
 ```powershell
 Open-BrowserBookmarks -Queries "github" -Edge -Count 5
@@ -83,7 +84,7 @@ Searches for bookmarks containing "github" in Microsoft Edge and opens the
 first 5 results in the default browser.
 ```
 
-### sites gh -e -c 5 Same as above using aliases - searches Edge bookmarks for "gh" and opens 5 results in the default browser.
+
 
 ```powershell
 sites gh -e -c 5
@@ -91,7 +92,7 @@ Same as above using aliases - searches Edge bookmarks for "gh" and opens 5
 results in the default browser.
 ```
 
-### Open-BrowserBookmarks -Queries "development", "tools" -Chrome -Firefox -Left -Count 10 Searches Chrome bookmarks for "development" and "tools", opens first 10 results in Firefox positioned on the left side of screen.
+
 
 ```powershell
 Open-BrowserBookmarks -Queries "development", "tools" -Chrome -Firefox -Left -Count 10

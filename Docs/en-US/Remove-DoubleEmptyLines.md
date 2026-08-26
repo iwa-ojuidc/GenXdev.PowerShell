@@ -17,6 +17,7 @@ formatting rules are applied to normalize the code structure.
 
 ## Syntax
 
+
 ```powershell
 Remove-DoubleEmptyLines -code <String> [-Reformat] [<CommonParameters>]
 ```
@@ -30,14 +31,14 @@ Remove-DoubleEmptyLines -code <String> [-Reformat] [<CommonParameters>]
 
 ## Examples
 
-### $cleanCode = $sourceCode | Remove-DoubleEmptyLines Pipes source code through the function to remove consecutive blank lines.
+
 
 ```powershell
 $cleanCode = $sourceCode | Remove-DoubleEmptyLines
 Pipes source code through the function to remove consecutive blank lines.
 ```
 
-### Remove-DoubleEmptyLines -code $sourceCode -Reformat Removes double empty lines and applies additional formatting.
+
 
 ```powershell
 Remove-DoubleEmptyLines -code $sourceCode -Reformat

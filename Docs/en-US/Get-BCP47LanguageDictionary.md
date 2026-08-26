@@ -26,13 +26,13 @@ display names.
 
 ## Syntax
 
+
 ```powershell
 Get-BCP47LanguageDictionary [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-BCP47LanguageDictionary
@@ -40,7 +40,6 @@ Get-BCP47LanguageDictionary
 
 Get the full BCP 47 language dictionary.
 
-### Examples 2
 
 ```powershell
 $dict = Get-BCP47LanguageDictionary

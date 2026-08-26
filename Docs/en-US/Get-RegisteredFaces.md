@@ -17,6 +17,7 @@ handling for various failure scenarios.
 
 ## Syntax
 
+
 ```powershell
 Get-RegisteredFaces [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [[-ImageName] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-NoDockerInitialize] [-SessionOnly] [-ShowWindow] [-UseGPU] [<CommonParameters>]
 ```
@@ -41,28 +42,28 @@ Get-RegisteredFaces [[-ContainerName] <String>] [[-VolumeName] <String>] [[-Serv
 
 ## Examples
 
-### Get-RegisteredFaces This example retrieves all registered faces using default parameters.
+
 
 ```powershell
 Get-RegisteredFaces
 This example retrieves all registered faces using default parameters.
 ```
 
-### Get-RegisteredFaces -Force -UseGPU This example forces a rebuild of the container and uses GPU acceleration.
+
 
 ```powershell
 Get-RegisteredFaces -Force -UseGPU
 This example forces a rebuild of the container and uses GPU acceleration.
 ```
 
-### Get-RegisteredFaces -ContainerName "my_deepstack" -ServicePort 8080 This example uses a custom container name and port number.
+
 
 ```powershell
 Get-RegisteredFaces -ContainerName "my_deepstack" -ServicePort 8080
 This example uses a custom container name and port number.
 ```
 
-### Get-RegisteredFaces | Where-Object { $_ -like "John*" } This example retrieves all faces and filters for those starting with "John".
+
 
 ```powershell
 Get-RegisteredFaces |

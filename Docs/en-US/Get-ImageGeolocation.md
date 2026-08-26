@@ -17,6 +17,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-ImageGeolocation -ImagePath <String> [<CommonParameters>]
 ```
@@ -29,7 +30,6 @@ Get-ImageGeolocation -ImagePath <String> [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-ImageGeolocation -ImagePath "C:\Pictures\vacation.jpg"
@@ -37,7 +37,6 @@ Get-ImageGeolocation -ImagePath "C:\Pictures\vacation.jpg"
 
 Extracts GPS coordinates from a vacation photo.
 
-### Examples 2
 
 ```powershell
 "C:\Pictures\vacation.jpg" | Get-ImageGeolocation

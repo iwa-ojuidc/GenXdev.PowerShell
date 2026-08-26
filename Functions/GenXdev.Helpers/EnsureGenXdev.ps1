@@ -184,7 +184,7 @@ function EnsureGenXdev {
         }
 
         # get all ensure cmdlets and execute each one (excluding self to prevent infinite recursion)
-        (@(GenXdev\Get-GenXDevCmdlet Ensure*) + @(GenXdev\Get-GenXDevCmdlet Optimize-Ensure*)) |
+        (@(GenXdev\Get-GenXDevCmdlet Ensure* | Microsoft.PowerShell.Core\Where-Object { $_.BaseModule -eq "GenXdev" }) + @(GenXdev\Get-GenXDevCmdlet Optimize-Ensure*)) |
             Microsoft.PowerShell.Core\ForEach-Object name |
             Microsoft.PowerShell.Core\Where-Object {
 

@@ -19,6 +19,7 @@ growth across processing batches.
 
 ## Syntax
 
+
 ```powershell
 Merge-TranslationCache [-GetCache] [<CommonParameters>]
 
@@ -45,25 +46,25 @@ Merge-TranslationCache -PurgeFromCache [<CommonParameters>]
 
 ## Examples
 
-### $cache = Merge-TranslationCache -GetCache
+
 
 ```powershell
 $cache = Merge-TranslationCache -GetCache
 ```
 
-### Merge-TranslationCache -Language 'nl-NL' -Key 'Hello' -Value 'Hallo'
+
 
 ```powershell
 Merge-TranslationCache -Language 'nl-NL' -Key 'Hello' -Value 'Hallo'
 ```
 
-### Merge-TranslationCache -PersistNow
+
 
 ```powershell
 Merge-TranslationCache -PersistNow
 ```
 
-### Merge-TranslationCache -PurgeFromCache
+
 
 ```powershell
 Merge-TranslationCache -PurgeFromCache

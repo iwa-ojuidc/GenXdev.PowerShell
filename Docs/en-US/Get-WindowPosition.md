@@ -14,6 +14,7 @@ docking state, and focus status for specified processes or window handles.
 
 ## Syntax
 
+
 ```powershell
 Get-WindowPosition [[-ProcessName] <String>] [<CommonParameters>]
 
@@ -32,21 +33,21 @@ Get-WindowPosition [-WindowHelper <GenXdev.Helpers.WindowObj[]>] [<CommonParamet
 
 ## Examples
 
-### Get-WindowPosition -ProcessName notepad Gets position information for all notepad windows
+
 
 ```powershell
 Get-WindowPosition -ProcessName notepad
 Gets position information for all notepad windows
 ```
 
-### Get-Process notepad | Get-WindowPosition Gets position information for notepad processes via pipeline
+
 
 ```powershell
 Get-Process notepad | Get-WindowPosition
 Gets position information for notepad processes via pipeline
 ```
 
-### Get-Window -ProcessName notepad | Get-WindowPosition Gets position information using window helper objects
+
 
 ```powershell
 Get-Window -ProcessName notepad | Get-WindowPosition

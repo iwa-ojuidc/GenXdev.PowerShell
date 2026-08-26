@@ -18,6 +18,7 @@ or bypass it entirely to read directly from stored preferences.
 
 ## Syntax
 
+
 ```powershell
 Get-AIDefaultLLMSettings [[-LLMQueryType] <String>] [-ApiEndpoint <String>] [-ApiKey <String>] [-ClearSession] [-Model <String>] [-NoSupportForJsonSchema] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -38,7 +39,7 @@ Get-AIDefaultLLMSettings [[-LLMQueryType] <String>] [-ApiEndpoint <String>] [-Ap
 
 ## Examples
 
-### Get-AIDefaultLLMSettings -LLMQueryType "Coding" Gets all available default configurations for Coding query type.
+
 
 ```powershell
 Get-AIDefaultLLMSettings -LLMQueryType "Coding"

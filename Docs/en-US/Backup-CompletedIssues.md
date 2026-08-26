@@ -15,6 +15,7 @@ while preserving a history of resolved issues.
 
 ## Syntax
 
+
 ```powershell
 Backup-CompletedIssues -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -29,13 +30,13 @@ Backup-CompletedIssues -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<Co
 
 ## Examples
 
-### Backup-CompletedIssues -Path "C:\temp\issue-archive.md"
+
 
 ```powershell
 Backup-CompletedIssues -Path "C:\temp\issue-archive.md"
 ```
 
-### archive-issues -Path ".\archive.md" -UseHomeREADME
+
 
 ```powershell
 archive-issues -Path ".\archive.md" -UseHomeREADME

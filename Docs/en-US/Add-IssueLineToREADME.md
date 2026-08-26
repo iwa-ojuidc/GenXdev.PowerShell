@@ -14,6 +14,7 @@ Can display the modified section and open in Visual Studio Code.
 
 ## Syntax
 
+
 ```powershell
 Add-IssueLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveCompleted] [-ArchiveFilePath <String>] [-Ascending] [-Code] [-Done] [-ExcludeCompleted] [-First <Int32>] [-OnlyCompleted] [-Show] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -39,13 +40,13 @@ Add-IssueLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveComplete
 
 ## Examples
 
-### Add-IssueLineToREADME -Line "Found critical bug" -Show -UseHomeREADME
+
 
 ```powershell
 Add-IssueLineToREADME -Line "Found critical bug" -Show -UseHomeREADME
 ```
 
-### issue "Server connection fails" -Show
+
 
 ```powershell
 issue "Server connection fails" -Show

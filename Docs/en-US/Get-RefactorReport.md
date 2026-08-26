@@ -13,6 +13,7 @@ Analyzes and reports on the progress of refactoring operations by examining thei
 
 ## Syntax
 
+
 ```powershell
 Get-RefactorReport [[-Name] <String[]>] [-AsText] [-ClearSession] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -30,7 +31,6 @@ Get-RefactorReport [[-Name] <String[]>] [-AsText] [-ClearSession] [-PreferencesD
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-RefactorReport -Name "DatabaseRefactor" -AsText
@@ -38,7 +38,6 @@ Get-RefactorReport -Name "DatabaseRefactor" -AsText
 
 Generates a text report for refactors matching "DatabaseRefactor".
 
-### Examples 2
 
 ```powershell
 refactorreport "*"

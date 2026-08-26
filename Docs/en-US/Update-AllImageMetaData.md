@@ -22,6 +22,7 @@ Update-AllImageMetaData | Export-ImageIndex
 
 ## Syntax
 
+
 ```powershell
 Update-AllImageMetaData -ImageDirectories <String[]> [-ApiEndpoint <String>] [-ApiKey <String>] [-AutoConsent] [-AutoConsentAllPackages] [-AutoUpdateFaces] [-ClearSession] [-ConfidenceThreshold <Double>] [-ContainerName <String>] [-FacesDirectory <String>] [-Force] [-HealthCheckInterval <Int32>] [-HealthCheckTimeout <Int32>] [-ImageName <String>] [-Language <String>] [-Model <String>] [-NoDockerInitialize] [-NoRecurse] [-NoSupportForJsonSchema] [-PassThru] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-RedoAll] [-RetryFailed] [-ServicePort <Int32>] [-SessionOnly] [-SkipSession] [-TimeoutSeconds <Int32>] [-UseGPU] [-VolumeName <String>] [<CommonParameters>]
 ```
@@ -63,24 +64,23 @@ Update-AllImageMetaData -ImageDirectories <String[]> [-ApiEndpoint <String>] [-A
 
 ## Examples
 
-### Update-AllImageMetaData -ImageDirectories @("C:\Pictures", "D:\Photos") `     -ServicePort 5000
+
 
 ```powershell
 Update-AllImageMetaData -ImageDirectories @("C:\Pictures", "D:\Photos") `
     -ServicePort 5000
 ```
 
-### Update-AllImageMetaData -RetryFailed -Force -Language "Spanish"
+
 
 ```powershell
 Update-AllImageMetaData -RetryFailed -Force -Language "Spanish"
 ```
 
-### updateallimages @("C:\MyImages") -ContainerName "custom_face_recognition" ##############################################################################
+
 
 ```powershell
 updateallimages @("C:\MyImages") -ContainerName "custom_face_recognition"
-##############################################################################
 ```
 
 ## Parameter Details

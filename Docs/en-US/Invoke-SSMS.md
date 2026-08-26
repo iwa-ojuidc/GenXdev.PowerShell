@@ -18,13 +18,14 @@ Provides a PowerShell interface for executing SQL Server queries with support fo
 
 ## Syntax
 
+
 ```powershell
 Invoke-SSMS [<CommonParameters>]
 ```
 
 ## Examples
 
-### Invoke-SSMS `     -DatabaseName "users" -Server "localhost" `     -Queries "SELECT * FROM Users WHERE active = @status" `     -SqlParameters @{"status" = 1}
+
 
 ```powershell
 Invoke-SSMS `
@@ -33,7 +34,7 @@ Invoke-SSMS `
     -SqlParameters @{"status" = 1}
 ```
 
-### "SELECT * FROM Users" | Invoke-SSMS -DatabaseName "users"
+
 
 ```powershell
 "SELECT * FROM Users" | Invoke-SSMS -DatabaseName "users"

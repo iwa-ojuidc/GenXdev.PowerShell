@@ -16,6 +16,7 @@ preservation of their structure and metadata.
 
 ## Syntax
 
+
 ```powershell
 Export-BrowserBookmarks -OutputFile <String> [-Chrome] [-Edge] [<CommonParameters>]
 
@@ -33,13 +34,13 @@ Export-BrowserBookmarks [-Firefox] [<CommonParameters>]
 
 ## Examples
 
-### Export-BrowserBookmarks -OutputFile "C:\MyBookmarks.json" -Edge
+
 
 ```powershell
 Export-BrowserBookmarks -OutputFile "C:\MyBookmarks.json" -Edge
 ```
 
-### Export-BrowserBookmarks "C:\MyBookmarks.json" -Chrome
+
 
 ```powershell
 Export-BrowserBookmarks "C:\MyBookmarks.json" -Chrome

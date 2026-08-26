@@ -42,6 +42,8 @@ archive-readme-sections -Path ".\archive.md" -UseHomeREADME
 function Backup-READMESections {
 
     [CmdletBinding()]
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseSingularNouns", "Backup-READMESections")]
+
     [Alias('archive-readme-sections')]
     param(
         #######################################################################

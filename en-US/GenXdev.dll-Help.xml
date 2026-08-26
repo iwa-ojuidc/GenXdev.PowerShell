@@ -65,7 +65,10 @@
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Convert-DotNetTypeToLLMType -DotNetType "System.String"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -303,7 +306,10 @@
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>$object = [PSCustomObject]@{
     Name = "John"
     Age = 30
@@ -523,14 +529,20 @@ $hashTable = ConvertTo-HashTable -InputObject $object</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>P</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+P</maml:title>
         <dev:code>ConvertTo-Uris -Text "Check out https://github.com and about:config"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>P</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+P</maml:title>
         <dev:code>"Visit http://example.com" | ConvertTo-Uris</dev:code>
         <dev:remarks>
           <maml:para />
@@ -669,7 +681,10 @@ another function's possible parameters.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>D</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+D</maml:title>
         <dev:code>function Test-Function {
     [CmdletBinding()]
     param(
@@ -1908,8 +1923,12 @@ another function's possible parameters.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>Find files containing a specific word</maml:title>
-        <dev:code>Find-Item -Content "translation"
+        <maml:title>--
+
+---[Example 1]-------
+Find files containing a specific word</maml:title>
+        <dev:code># Long form:
+Find-Item -Content "translation"
 
 # Short form:
 l -mc translation</dev:code>
@@ -1918,8 +1937,12 @@ l -mc translation</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Find JavaScript files with a version string</maml:title>
-        <dev:code>Find-Item "*.js" "Version == `"\d\d?\.\d\d?\.\d\d?`""
+        <maml:title>--
+
+---[Example 2]-------
+Find JavaScript files with a version string</maml:title>
+        <dev:code># Long form:
+Find-Item "*.js" "Version == `"\d\d?\.\d\d?\.\d\d?`""
 
 # Short form:
 l *.js "Version == `"\d\d?\.\d\d?\.\d\d?`""</dev:code>
@@ -1928,8 +1951,12 @@ l *.js "Version == `"\d\d?\.\d\d?\.\d\d?`""</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>List all directories</maml:title>
-        <dev:code>Find-Item -Directory
+        <maml:title>--
+
+---[Example 3]-------
+List all directories</maml:title>
+        <dev:code># Long form:
+Find-Item -Directory
 
 # Short form:
 l -dir</dev:code>
@@ -1938,8 +1965,12 @@ l -dir</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Find XML files and pass objects</maml:title>
-        <dev:code>Find-Item ".\*.xml" -PassThru | % FullName
+        <maml:title>--
+
+---[Example 4]-------
+Find XML files and pass objects</maml:title>
+        <dev:code># Long form:
+Find-Item ".\*.xml" -PassThru | % FullName
 
 # Short form:
 l *.xml -pt | % FullName</dev:code>
@@ -1948,8 +1979,12 @@ l *.xml -pt | % FullName</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Include alternate data streams</maml:title>
-        <dev:code>Find-Item -IncludeAlternateFileStreams
+        <maml:title>--
+
+---[Example 5]-------
+Include alternate data streams</maml:title>
+        <dev:code># Long form:
+Find-Item -IncludeAlternateFileStreams
 
 # Short form:
 l -ads</dev:code>
@@ -1958,8 +1993,12 @@ l -ads</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Search across all drives</maml:title>
-        <dev:code>Find-Item "*.pdf" -AllDrives
+        <maml:title>--
+
+---[Example 6]-------
+Search across all drives</maml:title>
+        <dev:code># Long form:
+Find-Item "*.pdf" -AllDrives
 
 # Short form:
 l *.pdf -alldrives</dev:code>
@@ -1968,8 +2007,13 @@ l *.pdf -alldrives</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Custom timeout and parallelism</maml:title>
-        <dev:code>Find-Item "*.log" -TimeoutSeconds 300 -MaxDegreeOfParallelism 4
+        <maml:title>--
+
+---[Example 7]-------
+Custom timeout and parallelism</maml:title>
+        <dev:code># Long form:
+Find-Item "*.log" `
+    -TimeoutSeconds 300 -MaxDegreeOfParallelism 4
 
 # Short form:
 l *.log -maxseconds 300 -threads 4</dev:code>
@@ -1978,8 +2022,13 @@ l *.log -maxseconds 300 -threads 4</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Pipeline input</maml:title>
-        <dev:code>Get-ChildItem -Path "C:\Logs" | Find-Item -Content "error"
+        <maml:title>--
+
+---[Example 8]-------
+Pipeline input</maml:title>
+        <dev:code># Long form:
+Get-ChildItem -Path "C:\Logs" | `
+    Find-Item -Content "error"
 
 # Short form:
 ls C:\Logs | l -matchcontent "error"</dev:code>
@@ -1988,8 +2037,12 @@ ls C:\Logs | l -matchcontent "error"</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Limit recursion depth</maml:title>
-        <dev:code>Find-Item "*.txt" -MaxRecursionDepth 2
+        <maml:title>--
+
+---[Example 9]-------
+Limit recursion depth</maml:title>
+        <dev:code># Long form:
+Find-Item "*.txt" -MaxRecursionDepth 2
 
 # Short form:
 l *.txt -maxdepth 2</dev:code>
@@ -1998,8 +2051,12 @@ l *.txt -maxdepth 2</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Filter by file size</maml:title>
-        <dev:code>Find-Item -MinFileSize 1048576 -MaxFileSize 10485760
+        <maml:title>--
+
+---[Example 10]-------
+Filter by file size</maml:title>
+        <dev:code># Long form:
+Find-Item -MinFileSize 1048576 -MaxFileSize 10485760
 
 # Short form:
 l -minsize 1048576 -maxsize 10485760</dev:code>
@@ -2008,8 +2065,12 @@ l -minsize 1048576 -maxsize 10485760</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Filter by modification date</maml:title>
-        <dev:code>Find-Item -ModifiedAfter "2025-01-01"
+        <maml:title>--
+
+---[Example 11]-------
+Filter by modification date</maml:title>
+        <dev:code># Long form:
+Find-Item -ModifiedAfter "2025-01-01"
 
 # Short form:
 l -after "2025-01-01"</dev:code>
@@ -2018,8 +2079,12 @@ l -after "2025-01-01"</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Exclude specific patterns</maml:title>
-        <dev:code>Find-Item -Exclude "*.tmp", "*\bin\*"
+        <maml:title>--
+
+---[Example 12]-------
+Exclude specific patterns</maml:title>
+        <dev:code># Long form:
+Find-Item -Exclude "*.tmp", "*\bin\*"
 
 # Short form:
 l -skiplike "*.tmp", "*\bin\*"</dev:code>
@@ -2028,8 +2093,12 @@ l -skiplike "*.tmp", "*\bin\*"</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Search specific drives</maml:title>
-        <dev:code>Find-Item "*.docx" -SearchDrives "C:\", "D:\"
+        <maml:title>--
+
+---[Example 13]-------
+Search specific drives</maml:title>
+        <dev:code># Long form:
+Find-Item "*.docx" -SearchDrives "C:\", "D:\"
 
 # Short form:
 l *.docx -drives C:\, D:\</dev:code>
@@ -2038,8 +2107,12 @@ l *.docx -drives C:\, D:\</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Case-sensitive content search</maml:title>
-        <dev:code>Find-Item -Content "Error" -CaseSensitive
+        <maml:title>--
+
+---[Example 14]-------
+Case-sensitive content search</maml:title>
+        <dev:code># Long form:
+Find-Item -Content "Error" -CaseSensitive
 
 # Short form:
 l -mc "Error" -CaseSensitive</dev:code>
@@ -2048,8 +2121,13 @@ l -mc "Error" -CaseSensitive</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Search alternate data stream content</maml:title>
-        <dev:code>Find-Item -IncludeAlternateFileStreams -SearchADSContent -Content "secret"
+        <maml:title>--
+
+---[Example 15]-------
+Search alternate data stream content</maml:title>
+        <dev:code># Long form:
+Find-Item -IncludeAlternateFileStreams `
+    -SearchADSContent -Content "secret"
 
 # Short form:
 l -ads -sads -mc "secret"</dev:code>
@@ -2058,8 +2136,12 @@ l -ads -sads -mc "secret"</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Find all matches per line</maml:title>
-        <dev:code>Find-Item "*.ps1" -Content "function" -AllMatches
+        <maml:title>--
+
+---[Example 16]-------
+Find all matches per line</maml:title>
+        <dev:code># Long form:
+Find-Item "*.ps1" -Content "function" -AllMatches
 
 # Short form:
 l *.ps1 -mc "function" -AllMatches</dev:code>
@@ -2068,8 +2150,12 @@ l *.ps1 -mc "function" -AllMatches</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Show context around matches</maml:title>
-        <dev:code>Find-Item "*.log" -Content "error" -Context 2,3
+        <maml:title>--
+
+---[Example 17]-------
+Show context around matches</maml:title>
+        <dev:code># Long form:
+Find-Item "*.log" -Content "error" -Context 2,3
 
 # Short form:
 l *.log -mc "error" -Context 2,3</dev:code>
@@ -2078,8 +2164,12 @@ l *.log -mc "error" -Context 2,3</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Get only matching strings</maml:title>
-        <dev:code>Find-Item "*.txt" -Content "TODO:.*" -Raw
+        <maml:title>--
+
+---[Example 18]-------
+Get only matching strings</maml:title>
+        <dev:code># Long form:
+Find-Item "*.txt" -Content "TODO:.*" -Raw
 
 # Short form:
 l *.txt -mc "TODO:.*" -Raw</dev:code>
@@ -2088,8 +2178,12 @@ l *.txt -mc "TODO:.*" -Raw</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Simple boolean check</maml:title>
-        <dev:code>Find-Item "*.config" -Content "database" -Quiet
+        <maml:title>--
+
+---[Example 19]-------
+Simple boolean check</maml:title>
+        <dev:code># Long form:
+Find-Item "*.config" -Content "database" -Quiet
 
 # Short form:
 l *.config -mc "database" -Quiet</dev:code>
@@ -2098,8 +2192,12 @@ l *.config -mc "database" -Quiet</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Find first match only per file</maml:title>
-        <dev:code>Find-Item "*.cs" -Content "class.*Controller" -List
+        <maml:title>--
+
+---[Example 20]-------
+Find first match only per file</maml:title>
+        <dev:code># Long form:
+Find-Item "*.cs" -Content "class.*Controller" -List
 
 # Short form:
 l *.cs -mc "class.*Controller" -List</dev:code>
@@ -2108,8 +2206,12 @@ l *.cs -mc "class.*Controller" -List</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Literal string matching</maml:title>
-        <dev:code>Find-Item "*.txt" -Content "$variable[0]" -SimpleMatch
+        <maml:title>--
+
+---[Example 21]-------
+Literal string matching</maml:title>
+        <dev:code># Long form:
+Find-Item "*.txt" -Content "$variable[0]" -SimpleMatch
 
 # Short form:
 l *.txt -mc "$variable[0]" -SimpleMatch</dev:code>
@@ -2118,8 +2220,12 @@ l *.txt -mc "$variable[0]" -SimpleMatch</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Find files NOT containing pattern</maml:title>
-        <dev:code>Find-Item "*.js" -Content "console\.log" -NotMatch
+        <maml:title>--
+
+---[Example 22]-------
+Find files NOT containing pattern</maml:title>
+        <dev:code># Long form:
+Find-Item "*.js" -Content "console\.log" -NotMatch
 
 # Short form:
 l *.js -mc "console\.log" -NotMatch</dev:code>
@@ -2128,8 +2234,12 @@ l *.js -mc "console\.log" -NotMatch</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Specify file encoding</maml:title>
-        <dev:code>Find-Item "*.txt" -Content "café" -Encoding UTF8
+        <maml:title>--
+
+---[Example 23]-------
+Specify file encoding</maml:title>
+        <dev:code># Long form:
+Find-Item "*.txt" -Content "café" -Encoding UTF8
 
 # Short form:
 l *.txt -mc "café" -Encoding UTF8</dev:code>
@@ -2138,8 +2248,13 @@ l *.txt -mc "café" -Encoding UTF8</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Cultural text comparison</maml:title>
-        <dev:code>Find-Item "*.txt" -Content "Müller" -SimpleMatch -Culture "de-DE"
+        <maml:title>--
+
+---[Example 24]-------
+Cultural text comparison</maml:title>
+        <dev:code># Long form:
+Find-Item "*.txt" -Content "Müller" `
+    -SimpleMatch -Culture "de-DE"
 
 # Short form:
 l *.txt -mc "Müller" -SimpleMatch -Culture "de-DE"</dev:code>
@@ -2148,11 +2263,18 @@ l *.txt -mc "Müller" -SimpleMatch -Culture "de-DE"</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Complex content search with file filters</maml:title>
-        <dev:code>Find-Item "*.log" -Content "exception" -MinFileSize 1024 -ModifiedAfter "2025-01-01" -MaxRecursionDepth 3
+        <maml:title>--
+
+---[Example 25]-------
+Complex content search with file filters</maml:title>
+        <dev:code># Long form:
+Find-Item "*.log" -Content "exception" `
+    -MinFileSize 1024 -ModifiedAfter "2025-01-01" `
+    -MaxRecursionDepth 3
 
 # Short form:
-l *.log -mc "exception" -minsize 1024 -after "2025-01-01" -maxdepth 3</dev:code>
+l *.log -mc "exception" -minsize 1024 `
+    -after "2025-01-01" -maxdepth 3</dev:code>
         <dev:remarks>
           <maml:para>Combine file size, date, and content filters for precise searches.</maml:para>
         </dev:remarks>
@@ -2414,21 +2536,30 @@ l *.log -mc "exception" -minsize 1024 -after "2025-01-01" -maxdepth 3</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+G</maml:title>
         <dev:code>Get-AIMetaLanguage</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+G</maml:title>
         <dev:code>Get-AIMetaLanguage -SkipSession</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+C</maml:title>
         <dev:code>Get-AIMetaLanguage -ClearSession</dev:code>
         <dev:remarks>
           <maml:para />
@@ -2695,14 +2826,20 @@ l *.log -mc "exception" -minsize 1024 -after "2025-01-01" -maxdepth 3</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-ApparentSizeAtArmLength -DistanceInMeters 10 -SizeInMeters 1 -As "centimeters"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-ApparentSizeAtArmLength 10 1</dev:code>
         <dev:remarks>
           <maml:para />
@@ -2925,7 +3062,10 @@ l *.log -mc "exception" -minsize 1024 -after "2025-01-01" -maxdepth 3</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-AtEyeLengthSizeInMM -DistanceInMeters 10 -SizeInMeters 1</dev:code>
         <dev:remarks>
           <maml:para />
@@ -3122,21 +3262,30 @@ l *.log -mc "exception" -minsize 1024 -after "2025-01-01" -maxdepth 3</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-AudioDeviceNames</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>Get-AudioDeviceNames -UseDesktopAudioCapture</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+R</maml:title>
         <dev:code>Get-AudioDeviceNames -Passthru</dev:code>
         <dev:remarks>
           <maml:para />
@@ -3226,14 +3375,20 @@ display names.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+G</maml:title>
         <dev:code>Get-BCP47LanguageDictionary</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>V</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+V</maml:title>
         <dev:code>$dict = Get-BCP47LanguageDictionary
 $dict["nl-NL"]  # returns "nl-NL"
 $dict["Dutch"]  # returns "nl-NL"</dev:code>
@@ -3741,14 +3896,20 @@ $dict["Dutch"]  # returns "nl-NL"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-CentripetalAccelerationByVelocityAndRadius -VelocityInMetersPerSecond 10 -RadiusInMeters 5 -As "g"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-CentripetalAccelerationByVelocityAndRadius 20 10</dev:code>
         <dev:remarks>
           <maml:para />
@@ -3902,14 +4063,20 @@ process.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+G</maml:title>
         <dev:code>Get-ChildProcesses</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Get child processes with verbose output showing detailed process detection</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+Get child processes with verbose output showing detailed process detection</maml:title>
         <dev:code>Get-ChildProcesses -Verbose</dev:code>
         <dev:remarks>
           <maml:para>information.</maml:para>
@@ -4109,14 +4276,20 @@ like copy/paste.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+G</maml:title>
         <dev:code>Get-ClipboardFiles</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+G</maml:title>
         <dev:code>$clipboardFiles = Get-ClipboardFiles
 $clipboardFiles | ForEach-Object { Write-Host $_.FullName }</dev:code>
         <dev:remarks>
@@ -4124,7 +4297,10 @@ $clipboardFiles | ForEach-Object { Write-Host $_.FullName }</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+G</maml:title>
         <dev:code>Get-ClipboardFiles | Where-Object { $_.Extension -eq '.txt' }</dev:code>
         <dev:remarks>
           <maml:para />
@@ -4318,7 +4494,10 @@ $clipboardFiles | ForEach-Object { Write-Host $_.FullName }</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+G</maml:title>
         <dev:code>Get-CpuCore</dev:code>
         <dev:remarks>
           <maml:para />
@@ -4400,7 +4579,10 @@ $clipboardFiles | ForEach-Object { Write-Host $_.FullName }</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>Retrieves the process object for the window that currently has keyboard</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+Retrieves the process object for the window that currently has keyboard</maml:title>
         <dev:code>$focusedProcess = Get-CurrentFocusedProcess
 Write-Host "Active window process: $($focusedProcess.ProcessName)"</dev:code>
         <dev:remarks>
@@ -4600,14 +4782,20 @@ Write-Host "Active window process: $($focusedProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+G</maml:title>
         <dev:code>Get-DefaultWebbrowser | Format-List</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>L</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+L</maml:title>
         <dev:code>$browser = Get-DefaultWebbrowser
 &amp; $browser.Path https://www.github.com/</dev:code>
         <dev:remarks>
@@ -4713,7 +4901,10 @@ settings.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-DefaultWebLanguage</dev:code>
         <dev:remarks>
           <maml:para />
@@ -4930,14 +5121,20 @@ monitor.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-DesktopScalingFactor -Monitor 0</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Returns the scaling factor percentage for the second monitor using positional</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+Returns the scaling factor percentage for the second monitor using positional</maml:title>
         <dev:code>Get-DesktopScalingFactor 1</dev:code>
         <dev:remarks>
           <maml:para>parameter.</maml:para>
@@ -5276,14 +5473,20 @@ monitor.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-DopplerFrequencyShiftBySourceSpeedAndObserverSpeed -OriginalFrequencyInHertz 440 -SourceSpeedInMetersPerSecond 10 -ObserverSpeedInMetersPerSecond 5 -Medium "water" -As "kilohertz"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-DopplerFrequencyShiftBySourceSpeedAndObserverSpeed 440 10 0 -SpeedOfSoundInMetersPerSecond 1480</dev:code>
         <dev:remarks>
           <maml:para />
@@ -5554,14 +5757,20 @@ monitor.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-DragForceByVelocityDensityAreaAndCoefficient -VelocityInMetersPerSecond 10 -DensityInKilogramsPerCubicMeter 1.225 -AreaInSquareMeters 1 -Coefficient 0.5 -As "poundforce"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-DragForceByVelocityDensityAreaAndCoefficient 20 1.225 2 0.3</dev:code>
         <dev:remarks>
           <maml:para />
@@ -5784,14 +5993,20 @@ monitor.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-EscapeVelocityByMassAndRadius -MassInKilograms 5.972e24 -RadiusInMeters 6371000 -As "km/h"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-EscapeVelocityByMassAndRadius 1e26 10000000</dev:code>
         <dev:remarks>
           <maml:para />
@@ -5944,14 +6159,20 @@ monitor.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-ForegroundWindow</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+S</maml:title>
         <dev:code>$windowHandle = Get-ForegroundWindow
 Write-Host "Active window handle: $windowHandle"</dev:code>
         <dev:remarks>
@@ -6243,14 +6464,20 @@ Write-Host "Active window handle: $windowHandle"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-FreeFallDistance -DurationInSeconds 10 -TerminalVelocityInMetersPerSecond 53 -As "feet"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-FreeFallDistance 5</dev:code>
         <dev:remarks>
           <maml:para />
@@ -6473,21 +6700,30 @@ Write-Host "Active window handle: $windowHandle"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-FreeFallHeight -DurationInSeconds 10 -TerminalVelocityInMs 53</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-FreeFallHeight 5</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+C</maml:title>
         <dev:code>Get-FreeFallHeight -DurationInSeconds 10 -As "feet"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -6710,21 +6946,30 @@ Write-Host "Active window handle: $windowHandle"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-FreeFallTime -HeightInMeters 100 -TerminalVelocityInMs 53</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-FreeFallTime 50</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+C</maml:title>
         <dev:code>Get-FreeFallTime -HeightInMeters 100 -As "minutes"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -7022,14 +7267,20 @@ Write-Host "Active window handle: $windowHandle"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-GenXdevPreference -Name "Theme" -DefaultValue "Dark"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>getPreference "Theme" "Dark"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -7205,21 +7456,30 @@ Write-Host "Active window handle: $windowHandle"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>Returns a sorted array of unique preference names from session storage and</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+Returns a sorted array of unique preference names from session storage and</maml:title>
         <dev:code>Get-GenXdevPreferenceNames -PreferencesDatabasePath "C:\Data\prefs.db"</dev:code>
         <dev:remarks>
           <maml:para>both stores using the specified database path.</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>getPreferenceNames -SessionOnly</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+R</maml:title>
         <dev:code>getPreferenceNames -SkipSession</dev:code>
         <dev:remarks>
           <maml:para />
@@ -7395,21 +7655,30 @@ GenXdev.Data operations.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-GenXdevPreferencesDatabasePath</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+S</maml:title>
         <dev:code>Get-GenXdevPreferencesDatabasePath -SkipSession</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+C</maml:title>
         <dev:code>Get-GenXdevPreferencesDatabasePath -ClearSession</dev:code>
         <dev:remarks>
           <maml:para />
@@ -7519,14 +7788,20 @@ GenXdev.Data operations.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-GitChangedFiles</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>Get-GitChangedFiles -PassThru</dev:code>
         <dev:remarks>
           <maml:para />
@@ -7588,7 +7863,10 @@ GenXdev.Data operations.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>$hasGpu = Get-HasCapableGpu
 Write-Host "System has capable GPU: $hasGpu"</dev:code>
         <dev:remarks>
@@ -7696,14 +7974,20 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>E</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+E</maml:title>
         <dev:code>Get-ImageGeolocation -ImagePath "C:\Pictures\vacation.jpg"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>"C:\Pictures\vacation.jpg" | Get-ImageGeolocation</dev:code>
         <dev:remarks>
           <maml:para />
@@ -7878,14 +8162,20 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-ImpactVelocityByHeightAndGravity -HeightInMeters 100 -As "km/h"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-ImpactVelocityByHeightAndGravity 50</dev:code>
         <dev:remarks>
           <maml:para />
@@ -8035,14 +8325,20 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-IsSpeaking</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>iss</dev:code>
         <dev:remarks>
           <maml:para />
@@ -8170,14 +8466,20 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-KeyValueStoreNames</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>getstorenames -DatabasePath 'C:\MyStores'</dev:code>
         <dev:remarks>
           <maml:para />
@@ -8305,7 +8607,10 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+G</maml:title>
         <dev:code>Get-KeyValueStorePath -StoreName "MyStore"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -8456,14 +8761,20 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-KineticEnergyByMassAndVelocity -MassInKilograms 10 -VelocityInMetersPerSecond 5 -As "calories"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-KineticEnergyByMassAndVelocity 5 10</dev:code>
         <dev:remarks>
           <maml:para />
@@ -8710,14 +9021,20 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-LightTravelTimeByDistance -DistanceInMeters 149597870700 -Medium "water" -As "minutes"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-LightTravelTimeByDistance 300000000 -SpeedOfLightInMetersPerSecond 225000000</dev:code>
         <dev:remarks>
           <maml:para />
@@ -8916,14 +9233,20 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-MagnificationByObjectDistanceAndImageDistance -ObjectDistanceInMeters 0.5 -ImageDistanceInMeters 1</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-MagnificationByObjectDistanceAndImageDistance 0.3 0.6</dev:code>
         <dev:remarks>
           <maml:para />
@@ -9299,14 +9622,20 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-MonitorCount</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>$screens = Get-MonitorCount -Verbose</dev:code>
         <dev:remarks>
           <maml:para />
@@ -9387,7 +9716,10 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>$defenderPath = Get-MpCmdRunPath</dev:code>
         <dev:remarks>
           <maml:para />
@@ -9606,14 +9938,20 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-NextAffirmation</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>Get-NextAffirmation -Speak</dev:code>
         <dev:remarks>
           <maml:para />
@@ -9671,7 +10009,10 @@ Write-Host "System has capable GPU: $hasGpu"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>$cores = Get-NumberOfCpuCores
 Write-Host "System has $cores logical CPU cores available"</dev:code>
         <dev:remarks>
@@ -9823,14 +10164,20 @@ Write-Host "System has $cores logical CPU cores available"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+U</maml:title>
         <dev:code>Get-OrbitalVelocityByRadiusAndMass -RadiusInMeters 6371000 -CentralMassInKilograms 5.972e24 -As "km/h"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+S</maml:title>
         <dev:code>Get-OrbitalVelocityByRadiusAndMass 10000000 1e26</dev:code>
         <dev:remarks>
           <maml:para />
@@ -10011,21 +10358,30 @@ Write-Host "System has $cores logical CPU cores available"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-PlaywrightProfileDirectory -BrowserType ChromeNormal</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-PlaywrightProfileDirectory -BrowserType ChromiumNormal</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+C</maml:title>
         <dev:code>Get-PlaywrightProfileDirectory -BrowserType ChromiumPlaywright</dev:code>
         <dev:remarks>
           <maml:para />
@@ -10220,14 +10576,20 @@ Write-Host "System has $cores logical CPU cores available"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-PotentialEnergyByMassHeightAndGravity -MassInKilograms 10 -HeightInMeters 5 -As "calories"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>D</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+D</maml:title>
         <dev:code>Get-PotentialEnergyByMassHeightAndGravity 5 10</dev:code>
         <dev:remarks>
           <maml:para />
@@ -10379,7 +10741,10 @@ Write-Host "System has $cores logical CPU cores available"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-PowershellMainWindow</dev:code>
         <dev:remarks>
           <maml:para />
@@ -10578,7 +10943,10 @@ Write-Host "System has $cores logical CPU cores available"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>Returns the process hosting the current PowerShell session and displays its</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+Returns the process hosting the current PowerShell session and displays its</maml:title>
         <dev:code>$hostProcess = Get-PowershellMainWindowProcess
 Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
         <dev:remarks>
@@ -10870,14 +11238,20 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-ProjectileRangeByInitialSpeedAndAngle -InitialSpeedInMetersPerSecond 20 -AngleInDegrees 45 -As "feet"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-ProjectileRangeByInitialSpeedAndAngle 30 30</dev:code>
         <dev:remarks>
           <maml:para />
@@ -11176,14 +11550,20 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+G</maml:title>
         <dev:code>Get-RefactorReport -Name "DatabaseRefactor" -AsText</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>G</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+G</maml:title>
         <dev:code>refactorreport "*"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -11434,14 +11814,20 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-RefractionAngleByIncidentAngleAndIndices -IncidentAngleInDegrees 30 -IndexOfRefraction1 1 -IndexOfRefraction2 1.33 -As "radians"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-RefractionAngleByIncidentAngleAndIndices 45 1 1.5</dev:code>
         <dev:remarks>
           <maml:para />
@@ -11688,14 +12074,20 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-ResonantFrequencyByLengthAndSpeed -LengthInMeters 0.5 -Medium "air" -As "kilohertz"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-ResonantFrequencyByLengthAndSpeed 1 -SpeedInMetersPerSecond 343</dev:code>
         <dev:remarks>
           <maml:para />
@@ -11942,14 +12334,20 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-SoundTravelDistanceByTime -TimeInSeconds 5 -Medium "water" -As "kilometers"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-SoundTravelDistanceByTime 10 -SpeedOfSoundInMetersPerSecond 1480</dev:code>
         <dev:remarks>
           <maml:para />
@@ -12069,7 +12467,7 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Processes audio files and converts speech to text using the Whisper.NET library, which implements OpenAI's Whisper automatic speech recognition (ASR) system. It supports multiple languages, translation capabilities, and various transcription quality settings.</maml:para>
+      <maml:para>Processes audio files and converts speech to text using whisper.cpp, a native implementation of OpenAI's Whisper automatic speech recognition (ASR) system. It supports multiple languages, translation capabilities, and various transcription quality settings. The bundled native libraries are built without AVX so they run on any x64 CPU.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -12246,9 +12644,9 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
           <maml:description>
             <maml:para>Whisper model type to use, defaults to LargeV3Turbo</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Whisper.net.Ggml.GgmlType</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">GenXdev.AI.Whisper.GgmlType</command:parameterValue>
           <dev:type>
-            <maml:name>Whisper.net.Ggml.GgmlType</maml:name>
+            <maml:name>GenXdev.AI.Whisper.GgmlType</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -12612,9 +13010,9 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
         <maml:description>
           <maml:para>Whisper model type to use, defaults to LargeV3Turbo</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">Whisper.net.Ggml.GgmlType</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">GenXdev.AI.Whisper.GgmlType</command:parameterValue>
         <dev:type>
-          <maml:name>Whisper.net.Ggml.GgmlType</maml:name>
+          <maml:name>GenXdev.AI.Whisper.GgmlType</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -12842,28 +13240,40 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>T</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+T</maml:title>
         <dev:code>Get-SpeechToText -Input "C:\audio\recording.wav"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>T</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+T</maml:title>
         <dev:code>Get-ChildItem "C:\audio\*.wav" | Get-SpeechToText</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>T</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+T</maml:title>
         <dev:code>Get-SpeechToText -Input "audio.mp3" -LanguageIn "es" -WithTranslate</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 4]-------
+R</maml:title>
         <dev:code>Get-SpeechToText -Input "recording.wav" -Passthru -WithTokenTimestamps</dev:code>
         <dev:remarks>
           <maml:para />
@@ -13023,14 +13433,20 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-StoreKeys -StoreName "ApplicationSettings"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>getkeys AppSettings</dev:code>
         <dev:remarks>
           <maml:para />
@@ -13253,14 +13669,20 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-TerminalVelocityByMassGravityDensityAndArea -MassInKilograms 80 -DensityInKilogramsPerCubicMeter 1.225 -AreaInSquareMeters 0.7 -DragCoefficient 1.0 -As "mph"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>Get-TerminalVelocityByMassGravityDensityAndArea 70 1.225 0.8 0.8</dev:code>
         <dev:remarks>
           <maml:para />
@@ -13507,14 +13929,20 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-TimeOfFlightByInitialVelocityAndAngle -InitialVelocityInMetersPerSecond 20 -AngleInDegrees 45 -As "minutes"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-TimeOfFlightByInitialVelocityAndAngle 30 30</dev:code>
         <dev:remarks>
           <maml:para />
@@ -13763,14 +14191,20 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>Retrieves the "Theme" value from "AppSettings", returning "Dark" if not</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+Retrieves the "Theme" value from "AppSettings", returning "Dark" if not</maml:title>
         <dev:code>Get-ValueByKeyFromStore -StoreName "AppSettings" -KeyName "Theme" -DefaultValue "Dark"</dev:code>
         <dev:remarks>
           <maml:para>found.</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>getvalue AppSettings Theme</dev:code>
         <dev:remarks>
           <maml:para />
@@ -13897,7 +14331,10 @@ Write-Host "PowerShell is hosted in: $($hostProcess.ProcessName)"</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>$v1 = @(0.12, -0.45, 0.89)
 $v2 = @(0.15, -0.40, 0.92)
 Get-VectorSimilarity -Vector1 $v1 -Vector2 $v2</dev:code>
@@ -14082,14 +14519,20 @@ Get-VectorSimilarity -Vector1 $v1 -Vector2 $v2</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Get-WaveSpeedByFrequencyAndWavelength -FrequencyInHertz 440 -WavelengthInMeters 0.78 -As "km/h"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Get-WaveSpeedByFrequencyAndWavelength 1000 0.34</dev:code>
         <dev:remarks>
           <maml:para />
@@ -14337,14 +14780,20 @@ Get-VectorSimilarity -Vector1 $v1 -Vector2 $v2</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-Webbrowser | Select-Object Name, Description | Format-Table</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>F</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+F</maml:title>
         <dev:code>Get-Webbrowser | Where-Object { $_.IsDefaultBrowser }</dev:code>
         <dev:remarks>
           <maml:para />
@@ -14448,7 +14897,10 @@ Get-VectorSimilarity -Vector1 $v1 -Vector2 $v2</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-WebLanguageDictionary</dev:code>
         <dev:remarks>
           <maml:para />
@@ -14726,21 +15178,30 @@ Get-VectorSimilarity -Vector1 $v1 -Vector2 $v2</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Get-Window -ProcessName "notepad"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>Get-Window -ProcessId 1234</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+R</maml:title>
         <dev:code>Get-Window -WindowHandle 45678</dev:code>
         <dev:remarks>
           <maml:para />
@@ -14963,14 +15424,20 @@ Get-VectorSimilarity -Vector1 $v1 -Vector2 $v2</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>I</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+I</maml:title>
         <dev:code>Initialize-SearchPaths</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>I</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+I</maml:title>
         <dev:code>Initialize-SearchPaths -WorkspaceFolder "C:\workspace"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -15233,14 +15700,20 @@ references.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>M</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+M</maml:title>
         <dev:code>Move-ItemWithTracking -Path "C:\temp\oldfile.txt" -Destination "D:\newfile.txt"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>M</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+M</maml:title>
         <dev:code>"C:\temp\olddir" | Move-ItemWithTracking -Destination "D:\newdir" -Force</dev:code>
         <dev:remarks>
           <maml:para />
@@ -15410,14 +15883,20 @@ references.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>M</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+M</maml:title>
         <dev:code>Move-ToRecycleBin -Path "C:\temp\old-report.txt"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>M</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+M</maml:title>
         <dev:code>"file1.txt","file2.txt" | recycle</dev:code>
         <dev:remarks>
           <maml:para />
@@ -15584,14 +16063,20 @@ references.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>New-GitCommit -Title "Added new authentication feature"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>commit "Hotfix for login issue"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -15823,9 +16308,9 @@ references.</maml:para>
           <maml:description>
             <maml:para>Whisper model type to use, defaults to Small</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Whisper.net.Ggml.GgmlType</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">GenXdev.AI.Whisper.GgmlType</command:parameterValue>
           <dev:type>
-            <maml:name>Whisper.net.Ggml.GgmlType</maml:name>
+            <maml:name>GenXdev.AI.Whisper.GgmlType</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -16247,9 +16732,9 @@ references.</maml:para>
         <maml:description>
           <maml:para>Whisper model type to use, defaults to Small</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">Whisper.net.Ggml.GgmlType</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">GenXdev.AI.Whisper.GgmlType</command:parameterValue>
         <dev:type>
-          <maml:name>Whisper.net.Ggml.GgmlType</maml:name>
+          <maml:name>GenXdev.AI.Whisper.GgmlType</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -16505,28 +16990,40 @@ references.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>B</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+B</maml:title>
         <dev:code>Receive-RealTimeSpeechToText</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>Receive-RealTimeSpeechToText -UseDesktopAudioCapture</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+U</maml:title>
         <dev:code>Receive-RealTimeSpeechToText -AudioDevice "Microphone*"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>W</maml:title>
+        <maml:title>--
+
+---[Example 4]-------
+W</maml:title>
         <dev:code>Receive-RealTimeSpeechToText -MaxDurationOfSilence "00:00:05"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -16803,14 +17300,20 @@ references.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Remove-GenXdevPreference -Name "Theme"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>removePreference "Theme" -RemoveDefault -AllMachines</dev:code>
         <dev:remarks>
           <maml:para />
@@ -16917,7 +17420,10 @@ references.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>$jsonContent = @'
 {
     // This is a comment
@@ -16931,7 +17437,10 @@ Remove-JSONComments -Json $jsonContent</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>P</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+P</maml:title>
         <dev:code>$jsonContent | Remove-JSONComments</dev:code>
         <dev:remarks>
           <maml:para />
@@ -17192,14 +17701,20 @@ purposes.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Remove-KeyFromStore -StoreName "MyStore" -KeyName "MyKey"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+R</maml:title>
         <dev:code>removekey "MyStore" "MyKey"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -17327,7 +17842,10 @@ its JSON file from disk.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Remove-KeyValueStore -StoreName "MyStore"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -17457,14 +17975,20 @@ its JSON file from disk.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>M</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+M</maml:title>
         <dev:code>Remove-OnReboot -Path "C:\temp\locked-file.txt"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Marks multiple files for deletion, using MarkInPlace for any that can't be</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+Marks multiple files for deletion, using MarkInPlace for any that can't be</maml:title>
         <dev:code>"file1.txt","file2.txt" | Remove-OnReboot -MarkInPlace</dev:code>
         <dev:remarks>
           <maml:para>renamed.</maml:para>
@@ -17691,21 +18215,30 @@ specified path.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Save-DesktopScreenShot -Monitor 0 -OutputPath "C:\Screenshots\primary.png"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+C</maml:title>
         <dev:code>Save-DesktopScreenShot -Monitor 1 -OutputPath "C:\Screenshots\monitor2.jpg" -Quality 95</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+C</maml:title>
         <dev:code>Save-DesktopScreenShot -Monitor -1 -OutputPath "C:\Screenshots\all_monitors.png"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -17928,7 +18461,10 @@ window.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>B</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+B</maml:title>
         <dev:code>$hwnd = (Get-Process notepad).MainWindowHandle
 Set-ForegroundWindow -WindowHandle $hwnd</dev:code>
         <dev:remarks>
@@ -17936,7 +18472,10 @@ Set-ForegroundWindow -WindowHandle $hwnd</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>$hwnd = (Get-Process notepad).MainWindowHandle
 Set-ForegroundWindow $hwnd</dev:code>
         <dev:remarks>
@@ -18299,14 +18838,20 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+S</maml:title>
         <dev:code>Set-GenXdevDefaultPreference -Name "Theme" -Value "Dark"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>setPreferenceDefault "EmailNotifications" "Disabled" -AllMachines</dev:code>
         <dev:remarks>
           <maml:para />
@@ -18553,14 +19098,20 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+S</maml:title>
         <dev:code>Set-GenXdevPreference -Name "Theme" -Value "Dark"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>setPreference Theme Light -AllMachines</dev:code>
         <dev:remarks>
           <maml:para />
@@ -18735,28 +19286,40 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+S</maml:title>
         <dev:code>Set-GenXdevPreferencesDatabasePath -PreferencesDatabasePath "C:\Data\Preferences.db"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+S</maml:title>
         <dev:code>Set-GenXdevPreferencesDatabasePath "C:\MyPreferences.db"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+S</maml:title>
         <dev:code>Set-GenXdevPreferencesDatabasePath "C:\TempPrefs.db" -SessionOnly</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 4]-------
+C</maml:title>
         <dev:code>Set-GenXdevPreferencesDatabasePath -ClearSession</dev:code>
         <dev:remarks>
           <maml:para />
@@ -18836,14 +19399,20 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Set-LocationParent</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>..</dev:code>
         <dev:remarks>
           <maml:para />
@@ -18987,14 +19556,20 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Set-LocationParent2</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>...</dev:code>
         <dev:remarks>
           <maml:para />
@@ -19138,14 +19713,20 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>N</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+N</maml:title>
         <dev:code>Set-LocationParent3</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>....</dev:code>
         <dev:remarks>
           <maml:para />
@@ -19289,14 +19870,20 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>N</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+N</maml:title>
         <dev:code>Set-LocationParent4</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>.....</dev:code>
         <dev:remarks>
           <maml:para />
@@ -19441,14 +20028,20 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>N</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+N</maml:title>
         <dev:code>Set-LocationParent5</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>......</dev:code>
         <dev:remarks>
           <maml:para />
@@ -19590,14 +20183,20 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>T</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+T</maml:title>
         <dev:code>Set-MonitorPowerOff</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>T</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+T</maml:title>
         <dev:code>poweroff</dev:code>
         <dev:remarks>
           <maml:para />
@@ -19791,14 +20390,20 @@ Set-ForegroundWindow $hwnd</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>T</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+T</maml:title>
         <dev:code>Set-MonitorPowerOn</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>T</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+T</maml:title>
         <dev:code>wake-monitor</dev:code>
         <dev:remarks>
           <maml:para />
@@ -20091,7 +20696,10 @@ function implements an upsert operation.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+S</maml:title>
         <dev:code>Set-ValueByKeyInStore -StoreName "ConfigStore" -KeyName "ApiEndpoint" `
     -Value "https://api.example.com"</dev:code>
         <dev:remarks>
@@ -20099,7 +20707,10 @@ function implements an upsert operation.</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>setvalue ConfigStore ApiEndpoint "https://api.example.com"</dev:code>
         <dev:remarks>
           <maml:para />
@@ -20251,14 +20862,20 @@ function implements an upsert operation.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+S</maml:title>
         <dev:code>Set-WindowsWallpaper -InputObject "C:\Wallpapers\*.jpg"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+S</maml:title>
         <dev:code>nextbg</dev:code>
         <dev:remarks>
           <maml:para />
@@ -20789,7 +21406,9 @@ The -Verb parameter is forced to 'RunAs'.</maml:para>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>---------- Example 1 ----------</maml:title>
+        <maml:title>--
+
+---[Example 1]-------</maml:title>
         <dev:code>Start-ProcessElevated -FilePath 'notepad.exe'
 Launches Notepad with administrator privileges.</dev:code>
         <dev:remarks>
@@ -20797,7 +21416,9 @@ Launches Notepad with administrator privileges.</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>---------- Example 2 ----------</maml:title>
+        <maml:title>--
+
+---[Example 2]-------</maml:title>
         <dev:code>Start-ProcessElevated -FilePath 'winget.exe' -ArgumentList 'install',
 'SomePackage' -Wait
 Installs a package via winget with admin rights and waits for completion.</dev:code>
@@ -21115,14 +21736,20 @@ Installs a package via winget with admin rights and waits for completion.</dev:c
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+S</maml:title>
         <dev:code>Start-ProcessWithPriority -FilePath "notepad.exe" -Priority "Low" -NoWait</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>U</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+U</maml:title>
         <dev:code>nice notepad.exe -Priority High</dev:code>
         <dev:remarks>
           <maml:para />
@@ -21319,7 +21946,10 @@ Installs a package via winget with admin rights and waits for completion.</dev:c
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>C</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+C</maml:title>
         <dev:code>Test-CpuAvx</dev:code>
         <dev:remarks>
           <maml:para />
@@ -21450,21 +22080,30 @@ Installs a package via winget with admin rights and waits for completion.</dev:c
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+S</maml:title>
         <dev:code>Test-PathUsingWindowsDefender -FilePath "C:\Downloads\file.exe" -Verbose</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>S</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+S</maml:title>
         <dev:code>virusscan "C:\Downloads\file.exe" -EnableRemediation</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>P</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+P</maml:title>
         <dev:code>"C:\Downloads\file.exe" | HasNoVirus</dev:code>
         <dev:remarks>
           <maml:para />
@@ -21719,28 +22358,40 @@ Installs a package via winget with admin rights and waits for completion.</dev:c
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+R</maml:title>
         <dev:code>Test-UnattendedMode</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>A</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+A</maml:title>
         <dev:code>Test-UnattendedMode -CallersInvocation $MyInvocation</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>R</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+R</maml:title>
         <dev:code>Test-UnattendedMode -CallersInvocation $MyInvocation -Detailed</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>E</maml:title>
+        <maml:title>--
+
+---[Example 4]-------
+E</maml:title>
         <dev:code>function My-Function {
     $isUnattended = Test-UnattendedMode -CallersInvocation $MyInvocation
     if ($isUnattended) {
@@ -22060,14 +22711,20 @@ Installs a package via winget with admin rights and waits for completion.</dev:c
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>W</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+W</maml:title>
         <dev:code>Write-FileAtomic -FilePath "data.bin" -Data $bytes</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Rapidly writes 100 times but only the final payload (100) is persisted</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+Rapidly writes 100 times but only the final payload (100) is persisted</maml:title>
         <dev:code># Debounce: only the LAST write within 5 seconds actually hits disk
 1..100 | ForEach-Object {
     Write-FileAtomic -FilePath "state.bin" -Data $_ `
@@ -22079,7 +22736,10 @@ Start-Sleep -Seconds 6</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>W</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+W</maml:title>
         <dev:code>Write-FileAtomic -FilePath "cache.dat" -Data $buffer `
     -MaxRetries 10 -RetryDelayMs 500</dev:code>
         <dev:remarks>
@@ -22447,7 +23107,10 @@ Start-Sleep -Seconds 6</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>W</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+W</maml:title>
         <dev:code>$data = @{ Name = "test"; Value = 42 }
 Write-JsonFileAtomic -FilePath "config.json" -Data $data</dev:code>
         <dev:remarks>
@@ -22455,7 +23118,10 @@ Write-JsonFileAtomic -FilePath "config.json" -Data $data</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>W</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+W</maml:title>
         <dev:code>Get-Process | Select-Object -First 5 |
     Write-JsonFileAtomic -FilePath "processes.json" -Compress</dev:code>
         <dev:remarks>
@@ -22753,14 +23419,20 @@ Write-JsonFileAtomic -FilePath "config.json" -Data $data</dev:code>
     </command:returnValues>
     <command:examples>
       <command:example>
-        <maml:title>W</maml:title>
+        <maml:title>--
+
+---[Example 1]-------
+W</maml:title>
         <dev:code>Write-TextFileAtomic -FilePath "config.txt" -Data "hello world"</dev:code>
         <dev:remarks>
           <maml:para />
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Pipes 50 lines rapidly; only the final line is persisted after a</maml:title>
+        <maml:title>--
+
+---[Example 2]-------
+Pipes 50 lines rapidly; only the final line is persisted after a</maml:title>
         <dev:code># Debounce: only the LAST log line within 2 seconds hits disk
 Get-Content server.log -Tail 50 | ForEach-Object {
     Write-TextFileAtomic -FilePath "filtered.log" -Data $_ `
@@ -22772,7 +23444,10 @@ Start-Sleep -Seconds 3</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>W</maml:title>
+        <maml:title>--
+
+---[Example 3]-------
+W</maml:title>
         <dev:code>Write-TextFileAtomic -FilePath "data.csv" -Data $csv `
     -Encoding ([System.Text.Encoding]::ASCII)</dev:code>
         <dev:remarks>
@@ -22780,7 +23455,10 @@ Start-Sleep -Seconds 3</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>A background job writes timestamps every 100ms but debounce coalesces</maml:title>
+        <maml:title>--
+
+---[Example 4]-------
+A background job writes timestamps every 100ms but debounce coalesces</maml:title>
         <dev:code># Debounce with custom retry: coalesce UI state saves
 $watcher = Start-ThreadJob -ScriptBlock {
     param($path)

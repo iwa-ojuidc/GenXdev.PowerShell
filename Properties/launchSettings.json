@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Debug PowerShell": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "commandLineArgs": "-NoLogo -NoProfile -ExecutionPolicy Bypass -MTA -Command & ([IO.Path]::GetFullPath('$(ProjectDir)..\\..\\..\\Microsoft.VSCode.Debug_profile.ps1'))",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

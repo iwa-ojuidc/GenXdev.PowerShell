@@ -195,8 +195,9 @@ function New-LLMAudioChat {
             Mandatory = $false,
             HelpMessage = 'Whisper model type to use, defaults to LargeV3Turbo'
         )]
-        [ValidateSet('Tiny', 'TinyEn', 'Base', 'BaseEn', 'Small', 'SmallEn', 'Medium', 'MediumEn', 'LargeV1', 'LargeV2', 'LargeV3', 'LargeV3Turbo')]
-        [string] $ModelType = 'SmallEn',
+        [ValidateSet('Tiny', 'TinyEn', 'Base', 'BaseEn', 'Small', 'SmallEn', 'Medium', 'MediumEn', 'LargeV1', 'LargeV2', 'LargeV3', 'LargeV3Turbo',
+            'TinyQ5_1', 'TinyEnQ5_1', 'BaseQ5_1', 'BaseEnQ5_1', 'SmallQ5_1', 'SmallEnQ5_1', 'MediumQ5_0', 'MediumEnQ5_0', 'LargeV2Q5_0', 'LargeV3Q5_0', 'LargeV3TurboQ5_0')]
+        [string] $ModelType = 'TinyEn',
         #######################################################################
         [Parameter(
             Mandatory = $false,

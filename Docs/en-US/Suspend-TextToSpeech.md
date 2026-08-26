@@ -19,13 +19,14 @@ to continue playback.
 
 ## Syntax
 
+
 ```powershell
 Suspend-TextToSpeech [<CommonParameters>]
 ```
 
 ## Examples
 
-### PS C:\> say "This is a long story about PowerShell and GenXdev and all the amazing things you can do with it" ; Suspend-TextToSpeech Starts speaking and immediately pauses it.
+
 
 ```powershell
 PS C:\> say "This is a long story about PowerShell and GenXdev and all
@@ -33,7 +34,7 @@ the amazing things you can do with it" ; Suspend-TextToSpeech
 Starts speaking and immediately pauses it.
 ```
 
-### PS C:\> Suspend-TextToSpeech; say "Urgent!" -Force; Resume-TextToSpeech Pauses ongoing speech, interrupts with urgent message, then resumes.
+
 
 ```powershell
 PS C:\> Suspend-TextToSpeech; say "Urgent!" -Force; Resume-TextToSpeech

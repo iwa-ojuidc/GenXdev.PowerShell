@@ -17,6 +17,7 @@ effects.
 
 ## Syntax
 
+
 ```powershell
 Push-Window [-AlwaysOnTop] [-Bottom] [-Centered] [-FadeOut] [-Focus] -Height <Int32> [-Hide] [-Left] [-Maximize] [-Minimize] [-Monitor <Int32>] [-NoBorders] [-Opacity <Byte>] [-PassThru] [-Restore] [-Right] [-Show] [-ShowWindow] [-Top] -Width <Int32> [<CommonParameters>]
 
@@ -54,21 +55,21 @@ Push-Window [-AlwaysOnTop] [-Bottom] [-Centered] [-FadeOut] [-Focus] [-Hide] [-L
 
 ## Examples
 
-### Push-Window -Maximize -AlwaysOnTop Maximizes the current window, sets it to be always on top, and pushes it onto the stack.
+
 
 ```powershell
 Push-Window -Maximize -AlwaysOnTop
 Maximizes the current window, sets it to be always on top, and pushes it onto the stack.
 ```
 
-### Push-Window -X 100 -Y 100 -Width 800 -Height 600 -NoBorders Positions and resizes the current window, removes its borders, and pushes it onto the stack.
+
 
 ```powershell
 Push-Window -X 100 -Y 100 -Width 800 -Height 600 -NoBorders
 Positions and resizes the current window, removes its borders, and pushes it onto the stack.
 ```
 
-### pushw -Left Positions the current window on the left half of the screen and pushes it onto the stack using the alias.
+
 
 ```powershell
 pushw -Left
@@ -76,20 +77,19 @@ Positions the current window on the left half of the screen and pushes it
 onto the stack using the alias.
 ```
 
-### Push-Window -Monitor 1 -Maximize Moves the current window to the first monitor, maximizes it, and pushes it onto the stack.
+
 
 ```powershell
 Push-Window -Monitor 1 -Maximize
 Moves the current window to the first monitor, maximizes it, and pushes it onto the stack.
 ```
 
-### Push-Window -Monitor -2 -Fullscreen Moves the current window to the secondary monitor, makes it fullscreen, and pushes it onto the stack. ##############################################################################
+
 
 ```powershell
 Push-Window -Monitor -2 -Fullscreen
 Moves the current window to the secondary monitor, makes it fullscreen,
 and pushes it onto the stack.
-##############################################################################
 ```
 
 ## Parameter Details

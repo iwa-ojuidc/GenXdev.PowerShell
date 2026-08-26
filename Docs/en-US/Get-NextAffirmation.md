@@ -14,6 +14,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-NextAffirmation [-Speak] [<CommonParameters>]
 ```
@@ -26,7 +27,6 @@ Get-NextAffirmation [-Speak] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-NextAffirmation
@@ -34,7 +34,6 @@ Get-NextAffirmation
 
 Retrieves a random affirmation from the API.
 
-### Examples 2
 
 ```powershell
 Get-NextAffirmation -Speak

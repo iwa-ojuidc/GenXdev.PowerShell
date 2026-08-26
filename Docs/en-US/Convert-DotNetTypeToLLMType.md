@@ -13,6 +13,7 @@ Takes a .NET type name as input and returns the corresponding simplified type na
 
 ## Syntax
 
+
 ```powershell
 Convert-DotNetTypeToLLMType -DotNetType <String> [<CommonParameters>]
 ```
@@ -25,7 +26,6 @@ Convert-DotNetTypeToLLMType -DotNetType <String> [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Convert-DotNetTypeToLLMType -DotNetType "System.String"

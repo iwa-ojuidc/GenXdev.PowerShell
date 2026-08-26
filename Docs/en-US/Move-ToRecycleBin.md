@@ -16,6 +16,7 @@
 
 ## Syntax
 
+
 ```powershell
 Move-ToRecycleBin -Path <String[]> [<CommonParameters>]
 ```
@@ -28,7 +29,6 @@ Move-ToRecycleBin -Path <String[]> [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Move-ToRecycleBin -Path "C:\temp\old-report.txt"
@@ -36,7 +36,6 @@ Move-ToRecycleBin -Path "C:\temp\old-report.txt"
 
 Move a single file to the recycle bin.
 
-### Examples 2
 
 ```powershell
 "file1.txt","file2.txt" | recycle

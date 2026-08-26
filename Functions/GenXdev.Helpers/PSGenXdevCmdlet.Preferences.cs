@@ -1,6 +1,5 @@
 using System.Management.Automation;
 using System.Collections;
-using System.Linq;
 using System.Management.Automation.Runspaces;
 public abstract partial class PSGenXdevCmdlet : PSCmdlet
 {
@@ -26,7 +25,7 @@ public abstract partial class PSGenXdevCmdlet : PSCmdlet
             f.GetScriptLocation().IndexOf("Pester.psm1", System.StringComparison.OrdinalIgnoreCase) >= 0
         );
     }
-    
+
     /// <summary>
     /// Gets the OneDrive path for the defaults preferences store.
     /// </summary>
@@ -515,14 +514,6 @@ public abstract partial class PSGenXdevCmdlet : PSCmdlet
             }
         }
 
-        if (!SessionOnly)
-        {
-            string defaultPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "GenXdev.PowerShell", "Preferences");
-            resolvedDatabasePath = ExpandPath(defaultPath, true);
-            WriteVerbose("Using default database path: " + resolvedDatabasePath);
-            return resolvedDatabasePath;
-        }
-
         // When running inside a Pester test and no explicit path was given,
         // auto-isolate preferences in TEMP so tests never touch real user data
         if (IsRunningUnderPester())
@@ -535,6 +526,14 @@ public abstract partial class PSGenXdevCmdlet : PSCmdlet
             WriteVerbose(
                 "Pester detected — using isolated test database path: " +
                 resolvedDatabasePath);
+            return resolvedDatabasePath;
+        }
+
+        if (!SessionOnly)
+        {
+            string defaultPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "GenXdev.PowerShell", "Preferences");
+            resolvedDatabasePath = ExpandPath(defaultPath, true);
+            WriteVerbose("Using default database path: " + resolvedDatabasePath);
             return resolvedDatabasePath;
         }
 

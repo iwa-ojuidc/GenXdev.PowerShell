@@ -13,6 +13,7 @@ Changes the indentation of a scriptblock string while respecting the original co
 
 ## Syntax
 
+
 ```powershell
 alignScript [<CommonParameters>]
 ```

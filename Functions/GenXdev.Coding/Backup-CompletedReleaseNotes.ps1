@@ -43,6 +43,7 @@ function Backup-CompletedReleaseNotes {
 
     [CmdletBinding()]
     [Alias('archive-releasenotes')]
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseSingularNouns", "Backup-CompletedReleaseNotes")]
     param(
         #######################################################################
         [Parameter(

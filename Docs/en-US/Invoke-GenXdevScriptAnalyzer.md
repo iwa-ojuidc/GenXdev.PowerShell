@@ -17,6 +17,7 @@ customizable rules and settings.
 
 ## Syntax
 
+
 ```powershell
 Invoke-GenXdevScriptAnalyzer -ScriptFilePath <String> [<CommonParameters>]
 
@@ -38,19 +39,19 @@ Invoke-GenXdevScriptAnalyzer [-EnableExit] [-Fix] [-Recurse] [-ReportSummary] [<
 
 ## Examples
 
-### Invoke-GenXdevScriptAnalyzer -Path "C:\Scripts\MyScript.ps1"
+
 
 ```powershell
 Invoke-GenXdevScriptAnalyzer -Path "C:\Scripts\MyScript.ps1"
 ```
 
-### Invoke-GenXdevScriptAnalyzer -ScriptDefinition "Get-Process | Where-Object {$_.Name -eq 'notepad'}"
+
 
 ```powershell
 Invoke-GenXdevScriptAnalyzer -ScriptDefinition "Get-Process | Where-Object {$_.Name -eq 'notepad'}"
 ```
 
-### Invoke-GenXdevScriptAnalyzer -Path "C:\Scripts\" -Recurse -Fix
+
 
 ```powershell
 Invoke-GenXdevScriptAnalyzer -Path "C:\Scripts\" -Recurse -Fix

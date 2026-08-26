@@ -17,6 +17,7 @@ Creates a cryptographically secure random token and optionally stores
 
 ## Syntax
 
+
 ```powershell
 New-GenXdevMCPToken [[-Length] <Int32>] [-Force] [-SetEnvironmentVariable] [<CommonParameters>]
 ```
@@ -31,14 +32,14 @@ New-GenXdevMCPToken [[-Length] <Int32>] [-Force] [-SetEnvironmentVariable] [<Com
 
 ## Examples
 
-### New-GenXdevMCPToken     Generates and displays a new random token without storing it.
+
 
 ```powershell
 New-GenXdevMCPToken
     Generates and displays a new random token without storing it.
 ```
 
-### New-GenXdevMCPToken -SetEnvironmentVariable     Generates a new token and stores it in the GENXDEV_MCP_TOKEN user     environment variable. Prompts if a token already exists.
+
 
 ```powershell
 New-GenXdevMCPToken -SetEnvironmentVariable
@@ -46,7 +47,7 @@ New-GenXdevMCPToken -SetEnvironmentVariable
     environment variable. Prompts if a token already exists.
 ```
 
-### New-GenXdevMCPToken -Length 64 -SetEnvironmentVariable -Force     Generates a longer 64-byte token, stores it in the environment     variable, and overwrites any existing token without prompting.
+
 
 ```powershell
 New-GenXdevMCPToken -Length 64 -SetEnvironmentVariable -Force
@@ -54,7 +55,7 @@ New-GenXdevMCPToken -Length 64 -SetEnvironmentVariable -Force
     variable, and overwrites any existing token without prompting.
 ```
 
-### $token = New-GenXdevMCPToken     Start-GenXdevMCPServer -Token $token     Generates a token and passes it directly to the MCP server without     storing in environment.
+
 
 ```powershell
 $token = New-GenXdevMCPToken

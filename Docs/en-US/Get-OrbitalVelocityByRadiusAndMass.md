@@ -13,6 +13,7 @@ Uses v = sqrt(G M / r).
 
 ## Syntax
 
+
 ```powershell
 Get-OrbitalVelocityByRadiusAndMass -RadiusInMeters <Double> -CentralMassInKilograms <Double> [[-As] <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-OrbitalVelocityByRadiusAndMass -RadiusInMeters <Double> -CentralMassInKilogr
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-OrbitalVelocityByRadiusAndMass -RadiusInMeters 6371000 -CentralMassInKilograms 5.972e24 -As "km/h"
@@ -35,7 +35,6 @@ Get-OrbitalVelocityByRadiusAndMass -RadiusInMeters 6371000 -CentralMassInKilogra
 
 Uses Earth's mass and radius for demonstration.
 
-### Examples 2
 
 ```powershell
 Get-OrbitalVelocityByRadiusAndMass 10000000 1e26

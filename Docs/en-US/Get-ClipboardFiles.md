@@ -19,13 +19,13 @@ like copy/paste.
 
 ## Syntax
 
+
 ```powershell
 Get-ClipboardFiles [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-ClipboardFiles
@@ -33,7 +33,6 @@ Get-ClipboardFiles
 
 Get all files currently in the clipboard as file system objects.
 
-### Examples 2
 
 ```powershell
 $clipboardFiles = Get-ClipboardFiles
@@ -42,7 +41,6 @@ $clipboardFiles | ForEach-Object { Write-Host $_.FullName }
 
 Get clipboard files and display their full paths.
 
-### Examples 3
 
 ```powershell
 Get-ClipboardFiles | Where-Object { $_.Extension -eq '.txt' }

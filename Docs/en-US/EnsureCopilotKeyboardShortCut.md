@@ -17,6 +17,7 @@ Also adds Alt+` (backtick) shortcut for toggling the maximized panel.
 
 ## Syntax
 
+
 ```powershell
 EnsureCopilotKeyboardShortCut [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -31,7 +32,7 @@ EnsureCopilotKeyboardShortCut [-AutoConsent] [-AutoConsentAllPackages] [-Session
 
 ## Examples
 
-### EnsureCopilotKeyboardShortCut
+
 
 ```powershell
 EnsureCopilotKeyboardShortCut

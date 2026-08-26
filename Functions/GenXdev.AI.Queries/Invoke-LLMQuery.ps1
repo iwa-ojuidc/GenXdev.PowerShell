@@ -1385,8 +1385,8 @@ ${example}
                         Microsoft.PowerShell.Utility\Write-Warning (
                             "LLM API returned 401 (Unauthorized). " +
                             "Your API key appears to be invalid. " +
-                            "Reconfigure with: Set-AILLMSettings " +
-                            "-PromptForSettings -LLMQueryType ${LLMQueryType}"
+                            "Run 'Invoke-AILLMSettingsPrompt -> promptllmsettings' to reconfigure your LLM " +
+                            "settings for query type ${LLMQueryType}."
                         )
                     }
                     403 {
@@ -1394,7 +1394,9 @@ ${example}
                             "LLM API returned 403 (Forbidden). " +
                             "Your account may lack permission " +
                             "for model '${Model}'. Verify your " +
-                            "API key has access to this model."
+                            "API key has access to this model. " +
+                            "Run 'Invoke-AILLMSettingsPrompt -> promptllmsettings' to reconfigure your LLM " +
+                            "settings for query type ${LLMQueryType}."
                         )
                     }
                     429 {
@@ -1409,11 +1411,46 @@ ${example}
                             Microsoft.PowerShell.Utility\Write-Warning (
                                 "LLM API returned HTTP ${statusCode}. " +
                                 "There may be an issue with your request " +
-                                "parameters or account configuration."
+                                "parameters or account configuration. " +
+                                "Run 'Invoke-AILLMSettingsPrompt -> promptllmsettings' to reconfigure your LLM " +
+                                "settings for query type ${LLMQueryType}."
                             )
                         }
                     }
                 }
+
+                throw
+            }
+
+            # No HTTP response was received. Determine whether the endpoint
+            # was genuinely unreachable (network-level failure) as opposed to
+            # a timeout, TLS, or other non-HTTP error.
+            $endpointUnreachable = $false
+            $innerException = $_.Exception
+            while ($null -ne $innerException) {
+                if ($innerException -is [System.Net.Sockets.SocketException]) {
+                    $endpointUnreachable = $true
+                    break
+                }
+                if ($innerException -is [System.Net.WebException] -and
+                    $innerException.Status -in @(
+                        [System.Net.WebExceptionStatus]::NameResolutionFailure,
+                        [System.Net.WebExceptionStatus]::ConnectFailure,
+                        [System.Net.WebExceptionStatus]::ConnectionClosed
+                    )) {
+                    $endpointUnreachable = $true
+                    break
+                }
+                $innerException = $innerException.InnerException
+            }
+
+            if ($endpointUnreachable) {
+                throw (
+                    "Could not reach the LLM API endpoint '${apiUrl}'. " +
+                    "The endpoint appears to be invalid or unreachable. " +
+                    "Run 'Invoke-AILLMSettingsPrompt -> promptllmsettings' to reconfigure your LLM " +
+                    "settings for query type ${LLMQueryType}."
+                )
             }
 
             throw

@@ -16,6 +16,7 @@ confidence level and reasoning from the AI model.
 
 ## Syntax
 
+
 ```powershell
 Invoke-LLMBooleanEvaluation [[-Text] <String>] [[-Instructions] <String>] [[-Attachments] <String[]>] [-AllowDefaultTools] [-ApiEndpoint <String>] [-ApiKey <String>] [-AudioContextSize <Int32>] [-AudioTemperature <Double>] [-ClearSession] [-ContinueLast] [-CpuThreads <Int32>] [-DontAddThoughtsToHistory] [-DontSpeak] [-DontSpeakThoughts] [-EntropyThreshold <Double>] [-ExposedCmdLets <GenXdev.Helpers.ExposedCmdletDefinition[]>] [-Functions <Collections.Hashtable[]>] [-ImageDetail <String>] [-IncludeThoughts] [-Language <String>] [-LengthPenalty <Double>] [-LLMQueryType <String>] [-LogProbThreshold <Double>] [-MarkupBlocksTypeFilter <String[]>] [-MaxToolcallBackLength <Int32>] [-Model <String>] [-NoConfirmationToolFunctionNames <String[]>] [-NoContext] [-NoSessionCaching] [-NoSpeechThreshold <Double>] [-NoSupportForJsonSchema] [-NoVOX] [-OnlyResponses] [-OutputMarkdownBlocksOnly] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-SessionOnly] [-SetClipboard] [-SilenceThreshold <Double>] [-SkipSession] [-Speak] [-SpeakThoughts] [-SuppressRegex <String>] [-Temperature <Double>] [-TemperatureResponse <Double>] [-UseDesktopAudioCapture] [-WithBeamSearchSamplingStrategy] [<CommonParameters>]
 ```
@@ -74,23 +75,22 @@ Invoke-LLMBooleanEvaluation [[-Text] <String>] [[-Instructions] <String>] [[-Att
 
 ## Examples
 
-### Invoke-LLMBooleanEvaluation -Text "The Earth is flat" -Model "gpt-4"
+
 
 ```powershell
 Invoke-LLMBooleanEvaluation -Text "The Earth is flat" -Model "gpt-4"
 ```
 
-### "Humans need oxygen to survive" | Invoke-LLMBooleanEvaluation
+
 
 ```powershell
 "Humans need oxygen to survive" | Invoke-LLMBooleanEvaluation
 ```
 
-### equalstrue "2 + 2 = 4" ##############################################################################
+
 
 ```powershell
 equalstrue "2 + 2 = 4"
-##############################################################################
 ```
 
 ## Parameter Details

@@ -24,6 +24,7 @@
 
 ## Syntax
 
+
 ```powershell
 Write-JsonFileAtomic -FilePath <String> [[-Data] <Object>] [-AsArray] [-Compress] [-DebounceMs <Int32>] [-Depth <Int32?>] [-EnumsAsStrings] [-MaxRetries <Int32>] [-RetryDelayMs <Int32>] [<CommonParameters>]
 ```
@@ -44,7 +45,6 @@ Write-JsonFileAtomic -FilePath <String> [[-Data] <Object>] [-AsArray] [-Compress
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 $data = @{ Name = "test"; Value = 42 }
@@ -53,7 +53,6 @@ Write-JsonFileAtomic -FilePath "config.json" -Data $data
 
 Writes a Hashtable as indented JSON to config.json atomically.
 
-### Examples 2
 
 ```powershell
 Get-Process | Select-Object -First 5 |

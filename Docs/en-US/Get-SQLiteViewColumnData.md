@@ -15,6 +15,7 @@ path. Allows limiting the number of returned records or retrieving all records.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLiteViewColumnData -ConnectionString <String> [<CommonParameters>]
 
@@ -35,7 +36,7 @@ Get-SQLiteViewColumnData -ViewName <String> -ColumnName <String> [[-Count] <Int3
 
 ## Examples
 
-### Get-SQLiteViewColumnData -DatabaseFilePath "C:\MyDB.sqlite" `     -ViewName "CustomersView" `     -ColumnName "Email" `     -Count 50
+
 
 ```powershell
 Get-SQLiteViewColumnData -DatabaseFilePath "C:\MyDB.sqlite" `
@@ -44,7 +45,7 @@ Get-SQLiteViewColumnData -DatabaseFilePath "C:\MyDB.sqlite" `
     -Count 50
 ```
 
-### Get-SQLiteViewColumnData "C:\MyDB.sqlite" "CustomersView" "Email"
+
 
 ```powershell
 Get-SQLiteViewColumnData "C:\MyDB.sqlite" "CustomersView" "Email"

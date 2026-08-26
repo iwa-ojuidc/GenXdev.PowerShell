@@ -19,6 +19,7 @@ monitor.
 
 ## Syntax
 
+
 ```powershell
 Get-DesktopScalingFactor [[-Monitor] <Int32>] [<CommonParameters>]
 ```
@@ -31,7 +32,6 @@ Get-DesktopScalingFactor [[-Monitor] <Int32>] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-DesktopScalingFactor -Monitor 0
@@ -39,7 +39,6 @@ Get-DesktopScalingFactor -Monitor 0
 
 Returns the scaling factor percentage for the primary monitor.
 
-### Examples 2
 
 ```powershell
 Get-DesktopScalingFactor 1

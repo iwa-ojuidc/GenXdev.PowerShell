@@ -16,6 +16,7 @@
 
 ## Syntax
 
+
 ```powershell
 Set-GenXdevDefaultPreference -Name <String> [[-Value] <String>] [[-PreferencesDatabasePath] <String>] [-AllMachines] [-ClearSession] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -34,7 +35,6 @@ Set-GenXdevDefaultPreference -Name <String> [[-Value] <String>] [[-PreferencesDa
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Set-GenXdevDefaultPreference -Name "Theme" -Value "Dark"
@@ -42,7 +42,6 @@ Set-GenXdevDefaultPreference -Name "Theme" -Value "Dark"
 
 Sets the default theme preference to "Dark" locally.
 
-### Examples 2
 
 ```powershell
 setPreferenceDefault "EmailNotifications" "Disabled" -AllMachines

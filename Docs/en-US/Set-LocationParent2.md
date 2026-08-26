@@ -15,13 +15,13 @@
 
 ## Syntax
 
+
 ```powershell
 Set-LocationParent2 [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Set-LocationParent2
@@ -29,7 +29,6 @@ Set-LocationParent2
 
 Changes to the grandparent directory and displays its contents.
 
-### Examples 2
 
 ```powershell
 ...

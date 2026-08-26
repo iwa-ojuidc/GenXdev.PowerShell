@@ -16,13 +16,13 @@ settings.
 
 ## Syntax
 
+
 ```powershell
 Get-DefaultWebLanguage [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-DefaultWebLanguage

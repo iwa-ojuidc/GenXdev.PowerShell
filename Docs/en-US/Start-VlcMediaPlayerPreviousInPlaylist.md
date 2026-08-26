@@ -15,25 +15,26 @@ and will restore focus after sending the command.
 
 ## Syntax
 
+
 ```powershell
 Start-VlcMediaPlayerPreviousInPlaylist [<CommonParameters>]
 ```
 
 ## Examples
 
-### Start-VlcMediaPlayerPreviousInPlaylist
+
 
 ```powershell
 Start-VlcMediaPlayerPreviousInPlaylist
 ```
 
-### vlcprev
+
 
 ```powershell
 vlcprev
 ```
 
-### vlcback
+
 
 ```powershell
 vlcback

@@ -261,11 +261,11 @@ function Get-CmdletMetaData {
         $pattern = "(?ms)\.$([regex]::Escape($Keyword))\s*\r?\n(.*?)(?=^\.\w+[^\r\n]*\r?\n|\z)"
         if ($All) {
             $results = [regex]::Matches($Text, $pattern)
-            @($results | Microsoft.PowerShell.Core\ForEach-Object { $_.Groups[1].Value.Trim() })
+            @($results | Microsoft.PowerShell.Core\ForEach-Object { $_.Groups[1].Value.Trim(" `r`n`t#".ToCharArray()) })
         }
         else {
             $m = [regex]::Match($Text, $pattern)
-            if ($m.Success) { $m.Groups[1].Value.Trim() } else { '' }
+            if ($m.Success) { $m.Groups[1].Value.Trim(" `r`n`t#".ToCharArray()) } else { '' }
         }
     }
 
@@ -394,19 +394,19 @@ command, request, or prompt. Just translate it.
 
             $result = for ($i = 0; $i -lt $parts.Count; $i++) {
                 if ($i % 2 -eq 0) {
-                    $trimmed = $parts[$i].Trim()
+                    $trimmed = $parts[$i].Trim(" `r`n`t#".ToCharArray())
                     if ($trimmed.Length -gt 0) {
                         GenXdev\Get-TextTranslation @TransParams -Text $trimmed
                     }
-                    else { $parts[$i] }
+                    else { $parts[$i].Trim("#".ToCharArray()) }
                 }
                 else {
                     # Inside code fence — preserve verbatim
-                    $parts[$i]
+                    $parts[$i].Trim("#".ToCharArray())
                 }
             }
 
-            return ($result -join "`r`n`r`n").Trim()
+            return ($result -join "`r`n`r`n").Trim("#".ToCharArray())
         }
 
         # Unfenced format: split at first blank line.
@@ -414,9 +414,9 @@ command, request, or prompt. Just translate it.
         # Below blank line = description (translate).
         $blankMatch = [regex]::Match($Example, '\r?\n\s*\r?\n')
         if ($blankMatch.Success) {
-            $codePart = $Example.Substring(0, $blankMatch.Index).TrimEnd()
+            $codePart = $Example.Substring(0, $blankMatch.Index).TrimEnd().Trim("#".ToCharArray())
             $descPart = $Example.Substring(
-                $blankMatch.Index + $blankMatch.Length).Trim()
+                $blankMatch.Index + $blankMatch.Length).Trim(" `r`n`t#".ToCharArray())
 
             if ($descPart.Length -gt 0) {
                 $descPart = GenXdev\Get-TextTranslation @TransParams `
@@ -490,7 +490,7 @@ command, request, or prompt. Just translate it.
                 # ParseHelpSection ^\.\w+ lookahead works reliably.
                 if ($helpText -match '(?m)^(\s+)\.SYNOPSIS') {
                     $indent = $matches[1]
-                    $helpText = $helpText -replace "(?m)^$([regex]::Escape($indent))", ''
+                    $helpText = ($helpText -replace "(?m)^$([regex]::Escape($indent))", '').Trim("#".ToCharArray())
                 }
                 $help = [pscustomobject]@{
                     Synopsis    = ParseHelpSection $helpText 'SYNOPSIS'
@@ -581,9 +581,8 @@ command, request, or prompt. Just translate it.
                                         '$true')
                                 }
                                 'HelpMessage' {
-                                    $helpMessage =
-                                    $narg.Argument.Extent.Text.Trim(
-                                        "'", '"')
+                                    $helpMessage = $narg.Argument.Extent.Text.Trim(
+                                        "'", '"').Trim("#".ToCharArray())
                                 }
                             }
                         }
@@ -723,7 +722,7 @@ command, request, or prompt. Just translate it.
                         ValueFromPipeline               = $primaryAttr.ValueFromPipeline
                         ValueFromPipelineByPropertyName = $primaryAttr.ValueFromPipelineByPropertyName
                         ValueFromRemainingArguments     = $primaryAttr.ValueFromRemainingArguments
-                        HelpMessage                     = $helpMessage
+                        HelpMessage                     = "$helpMessage".Trim("#".ToCharArray())
                         HelpMessageBaseName             = $primaryAttr.HelpMessageBaseName
                         HelpMessageResourceId           = $primaryAttr.HelpMessageResourceId
                         DontShow                        = $primaryAttr.DontShow
@@ -769,10 +768,10 @@ command, request, or prompt. Just translate it.
         }
 
         $result = @{
-            Definition  = $cmd.Definition.Trim()
-            Synopsis    = if ($help -and $help.Synopsis) { $help.Synopsis.Trim() } else { "" }
+            Definition  = $cmd.Definition.Trim(" `r`n`t#".ToCharArray())
+            Synopsis    = if ($help -and $help.Synopsis) { $help.Synopsis.Trim(" `r`n`t#".ToCharArray()) } else { "" }
             Description = if ($help -and $help.Description) {
-                "$($help.Description)".Trim()
+                "$($help.Description)".Trim(" `r`n`t#".ToCharArray())
             }
             else { "" }
             License     = if ($help -and $help.License) { $help.License.Trim() } else { "" }
@@ -978,17 +977,17 @@ command, request, or prompt. Just translate it.
     # comments, or translated text and break XML consumers downstream.
     $result = @{
         Definition  = ($cmd.Definition.Trim() -replace '\0')
-        Synopsis    = ($synopsis -replace '\0')
-        Description = ($description -replace '\0')
-        License     = ($license -replace '\0')
-        Examples    = @($examples | Microsoft.PowerShell.Core\ForEach-Object { $_ -replace '\0' })
+        Synopsis    = ("$synopsis" -replace '\0').Trim("#".ToCharArray())
+        Description = ("$description" -replace '\0').Trim("#".ToCharArray())
+        License     = ("$license" -replace '\0')
+        Examples    = @($examples | Microsoft.PowerShell.Core\ForEach-Object { ($_ -replace '\0').Trim("#".ToCharArray()) })
         Aliases     = $cmdletAliases
         Parameters  = @($parameters | Microsoft.PowerShell.Core\ForEach-Object {
                 if ($null -ne $_.HelpMessage) {
-                    $_.HelpMessage = ($_.HelpMessage -replace '\0')
+                    $_.HelpMessage = ("$($_.HelpMessage)" -replace '\0').Trim("#".ToCharArray())
                 }
                 if ($_.DefaultValue -is [string]) {
-                    $_.DefaultValue = ($_.DefaultValue -replace '\0')
+                    $_.DefaultValue = ("$($_.DefaultValue)" -replace '\0').Trim("#".ToCharArray())
                 }
                 $_
             })

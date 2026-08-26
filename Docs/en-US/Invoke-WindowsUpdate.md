@@ -16,6 +16,7 @@ can optionally reboot the system if updates require a restart.
 
 ## Syntax
 
+
 ```powershell
 Invoke-WindowsUpdate [[-Criteria] <String>] [-AutoReboot] [-GroupByCategory] [-IncludeDrivers] [-Install] [-NoBanner] [-NoRebootCheck] [-ProcessOptionalUpdates] [<CommonParameters>]
 ```
@@ -35,35 +36,35 @@ Invoke-WindowsUpdate [[-Criteria] <String>] [-AutoReboot] [-GroupByCategory] [-I
 
 ## Examples
 
-### Invoke-WindowsUpdate Checks for available Windows and winget updates without installing them.
+
 
 ```powershell
 Invoke-WindowsUpdate
 Checks for available Windows and winget updates without installing them.
 ```
 
-### Invoke-WindowsUpdate -Install Automatically installs all available Windows and winget updates.
+
 
 ```powershell
 Invoke-WindowsUpdate -Install
 Automatically installs all available Windows and winget updates.
 ```
 
-### updatewindows -Install -AutoReboot Installs all updates and reboots automatically if required using the alias.
+
 
 ```powershell
 updatewindows -Install -AutoReboot
 Installs all updates and reboots automatically if required using the alias.
 ```
 
-### Invoke-WindowsUpdate -GroupByCategory Displays available updates grouped by category for better organization.
+
 
 ```powershell
 Invoke-WindowsUpdate -GroupByCategory
 Displays available updates grouped by category for better organization.
 ```
 
-### Invoke-WindowsUpdate -Install -ProcessOptionalUpdates Installs all important updates automatically and prompts for each optional update individually, allowing selective installation of optional updates.
+
 
 ```powershell
 Invoke-WindowsUpdate -Install -ProcessOptionalUpdates
@@ -71,7 +72,7 @@ Installs all important updates automatically and prompts for each optional
 update individually, allowing selective installation of optional updates.
 ```
 
-### Invoke-WindowsUpdate -IncludeDrivers -Criteria "IsInstalled=0" Checks for updates including drivers with custom search criteria.
+
 
 ```powershell
 Invoke-WindowsUpdate -IncludeDrivers -Criteria "IsInstalled=0"

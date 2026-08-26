@@ -17,6 +17,7 @@ The browser type can be specified using the -Edge, -Chrome, -Chromium,
 
 ## Syntax
 
+
 ```powershell
 Get-PlaywrightSessionReference [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Webkit] [<CommonParameters>]
 ```
@@ -33,14 +34,14 @@ Get-PlaywrightSessionReference [-Chrome] [-Chromium] [-Edge] [-Firefox] [-Webkit
 
 ## Examples
 
-### Get a reference to the current browser session $sessionRef = Get-PlaywrightSessionReference
+
 
 ```powershell
 Get a reference to the current browser session
 $sessionRef = Get-PlaywrightSessionReference
 ```
 
-### Store the reference and use it later to execute JavaScript $ref = Get-PlaywrightSessionReference Invoke-WebbrowserEvaluation "document.title" -ByReference $ref
+
 
 ```powershell
 Store the reference and use it later to execute JavaScript

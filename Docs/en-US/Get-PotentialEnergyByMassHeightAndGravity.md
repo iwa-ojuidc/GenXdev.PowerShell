@@ -13,6 +13,7 @@ Uses PE = m g h.
 
 ## Syntax
 
+
 ```powershell
 Get-PotentialEnergyByMassHeightAndGravity -MassInKilograms <Double> -HeightInMeters <Double> [[-GravityInMetersPerSecondSquared] <Double>] [[-As] <String>] [<CommonParameters>]
 ```
@@ -28,7 +29,6 @@ Get-PotentialEnergyByMassHeightAndGravity -MassInKilograms <Double> -HeightInMet
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-PotentialEnergyByMassHeightAndGravity -MassInKilograms 10 -HeightInMeters 5 -As "calories"
@@ -36,7 +36,6 @@ Get-PotentialEnergyByMassHeightAndGravity -MassInKilograms 10 -HeightInMeters 5 
 
 Calculates the gravitational potential energy for a 10kg mass at a height of 5 meters, outputting the result in calories.
 
-### Examples 2
 
 ```powershell
 Get-PotentialEnergyByMassHeightAndGravity 5 10

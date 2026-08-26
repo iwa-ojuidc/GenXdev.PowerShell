@@ -16,13 +16,13 @@
 
 ## Syntax
 
+
 ```powershell
 Get-MonitorCount [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-MonitorCount
@@ -30,7 +30,6 @@ Get-MonitorCount
 
 Returns the total number of connected monitors (e.g. 2).
 
-### Examples 2
 
 ```powershell
 $screens = Get-MonitorCount -Verbose

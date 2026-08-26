@@ -32,6 +32,7 @@ management features are inherited from the underlying Open-Webbrowser function.
 
 ## Syntax
 
+
 ```powershell
 Open-GoogleQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -89,7 +90,7 @@ Open-GoogleQuery -Queries <String[]> [[-Language] <String>] [-AcceptLang <String
 
 ## Examples
 
-### Open-GoogleQuery -Queries "PowerShell scripting" -Language "English" -Monitor 0 Opens a Google search for "PowerShell scripting" in English on the primary monitor.
+
 
 ```powershell
 Open-GoogleQuery -Queries "PowerShell scripting" -Language "English" -Monitor 0
@@ -97,7 +98,7 @@ Opens a Google search for "PowerShell scripting" in English on the primary
 monitor.
 ```
 
-### q "machine learning algorithms" -m 2 -fs Opens a Google search for "machine learning algorithms" in fullscreen mode on monitor 2 using aliases.
+
 
 ```powershell
 q "machine learning algorithms" -m 2 -fs
@@ -105,21 +106,21 @@ Opens a Google search for "machine learning algorithms" in fullscreen mode
 on monitor 2 using aliases.
 ```
 
-### "PowerShell", "Python", "JavaScript" | Open-GoogleQuery -Language "English" -Chrome Opens multiple Google searches in Chrome via pipeline input, each in English.
+
 
 ```powershell
 "PowerShell", "Python", "JavaScript" | Open-GoogleQuery -Language "English" -Chrome
 Opens multiple Google searches in Chrome via pipeline input, each in English.
 ```
 
-### Open-GoogleQuery -Queries "artificial intelligence" -Private -NewWindow Opens a private browsing search for "artificial intelligence" in a new window.
+
 
 ```powershell
 Open-GoogleQuery -Queries "artificial intelligence" -Private -NewWindow
 Opens a private browsing search for "artificial intelligence" in a new window.
 ```
 
-### Open-GoogleQuery -Queries "web development" -ApplicationMode -Centered Opens a search in application mode (no browser controls) centered on screen.
+
 
 ```powershell
 Open-GoogleQuery -Queries "web development" -ApplicationMode -Centered

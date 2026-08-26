@@ -13,6 +13,7 @@ Uses T = (2 v sinθ) / g for ideal motion.
 
 ## Syntax
 
+
 ```powershell
 Get-TimeOfFlightByInitialVelocityAndAngle -InitialVelocityInMetersPerSecond <Double> -AngleInDegrees <Double> [[-GravityInMetersPerSecondSquared] <Double>] [[-As] <String>] [<CommonParameters>]
 ```
@@ -28,7 +29,6 @@ Get-TimeOfFlightByInitialVelocityAndAngle -InitialVelocityInMetersPerSecond <Dou
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-TimeOfFlightByInitialVelocityAndAngle -InitialVelocityInMetersPerSecond 20 -AngleInDegrees 45 -As "minutes"
@@ -36,7 +36,6 @@ Get-TimeOfFlightByInitialVelocityAndAngle -InitialVelocityInMetersPerSecond 20 -
 
 Calculates time of flight for a projectile launched at 20 m/s at 45 degrees, output in minutes.
 
-### Examples 2
 
 ```powershell
 Get-TimeOfFlightByInitialVelocityAndAngle 30 30

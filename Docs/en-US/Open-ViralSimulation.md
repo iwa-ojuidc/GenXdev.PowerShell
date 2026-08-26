@@ -25,6 +25,7 @@ like:
 
 ## Syntax
 
+
 ```powershell
 Open-ViralSimulation [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoApplicationMode] [-NoBorders] [-NoBrowserExtensions] [-NoFullScreen] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -83,7 +84,7 @@ Open-ViralSimulation [[-Language] <String>] [-AcceptLang <String>] [-All] [-Appl
 
 ## Examples
 
-### Open-ViralSimulation -Chrome -Private -NoFullScreen Opens viral simulation in Google Chrome with private browsing mode and no fullscreen.
+
 
 ```powershell
 Open-ViralSimulation -Chrome -Private -NoFullScreen
@@ -91,7 +92,7 @@ Opens viral simulation in Google Chrome with private browsing mode and no
 fullscreen.
 ```
 
-### viral -ch -incognito -nfs Opens viral simulation using aliases with Chrome, incognito mode, and no fullscreen.
+
 
 ```powershell
 viral -ch -incognito -nfs

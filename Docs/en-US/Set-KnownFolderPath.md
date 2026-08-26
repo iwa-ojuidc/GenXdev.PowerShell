@@ -19,6 +19,7 @@ moving system-critical folders as this may affect system stability.
 
 ## Syntax
 
+
 ```powershell
 Set-KnownFolderPath -KnownFolder <String> -Path <String> [<CommonParameters>]
 ```
@@ -32,13 +33,13 @@ Set-KnownFolderPath -KnownFolder <String> -Path <String> [<CommonParameters>]
 
 ## Examples
 
-### Set-KnownFolderPath -KnownFolder 'Documents' -Path 'D:\UserDocs'
+
 
 ```powershell
 Set-KnownFolderPath -KnownFolder 'Documents' -Path 'D:\UserDocs'
 ```
 
-### Set-KnownFolderPath Downloads 'E:\Downloads'
+
 
 ```powershell
 Set-KnownFolderPath Downloads 'E:\Downloads'

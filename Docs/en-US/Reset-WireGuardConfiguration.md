@@ -18,6 +18,7 @@ restarts the container, and verifies that a new configuration is generated.
 
 ## Syntax
 
+
 ```powershell
 Reset-WireGuardConfiguration [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [[-ImageName] <String>] [[-PUID] <String>] [[-PGID] <String>] [[-TimeZone] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-NoDockerInitialize] [-SessionOnly] [<CommonParameters>]
 ```
@@ -43,7 +44,7 @@ Reset-WireGuardConfiguration [[-ContainerName] <String>] [[-VolumeName] <String>
 
 ## Examples
 
-### Reset-WireGuardConfiguration Resets the WireGuard configuration with default settings and prompts for confirmation before proceeding.
+
 
 ```powershell
 Reset-WireGuardConfiguration
@@ -51,7 +52,7 @@ Resets the WireGuard configuration with default settings and prompts for
 confirmation before proceeding.
 ```
 
-### Reset-WireGuardConfiguration -Force -ContainerName "my-wireguard" Resets the WireGuard configuration for a custom container name without confirmation prompts.
+
 
 ```powershell
 Reset-WireGuardConfiguration -Force -ContainerName "my-wireguard"

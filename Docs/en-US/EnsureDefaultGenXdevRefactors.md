@@ -15,6 +15,7 @@ C# conversion, and installation consent prompts.
 
 ## Syntax
 
+
 ```powershell
 EnsureDefaultGenXdevRefactors [-AutoConsent] [-AutoConsentAllPackages] [-Force] [-SessionOnly] [<CommonParameters>]
 ```
@@ -30,13 +31,13 @@ EnsureDefaultGenXdevRefactors [-AutoConsent] [-AutoConsentAllPackages] [-Force] 
 
 ## Examples
 
-### EnsureDefaultGenXdevRefactors
+
 
 ```powershell
 EnsureDefaultGenXdevRefactors
 ```
 
-### EnsureDefaultGenXdevRefactors -Force
+
 
 ```powershell
 EnsureDefaultGenXdevRefactors -Force

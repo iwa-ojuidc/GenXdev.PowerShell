@@ -16,20 +16,21 @@ time zones. The returned DateTime object can be used for timestamp
 
 ## Syntax
 
+
 ```powershell
 UtcNow [<CommonParameters>]
 ```
 
 ## Examples
 
-### $currentUtc = UtcNow Returns the current UTC time as a DateTime object.
+
 
 ```powershell
 $currentUtc = UtcNow
 Returns the current UTC time as a DateTime object.
 ```
 
-### $timestamp = (UtcNow).ToString("yyyy-MM-dd HH:mm:ss") Gets the current UTC time and formats it as a string.
+
 
 ```powershell
 $timestamp = (UtcNow).ToString("yyyy-MM-dd HH:mm:ss")

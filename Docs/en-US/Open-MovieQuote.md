@@ -24,6 +24,7 @@ Key features:
 
 ## Syntax
 
+
 ```powershell
 Open-MovieQuote -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -81,28 +82,28 @@ Open-MovieQuote -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>
 
 ## Examples
 
-### Open-MovieQuote -Queries "I'll be back" Opens a search for the famous Terminator quote "I'll be back".
+
 
 ```powershell
 Open-MovieQuote -Queries "I'll be back"
 Opens a search for the famous Terminator quote "I'll be back".
 ```
 
-### Open-MovieQuote -Queries "Here's looking at you kid" -Monitor 1 Opens a search for the Casablanca quote on monitor 1.
+
 
 ```powershell
 Open-MovieQuote -Queries "Here's looking at you kid" -Monitor 1
 Opens a search for the Casablanca quote on monitor 1.
 ```
 
-### moviequote "May the Force be with you" -Language "English" -Private Opens a search for the Star Wars quote in English using private browsing.
+
 
 ```powershell
 moviequote "May the Force be with you" -Language "English" -Private
 Opens a search for the Star Wars quote in English using private browsing.
 ```
 
-### "I'll be back", "Frankly, my dear" | Open-MovieQuote -Chrome -FullScreen Opens multiple movie quote searches in Chrome fullscreen mode via pipeline.
+
 
 ```powershell
 "I'll be back", "Frankly, my dear" | Open-MovieQuote -Chrome -FullScreen

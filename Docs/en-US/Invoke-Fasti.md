@@ -18,6 +18,7 @@ system.
 
 ## Syntax
 
+
 ```powershell
 Invoke-Fasti [[-Password] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-DontDeleteArchives] [-ExtractOutputToo] [-SessionOnly] [<CommonParameters>]
 ```
@@ -35,13 +36,13 @@ Invoke-Fasti [[-Password] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-D
 
 ## Examples
 
-### PS C:\Downloads> Invoke-Fasti
+
 
 ```powershell
 PS C:\Downloads> Invoke-Fasti
 ```
 
-### PS C:\Downloads> fasti
+
 
 ```powershell
 PS C:\Downloads> fasti

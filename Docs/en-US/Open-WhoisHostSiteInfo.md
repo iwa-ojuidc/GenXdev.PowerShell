@@ -16,6 +16,7 @@ selection, and automation features.
 
 ## Syntax
 
+
 ```powershell
 Open-WhoisHostSiteInfo -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -73,21 +74,21 @@ Open-WhoisHostSiteInfo -Queries <String[]> [[-Language] <String>] [-AcceptLang <
 
 ## Examples
 
-### Open-WhoisHostSiteInfo -Queries "example.com", "example.org" -Monitor 0 Opens Whois information for multiple domains on the default monitor.
+
 
 ```powershell
 Open-WhoisHostSiteInfo -Queries "example.com", "example.org" -Monitor 0
 Opens Whois information for multiple domains on the default monitor.
 ```
 
-### whois example.com -m 1 Opens Whois information for example.com using aliases and positional parameters.
+
 
 ```powershell
 whois example.com -m 1
 Opens Whois information for example.com using aliases and positional parameters.
 ```
 
-### "microsoft.com", "google.com" | Open-WhoisHostSiteInfo -Private -Chrome Opens Whois information for domains from pipeline in Chrome private mode.
+
 
 ```powershell
 "microsoft.com", "google.com" | Open-WhoisHostSiteInfo -Private -Chrome

@@ -15,6 +15,7 @@ the transaction. Requires an existing SQL Server database and connection.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLServerTransaction -ConnectionString <String> [<CommonParameters>]
 
@@ -37,7 +38,7 @@ Get-SQLServerTransaction [-AutoConsent] [-AutoConsentAllPackages] [-IsolationLev
 
 ## Examples
 
-### $transaction = Get-SQLServerTransaction -Server "localhost" -DatabaseName "MyDatabase" try {     Invoke-SQLServerQuery -Transaction $transaction -Queries "INSERT INTO Users..."     Invoke-SQLServerQuery -Transaction $transaction -Queries "UPDATE Users..."     $transaction.Commit() } catch {     $transaction.Rollback()     throw } finally {     $transaction.Connection.Close() }
+
 
 ```powershell
 $transaction = Get-SQLServerTransaction -Server "localhost" -DatabaseName "MyDatabase"
@@ -53,13 +54,13 @@ try {
 }
 ```
 
-### $transaction = Get-SQLServerTransaction -ConnectionString "Server=localhost;Database=MyDB;Integrated Security=true"
+
 
 ```powershell
 $transaction = Get-SQLServerTransaction -ConnectionString "Server=localhost;Database=MyDB;Integrated Security=true"
 ```
 
-### $transaction = Get-SQLServerTransaction -Server "localhost" -DatabaseName "MyDatabase" -AutoConsentAllPackages
+
 
 ```powershell
 $transaction = Get-SQLServerTransaction -Server "localhost" -DatabaseName "MyDatabase" -AutoConsentAllPackages

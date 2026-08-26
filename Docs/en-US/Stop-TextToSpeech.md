@@ -15,20 +15,21 @@ text-to-speech activities.
 
 ## Syntax
 
+
 ```powershell
 Stop-TextToSpeech [<CommonParameters>]
 ```
 
 ## Examples
 
-### PS C:\> Stop-TextToSpeech Immediately stops any ongoing speech
+
 
 ```powershell
 PS C:\> Stop-TextToSpeech
 Immediately stops any ongoing speech
 ```
 
-### PS C:\> say "Hello world"; sst Starts speaking but gets interrupted immediately
+
 
 ```powershell
 PS C:\> say "Hello world"; sst

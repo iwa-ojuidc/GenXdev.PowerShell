@@ -16,17 +16,17 @@ security and access-related issues.
 
 ## Syntax
 
+
 ```powershell
 CurrentUserHasElevatedRights [<CommonParameters>]
 ```
 
 ## Examples
 
-### $hasRights = CurrentUserHasElevatedRights ##############################################################################
+
 
 ```powershell
 $hasRights = CurrentUserHasElevatedRights
-##############################################################################
 ```
 
 ## Outputs

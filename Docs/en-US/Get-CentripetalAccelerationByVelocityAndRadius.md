@@ -13,6 +13,7 @@ Uses a = v² / r.
 
 ## Syntax
 
+
 ```powershell
 Get-CentripetalAccelerationByVelocityAndRadius -VelocityInMetersPerSecond <Double> -RadiusInMeters <Double> [[-As] <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-CentripetalAccelerationByVelocityAndRadius -VelocityInMetersPerSecond <Doubl
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-CentripetalAccelerationByVelocityAndRadius -VelocityInMetersPerSecond 10 -RadiusInMeters 5 -As "g"
@@ -35,7 +35,6 @@ Get-CentripetalAccelerationByVelocityAndRadius -VelocityInMetersPerSecond 10 -Ra
 
 Calculates centripetal acceleration for velocity 10 m/s and radius 5 m, output in g units.
 
-### Examples 2
 
 ```powershell
 Get-CentripetalAccelerationByVelocityAndRadius 20 10

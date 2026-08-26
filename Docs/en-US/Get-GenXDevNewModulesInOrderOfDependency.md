@@ -17,6 +17,7 @@ sequence.
 
 ## Syntax
 
+
 ```powershell
 Get-GenXDevNewModulesInOrderOfDependency [[-ModuleName] <String[]>] [<CommonParameters>]
 ```
@@ -29,13 +30,13 @@ Get-GenXDevNewModulesInOrderOfDependency [[-ModuleName] <String[]>] [<CommonPara
 
 ## Examples
 
-### Get-GenXDevNewModulesInOrderOfDependency -ModuleName "GenXdev.Helpers"
+
 
 ```powershell
 Get-GenXDevNewModulesInOrderOfDependency -ModuleName "GenXdev.Helpers"
 ```
 
-### "GenXdev.Console" | Get-GenXDevNewModulesInOrderOfDependency
+
 
 ```powershell
 "GenXdev.Console" | Get-GenXDevNewModulesInOrderOfDependency

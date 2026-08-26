@@ -16,6 +16,7 @@ collection of strings.
 
 ## Syntax
 
+
 ```powershell
 Get-SQLServerTables -ConnectionString <String> [<CommonParameters>]
 
@@ -32,14 +33,14 @@ Get-SQLServerTables -DatabaseName <String> [[-Server] <String>] [<CommonParamete
 
 ## Examples
 
-### Get-SQLServerTables -DatabaseName "Inventory" -Server "localhost" Returns all table names from the specified database
+
 
 ```powershell
 Get-SQLServerTables -DatabaseName "Inventory" -Server "localhost"
 Returns all table names from the specified database
 ```
 
-### Get-SQLServerTables -ConnectionString "Server=localhost;Database=Users;Integrated Security=true;" Returns all table names using a custom connection string
+
 
 ```powershell
 Get-SQLServerTables -ConnectionString "Server=localhost;Database=Users;Integrated Security=true;"

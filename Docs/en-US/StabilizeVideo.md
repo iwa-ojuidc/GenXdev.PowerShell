@@ -14,6 +14,7 @@ Two-pass vid.stab stabilization with optzoom=1 (auto zoom/crop so borders never 
 
 ## Syntax
 
+
 ```powershell
 StabilizeVideo [[-InputFile] <String>] [<CommonParameters>]
 ```
@@ -26,7 +27,7 @@ StabilizeVideo [[-InputFile] <String>] [<CommonParameters>]
 
 ## Examples
 
-### Stabilize-Video                  # stabilizes the most recent .mp4     Stabilize-Video shaky.mp4         # specific file
+
 
 ```powershell
 Stabilize-Video                  # stabilizes the most recent .mp4

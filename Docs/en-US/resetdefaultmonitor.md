@@ -16,13 +16,14 @@ See also: 'sidebyside' function to switch to side-by-side mode for new windows.
 
 ## Syntax
 
+
 ```powershell
 resetdefaultmonitor [<CommonParameters>]
 ```
 
 ## Examples
 
-### secondscreen Restores the default secondary monitor configuration for the system.
+
 
 ```powershell
 secondscreen

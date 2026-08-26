@@ -16,6 +16,7 @@ provides a convenient wrapper for secondary monitor window positioning.
 
 ## Syntax
 
+
 ```powershell
 Set-WindowPositionForSecondary [[-Process] <Diagnostics.Process[]>] [-Bottom] [-Centered] [-ClearSession] [-FocusWindow] [-FullScreen] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NoBorders] [-PassThru] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -55,14 +56,14 @@ Set-WindowPositionForSecondary [[-Process] <Diagnostics.Process[]>] [-Bottom] [-
 
 ## Examples
 
-### Set-WindowPositionForSecondary -Process "notepad" -Width 800 -Height 600 `     -Centered -NoBorders
+
 
 ```powershell
 Set-WindowPositionForSecondary -Process "notepad" -Width 800 -Height 600 `
     -Centered -NoBorders
 ```
 
-### wps notepad -w 800 -h 600 -c -nb
+
 
 ```powershell
 wps notepad -w 800 -h 600 -c -nb

@@ -18,6 +18,7 @@ formatting.
 
 ## Syntax
 
+
 ```powershell
 Add-ArrayTemplate -InputObject <Collections.IEnumerable> -Template <String> [[-Delimiter] <String>] [[-Indentation] <Int32>] [-EndDelimiter] [-NewLine] [<CommonParameters>]
 ```
@@ -35,7 +36,7 @@ Add-ArrayTemplate -InputObject <Collections.IEnumerable> -Template <String> [[-D
 
 ## Examples
 
-### @(     @{ Name = "Alice"; Age = 30 }     @{ Name = "Bob"; Age = 25 } ) | Add-ArrayTemplate -Template "{Name} is {Age} years old" Name: Alice Age: 30 Name: Bob Age: 25 Formats an array of hashtables with property placeholders.
+
 
 ```powershell
 @(
@@ -49,7 +50,7 @@ Age: 25
 Formats an array of hashtables with property placeholders.
 ```
 
-### $items | FormatArray -Template "  - {Name}" -Delimiter ", " -Indentation 1 Uses the FormatArray alias with indentation and a custom delimiter.
+
 
 ```powershell
 $items | FormatArray -Template "  - {Name}" -Delimiter ", " -Indentation 1

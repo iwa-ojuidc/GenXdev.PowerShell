@@ -17,6 +17,7 @@ specified path.
 
 ## Syntax
 
+
 ```powershell
 Save-DesktopScreenShot -Monitor <Int32> -OutputPath <String> [-Quality <Int32>] [<CommonParameters>]
 ```
@@ -31,7 +32,6 @@ Save-DesktopScreenShot -Monitor <Int32> -OutputPath <String> [-Quality <Int32>] 
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Save-DesktopScreenShot -Monitor 0 -OutputPath "C:\Screenshots\primary.png"
@@ -39,7 +39,6 @@ Save-DesktopScreenShot -Monitor 0 -OutputPath "C:\Screenshots\primary.png"
 
 Captures a screenshot of the primary monitor and saves it as PNG.
 
-### Examples 2
 
 ```powershell
 Save-DesktopScreenShot -Monitor 1 -OutputPath "C:\Screenshots\monitor2.jpg" -Quality 95
@@ -47,7 +46,6 @@ Save-DesktopScreenShot -Monitor 1 -OutputPath "C:\Screenshots\monitor2.jpg" -Qua
 
 Captures a screenshot of the second monitor with high quality JPEG.
 
-### Examples 3
 
 ```powershell
 Save-DesktopScreenShot -Monitor -1 -OutputPath "C:\Screenshots\all_monitors.png"

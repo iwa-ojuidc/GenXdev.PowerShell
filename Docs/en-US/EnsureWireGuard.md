@@ -20,6 +20,7 @@ and excellent cross-platform support.
 
 ## Syntax
 
+
 ```powershell
 EnsureWireGuard [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServicePort] <Int32>] [[-HealthCheckTimeout] <Int32>] [[-HealthCheckInterval] <Int32>] [[-ImageName] <String>] [[-PUID] <String>] [[-PGID] <String>] [[-TimeZone] <String>] [-AutoConsent] [-AutoConsentAllPackages] [-Bottom] [-Centered] [-ClearSession] [-FocusWindow] [-Force] [-Fullscreen] [-Height <Int32>] [-Left] [-NoBorders] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-ShowWindow] [-SideBySide] [-SkipSession] [-Width <Int32>] [<CommonParameters>]
 ```
@@ -63,31 +64,31 @@ EnsureWireGuard [[-ContainerName] <String>] [[-VolumeName] <String>] [[-ServiceP
 
 ## Examples
 
-### EnsureWireGuard
+
 
 ```powershell
 EnsureWireGuard
 ```
 
-### EnsureWireGuard -ContainerName "my_wireguard" -ServicePort 51821
+
 
 ```powershell
 EnsureWireGuard -ContainerName "my_wireguard" -ServicePort 51821
 ```
 
-### EnsureWireGuard -VolumeName "custom_vpn_data" -HealthCheckTimeout 120
+
 
 ```powershell
 EnsureWireGuard -VolumeName "custom_vpn_data" -HealthCheckTimeout 120
 ```
 
-### EnsureWireGuard -PUID 1001 -PGID 1001 -TimeZone "America/New_York"
+
 
 ```powershell
 EnsureWireGuard -PUID 1001 -PGID 1001 -TimeZone "America/New_York"
 ```
 
-### EnsureWireGuard -Force
+
 
 ```powershell
 EnsureWireGuard -Force

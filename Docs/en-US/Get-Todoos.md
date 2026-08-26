@@ -15,6 +15,7 @@ OneDrive directory.
 
 ## Syntax
 
+
 ```powershell
 Get-Todoos [[-First] <Int32>] [-Ascending] [-ExcludeCompleted] [-OnlyCompleted] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -33,13 +34,13 @@ Get-Todoos [[-First] <Int32>] [-Ascending] [-ExcludeCompleted] [-OnlyCompleted] 
 
 ## Examples
 
-### Todoos -UseHomeREADME
+
 
 ```powershell
 Todoos -UseHomeREADME
 ```
 
-### Todoos -UseOneDriveREADME
+
 
 ```powershell
 Todoos -UseOneDriveREADME

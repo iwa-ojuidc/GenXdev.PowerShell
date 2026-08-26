@@ -14,6 +14,7 @@ including parameter information and callback handlers.
 
 ## Syntax
 
+
 ```powershell
 ConvertTo-LLMOpenAIApiFunctionDefinition [[-ExposedCmdLets] <GenXdev.Helpers.ExposedCmdletDefinition[]>] [<CommonParameters>]
 ```
@@ -26,7 +27,7 @@ ConvertTo-LLMOpenAIApiFunctionDefinition [[-ExposedCmdLets] <GenXdev.Helpers.Exp
 
 ## Examples
 
-### Get-Command Get-Process | ConvertTo-LLMOpenAIApiFunctionDefinition
+
 
 ```powershell
 Get-Command Get-Process | ConvertTo-LLMOpenAIApiFunctionDefinition

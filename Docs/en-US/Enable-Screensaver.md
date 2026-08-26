@@ -14,13 +14,14 @@ executable (scrnsave.scr) with the /s switch to start it immediately.
 
 ## Syntax
 
+
 ```powershell
 Enable-Screensaver [<CommonParameters>]
 ```
 
 ## Examples
 
-### Enable-Screensaver
+
 
 ```powershell
 Enable-Screensaver

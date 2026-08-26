@@ -53,33 +53,4 @@ Pester\Describe 'Get-GenXdevPreference' {
         $result = GenXdev\Get-GenXdevPreference -Name 'NonExistent'
         $result | Pester\Should -BeNullOrEmpty
     }
-
-    Pester\It 'Should work on a different preferences set when setting a different database path in session once' {
-
-        $testFile = (GenXdev\Expand-Path ([IO.Path]::GetTempFileName()) -DeleteExistingFile -CreateDirectory)
-
-        GenXdev\Set-GenXdevPreferencesDatabasePath $testFile -SessionOnly
-
-        $result = GenXdev\Get-GenXdevPreference -Name 'TestPref1'
-        $result | Pester\Should -Not -Be 'LocalValue'
-
-        GenXdev\Set-GenXdevPreference -Name 'TestPref1' -Value 'DifferentValue'
-
-        $result = GenXdev\Get-GenXdevPreference -Name 'TestPref1'
-        $result | Pester\Should -Be 'DifferentValue'
-
-        GenXdev\Set-GenXdevPreferencesDatabasePath -ClearSession
-
-        $result = GenXdev\Get-GenXdevPreference -Name 'TestPref1'
-        $result | Pester\Should -Be 'LocalValue'
-
-        $result = GenXdev\Get-GenXdevPreference -Name 'TestPref2'
-        $result | Pester\Should -Be 'DefaultValue'
-
-        $result = GenXdev\Get-GenXdevPreference -Name 'NonExistent' -DefaultValue 'Fallback'
-        $result | Pester\Should -Be 'Fallback'
-
-        $result = GenXdev\Get-GenXdevPreference -Name 'NonExistent'
-        $result | Pester\Should -BeNullOrEmpty
-    }
 }

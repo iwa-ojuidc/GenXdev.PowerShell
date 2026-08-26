@@ -16,6 +16,7 @@ prompt behavior and validation.
 
 ## Syntax
 
+
 ```powershell
 Invoke-SpectrePrompt [[-Prompt] <Object>] [<CommonParameters>]
 ```
@@ -28,7 +29,7 @@ Invoke-SpectrePrompt [[-Prompt] <Object>] [<CommonParameters>]
 
 ## Examples
 
-### $prompt = New-Object Spectre.Console.TextPrompt[string]("Enter your name:") Invoke-SpectrePrompt -Prompt $prompt Presents a text prompt to the user and returns the entered value
+
 
 ```powershell
 $prompt = New-Object Spectre.Console.TextPrompt[string]("Enter your name:")

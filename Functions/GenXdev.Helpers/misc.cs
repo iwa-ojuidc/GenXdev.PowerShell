@@ -116,11 +116,11 @@ namespace GenXdev.Helpers
         private string _volume = "+0%";
         private string _pitch = "+0Hz";
         private CancellationTokenSource _activeCts;
-        private WaveOutEvent _currentOutput; // guarded by _gate
+        private WaveOut _currentOutput; // guarded by _gate
         private bool _disposed;
 
         // -- preload (eliminates EdgeTTS API latency between sentences) --
-        private WaveOutEvent _preloadedOutput;  // guarded by _gate
+        private WaveOut _preloadedOutput;  // guarded by _gate
         private Mp3FileReader _preloadedReader; // guarded by _gate
         private MemoryStream _preloadedStream;   // guarded by _gate
 
@@ -392,7 +392,7 @@ namespace GenXdev.Helpers
                         {
                             // Take ownership of any preloaded
                             // (paused) audio from previous iteration
-                            WaveOutEvent preOut;
+                            WaveOut preOut;
                             Mp3FileReader preRdr;
                             MemoryStream preStm;
                             lock (_gate)
@@ -455,7 +455,7 @@ namespace GenXdev.Helpers
         /// <summary>
         /// Preload the next sentence: synthesize via EdgeTTS to a temp
         /// file, load into a MemoryStream (deleting the file immediately),
-        /// then create a NAudio WaveOutEvent, Play and immediately Pause.
+        /// then create a NAudio WaveOut, Play and immediately Pause.
         /// The paused output stays in memory — no lingering temp file.
         /// </summary>
         private async Task PreloadAsync(SpeechItem item, CancellationToken token)
@@ -481,7 +481,7 @@ namespace GenXdev.Helpers
                 tempFile = null;
 
                 var reader = new Mp3FileReader(stream);
-                var output = new WaveOutEvent();
+                var output = new WaveOut();
                 output.Init(reader);
                 output.Play();
                 output.Pause(); // buffered, ready to resume
@@ -507,7 +507,7 @@ namespace GenXdev.Helpers
 
         /// <summary>Resume a preloaded (paused) output and wait for it.</summary>
         private void PlayPreloaded(
-            WaveOutEvent output, Mp3FileReader reader,
+            WaveOut output, Mp3FileReader reader,
             MemoryStream stream, CancellationToken token)
         {
             lock (_gate) { _currentOutput = output; }
@@ -755,7 +755,7 @@ namespace GenXdev.Helpers
             string filePath, CancellationToken token, bool wait)
         {
             var reader = new AudioFileReader(filePath);
-            var output = new WaveOutEvent();
+            var output = new WaveOut();
             output.Init(reader);
 
             if (wait)
@@ -765,7 +765,7 @@ namespace GenXdev.Helpers
         }
 
         private void PlaySync(
-            WaveOutEvent output, AudioFileReader reader,
+            WaveOut output, AudioFileReader reader,
             string filePath, CancellationToken token)
         {
             // Track the output so PauseSpeech/ResumeSpeech can control it.
@@ -803,7 +803,7 @@ namespace GenXdev.Helpers
         }
 
         private void PlayAsync(
-            WaveOutEvent output, AudioFileReader reader,
+            WaveOut output, AudioFileReader reader,
             string filePath, CancellationToken token)
         {
             // Track the output so PauseSpeech/ResumeSpeech can control it.

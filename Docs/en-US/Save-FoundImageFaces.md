@@ -17,6 +17,7 @@ and overall mood. It can also filter by nudity and explicit content.
 
 ## Syntax
 
+
 ```powershell
 Save-FoundImageFaces [[-Any] <String[]>] [-ClearSession] [-DatabaseFilePath <String>] [-DescriptionSearch <String[]>] [-ForceIndexRebuild] [-GeoDistanceInMeters <Double>] [-GeoLocation <Double[]>] [-HasExplicitContent] [-HasNudity] [-InputObject <Object[]>] [-Keywords <String[]>] [-Language <String>] [-NoExplicitContent] [-NoNudity] [-Objects <String[]>] [-OutputDirectory <String>] [-OverallMood <String[]>] [-PathLike <String[]>] [-People <String[]>] [-PictureType <String[]>] [-PreferencesDatabasePath <String>] [-SaveUnknownPersons] [-Scenes <String[]>] [-SessionOnly] [-SkipSession] [-StyleType <String[]>] [<CommonParameters>]
 ```
@@ -54,13 +55,13 @@ Save-FoundImageFaces [[-Any] <String[]>] [-ClearSession] [-DatabaseFilePath <Str
 
 ## Examples
 
-### Save-FoundImageFaces -People "John*" -OutputDirectory "C:\Faces"
+
 
 ```powershell
 Save-FoundImageFaces -People "John*" -OutputDirectory "C:\Faces"
 ```
 
-### saveimagefaces -Any "vacation" -SaveUnknownPersons
+
 
 ```powershell
 saveimagefaces -Any "vacation" -SaveUnknownPersons

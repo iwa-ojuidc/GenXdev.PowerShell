@@ -16,6 +16,7 @@ quickly navigate to the function definition.
 
 ## Syntax
 
+
 ```powershell
 Search-GenXdevCmdlet [[-CmdletName] <String>] [[-ModuleName] <String[]>] [-Code] [-EditCmdlet] [-FromScripts] [-NoLocal] [-OnlyPublished] [-VisualStudio] [<CommonParameters>]
 ```
@@ -35,14 +36,14 @@ Search-GenXdevCmdlet [[-CmdletName] <String>] [[-ModuleName] <String[]>] [-Code]
 
 ## Examples
 
-### Search-GenXdevCmdlet -CmdletName "Get-*" -Code Opens first matching cmdlet starting with "Get-" in Visual Studio Code.
+
 
 ```powershell
 Search-GenXdevCmdlet -CmdletName "Get-*" -Code
 Opens first matching cmdlet starting with "Get-" in Visual Studio Code.
 ```
 
-### searchcmdlet "Set-GitConfig" -EditCmdlet Searches for Set-GitConfig cmdlet and opens it for editing.
+
 
 ```powershell
 searchcmdlet "Set-GitConfig" -EditCmdlet

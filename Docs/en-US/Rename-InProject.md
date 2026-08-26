@@ -17,6 +17,7 @@ case-insensitive replacement modes.
 
 ## Syntax
 
+
 ```powershell
 Rename-InProject [[-Source] <String>] -FindText <String> -ReplacementText <String> [-CaseInsensitive] [<CommonParameters>]
 ```
@@ -32,20 +33,20 @@ Rename-InProject [[-Source] <String>] -FindText <String> -ReplacementText <Strin
 
 ## Examples
 
-### Rename-InProject -Source .\src\*.js -FindText "oldName" `     -ReplacementText "newName"
+
 
 ```powershell
 Rename-InProject -Source .\src\*.js -FindText "oldName" `
     -ReplacementText "newName"
 ```
 
-### rip . "MyClass" "MyNewClass" -WhatIf
+
 
 ```powershell
 rip . "MyClass" "MyNewClass" -WhatIf
 ```
 
-### rip . "OLDNAME" "NewName" -CaseInsensitive
+
 
 ```powershell
 rip . "OLDNAME" "NewName" -CaseInsensitive

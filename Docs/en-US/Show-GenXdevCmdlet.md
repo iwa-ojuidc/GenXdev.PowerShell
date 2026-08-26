@@ -15,6 +15,7 @@ their script positions. Provides filtering and various display options.
 
 ## Syntax
 
+
 ```powershell
 Show-GenXdevCmdlet [[-CmdletName] <String>] [[-DefinitionMatches] <String>] [[-ModuleName] <String[]>] [-ExactMatch] [-FromScripts] [-NoLocal] [-Online] [-OnlyAliases] [-OnlyPublished] [-OnlyReturnModuleNames] [-PassThru] [-ShowTable] [<CommonParameters>]
 
@@ -41,21 +42,21 @@ Show-GenXdevCmdlet [-IncludeScripts] [<CommonParameters>]
 
 ## Examples
 
-### Show-GenXdevCmdlet -CmdletName "Get" -ModuleName "Console" -ShowTable Lists all cmdlets starting with "Get" in the Console module as a table
+
 
 ```powershell
 Show-GenXdevCmdlet -CmdletName "Get" -ModuleName "Console" -ShowTable
 Lists all cmdlets starting with "Get" in the Console module as a table
 ```
 
-### cmds get -m console Lists all cmdlets starting with "Get" in the Console module
+
 
 ```powershell
 cmds get -m console
 Lists all cmdlets starting with "Get" in the Console module
 ```
 
-### Show-GenXdevCmdlet -OnlyReturnModuleNames Returns only unique module names
+
 
 ```powershell
 Show-GenXdevCmdlet -OnlyReturnModuleNames

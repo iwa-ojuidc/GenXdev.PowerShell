@@ -14,6 +14,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-StoreKeys -StoreName <String> [-DatabasePath <String>] [<CommonParameters>]
 ```
@@ -27,7 +28,6 @@ Get-StoreKeys -StoreName <String> [-DatabasePath <String>] [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-StoreKeys -StoreName "ApplicationSettings"
@@ -35,7 +35,6 @@ Get-StoreKeys -StoreName "ApplicationSettings"
 
 Retrieves all keys from the ApplicationSettings store.
 
-### Examples 2
 
 ```powershell
 getkeys AppSettings

@@ -15,6 +15,7 @@ database and controlling the amount of data retrieved through the Count paramete
 
 ## Syntax
 
+
 ```powershell
 Get-SQLServerTableData -ConnectionString <String> [<CommonParameters>]
 
@@ -35,13 +36,13 @@ Get-SQLServerTableData -TableName <String> [[-Count] <Int32>] [<CommonParameters
 
 ## Examples
 
-### Get-SQLServerTableData -DatabaseFilePath "C:\data\users.db" -TableName "Employees" -Count 50
+
 
 ```powershell
 Get-SQLServerTableData -DatabaseFilePath "C:\data\users.db" -TableName "Employees" -Count 50
 ```
 
-### Get-SQLServerTableData "C:\data\users.db" "Employees"
+
 
 ```powershell
 Get-SQLServerTableData "C:\data\users.db" "Employees"

@@ -17,6 +17,7 @@ storage for use across sessions.
 
 ## Syntax
 
+
 ```powershell
 Set-AIMetaLanguage [[-Language] <String>] [-ClearSession] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -33,28 +34,28 @@ Set-AIMetaLanguage [[-Language] <String>] [-ClearSession] [-PreferencesDatabaseP
 
 ## Examples
 
-### Set-AIMetaLanguage -Language "Spanish" -ImageDirectories @("C:\Images", "D:\Photos") Sets the language and image directories persistently in preferences.
+
 
 ```powershell
 Set-AIMetaLanguage -Language "Spanish" -ImageDirectories @("C:\Images", "D:\Photos")
 Sets the language and image directories persistently in preferences.
 ```
 
-### Set-AIMetaLanguage "French" Sets the language persistently in preferences.
+
 
 ```powershell
 Set-AIMetaLanguage "French"
 Sets the language persistently in preferences.
 ```
 
-### Set-AIMetaLanguage -Language "German" -SessionOnly Sets the language only for the current session (Global variable).
+
 
 ```powershell
 Set-AIMetaLanguage -Language "German" -SessionOnly
 Sets the language only for the current session (Global variable).
 ```
 
-### Set-AIMetaLanguage -ClearSession Clears the session language setting (Global variable) without affecting persistent preferences.
+
 
 ```powershell
 Set-AIMetaLanguage -ClearSession

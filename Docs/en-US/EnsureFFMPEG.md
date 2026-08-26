@@ -17,6 +17,7 @@ directly.
 
 ## Syntax
 
+
 ```powershell
 EnsureFFMPEG [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -31,7 +32,7 @@ EnsureFFMPEG [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonPar
 
 ## Examples
 
-### EnsureFFMPEG ffmpeg -i input.mp4 -ac 1 -ar 16000 output.wav
+
 
 ```powershell
 EnsureFFMPEG

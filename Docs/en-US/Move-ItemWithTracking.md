@@ -18,6 +18,7 @@ references.
 
 ## Syntax
 
+
 ```powershell
 Move-ItemWithTracking -Path <String> -Destination <String> [-Force] [<CommonParameters>]
 ```
@@ -32,7 +33,6 @@ Move-ItemWithTracking -Path <String> -Destination <String> [-Force] [<CommonPara
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Move-ItemWithTracking -Path "C:\temp\oldfile.txt" -Destination "D:\newfile.txt"
@@ -40,7 +40,6 @@ Move-ItemWithTracking -Path "C:\temp\oldfile.txt" -Destination "D:\newfile.txt"
 
 Moves a file while preserving filesystem links and Git tracking.
 
-### Examples 2
 
 ```powershell
 "C:\temp\olddir" | Move-ItemWithTracking -Destination "D:\newdir" -Force

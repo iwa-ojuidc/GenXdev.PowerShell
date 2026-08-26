@@ -15,6 +15,7 @@ language filtering.
 
 ## Syntax
 
+
 ```powershell
 Copy-PDFsFromGoogleQuery -Queries <String[]> [[-Max] <Int32>] [[-Language] <String>] [<CommonParameters>]
 ```
@@ -29,7 +30,7 @@ Copy-PDFsFromGoogleQuery -Queries <String[]> [[-Max] <Int32>] [[-Language] <Stri
 
 ## Examples
 
-### Open-Webbrowser Select-WebbrowserTab $null = New-Item -ItemType Directory -Name pdfs Set-Location pdfs Copy-PDFsFromGoogleQuery "scientific paper co2" -Max 50 -Language "English"
+
 
 ```powershell
 Open-Webbrowser

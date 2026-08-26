@@ -16,6 +16,7 @@ identified by the prefix "refactor_set_" in the preferences system.
 
 ## Syntax
 
+
 ```powershell
 Remove-Refactor -Name <String[]> [-ClearSession] [-DefaultValue <String>] [-PreferencesDatabasePath <String>] [-RemoveDefault] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -34,7 +35,7 @@ Remove-Refactor -Name <String[]> [-ClearSession] [-DefaultValue <String>] [-Pref
 
 ## Examples
 
-### Remove-Refactor -Name "CustomRefactor" -RemoveDefault Removes a specific refactor set named "CustomRefactor" and allows removal of default sets if matched
+
 
 ```powershell
 Remove-Refactor -Name "CustomRefactor" -RemoveDefault

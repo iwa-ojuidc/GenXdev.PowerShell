@@ -16,13 +16,13 @@
 
 ## Syntax
 
+
 ```powershell
 Get-MpCmdRunPath [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 $defenderPath = Get-MpCmdRunPath

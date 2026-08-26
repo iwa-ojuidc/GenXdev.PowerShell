@@ -17,6 +17,7 @@ detection, and scene classification data.
 
 ## Syntax
 
+
 ```powershell
 Show-FoundImagesInBrowser [[-InputObject] <Object[]>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-AutoAnimateRectangles] [-AutoScrollPixelsPerSecond <Int32>] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-Description <String>] [-DisablePopupBlocker] [-Edge] [-EmbedImages] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Height <Int32>] [-ImageUrlPrefix <String>] [-Interactive] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-OnlyReturnHtml] [-PassThru] [-Private] [-RestoreFocus] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-ShowOnlyPictures] [-SideBySide] [-SingleColumnMode] [-SkipSession] [-Title <String>] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -79,21 +80,21 @@ Show-FoundImagesInBrowser [[-InputObject] <Object[]>] [-AcceptLang <String>] [-A
 
 ## Examples
 
-### Show-FoundImagesInBrowser -InputObject $images Displays the image results in a simple web gallery.
+
 
 ```powershell
 Show-FoundImagesInBrowser -InputObject $images
 Displays the image results in a simple web gallery.
 ```
 
-### Show-FoundImagesInBrowser -InputObject $images -Interactive -Title "My Photos" Displays images in interactive mode with edit/delete buttons.
+
 
 ```powershell
 Show-FoundImagesInBrowser -InputObject $images -Interactive -Title "My Photos"
 Displays images in interactive mode with edit/delete buttons.
 ```
 
-### showfoundimages $images -Private -FullScreen Opens the gallery in private browsing mode in fullscreen.
+
 
 ```powershell
 showfoundimages $images -Private -FullScreen

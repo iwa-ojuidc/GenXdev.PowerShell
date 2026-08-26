@@ -16,6 +16,7 @@ count changes during the import process.
 
 ## Syntax
 
+
 ```powershell
 Import-GenXdevModules [-DebugFailedModuleDefinitions] [<CommonParameters>]
 ```
@@ -28,14 +29,14 @@ Import-GenXdevModules [-DebugFailedModuleDefinitions] [<CommonParameters>]
 
 ## Examples
 
-### Import-GenXdevModules -DebugFailedModuleDefinitions Imports modules with debug output for failures
+
 
 ```powershell
 Import-GenXdevModules -DebugFailedModuleDefinitions
 Imports modules with debug output for failures
 ```
 
-### reloadgenxdev Imports all modules using the alias
+
 
 ```powershell
 reloadgenxdev

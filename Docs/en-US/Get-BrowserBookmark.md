@@ -17,6 +17,7 @@ installation when reading Firefox bookmarks.
 
 ## Syntax
 
+
 ```powershell
 Get-BrowserBookmark [-AutoConsent] [-AutoConsentAllPackages] [-Chrome] [-Edge] [-SessionOnly] [<CommonParameters>]
 
@@ -36,21 +37,21 @@ Get-BrowserBookmark [-Firefox] [<CommonParameters>]
 
 ## Examples
 
-### Get-BrowserBookmark -Edge | Format-Table Name, URL, Folder Returns Edge bookmarks formatted as a table showing name, URL and folder.
+
 
 ```powershell
 Get-BrowserBookmark -Edge | Format-Table Name, URL, Folder
 Returns Edge bookmarks formatted as a table showing name, URL and folder.
 ```
 
-### gbm -Chrome | Where-Object URL -like "*github*" Returns Chrome bookmarks filtered to only show GitHub-related URLs.
+
 
 ```powershell
 gbm -Chrome | Where-Object URL -like "*github*"
 Returns Chrome bookmarks filtered to only show GitHub-related URLs.
 ```
 
-### Get-BrowserBookmark -Firefox -AutoConsentAllPackages Returns Firefox bookmarks with automatic consent to SQLite package installation.
+
 
 ```powershell
 Get-BrowserBookmark -Firefox -AutoConsentAllPackages

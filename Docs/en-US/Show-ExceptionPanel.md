@@ -13,6 +13,7 @@ Uses Spectre.Console to show an exception in a nice panel.
 
 ## Syntax
 
+
 ```powershell
 Show-ExceptionPanel -Exception <Exception> [<CommonParameters>]
 ```
@@ -25,7 +26,7 @@ Show-ExceptionPanel -Exception <Exception> [<CommonParameters>]
 
 ## Examples
 
-### try {     throw "This is a test exception" } catch {     Show-ExceptionPanel -Exception $_.Exception }
+
 
 ```powershell
 try {

@@ -17,6 +17,7 @@ existing metadata files or retry previously failed classifications.
 
 ## Syntax
 
+
 ```powershell
 Invoke-ImageScenesUpdate [[-ImageDirectories] <String[]>] [-ApiKey <String>] [-AutoUpdateFaces] [-ClearSession] [-ConfidenceThreshold <Double>] [-ContainerName <String>] [-FacesDirectory <String>] [-Force] [-HealthCheckInterval <Int32>] [-HealthCheckTimeout <Int32>] [-ImageName <String>] [-Language <String>] [-Model <String>] [-NoDockerInitialize] [-NoSupportForJsonSchema] [-OnlyNew] [-PassThru] [-PreferencesDatabasePath <String>] [-PromptForSettings] [-Recurse] [-RetryFailed] [-ServicePort <Int32>] [-SessionOnly] [-ShowWindow] [-SkipSession] [-TimeoutSecond <Int32>] [-UseGPU] [-VolumeName <String>] [<CommonParameters>]
 ```
@@ -56,7 +57,7 @@ Invoke-ImageScenesUpdate [[-ImageDirectories] <String[]>] [-ApiKey <String>] [-A
 
 ## Examples
 
-### Invoke-ImageScenesUpdate -ImageDirectories @("C:\Photos", "D:\Pictures") -Recurse Processes all images in C:\Photos and D:\Pictures and subdirectories for scene classification.
+
 
 ```powershell
 Invoke-ImageScenesUpdate -ImageDirectories @("C:\Photos", "D:\Pictures") -Recurse
@@ -64,7 +65,7 @@ Processes all images in C:\Photos and D:\Pictures and subdirectories for scene
 classification.
 ```
 
-### scenerecognition @("C:\Photos", "C:\Archive") -RetryFailed -OnlyNew Uses alias to retry failed classifications and only process new images in multiple directories.
+
 
 ```powershell
 scenerecognition @("C:\Photos", "C:\Archive") -RetryFailed -OnlyNew
@@ -72,14 +73,14 @@ Uses alias to retry failed classifications and only process new images in
 multiple directories.
 ```
 
-### Invoke-ImageScenesUpdate -ImageDirectories ".\MyImages" -Force -UseGPU Forces container rebuild and uses GPU acceleration for faster processing.
+
 
 ```powershell
 Invoke-ImageScenesUpdate -ImageDirectories ".\MyImages" -Force -UseGPU
 Forces container rebuild and uses GPU acceleration for faster processing.
 ```
 
-### Invoke-ImageScenesUpdate -ImageDirectories "C:\Photos" -ConfidenceThreshold 0.6 -Recurse Processes all images recursively and only stores scene classifications with confidence >= 60%.
+
 
 ```powershell
 Invoke-ImageScenesUpdate -ImageDirectories "C:\Photos" -ConfidenceThreshold 0.6 -Recurse

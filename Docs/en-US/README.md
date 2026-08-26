@@ -1,6 +1,6 @@
 # GenXdev — Cmdlet Reference
 
-Auto-generated cmdlet reference documentation. Last updated: 2026-08-06.
+Auto-generated cmdlet reference documentation. Last updated: 2026-08-26.
 
 ## GenXdev
 

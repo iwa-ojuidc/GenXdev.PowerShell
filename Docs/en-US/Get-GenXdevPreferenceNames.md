@@ -17,6 +17,7 @@
 
 ## Syntax
 
+
 ```powershell
 Get-GenXdevPreferenceNames [-ClearSession] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -32,7 +33,6 @@ Get-GenXdevPreferenceNames [-ClearSession] [-PreferencesDatabasePath <String>] [
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-GenXdevPreferenceNames -PreferencesDatabasePath "C:\Data\prefs.db"
@@ -41,7 +41,6 @@ Get-GenXdevPreferenceNames -PreferencesDatabasePath "C:\Data\prefs.db"
 Returns a sorted array of unique preference names from session storage and
 both stores using the specified database path.
 
-### Examples 2
 
 ```powershell
 getPreferenceNames -SessionOnly
@@ -49,7 +48,6 @@ getPreferenceNames -SessionOnly
 
 Returns only preference names from session storage.
 
-### Examples 3
 
 ```powershell
 getPreferenceNames -SkipSession

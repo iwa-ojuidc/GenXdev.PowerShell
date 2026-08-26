@@ -134,7 +134,7 @@ Captures all monitors combined into a single screenshot image.
             WriteVerbose("Starting desktop screenshot capture");
 
             // Validate output directory exists - use base class ExpandPath for proper path handling
-            var expandedPath = ExpandPath(OutputPath, CreateDirectory: true, DeleteExistingFile: true);
+            var expandedPath = ExpandPath(OutputPath, CreateDirectory: true);
             if (string.IsNullOrEmpty(expandedPath))
             {
                 throw new ArgumentException($"Could not expand output path: {OutputPath}");

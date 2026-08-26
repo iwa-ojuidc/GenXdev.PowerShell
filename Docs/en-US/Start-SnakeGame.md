@@ -17,6 +17,7 @@ space and snake length. By default, the console is cleared before starting.
 
 ## Syntax
 
+
 ```powershell
 Start-SnakeGame [[-InitialLength] <Int32>] [[-Speed] <Int32>] [-MazeWidth <Int32>] [-NoClear] [-ShowRoute] [-WithMaze] [<CommonParameters>]
 ```
@@ -34,14 +35,14 @@ Start-SnakeGame [[-InitialLength] <Int32>] [[-Speed] <Int32>] [-MazeWidth <Int32
 
 ## Examples
 
-### Start-SnakeGame Starts the Snake game with default settings (5 segments, 300ms speed).
+
 
 ```powershell
 Start-SnakeGame
 Starts the Snake game with default settings (5 segments, 300ms speed).
 ```
 
-### Start-SnakeGame -NoClear -InitialLength 3 -Speed 200 Starts the Snake game without clearing console, with shorter snake and faster speed.
+
 
 ```powershell
 Start-SnakeGame -NoClear -InitialLength 3 -Speed 200
@@ -49,21 +50,21 @@ Starts the Snake game without clearing console, with shorter snake and faster
 speed.
 ```
 
-### snake -InitialLength 10 Starts the game using the alias with a longer initial snake.
+
 
 ```powershell
 snake -InitialLength 10
 Starts the game using the alias with a longer initial snake.
 ```
 
-### Start-SnakeGame -WithMaze Starts the Snake game with a maze in the playfield.
+
 
 ```powershell
 Start-SnakeGame -WithMaze
 Starts the Snake game with a maze in the playfield.
 ```
 
-### Start-SnakeGame -WithMaze -ShowRoute Starts the Snake game with a maze and displays the shortest path from the snake to the food with green dots.
+
 
 ```powershell
 Start-SnakeGame -WithMaze -ShowRoute
@@ -71,7 +72,7 @@ Starts the Snake game with a maze and displays the shortest path from the
 snake to the food with green dots.
 ```
 
-### Start-SnakeGame -WithMaze -MazeWidth 5 Starts the Snake game with a maze that has wider pathways (minimum 5 spaces) for easier navigation.
+
 
 ```powershell
 Start-SnakeGame -WithMaze -MazeWidth 5

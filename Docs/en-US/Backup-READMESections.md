@@ -15,6 +15,7 @@ Delegates to the individual Backup-Completed* cmdlets for each section.
 
 ## Syntax
 
+
 ```powershell
 Backup-READMESections -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -29,13 +30,13 @@ Backup-READMESections -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<Com
 
 ## Examples
 
-### Backup-READMESections -Path "C:\temp\full-archive.md"
+
 
 ```powershell
 Backup-READMESections -Path "C:\temp\full-archive.md"
 ```
 
-### archive-readme-sections -Path ".\archive.md" -UseHomeREADME
+
 
 ```powershell
 archive-readme-sections -Path ".\archive.md" -UseHomeREADME

@@ -17,6 +17,7 @@ applications, or user selection.
 
 ## Syntax
 
+
 ```powershell
 Open-SourceFileInIde -Path <String> [[-LineNo] <Int32>] [[-KeysToSend] <String[]>] [-AutoConsent] [-AutoConsentAllPackages] [-Code] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-VisualStudio] [<CommonParameters>]
 ```
@@ -40,13 +41,13 @@ Open-SourceFileInIde -Path <String> [[-LineNo] <Int32>] [[-KeysToSend] <String[]
 
 ## Examples
 
-### Open-SourceFileInIde -Path "C:\Projects\MyScript.ps1" -LineNo 25 -Code
+
 
 ```powershell
 Open-SourceFileInIde -Path "C:\Projects\MyScript.ps1" -LineNo 25 -Code
 ```
 
-### editcode "C:\Projects\MyScript.ps1" 25
+
 
 ```powershell
 editcode "C:\Projects\MyScript.ps1" 25

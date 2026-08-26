@@ -16,6 +16,7 @@ browsers.
 
 ## Syntax
 
+
 ```powershell
 Find-BrowserBookmark [[-Queries] <String[]>] [-Chrome] [-Count <Int32>] [-Edge] [-Firefox] [-PassThru] [<CommonParameters>]
 ```
@@ -33,14 +34,14 @@ Find-BrowserBookmark [[-Queries] <String[]>] [-Chrome] [-Count <Int32>] [-Edge] 
 
 ## Examples
 
-### Find-BrowserBookmark -Query "github" -Edge -Chrome -Count 10 Searches Edge and Chrome bookmarks for "github", returns first 10 URLs
+
 
 ```powershell
 Find-BrowserBookmark -Query "github" -Edge -Chrome -Count 10
 Searches Edge and Chrome bookmarks for "github", returns first 10 URLs
 ```
 
-### bookmarks powershell -e -ff -PassThru Searches Edge and Firefox bookmarks for "powershell", returns full objects
+
 
 ```powershell
 bookmarks powershell -e -ff -PassThru

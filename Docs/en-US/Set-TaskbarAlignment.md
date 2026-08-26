@@ -16,6 +16,7 @@ Explorer\Advanced. The alignment can be set to either center (value 1) or left
 
 ## Syntax
 
+
 ```powershell
 Set-TaskbarAlignment -Justify <String> [<CommonParameters>]
 ```
@@ -28,14 +29,14 @@ Set-TaskbarAlignment -Justify <String> [<CommonParameters>]
 
 ## Examples
 
-### Set-TaskbarAlignment -Justify Left Sets the Windows 11 taskbar to left alignment
+
 
 ```powershell
 Set-TaskbarAlignment -Justify Left
 Sets the Windows 11 taskbar to left alignment
 ```
 
-### Set-TaskAlign Center -WhatIf Shows what would happen if taskbar was set to center alignment
+
 
 ```powershell
 Set-TaskAlign Center -WhatIf

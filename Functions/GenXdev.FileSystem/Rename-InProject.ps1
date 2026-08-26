@@ -202,7 +202,7 @@ function Rename-InProject {
                                 $newContent = $content.Replace($FindText, $ReplacementText)
                             }
 
-                            if ($content -ne $newContent) {
+                            if ($content -cne $newContent) {
                                 if ($PSCmdlet.ShouldProcess($filePath,
                                         'Replace content')) {
 
@@ -228,7 +228,7 @@ function Rename-InProject {
                             $newName = $oldName.Replace($FindText, $ReplacementText)
                         }
 
-                        if ($oldName -ne $newName) {
+                        if ($oldName -cne $newName) {
                             $newPath = [IO.Path]::Combine(
                                 [IO.Path]::GetDirectoryName($filePath),
                                 $newName)
@@ -238,11 +238,11 @@ function Rename-InProject {
 
                                     if ("$filePath".ToLowerInvariant() -eq "$newPath".ToLowerInvariant()) {
 
-                                        $newPath = "$newPath.$([DateTime]::Now.Ticks).tmp"
+                                        $tempPath = "$newPath.$([DateTime]::Now.Ticks).tmp"
                                         $null = GenXdev\Move-ItemWithTracking -Path $filePath `
-                                            -Destination "$newPath.tmp12389"
-                                        Microsoft.PowerShell.Utility\Write-Verbose "Renamed file: $filePath -> $newPath"
-                                        $filePath = $newPath
+                                            -Destination $tempPath
+                                        Microsoft.PowerShell.Utility\Write-Verbose "Renamed file: $filePath -> $tempPath"
+                                        $filePath = $tempPath
                                     }
 
                                     $null = GenXdev\Move-ItemWithTracking -Path $filePath `
@@ -276,7 +276,7 @@ function Rename-InProject {
                         $newName = $oldName.Replace($FindText, $ReplacementText)
                     }
 
-                    if ($oldName -ne $newName) {
+                    if ($oldName -cne $newName) {
                         $newPath = GenXdev\Expand-Path (
                             [IO.Path]::Combine($dir.Parent.FullName, $newName))
 

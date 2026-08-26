@@ -15,6 +15,7 @@ website traffic analysis, competitor research, and digital marketing insights.
 
 ## Syntax
 
+
 ```powershell
 Open-SimularWebSiteInfo -Queries <String[]> [[-Language] <String>] [-AcceptLang <String>] [-All] [-ApplicationMode] [-Bottom] [-Centered] [-Chrome] [-Chromium] [-ClearSession] [-DisablePopupBlocker] [-Edge] [-Firefox] [-FocusWindow] [-Force] [-FullScreen] [-Headless] [-Height <Int32>] [-KeysToSend <String[]>] [-Left] [-Maximize] [-Monitor <Int32>] [-NewWindow] [-NoBorders] [-NoBrowserExtensions] [-PassThru] [-PlayWright] [-Private] [-RestoreFocus] [-ReturnOnlyURL] [-ReturnURL] [-Right] [-SendKeyDelayMilliSeconds <Int32>] [-SendKeyEscape] [-SendKeyHoldKeyboardFocus] [-SendKeyUseShiftEnter] [-SessionOnly] [-SetForeground] [-SetRestored] [-SideBySide] [-SkipSession] [-Top] [-Webkit] [-Width <Int32>] [-X <Int32>] [-Y <Int32>] [<CommonParameters>]
 ```
@@ -72,28 +73,28 @@ Open-SimularWebSiteInfo -Queries <String[]> [[-Language] <String>] [-AcceptLang 
 
 ## Examples
 
-### Open-SimularWebSiteInfo -Queries "google.com" -Monitor 0 Opens a SimilarWeb analysis for Google.com on the primary monitor.
+
 
 ```powershell
 Open-SimularWebSiteInfo -Queries "google.com" -Monitor 0
 Opens a SimilarWeb analysis for Google.com on the primary monitor.
 ```
 
-### simularsite google.com -mon 0 Opens a SimilarWeb analysis using the function alias with monitor positioning.
+
 
 ```powershell
 simularsite google.com -mon 0
 Opens a SimilarWeb analysis using the function alias with monitor positioning.
 ```
 
-### "microsoft.com", "apple.com" | Open-SimularWebSiteInfo -Language "English" -Centered Analyzes multiple websites through pipeline input with centered window positioning.
+
 
 ```powershell
 "microsoft.com", "apple.com" | Open-SimularWebSiteInfo -Language "English" -Centered
 Analyzes multiple websites through pipeline input with centered window positioning.
 ```
 
-### Open-SimularWebSiteInfo -Queries "github.com" -ReturnURL Returns the SimilarWeb URL for GitHub without opening the browser.
+
 
 ```powershell
 Open-SimularWebSiteInfo -Queries "github.com" -ReturnURL

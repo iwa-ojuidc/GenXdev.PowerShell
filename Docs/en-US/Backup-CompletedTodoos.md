@@ -15,6 +15,7 @@ while preserving a history of completed todo items.
 
 ## Syntax
 
+
 ```powershell
 Backup-CompletedTodoos -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -29,13 +30,13 @@ Backup-CompletedTodoos -Path <String> [-UseHomeREADME] [-UseOneDriveREADME] [<Co
 
 ## Examples
 
-### Backup-CompletedTodoos -Path "C:\temp\todo-archive.md"
+
 
 ```powershell
 Backup-CompletedTodoos -Path "C:\temp\todo-archive.md"
 ```
 
-### archive-todoos -Path ".\archive.md" -UseHomeREADME
+
 
 ```powershell
 archive-todoos -Path ".\archive.md" -UseHomeREADME

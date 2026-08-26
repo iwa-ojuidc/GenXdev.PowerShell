@@ -39,6 +39,7 @@ README.md index groups cmdlets by sub-module.
 
 ## Syntax
 
+
 ```powershell
 New-ModuleMarkdownHelp -ModuleName <String> [-ApiEndpoint <String>] [-ApiKey <String>] [-Force] [-Language <String>] [-LinkPrefix <String>] [-Model <String>] [-NoLicense] [-NoSupportForJsonSchema] [-OutputPath <String>] [-PromptForSettings] [-SkipTranslation] [-TranslationInstructions <String>] [<CommonParameters>]
 ```
@@ -63,21 +64,21 @@ New-ModuleMarkdownHelp -ModuleName <String> [-ApiEndpoint <String>] [-ApiKey <St
 
 ## Examples
 
-### New-ModuleMarkdownHelp -ModuleName 'Microsoft.WinGet.Client' -SkipTranslation Generates Docs\ folder with one .md per WinGet cmdlet + README.md index.
+
 
 ```powershell
 New-ModuleMarkdownHelp -ModuleName 'Microsoft.WinGet.Client' -SkipTranslation
 Generates Docs\ folder with one .md per WinGet cmdlet + README.md index.
 ```
 
-### New-ModuleMarkdownHelp -ModuleName 'GenXdev' -Language 'nl-NL' -Force -Model 'deepseek-v4-pro' -ApiKey 'your-api-key' -ApiEndpoint 'https://api.deepseek.com/chat/completions' Generates Dutch-translated markdown help, overwriting existing files.
+
 
 ```powershell
 New-ModuleMarkdownHelp -ModuleName 'GenXdev' -Language 'nl-NL' -Force -Model 'deepseek-v4-pro' -ApiKey 'your-api-key' -ApiEndpoint 'https://api.deepseek.com/chat/completions'
 Generates Dutch-translated markdown help, overwriting existing files.
 ```
 
-### New-ModuleMarkdownHelp -ModuleName 'GenXdev' -LinkPrefix `     'https://github.com/genXdev/GenXdev.PowerShell/Docs/' -SkipTranslation Generates help with absolute GitHub links in the README index.
+
 
 ```powershell
 New-ModuleMarkdownHelp -ModuleName 'GenXdev' -LinkPrefix `

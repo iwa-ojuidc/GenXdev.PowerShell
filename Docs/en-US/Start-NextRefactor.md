@@ -15,6 +15,7 @@ provides interactive user control over the refactoring process.
 
 ## Syntax
 
+
 ```powershell
 Start-NextRefactor [[-Name] <String[]>] [[-FilesToAdd] <IO.FileInfo[]>] [[-FilesToRemove] <IO.FileInfo[]>] [-CleanUpDeletedFiles] [-MarkAllCompleted] [-RedoLast] [-Reset] [-ResetLMSelections] [-Speak] [<CommonParameters>]
 ```
@@ -35,14 +36,14 @@ Start-NextRefactor [[-Name] <String[]>] [[-FilesToAdd] <IO.FileInfo[]>] [[-Files
 
 ## Examples
 
-### Start-NextRefactor -Name "RefactorProject" -Reset -CleanUpDeletedFiles Restarts refactoring for "RefactorProject" and removes deleted files.
+
 
 ```powershell
 Start-NextRefactor -Name "RefactorProject" -Reset -CleanUpDeletedFiles
 Restarts refactoring for "RefactorProject" and removes deleted files.
 ```
 
-### nextrefactor -Name "*Test*" -Speak Processes all refactor sets matching "*Test*" pattern with speech enabled.
+
 
 ```powershell
 nextrefactor -Name "*Test*" -Speak

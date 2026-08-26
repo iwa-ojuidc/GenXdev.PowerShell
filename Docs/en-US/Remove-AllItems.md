@@ -13,6 +13,7 @@ Safely removes all files and subdirectories within a specified directory
 
 ## Syntax
 
+
 ```powershell
 Remove-AllItems -Path <String> [-DeleteFolder] [<CommonParameters>]
 ```
@@ -26,13 +27,13 @@ Remove-AllItems -Path <String> [-DeleteFolder] [<CommonParameters>]
 
 ## Examples
 
-### Remove-AllItems -Path "C:\Temp\BuildOutput" -DeleteFolder -Verbose
+
 
 ```powershell
 Remove-AllItems -Path "C:\Temp\BuildOutput" -DeleteFolder -Verbose
 ```
 
-### sdel ".\temp" -DeleteFolder
+
 
 ```powershell
 sdel ".\temp" -DeleteFolder

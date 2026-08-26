@@ -16,6 +16,7 @@ conversations with extensive tool integration and customization options.
 
 ## Syntax
 
+
 ```powershell
 New-LLMTextChat [[-Query] <String>] [<CommonParameters>]
 
@@ -77,14 +78,14 @@ New-LLMTextChat [[-Instructions] <String>] [[-Attachments] <String[]>] [[-Temper
 
 ## Examples
 
-### New-LLMTextChat -Model "qwen2.5-14b-instruct" -Temperature 0.7 `     -Instructions "You are a helpful AI assistant"
+
 
 ```powershell
 New-LLMTextChat -Model "qwen2.5-14b-instruct" -Temperature 0.7 `
     -Instructions "You are a helpful AI assistant"
 ```
 
-### llmchat "Tell me a joke" -Speak -IncludeThoughts
+
 
 ```powershell
 llmchat "Tell me a joke" -Speak -IncludeThoughts

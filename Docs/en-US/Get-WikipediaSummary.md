@@ -14,6 +14,7 @@ removing parenthetical content for improved readability.
 
 ## Syntax
 
+
 ```powershell
 Get-WikipediaSummary -Queries <String[]> [<CommonParameters>]
 ```
@@ -26,13 +27,13 @@ Get-WikipediaSummary -Queries <String[]> [<CommonParameters>]
 
 ## Examples
 
-### Get-WikipediaSummary -Queries "PowerShell"
+
 
 ```powershell
 Get-WikipediaSummary -Queries "PowerShell"
 ```
 
-### wikitxt "PowerShell", "Typescript", "C#"
+
 
 ```powershell
 wikitxt "PowerShell", "Typescript", "C#"

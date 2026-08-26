@@ -15,6 +15,7 @@ Handles the complete installation and configuration process automatically.
 
 ## Syntax
 
+
 ```powershell
 EnsureWinMerge [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```
@@ -29,7 +30,7 @@ EnsureWinMerge [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonP
 
 ## Examples
 
-### EnsureWinMerge Ensures WinMerge is installed and properly configured.
+
 
 ```powershell
 EnsureWinMerge

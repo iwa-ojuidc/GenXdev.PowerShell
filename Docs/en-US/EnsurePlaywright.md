@@ -18,6 +18,7 @@ and explicitly from EnsureGenXdev during environment setup.
 
 ## Syntax
 
+
 ```powershell
 EnsurePlaywright [-AutoConsent] [-AutoConsentAllPackages] [-SessionOnly] [<CommonParameters>]
 ```

@@ -693,7 +693,8 @@ function Start-AudioTranscription {
             Mandatory = $false,
             HelpMessage = 'Whisper model type to use, defaults to LargeV3Turbo'
         )]
-        [ValidateSet('Tiny', 'TinyEn', 'Base', 'BaseEn', 'Small', 'SmallEn', 'Medium', 'MediumEn', 'LargeV1', 'LargeV2', 'LargeV3', 'LargeV3Turbo')]
+        [ValidateSet('Tiny', 'TinyEn', 'Base', 'BaseEn', 'Small', 'SmallEn', 'Medium', 'MediumEn', 'LargeV1', 'LargeV2', 'LargeV3', 'LargeV3Turbo',
+            'TinyQ5_1', 'TinyEnQ5_1', 'BaseQ5_1', 'BaseEnQ5_1', 'SmallQ5_1', 'SmallEnQ5_1', 'MediumQ5_0', 'MediumEnQ5_0', 'LargeV2Q5_0', 'LargeV3Q5_0', 'LargeV3TurboQ5_0')]
         [string] $ModelType,
         ###########################################################################
         [Parameter(
@@ -1075,7 +1076,7 @@ function Start-AudioTranscription {
                 if (-not $myPSBoundParameters.ContainsKey("ModelType")) {
 
                     # use most accurate model for batch processing
-                    $ModelType = 'LargeV3Turbo'
+                    $ModelType = "TinyEn"
 
                     # add modeltype to bound parameters for downstream functions
                     $null = $myPSBoundParameters.Add('ModelType', $ModelType)
@@ -1265,7 +1266,7 @@ function Start-AudioTranscription {
             if (-not $myPSBoundParameters.ContainsKey("ModelType")) {
 
                 # use most accurate model for batch processing
-                $ModelType = 'tiny'
+                $ModelType = 'TinyEn'
 
                 # add modeltype to bound parameters for downstream functions
                 $null = $myPSBoundParameters.Add('ModelType', $ModelType)

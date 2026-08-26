@@ -16,6 +16,7 @@ parameter.
 
 ## Syntax
 
+
 ```powershell
 Show-GenXdevCmdLetInIde -CmdletName <String> [[-ModuleName] <String[]>] [-AutoConsent] [-AutoConsentAllPackages] [-ChangedirectoryOnly] [-Code] [-CoPilot] [-EditPrompt] [-FromScripts] [-KeysToSend <String[]>] [-NoLocal] [-OnlyPublished] [-Prompt <String>] [-Search] [-SessionOnly] [-UnitTests] [-VisualStudio] [<CommonParameters>]
 
@@ -52,14 +53,14 @@ Show-GenXdevCmdLetInIde [[-BaseModuleName] <String>] [[-Synopsis] <String>] [[-D
 
 ## Examples
 
-### Show-GenXdevCmdLetInIde -CmdletName "Get-GenXDevModuleInfo" Opens the implementation of Get-GenXDevModuleInfo in VSCode.
+
 
 ```powershell
 Show-GenXdevCmdLetInIde -CmdletName "Get-GenXDevModuleInfo"
 Opens the implementation of Get-GenXDevModuleInfo in VSCode.
 ```
 
-### editcmdlet Get-GenXDevModuleInfo -UnitTests Opens the unit tests for Get-GenXDevModuleInfo using the alias.
+
 
 ```powershell
 editcmdlet Get-GenXDevModuleInfo -UnitTests

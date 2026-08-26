@@ -15,25 +15,25 @@ This is useful for system administration and security monitoring.
 
 ## Syntax
 
+
 ```powershell
 Get-ActiveUser [<CommonParameters>]
 ```
 
 ## Examples
 
-### Get-ActiveUser Returns a list of all unique usernames with active processes.
+
 
 ```powershell
 Get-ActiveUser
 Returns a list of all unique usernames with active processes.
 ```
 
-### gusers Uses the alias to get the same results. ##############################################################################
+
 
 ```powershell
 gusers
 Uses the alias to get the same results.
-##############################################################################
 ```
 
 ## Related Links

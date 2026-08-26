@@ -17,6 +17,7 @@ GenXdev.Data operations.
 
 ## Syntax
 
+
 ```powershell
 Get-GenXdevPreferencesDatabasePath [[-PreferencesDatabasePath] <String>] [-ClearSession] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -32,7 +33,6 @@ Get-GenXdevPreferencesDatabasePath [[-PreferencesDatabasePath] <String>] [-Clear
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-GenXdevPreferencesDatabasePath
@@ -40,7 +40,6 @@ Get-GenXdevPreferencesDatabasePath
 
 Retrieves the database path from Global variables or preferences.
 
-### Examples 2
 
 ```powershell
 Get-GenXdevPreferencesDatabasePath -SkipSession
@@ -48,7 +47,6 @@ Get-GenXdevPreferencesDatabasePath -SkipSession
 
 Skips the session variable and uses persistent preferences.
 
-### Examples 3
 
 ```powershell
 Get-GenXdevPreferencesDatabasePath -ClearSession

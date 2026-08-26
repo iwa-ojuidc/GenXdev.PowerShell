@@ -15,6 +15,7 @@ Each new todo item is automatically timestamped unless marking as done.
 
 ## Syntax
 
+
 ```powershell
 Add-TodoLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveCompleted] [-ArchiveFilePath <String>] [-Ascending] [-Code] [-Done] [-ExcludeCompleted] [-First <Int32>] [-OnlyCompleted] [-Show] [-SortByDate] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ```
@@ -40,13 +41,13 @@ Add-TodoLineToREADME [[-Line] <String>] [[-Priority] <Int32>] [-ArchiveCompleted
 
 ## Examples
 
-### Add-TodoLineToREADME -Line "Implement new feature" -Show -Code
+
 
 ```powershell
 Add-TodoLineToREADME -Line "Implement new feature" -Show -Code
 ```
 
-### todo "Fix bug" -Done
+
 
 ```powershell
 todo "Fix bug" -Done

@@ -13,13 +13,13 @@ Checks the state of both the default and customized speech synthesizers to deter
 
 ## Syntax
 
+
 ```powershell
 Get-IsSpeaking [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-IsSpeaking
@@ -27,7 +27,6 @@ Get-IsSpeaking
 
 Returns true if the text-to-speech engine is speaking.
 
-### Examples 2
 
 ```powershell
 iss

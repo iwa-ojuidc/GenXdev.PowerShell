@@ -17,6 +17,7 @@ persistent preferences, and finally uses system defaults.
 
 ## Syntax
 
+
 ```powershell
 Get-AIKnownFacesRootpath [[-FacesDirectory] <String>] [-ClearSession] [-PreferencesDatabasePath <String>] [-SessionOnly] [-SkipSession] [<CommonParameters>]
 ```
@@ -33,7 +34,7 @@ Get-AIKnownFacesRootpath [[-FacesDirectory] <String>] [-ClearSession] [-Preferen
 
 ## Examples
 
-### Get-AIKnownFacesRootpath Gets the currently configured faces directory from Global variables or preferences.
+
 
 ```powershell
 Get-AIKnownFacesRootpath
@@ -41,7 +42,7 @@ Gets the currently configured faces directory from Global variables or
 preferences.
 ```
 
-### Get-AIKnownFacesRootpath -SkipSession Gets the configured faces directory only from persistent preferences, ignoring any session setting.
+
 
 ```powershell
 Get-AIKnownFacesRootpath -SkipSession
@@ -49,7 +50,7 @@ Gets the configured faces directory only from persistent preferences, ignoring
 any session setting.
 ```
 
-### Get-AIKnownFacesRootpath -ClearSession Clears the session faces directory setting and then gets the directory from persistent preferences.
+
 
 ```powershell
 Get-AIKnownFacesRootpath -ClearSession
@@ -57,7 +58,7 @@ Clears the session faces directory setting and then gets the directory from
 persistent preferences.
 ```
 
-### Get-AIKnownFacesRootpath "C:\MyFaces" Returns the specified directory after expanding the path.
+
 
 ```powershell
 Get-AIKnownFacesRootpath "C:\MyFaces"

@@ -13,13 +13,13 @@ Uses Windows API calls to send a power-off signal to all connected monitors. Thi
 
 ## Syntax
 
+
 ```powershell
 Set-MonitorPowerOff [<CommonParameters>]
 ```
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Set-MonitorPowerOff
@@ -27,7 +27,6 @@ Set-MonitorPowerOff
 
 Turns off all connected monitors.
 
-### Examples 2
 
 ```powershell
 poweroff

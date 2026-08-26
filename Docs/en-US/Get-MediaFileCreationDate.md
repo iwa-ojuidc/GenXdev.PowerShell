@@ -18,6 +18,7 @@ always returns a [DateTime]; when no date can be determined it returns
 
 ## Syntax
 
+
 ```powershell
 Get-MediaFileCreationDate -FilePath <String> [<CommonParameters>]
 ```
@@ -30,7 +31,7 @@ Get-MediaFileCreationDate -FilePath <String> [<CommonParameters>]
 
 ## Examples
 
-### Get-MediaFileCreationDate -FilePath '.\IMG_20250601_123000.jpg'
+
 
 ```powershell
 Get-MediaFileCreationDate -FilePath '.\IMG_20250601_123000.jpg'

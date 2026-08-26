@@ -15,6 +15,7 @@ combination, and optionally closes the current tab after a delay.
 
 ## Syntax
 
+
 ```powershell
 New-MicrosoftShellTab [-DontCloseThisTab] [<CommonParameters>]
 ```
@@ -27,14 +28,14 @@ New-MicrosoftShellTab [-DontCloseThisTab] [<CommonParameters>]
 
 ## Examples
 
-### New-MicrosoftShellTab -DontCloseThisTab Creates a new terminal tab while keeping the current tab open.
+
 
 ```powershell
 New-MicrosoftShellTab -DontCloseThisTab
 Creates a new terminal tab while keeping the current tab open.
 ```
 
-### x Creates a new terminal tab and closes the current one after 3 seconds.
+
 
 ```powershell
 x

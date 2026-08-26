@@ -13,6 +13,7 @@ Uses t = d / c, with c depending on medium.
 
 ## Syntax
 
+
 ```powershell
 Get-LightTravelTimeByDistance -DistanceInMeters <Double> [[-As] <String>] [<CommonParameters>]
 
@@ -32,7 +33,6 @@ Get-LightTravelTimeByDistance -Medium <String> [<CommonParameters>]
 
 ## Examples
 
-### Examples 1
 
 ```powershell
 Get-LightTravelTimeByDistance -DistanceInMeters 149597870700 -Medium "water" -As "minutes"
@@ -40,7 +40,6 @@ Get-LightTravelTimeByDistance -DistanceInMeters 149597870700 -Medium "water" -As
 
 Calculates the time for light to travel the distance to the sun through water, in minutes.
 
-### Examples 2
 
 ```powershell
 Get-LightTravelTimeByDistance 300000000 -SpeedOfLightInMetersPerSecond 225000000
